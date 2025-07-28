@@ -33,7 +33,7 @@ export default function Home() {
               <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                  <Image
                     src="https://placehold.co/600x400.png"
-                    data-ai-hint="futuristic technology"
+                    data-ai-hint="abstract technology"
                     width="600"
                     height="400"
                     alt="Hero"
@@ -57,21 +57,23 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
-              {services.map((service) => (
-                <Card key={service.slug} className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                  <CardHeader>
-                    <div className="mb-4 text-primary">{service.icon}</div>
-                    <CardTitle className="font-headline">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
-                  </CardHeader>
-                  <CardFooter>
-                    <Button asChild variant="link" className="p-0 h-auto text-primary">
-                       <Link href={`/services/${service.slug}`}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                       </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
+              {services.map((service, i) => (
+                <div key={service.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
+                  <Card className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect h-full flex flex-col">
+                    <CardHeader>
+                      <div className="mb-4 text-primary">{service.icon}</div>
+                      <CardTitle className="font-headline">{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                    <CardFooter className="mt-auto">
+                      <Button asChild variant="link" className="p-0 h-auto text-primary">
+                         <Link href={`/services/${service.slug}`}>
+                          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                         </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
@@ -90,8 +92,8 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
-              {portfolio.slice(0, 3).map((project) => (
-                 <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group">
+              {portfolio.slice(0, 3).map((project, i) => (
+                 <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                     <Image
                       src={project.imageUrl}
@@ -143,7 +145,7 @@ export default function Home() {
             </div>
              <Image
                 src="https://placehold.co/600x600.png"
-                data-ai-hint="business strategy futuristic"
+                data-ai-hint="team collaboration futuristic"
                 width="600"
                 height="600"
                 alt="Why Choose Us"
@@ -166,8 +168,8 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
-              {blogPosts.slice(0, 3).map((post) => (
-                <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
+              {blogPosts.slice(0, 3).map((post, i) => (
+                <Link href={`/blog/${post.slug}`} key={post.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                     <Image
                       src={post.imageUrl}
@@ -197,23 +199,29 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
-          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
-            <div className="space-y-3">
-              <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">
-                Ready to Build the Future?
-              </h2>
-              <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Let's discuss how we can help you achieve your goals. Contact us today for a no-obligation consultation.
-              </p>
+        <section className="w-full py-20 md:py-32">
+            <div className="container px-4 md:px-6">
+                <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-secondary/50 p-8 md:p-12 shadow-[0_0_40px_-15px_hsl(var(--primary)/0.3)]">
+                    <div className="absolute -top-1/2 -right-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,hsl(var(--primary)/0.1),transparent_70%)] -z-10 animate-pulse"></div>
+                    <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                        <div className="space-y-4">
+                             <h2 className="text-3xl font-headline font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
+                                Ready to Build the Future?
+                              </h2>
+                              <p className="max-w-xl text-foreground/80 md:text-xl">
+                                Let's discuss how we can help you achieve your goals. Contact us today for a no-obligation consultation.
+                              </p>
+                        </div>
+                        <div className="flex justify-center md:justify-end">
+                              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto glow-effect text-lg px-8 py-6">
+                                 <Link href="/contact">Contact Us</Link>
+                               </Button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="mx-auto w-full max-w-sm space-y-2">
-               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full glow-effect">
-                 <Link href="/contact">Contact Us</Link>
-               </Button>
-            </div>
-          </div>
         </section>
+
       </main>
     </div>
   );

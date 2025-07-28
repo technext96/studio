@@ -43,7 +43,7 @@ export default function EcommercePlatformCaseStudy() {
 
             <Image
               src="https://placehold.co/1200x600.png"
-              data-ai-hint="online fashion store"
+              data-ai-hint="fashion online store"
               width={1200}
               height={600}
               alt="E-commerce Platform Showcase"

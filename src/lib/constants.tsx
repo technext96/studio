@@ -34,7 +34,7 @@ export const portfolio = [
     category: 'Web Development',
     excerpt: 'A scalable e-commerce solution that increased client sales by 40% through an optimized user experience.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'online shopping',
+    imageHint: 'fashion online store',
   },
   {
     slug: 'logistics-dashboard',
@@ -42,7 +42,7 @@ export const portfolio = [
     category: 'Enterprise Software',
     excerpt: 'A real-time data visualization tool for a major logistics firm, improving operational efficiency by 25%.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'data dashboard',
+    imageHint: 'logistics dashboard charts',
   },
   {
     slug: 'fitness-mobile-app',
@@ -50,7 +50,7 @@ export const portfolio = [
     category: 'Mobile App',
     excerpt: 'A cross-platform mobile app with over 100,000 downloads, featuring personalized workout plans and progress tracking.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'mobile application',
+    imageHint: 'fitness app interface',
   },
    {
     slug: 'saas-analytics',
@@ -58,7 +58,7 @@ export const portfolio = [
     category: 'Cloud Solutions',
     excerpt: 'A multi-tenant SaaS platform providing deep business intelligence insights for marketing agencies.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'analytics charts',
+    imageHint: 'saas dashboard analytics',
   },
 ];
 
