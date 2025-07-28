@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services, portfolio, valuePropositions } from "@/lib/constants";
+import { services, portfolio, valuePropositions, blogPosts } from "@/lib/constants";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,33 +10,36 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 md:py-32 lg:py-40 bg-secondary/50">
-          <div className="container px-4 md:px-6">
+        <section className="w-full py-20 md:py-32 lg:py-40 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="container px-4 md:px-6 z-10 relative">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
+              <div className="flex flex-col justify-center space-y-4 animate-fade-in-up">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
-                  Building Digital Excellence
+                  Engineering Tomorrow
                 </h1>
                 <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                  Code Harbor crafts bespoke software solutions that power growth, innovation, and efficiency. From sleek web apps to robust enterprise systems, we bring your vision to life with cutting-edge technology.
+                  Code Harbor crafts futuristic software solutions that power growth, innovation, and efficiency. From sleek web apps to robust enterprise systems, we bring your vision to life with cutting-edge technology.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect">
                     <Link href="/contact">Get a Free Quote</Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline">
+                  <Button asChild size="lg" variant="outline" className="glow-effect">
                     <Link href="/portfolio">Our Work</Link>
                   </Button>
                 </div>
               </div>
-              <Image
-                src="https://placehold.co/600x400.png"
-                data-ai-hint="team collaboration"
-                width="600"
-                height="400"
-                alt="Hero"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-              />
+              <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                 <Image
+                    src="https://placehold.co/600x400.png"
+                    data-ai-hint="futuristic technology"
+                    width="600"
+                    height="400"
+                    alt="Hero"
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full border-2 border-primary/20 glow-effect"
+                  />
+              </div>
             </div>
           </div>
         </section>
@@ -46,7 +49,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-semibold">Our Services</div>
+                <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Services</div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">What We Do Best</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   We offer a comprehensive suite of services to cover all your digital needs, ensuring seamless integration and exceptional performance.
@@ -55,7 +58,7 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
               {services.map((service) => (
-                <Card key={service.slug} className="group hover:shadow-lg transition-shadow duration-300">
+                <Card key={service.slug} className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                   <CardHeader>
                     <div className="mb-4 text-primary">{service.icon}</div>
                     <CardTitle className="font-headline">{service.title}</CardTitle>
@@ -75,11 +78,11 @@ export default function Home() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
+        <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-semibold">Our Portfolio</div>
+                <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Portfolio</div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Success Stories</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   We're proud of the solutions we've delivered. Explore some of our recent projects that have made a real impact.
@@ -89,7 +92,7 @@ export default function Home() {
             <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
               {portfolio.slice(0, 3).map((project) => (
                  <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group">
-                  <Card className="overflow-hidden h-full flex flex-col">
+                  <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                     <Image
                       src={project.imageUrl}
                       data-ai-hint={project.imageHint}
@@ -110,7 +113,7 @@ export default function Home() {
               ))}
             </div>
              <div className="mt-12 text-center">
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="glow-effect">
                 <Link href="/portfolio">View All Projects</Link>
               </Button>
             </div>
@@ -121,7 +124,7 @@ export default function Home() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-semibold">Our Commitment</div>
+              <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Commitment</div>
               <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Your Partner in Innovation</h2>
               <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 We're more than just developers; we're strategic partners dedicated to your success. Our process is built on collaboration, transparency, and a relentless pursuit of quality.
@@ -140,29 +143,72 @@ export default function Home() {
             </div>
              <Image
                 src="https://placehold.co/600x600.png"
-                data-ai-hint="business strategy"
+                data-ai-hint="business strategy futuristic"
                 width="600"
                 height="600"
                 alt="Why Choose Us"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
+                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
               />
           </div>
         </section>
 
 
+        {/* Blog Section */}
+        <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Blog</div>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">From Our Labs</h2>
+                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                  Insights, tutorials, and thoughts on the future of technology.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
+                  <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                    <Image
+                      src={post.imageUrl}
+                      data-ai-hint={post.imageHint}
+                      width="600"
+                      height="400"
+                      alt={post.title}
+                      className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <CardHeader>
+                      <p className="text-sm text-primary font-semibold">{post.category}</p>
+                      <CardTitle className="font-headline">{post.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-foreground/80">{post.excerpt}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" variant="outline" className="glow-effect">
+                <Link href="/blog">Read More</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">
-                Ready to Start Your Project?
+                Ready to Build the Future?
               </h2>
               <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Let's discuss how we can help you achieve your goals. Contact us today for a no-obligation consultation.
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
-               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground w-full glow-effect">
                  <Link href="/contact">Contact Us</Link>
                </Button>
             </div>

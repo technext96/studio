@@ -67,3 +67,36 @@ export const valuePropositions = [
     { title: 'Quality First', description: 'Our rigorous testing and QA processes ensure your product is reliable, secure, and bug-free.' },
     { title: 'Transparent Communication', description: 'We believe in open and honest communication, providing regular updates and clear roadmaps.' },
 ];
+
+export const blogPosts = [
+  {
+    slug: 'quantum-computing-explained',
+    title: 'Quantum Computing: The Next Frontier',
+    category: 'Future Tech',
+    author: 'Dr. Evelyn Reed',
+    date: '2024-07-22',
+    excerpt: 'A beginner-friendly dive into the mind-bending world of quantum computing and its potential to revolutionize industries.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'quantum circuit',
+  },
+  {
+    slug: 'building-with-gen-ai',
+    title: 'Practical Generative AI: From Prompts to Products',
+    category: 'AI/ML',
+    author: 'Jian Li',
+    date: '2024-07-15',
+    excerpt: 'Learn how to leverage large language models to build real-world applications that are both smart and scalable.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'neural network',
+  },
+  {
+    slug: 'the-rise-of-spatial-computing',
+    title: 'The Rise of Spatial Computing',
+    category: 'Web Development',
+    author: 'Alex Chen',
+    date: '2024-07-05',
+    excerpt: 'Exploring how WebXR and new hardware are merging the digital and physical worlds, creating new immersive experiences.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'augmented reality',
+  },
+];

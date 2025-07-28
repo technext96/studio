@@ -12,6 +12,7 @@ const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
 ];
 
@@ -48,7 +49,7 @@ export default function Header() {
                                 <span className="sr-only">Toggle Menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+                        <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur">
                             <div className="flex flex-col h-full">
                                 <div className="p-4">
                                     <Logo />
@@ -59,7 +60,7 @@ export default function Header() {
                                     ))}
                                 </nav>
                                 <div className="mt-auto p-4">
-                                    <Button asChild className="w-full">
+                                    <Button asChild className="w-full glow-effect">
                                         <Link href="/contact">Get a Quote</Link>
                                     </Button>
                                 </div>
@@ -83,7 +84,7 @@ export default function Header() {
 
                 <div className="flex flex-1 items-center justify-end space-x-4">
                     <nav className="hidden md:flex items-center space-x-2">
-                        <Button asChild>
+                        <Button asChild className="glow-effect">
                             <Link href="/contact">Get a Quote</Link>
                         </Button>
                     </nav>

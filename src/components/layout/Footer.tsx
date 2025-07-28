@@ -13,11 +13,12 @@ export default function Footer() {
         { href: "/", label: "Home" },
         { href: "/services", label: "Services" },
         { href: "/portfolio", label: "Portfolio" },
+        { href: "/blog", label: "Blog" },
         { href: "/contact", label: "Contact" },
     ];
 
     return (
-        <footer className="bg-secondary/50 text-foreground/80">
+        <footer className="bg-secondary/20 text-foreground/80">
             <div className="container py-12 px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
