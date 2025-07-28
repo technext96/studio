@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Inter, Space_Grotesk } from 'next/font/google';
@@ -18,18 +19,18 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Code Harbor | Custom Software & Web Development',
-    template: '%s | Code Harbor',
+    default: 'Technext | Custom Software & Web Development',
+    template: '%s | Technext',
   },
-  description: 'Code Harbor is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
-  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react'],
+  description: 'Technext is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
+  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Technext'],
   openGraph: {
-    title: 'Code Harbor | Custom Software & Web Development',
+    title: 'Technext | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://codeharbor.dev', // Replace with your actual domain
-    siteName: 'Code Harbor',
+    url: 'https://technext.dev', // Replace with your actual domain
+    siteName: 'Technext',
   },
 };
 
