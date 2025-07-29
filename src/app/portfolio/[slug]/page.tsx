@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { portfolio } from "@/lib/constants";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle, ExternalLink, ShoppingCart } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,6 +47,27 @@ export default function PortfolioProjectPage({ params }: Props) {
           <article className="prose prose-invert max-w-none prose-h1:font-headline prose-h1:text-4xl prose-h1:text-primary prose-h2:font-headline prose-h2:text-2xl prose-h3:font-headline">
             <p className="text-primary font-semibold">{project.category}</p>
             <h1>Case Study: {project.title}</h1>
+            
+            {(project.demoUrl || project.buyUrl) && (
+                <div className="flex flex-col sm:flex-row gap-4 my-6">
+                    {project.demoUrl && (
+                        <Button asChild size="lg" className="flex-1 glow-effect">
+                            <Link href={project.demoUrl}>
+                                <ExternalLink className="mr-2"/>
+                                View Live Demo
+                            </Link>
+                        </Button>
+                    )}
+                    {project.buyUrl && (
+                        <Button asChild size="lg" variant="outline" className="flex-1 glow-effect">
+                            <Link href={project.buyUrl}>
+                                <ShoppingCart className="mr-2"/>
+                                Buy Now
+                            </Link>
+                        </Button>
+                    )}
+                </div>
+            )}
 
             <Image
               src={project.imageUrl}
@@ -132,3 +153,5 @@ export async function generateStaticParams() {
     slug: p.slug,
   }));
 }
+
+    

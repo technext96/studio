@@ -34,7 +34,7 @@ export const services = [
     title: 'Mobile App Development',
     categoryFilter: 'Mobile',
     description: 'Building intuitive and engaging native and cross-platform mobile apps for iOS and Android.',
-    longDescription: 'We craft beautiful, high-performing mobile applications for both iOS and Android. Our team specializes in creating engaging user experiences that keep your audience coming back.',
+    longDescription: 'We craft beautiful, high-performing mobile applications for both iOS and Android. Our team specializes in creating engaging user experiences that your audience will love.',
     icon: <Smartphone className="w-10 h-10" />,
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'mobile app design interface',
@@ -92,6 +92,74 @@ export const services = [
 ];
 
 export const portfolio = [
+  {
+    slug: 'ai-vision-prototyper',
+    title: 'AI Vision Prototyper',
+    category: 'AI & Prototyping Tool',
+    excerpt: 'An interactive tool that lets you generate a product vision document using AI. Instantly validate your ideas.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'AI analysis dashboard',
+    demoUrl: '/services/ai-integration',
+    buyUrl: '#',
+    details: {
+        client: "Internal Project / SaaS",
+        timeline: "2 Weeks",
+        industry: "Software Development"
+    },
+    challenge: "Early-stage founders and product managers struggle to articulate and structure their product ideas. This leads to miscommunication, wasted time, and unfocused development efforts.",
+    solution: "We developed the AI Vision Prototyper, a tool directly integrated into our services page. It uses a powerful language model to take a user's raw idea and instantly generate a structured vision document, including a product name, tagline, target audience, problems to solve, and core features.",
+    keyFeatures: [
+      "Instant vision document generation",
+      "Structured output for clarity and focus",
+      "Defines target audience and key problems",
+      "Outlines core product features",
+      "Provides a shareable, professional-looking document",
+      "Helps validate business ideas in minutes"
+    ],
+    technologies: ["Next.js", "Genkit", "Vercel AI SDK", "ShadCN UI", "Tailwind CSS"],
+    results: {
+        summary: "This tool has become a powerful lead magnet and a showcase of our AI integration capabilities. It allows potential clients to experience the value we provide firsthand, leading to more qualified inquiries and a faster sales cycle.",
+        metrics: [
+            { value: "+300%", label: "User Engagement on Page" },
+            { value: "+50%", label: "Qualified Leads" },
+            { value: "95%", label: "Positive User Feedback" },
+        ]
+    }
+  },
+  {
+    slug: 'real-estate-vr',
+    title: 'VR Real Estate Showcase',
+    category: 'Web & Immersive Tech',
+    excerpt: 'A cutting-edge platform for real estate agencies to offer immersive VR tours of properties.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'virtual reality living room',
+    demoUrl: '#',
+    buyUrl: '#',
+    details: {
+        client: "Prop-V",
+        timeline: "3 Months",
+        industry: "Real Estate"
+    },
+    challenge: "Traditional property viewings are time-consuming and geographically restrictive. Prop-V wanted a way to allow potential buyers to tour properties from anywhere in the world, at any time.",
+    solution: "We built a web-based VR platform that allows real estate agents to upload 360-degree photos and create interactive virtual tours. The experience is accessible on desktop, mobile, and VR headsets. Users can virtually walk through properties, view floor plans, and get a true sense of the space.",
+    keyFeatures: [
+      "High-resolution VR tour streaming",
+      "Cross-device compatibility (VR, desktop, mobile)",
+      "Interactive hotspots with property details",
+      "Virtual staging capabilities",
+      "Agent-led guided tour mode",
+      "Lead capture forms integrated into the tour"
+    ],
+    technologies: ["A-Frame", "Three.js", "Next.js", "AWS S3", "WebSockets"],
+    results: {
+        summary: "The VR Showcase has transformed Prop-V's business model, enabling them to reach a global audience and close deals faster. It has set a new standard for property marketing in their region.",
+        metrics: [
+            { value: "+400%", label: "Viewing Reach" },
+            { value: "-50%", label: "Time-to-Offer" },
+            { value: "+20%", label: "Higher Engagement" },
+        ]
+    }
+  },
   {
     slug: 'ecommerce-platform',
     title: 'Next-Gen E-commerce Platform',
@@ -260,3 +328,5 @@ export const blogPosts = [
     imageHint: 'augmented reality',
   },
 ];
+
+    
