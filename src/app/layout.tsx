@@ -47,6 +47,7 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable, spaceGrotesk.variable)}>
         <div className="relative flex min-h-dvh flex-col bg-background">
+          <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
