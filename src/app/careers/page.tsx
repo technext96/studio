@@ -14,25 +14,25 @@ const jobOpenings = [
         title: "Senior Full-Stack Engineer",
         location: "Remote",
         department: "Engineering",
-        description: "We are looking for an experienced Full-Stack Engineer to build and maintain scalable web applications. You'll work with a modern tech stack and contribute to all phases of the development lifecycle."
+        description: "We are looking for an experienced Full-Stack Engineer to build and maintain scalable web applications. You'll work with a modern tech stack (Next.js, React, Genkit) and contribute to all phases of the development lifecycle, from concept to deployment."
     },
     {
         title: "AI/ML Engineer",
         location: "Tech City Office",
         department: "AI & Data Science",
-        description: "Join our AI team to design and implement machine learning models, develop AI-driven features, and push the boundaries of what's possible with artificial intelligence."
+        description: "Join our AI team to design, implement, and deploy machine learning models. You will develop AI-driven features, research new algorithms, and push the boundaries of what's possible with artificial intelligence."
     },
     {
         title: "UX/UI Designer",
         location: "Remote",
         department: "Design",
-        description: "We are seeking a creative UX/UI designer to create intuitive and beautiful user experiences. You'll be responsible for the entire design process, from user research to final hand-off."
+        description: "We are seeking a creative and user-centric UX/UI designer to create intuitive and beautiful user experiences. You'll be responsible for the entire design process, from user research and wireframing to final high-fidelity mockups and hand-off."
     },
     {
         title: "DevOps Engineer",
         location: "Remote / Tech City",
         department: "Engineering",
-        description: "Help us build and maintain our cloud infrastructure, automate our deployment pipelines, and ensure the reliability and scalability of our systems."
+        description: "Help us build and maintain our robust cloud infrastructure. Your role will involve automating our CI/CD pipelines, ensuring the reliability and scalability of our systems, and implementing best practices for security and performance."
     }
 ];
 
@@ -45,7 +45,7 @@ export default function CareersPage() {
                     <div className="space-y-2 animate-fade-in-up">
                         <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-                            Join a forward-thinking team that is building the future of software solutions.
+                            Join a forward-thinking team that is passionate about technology and dedicated to building the future of software solutions. Your next great opportunity starts here.
                         </p>
                     </div>
                 </div>
@@ -57,12 +57,12 @@ export default function CareersPage() {
                         <div className="space-y-4">
                             <h2 className="text-3xl font-headline font-bold">Life at Code Harbor</h2>
                             <p className="text-foreground/80">
-                                At Code Harbor, we foster a vibrant culture that encourages growth, learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators.
+                                At Code Harbor, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference.
                             </p>
                             <ul className="space-y-2 text-foreground/80">
-                                <li className="flex items-center gap-2"><BrainCircuit className="text-primary h-5 w-5"/> Continuous learning and development opportunities.</li>
-                                <li className="flex items-center gap-2"><Briefcase className="text-primary h-5 w-5"/> Flexible work arrangements and a healthy work-life balance.</li>
-                                <li className="flex items-center gap-2"><Users className="text-primary h-5 w-5"/> A collaborative and inclusive work environment.</li>
+                                <li className="flex items-center gap-2"><BrainCircuit className="text-primary h-5 w-5"/> Access to continuous learning, professional development opportunities, and tech conferences.</li>
+                                <li className="flex items-center gap-2"><Briefcase className="text-primary h-5 w-5"/> Flexible work arrangements, generous paid time off, and a focus on a healthy work-life balance.</li>
+                                <li className="flex items-center gap-2"><Users className="text-primary h-5 w-5"/> A collaborative, inclusive, and supportive work environment where every voice is heard and valued.</li>
                             </ul>
                         </div>
                          <div className="grid grid-cols-2 gap-4">
@@ -75,7 +75,7 @@ export default function CareersPage() {
 
             <section className="w-full py-12 md:py-24 bg-secondary/20">
                 <div className="px-4 md:px-6">
-                    <h2 className="text-3xl font-headline font-bold text-center mb-12">Open Positions</h2>
+                    <h2 className="text-3xl font-headline font-bold text-center mb-12">Current Open Positions</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         {jobOpenings.map((job, index) => (
                             <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300">

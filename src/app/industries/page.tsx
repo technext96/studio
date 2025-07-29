@@ -18,9 +18,9 @@ export default function IndustriesPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-4 md:px-6 text-center z-10 relative">
           <div className="space-y-2 animate-fade-in-up">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Industries We Serve</h1>
+            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Industries We Serve with Distinction</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-              Driving impactful and customized software solutions to meet unique industry challenges.
+              We leverage deep industry knowledge to deliver impactful and customized software solutions that meet the unique challenges and regulatory demands of your sector.
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function IndustriesPage() {
                   <CardFooter>
                      <Button asChild variant="link" className="p-0 h-auto text-primary">
                        <Link href={`/industries/${industry.slug}`}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        Explore Solutions <ArrowRight className="ml-2 h-4 w-4" />
                        </Link>
                     </Button>
                   </CardFooter>

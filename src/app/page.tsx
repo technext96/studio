@@ -21,14 +21,14 @@ export default function Home() {
                   Powering Your Growth Through Expert Technology
                 </h1>
                 <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                  Delivering real-world solutions that solve challenges and accelerate business growth. Code Harbor crafts futuristic software solutions that power growth, innovation, and efficiency.
+                  We specialize in crafting bespoke software solutions that drive innovation, efficiency, and growth. At Code Harbor, we transform complex challenges into real-world, high-impact digital products that accelerate your business and secure your place in the future.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect">
                     <Link href="/contact">Get a Free Quote</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="glow-effect">
-                    <Link href="/portfolio">Our Work</Link>
+                    <Link href="/portfolio">Explore Our Work</Link>
                   </Button>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Services</div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">What We Do Best</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We offer a comprehensive suite of services to cover all your digital needs, ensuring seamless integration and exceptional performance.
+                  From intelligent automation to custom software development, we offer a comprehensive suite of services designed to address your most critical business needs. Our expert teams ensure seamless integration, exceptional performance, and measurable results.
                 </p>
               </div>
             </div>
@@ -87,9 +87,9 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Industries We Serve</div>
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Driving Client Success Through Innovation</h2>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Driving Success Across Diverse Sectors</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                  Delivering impactful and customized software solutions to meet unique industry challenges.
+                  We deliver impactful and customized software solutions tailored to meet the unique challenges and opportunities of your industry. Our deep domain expertise ensures that we speak your language and understand what it takes to succeed.
                 </p>
               </div>
             </div>
@@ -117,9 +117,9 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Portfolio</div>
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Success Stories</h2>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Success Stories in Action</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Explore our portfolio, showcasing successful implementations of advanced technologies.
+                  Our work speaks for itself. Explore our portfolio to see how we've transformed businesses through successful implementations of advanced technologies and created tangible value for our clients.
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Home() {
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Blog</div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Your Gateway To Tech Intelligence</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                   Access thought leadership, trends, and innovation-driven business resources anytime.
+                   Stay ahead of the curve with our expert insights. Access thought leadership, industry trends, and innovation-driven business resources to fuel your growth and knowledge.
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function Home() {
                                 Ready to Build the Future?
                               </h2>
                               <p className="max-w-xl text-foreground/80 md:text-xl">
-                                Let's discuss how we can help you achieve your goals. Contact us today for a no-obligation consultation.
+                                Your vision deserves the best technology partner. Let's discuss how we can help you achieve your goals and turn your ideas into reality. Contact us today for a no-obligation consultation and let's start building together.
                               </p>
                         </div>
                         <div className="flex justify-center md:justify-end">

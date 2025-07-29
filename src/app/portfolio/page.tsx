@@ -16,9 +16,9 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-4 md:px-6 text-center z-10 relative">
           <div className="space-y-2 animate-fade-in-up">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Our Work</h1>
+            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Our Work, Your Success</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-              A showcase of our passion for technology and commitment to client success.
+              We take pride in our work. Explore a curated selection of our projects that demonstrate our passion for technology and our unwavering commitment to client success.
             </p>
           </div>
         </div>

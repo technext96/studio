@@ -17,9 +17,9 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-4 md:px-6 text-center z-10 relative">
           <div className="space-y-2 animate-fade-in-up">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">From Our Labs</h1>
+            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">From Our Digital Labs</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-              Insights, tutorials, and thoughts on the future of technology.
+              Dive into our collection of expert insights, in-depth tutorials, and forward-thinking articles on the future of technology. Your resource for staying ahead in the digital age.
             </p>
           </div>
         </div>

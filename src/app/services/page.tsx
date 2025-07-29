@@ -16,9 +16,9 @@ export default function ServicesPage() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
         <div className="px-4 md:px-6">
           <div className="text-center space-y-2">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Our Services</h1>
+            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Our Suite of Services</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-              Comprehensive solutions to build, scale, and innovate your digital presence.
+              We provide comprehensive, end-to-end technology solutions designed to help you build, scale, and innovate your digital presence. Explore how our expertise can empower your business.
             </p>
           </div>
         </div>
