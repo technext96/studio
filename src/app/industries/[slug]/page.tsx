@@ -40,7 +40,7 @@ export default function IndustryPage({ params }: Props) {
         <>
             <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary/50 relative">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="container px-4 md:px-6 z-10 relative">
+                <div className="px-4 md:px-6 z-10 relative">
                     <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-4">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
@@ -73,7 +73,7 @@ export default function IndustryPage({ params }: Props) {
             
             {relatedProjects.length > 0 && (
                 <section id="portfolio" className="w-full py-12 md:py-24">
-                    <div className="container px-4 md:px-6">
+                    <div className="px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Related Case Studies</h2>
                             <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
@@ -107,7 +107,7 @@ export default function IndustryPage({ params }: Props) {
             )}
 
              <section className="w-full py-12 md:py-24 bg-secondary/20">
-                <div className="container px-4 md:px-6 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
                      <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Innovate in the {industry.title} Sector?</h2>
                      <p className="text-foreground/80 md:text-lg">

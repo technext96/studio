@@ -43,7 +43,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
               <div className="text-center space-y-2">
                 <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Get in Touch</h1>
                 <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
@@ -54,7 +54,7 @@ export default function ContactPage() {
       </section>
 
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="grid gap-12 lg:grid-cols-2">
             
             <Card>

@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { portfolio } from "@/lib/constants";
-import { ArrowLeft, CheckCircle2, Bot, GraduationCap, HeartPulse, ShoppingCart, Briefcase, Factory, User, Rocket, Shield } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Bot, GraduationCap, HeartPulse, ShoppingCart, Briefcase, Factory, User, Rocket, Shield, ExternalLink } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -46,7 +46,7 @@ export default function PortfolioProjectPage({ params }: Props) {
   const renderDetailedProject = () => (
     <>
       <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary/20">
-        <div className="container px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl text-primary">Quick Summary</h2>
@@ -70,7 +70,7 @@ export default function PortfolioProjectPage({ params }: Props) {
 
       {project.solutions && (
         <section className="w-full py-12 md:py-24">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl text-center mb-12">Solutions We Provided</h2>
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               <div>
@@ -108,7 +108,7 @@ export default function PortfolioProjectPage({ params }: Props) {
       
       {project.usps && (
         <section className="w-full py-12 md:py-24 bg-secondary/20">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl text-center mb-12">USPs of the Project</h2>
              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.usps.map((usp, index) => (
@@ -131,7 +131,7 @@ export default function PortfolioProjectPage({ params }: Props) {
 
       {project.techStack && (
         <section className="w-full py-12 md:py-24">
-            <div className="container px-4 md:px-6">
+            <div className="px-4 md:px-6">
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl text-center mb-12">The Technology Used</h2>
                 <div className="flex flex-wrap justify-center gap-4">
                     {project.techStack.map(tech => (
@@ -144,7 +144,7 @@ export default function PortfolioProjectPage({ params }: Props) {
 
       {project.impacts && (
         <section className="w-full py-12 md:py-24 bg-secondary/20">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
              <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl text-center mb-12">Impacts and benefits from our solution</h2>
              <div className="grid sm:grid-cols-2 gap-8">
                 {project.impacts.map((impact, index) => (
@@ -164,7 +164,7 @@ export default function PortfolioProjectPage({ params }: Props) {
     <>
       <section className="w-full py-12 md:py-20 lg:py-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="container px-4 md:px-6 z-10 relative">
+        <div className="px-4 md:px-6 z-10 relative">
           <div className="max-w-4xl mx-auto">
             <Button variant="ghost" asChild className="mb-8 -ml-4">
               <Link href="/portfolio">
@@ -180,6 +180,26 @@ export default function PortfolioProjectPage({ params }: Props) {
               </h1>
               <p className="text-foreground/80 text-lg md:text-xl">{project.excerpt}</p>
             </div>
+             {(project.demoUrl || project.purchaseUrl) && (
+              <div className="flex gap-4 mt-8">
+                  {project.demoUrl && (
+                      <Button asChild size="lg">
+                          <Link href={project.demoUrl} target="_blank">
+                              <ExternalLink className="mr-2 h-5 w-5"/>
+                              Live Demo
+                          </Link>
+                      </Button>
+                  )}
+                  {project.purchaseUrl && (
+                       <Button asChild size="lg" variant="outline">
+                          <Link href={project.purchaseUrl} target="_blank">
+                              <ShoppingCart className="mr-2 h-5 w-5"/>
+                              Purchase
+                          </Link>
+                      </Button>
+                  )}
+              </div>
+            )}
 
             <Image
               src={project.imageUrl}
@@ -200,7 +220,7 @@ export default function PortfolioProjectPage({ params }: Props) {
       )}
 
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6 text-center">
+        <div className="px-4 md:px-6 text-center">
             <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Want to See Your Idea as the Next Big Thing?</h2>
                 <p className="text-foreground/80 md:text-lg">

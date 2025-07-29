@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Briefcase, BrainCircuit } from 'lucide-react';
+import { MapPin, Briefcase, BrainCircuit, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -41,7 +41,7 @@ export default function CareersPage() {
         <>
             <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="container px-4 md:px-6 text-center z-10 relative">
+                <div className="px-4 md:px-6 text-center z-10 relative">
                     <div className="space-y-2 animate-fade-in-up">
                         <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
@@ -52,7 +52,7 @@ export default function CareersPage() {
             </section>
 
              <section className="w-full py-12 md:py-24">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-4">
                             <h2 className="text-3xl font-headline font-bold">Life at Code Harbor</h2>
@@ -74,7 +74,7 @@ export default function CareersPage() {
             </section>
 
             <section className="w-full py-12 md:py-24 bg-secondary/20">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                     <h2 className="text-3xl font-headline font-bold text-center mb-12">Open Positions</h2>
                     <div className="grid md:grid-cols-2 gap-8">
                         {jobOpenings.map((job, index) => (
@@ -104,8 +104,3 @@ export default function CareersPage() {
         </>
     );
 }
-
-// Add a simple Users icon component if not available in lucide-react
-const Users = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-  );

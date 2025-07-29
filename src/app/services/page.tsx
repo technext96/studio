@@ -14,7 +14,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
-        <div className="container px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Our Services</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="w-full py-12 md:py-24">
-        <div className="container px-4 md:px-6">
+        <div className="px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service) => (
               <Card key={service.slug} className="group hover:shadow-lg transition-shadow duration-300 flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">

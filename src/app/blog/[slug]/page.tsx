@@ -35,7 +35,7 @@ export default function BlogPostPage({ params }: Props) {
 
   return (
     <div className="w-full py-12 md:py-20 lg:py-24 bg-background">
-      <div className="container px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="max-w-3xl mx-auto">
           <Button variant="ghost" asChild className="mb-8">
             <Link href="/blog">

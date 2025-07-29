@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { valuePropositions } from '@/lib/constants';
-import { CheckCircle2, Eye, Gem, Target } from 'lucide-react';
+import { CheckCircle2, Eye, Gem, Target, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <>
             <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="container px-4 md:px-6 text-center z-10 relative">
+                <div className="px-4 md:px-6 text-center z-10 relative">
                     <div className="space-y-2 animate-fade-in-up">
                         <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">We’re More Than a Team, We’re a Family</h1>
                         <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
@@ -26,7 +26,7 @@ export default function AboutPage() {
             </section>
 
             <section className="w-full py-12 md:py-24">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
@@ -57,7 +57,7 @@ export default function AboutPage() {
             </section>
 
              <section className="w-full py-12 md:py-24 bg-secondary/20">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                      <div className="text-center space-y-2 mb-12">
                          <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Our Core Values</h2>
                          <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">The principles that guide every decision we make.</p>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             </section>
             
             <section className="w-full py-12 md:py-24">
-                <div className="container px-4 md:px-6 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <div className="space-y-4 max-w-3xl mx-auto">
                      <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Join Our Team</h2>
                      <p className="text-foreground/80 md:text-lg">

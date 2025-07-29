@@ -14,7 +14,7 @@ export default function Home() {
         <section className="w-full py-20 md:py-32 lg:py-40 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10"></div>
-          <div className="container px-4 md:px-6 z-20 relative">
+          <div className="px-4 md:px-6 z-20 relative">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4 animate-fade-in-up">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
@@ -48,7 +48,7 @@ export default function Home() {
 
         {/* Services Section */}
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Services</div>
@@ -83,7 +83,7 @@ export default function Home() {
         
         {/* Industries Section */}
         <section id="industries" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Industries We Serve</div>
@@ -113,7 +113,7 @@ export default function Home() {
 
         {/* Portfolio Section */}
         <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Portfolio</div>
@@ -157,7 +157,7 @@ export default function Home() {
 
         {/* Blog Section */}
         <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
-          <div className="container px-4 md:px-6">
+          <div className="px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Blog</div>
@@ -200,7 +200,7 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className="w-full py-20 md:py-32">
-            <div className="container px-4 md:px-6">
+            <div className="px-4 md:px-6">
                 <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-secondary/50 p-8 md:p-12 shadow-[0_0_40px_-15px_hsl(var(--primary)/0.3)]">
                     <div className="absolute -top-1/2 -right-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,hsl(var(--primary)/0.1),transparent_70%)] -z-10 animate-pulse"></div>
                     <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">

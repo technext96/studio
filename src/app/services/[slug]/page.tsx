@@ -47,7 +47,7 @@ export default function ServicePage({ params }: Props) {
         <>
             <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary/50 relative">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="container px-4 md:px-6 z-10 relative">
+                <div className="px-4 md:px-6 z-10 relative">
                     <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
                         <div className="space-y-4">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
@@ -76,7 +76,7 @@ export default function ServicePage({ params }: Props) {
             </section>
 
             <section className="w-full py-12 md:py-24">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                     <div className="text-center space-y-2 mb-12">
                          <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Our Approach</h2>
                          <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">A collaborative and transparent journey from idea to launch.</p>
@@ -108,7 +108,7 @@ export default function ServicePage({ params }: Props) {
             
             {service.slug === 'ai-ml' && (
               <section className="w-full py-12 md:py-24 bg-background">
-                <div className="container px-4 md:px-6">
+                <div className="px-4 md:px-6">
                    <div className="text-center space-y-2 mb-12">
                      <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">AI-Powered Vision Document Generator</h2>
                      <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">Have an idea? Describe it below and let our AI create a starting vision document for you.</p>
@@ -120,7 +120,7 @@ export default function ServicePage({ params }: Props) {
 
             {service.subServices && (
                  <section className="w-full py-12 md:py-24 bg-secondary/20">
-                    <div className="container px-4 md:px-6">
+                    <div className="px-4 md:px-6">
                         <div className="text-center space-y-2 mb-12">
                              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Key Offerings</h2>
                              <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We provide top-tier expertise across a wide range of areas within {service.title}.</p>
@@ -135,7 +135,7 @@ export default function ServicePage({ params }: Props) {
             )}
 
              <section className="w-full py-12 md:py-24">
-                <div className="container px-4 md:px-6 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
                      <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Start Your Project?</h2>
                      <p className="text-foreground/80 md:text-lg">
