@@ -1,8 +1,9 @@
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/constants";
 import { ArrowLeft, Calendar, User } from "lucide-react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -34,27 +35,27 @@ export default function BlogPostPage({ params }: Props) {
   }
 
   return (
-    <div className="w-full py-12 md:py-20 lg:py-24 bg-background">
-      <div className="px-4 md:px-6">
-        <div className="max-w-3xl mx-auto">
-          <Button variant="ghost" asChild className="mb-8">
+    <div className="w-full py-16 md:py-24 lg:py-28">
+      <div className="px-8 md:px-12">
+        <div className="max-w-4xl mx-auto">
+          <Button variant="ghost" asChild className="mb-8 -ml-4">
             <Link href="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Blog
             </Link>
           </Button>
 
-          <article className="prose prose-invert max-w-none prose-h1:font-headline prose-h1:text-4xl prose-h1:text-primary prose-h2:font-headline prose-h2:text-2xl prose-h3:font-headline">
-            <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">{post.category}</Badge>
+          <article className="prose prose-invert max-w-none prose-h1:font-headline prose-h1:text-4xl prose-h1:text-primary prose-h2:font-headline prose-h2:text-3xl prose-h3:font-headline prose-h3:text-2xl prose-p:text-lg prose-p:text-foreground/80 prose-blockquote:border-primary prose-blockquote:text-xl">
+            <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 mb-4">{post.category}</Badge>
             <h1>{post.title}</h1>
 
-            <div className="flex items-center gap-8 text-sm text-foreground/80 my-4">
+            <div className="flex items-center gap-8 text-base text-foreground/80 my-6">
               <div className="flex items-center gap-2">
-                <User className="h-4 w-4" />
+                <User className="h-5 w-5" />
                 <span>{post.author}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
+                <Calendar className="h-5 w-5" />
                 <span>{format(new Date(post.date), "MMMM d, yyyy")}</span>
               </div>
             </div>
@@ -68,25 +69,25 @@ export default function BlogPostPage({ params }: Props) {
               className="rounded-lg my-8 border-2 border-primary/20 glow-effect"
             />
 
-            <h2>Introduction</h2>
+            <h2>The Dawn of a New Era</h2>
             <p>
-              {post.excerpt} This is where the main body of the blog post would begin. We are using placeholder text here to demonstrate the structure and layout of a full blog post page. In a real application, this content would be fetched from a CMS or a local markdown file.
+              {post.excerpt} The landscape of technology is in a perpetual state of flux, but every so often, a paradigm shift occurs that redefines the boundaries of what's possible. Today, we stand at the precipice of such a change, driven by the advancements in {post.category}. This article will explore the fundamental concepts, practical applications, and future implications of this transformative technology.
             </p>
 
-            <h2>Diving Deeper</h2>
+            <h2>Core Concepts and Breakthroughs</h2>
             <p>
-              The topic of "{post.title}" is vast and multi-faceted. This section would expand on the core concepts, providing detailed explanations, examples, and perhaps some code snippets to illustrate the points being made. The goal is to offer valuable insights to the reader, establishing Code Harbor as a thought leader in the tech space.
+              To truly grasp the significance of "{post.title}," we must first understand its core principles. Unlike traditional approaches that rely on linear processing, this new frontier leverages complex, interconnected systems to achieve unprecedented results. We will delve into the key breakthroughs that have made this possible, from novel algorithms to advancements in hardware capabilities. This section aims to provide a clear, accessible explanation for technical and non-technical readers alike.
             </p>
             <blockquote>
-              "This is an inspiring quote related to the topic. It serves to break up the text and add a point of emphasis."
+              "The best way to predict the future is to invent it. The innovations we're seeing in {post.category} are not just predictions; they are the building blocks of tomorrow."
             </blockquote>
             <p>
-              Further paragraphs would continue to build the narrative, exploring different angles of the subject. Using lists, blockquotes, and other formatting elements helps to keep the content engaging and easy to digest for the reader.
+              The practical applications are already beginning to emerge, disrupting industries from healthcare to finance. For example, in the medical field, AI-driven diagnostic tools are achieving accuracy levels that surpass human experts. In finance, algorithmic trading models can now analyze market data at speeds previously unimaginable. These are not isolated incidents but rather the first waves of a technological tsunami.
             </p>
 
-            <h2>Conclusion</h2>
+            <h2>Conclusion: Navigating the Future</h2>
             <p>
-              To wrap up, this final section would summarize the key takeaways from the post and might offer some predictions or concluding thoughts on the future of the technology discussed. It's a chance to leave a lasting impression on the reader and encourage them to explore more of our content or get in touch.
+              As we conclude our exploration, it's clear that the rise of {post.category} is not a fleeting trend but a fundamental evolution. The implications for business, society, and our daily lives will be profound. The key takeaway is not to fear this change but to embrace it, understand it, and strategically integrate it. At Code Harbor, we are not just observers of this revolution; we are architects of it, helping our clients navigate this new terrain and build the solutions of the future.
             </p>
           </article>
         </div>

@@ -1,12 +1,13 @@
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/constants";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { Metadata } from "next";
+import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import VisionDocumentGenerator from "./VisionDocumentGenerator";
+import { Badge } from "@/components/ui/badge";
 
 type Props = {
   params: { slug: string };
@@ -35,21 +36,21 @@ export default function ServicePage({ params }: Props) {
         notFound();
     }
 
-    // A simple process timeline for demonstration
     const process = [
-        { title: "Discovery & Strategy", description: "We start by understanding your goals, audience, and market to define a clear roadmap for success." },
-        { title: "Design & Prototyping", description: "Our designers create intuitive and beautiful interfaces focused on delivering a superior user experience."},
-        { title: "Agile Development", description: "We build your application in iterative sprints, allowing for flexibility and regular feedback."},
-        { title: "Deployment & Support", description: "We handle the deployment process and offer ongoing support and maintenance to keep your application running smoothly."}
+        { title: "1. Discovery & Strategic Planning", description: "Every successful project begins with a deep understanding of your vision. We collaborate closely with you to define objectives, analyze market dynamics, and map out a strategic roadmap. This foundational step ensures our efforts are perfectly aligned with your business goals from day one." },
+        { title: "2. Architectural Design & Prototyping", description: "With a clear strategy, our architects and designers craft intuitive, user-centric interfaces. We create detailed wireframes and interactive prototypes, allowing you to visualize and refine the user experience before development begins, ensuring the final product is both beautiful and functional."},
+        { title: "3. Agile Development & Iteration", description: "Our development process is built on agile principles. We work in iterative sprints, delivering functional pieces of your application regularly. This approach allows for continuous feedback, flexibility to adapt to new requirements, and complete transparency throughout the development lifecycle."},
+        { title: "4. Rigorous Testing & Quality Assurance", description: "Quality is at the core of everything we do. Our dedicated QA team conducts comprehensive testing—from functional and performance to security—to ensure your application is robust, scalable, and bug-free before it ever reaches your users." },
+        { title: "5. Seamless Deployment & Ongoing Support", description: "We manage the entire deployment process to ensure a smooth and seamless launch. But our partnership doesn't end there. We provide ongoing support and maintenance to keep your application running at peak performance, adapting to new challenges and opportunities as your business grows."}
     ];
 
     return (
         <>
-            <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary/50 relative">
+            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-4 md:px-6 z-10 relative">
-                    <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-                        <div className="space-y-4">
+                <div className="px-8 md:px-12 z-10 relative">
+                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                        <div className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/services">
                                     <ArrowLeft className="mr-2 h-4 w-4" />
@@ -59,8 +60,8 @@ export default function ServicePage({ params }: Props) {
                             <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
                                 {service.title}
                             </h1>
-                            <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                                {service.longDescription}
+                            <p className="max-w-2xl text-foreground/80 md:text-xl">
+                                {service.longDescription} At Code Harbor, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
                             </p>
                         </div>
                          <Image
@@ -75,27 +76,26 @@ export default function ServicePage({ params }: Props) {
                 </div>
             </section>
 
-            <section className="w-full py-12 md:py-24">
-                <div className="px-4 md:px-6">
-                    <div className="text-center space-y-2 mb-12">
-                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Our Approach</h2>
-                         <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">A collaborative and transparent journey from idea to launch.</p>
+            <section className="w-full py-16 md:py-24">
+                <div className="px-8 md:px-12">
+                    <div className="text-center space-y-4 mb-16 max-w-4xl mx-auto">
+                         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our End-to-End Approach</h2>
+                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We follow a structured, collaborative, and transparent journey to transform your ambitious ideas into market-ready realities. Our process is designed for clarity, efficiency, and exceptional outcomes.</p>
                     </div>
-                    <div className="relative">
+                    <div className="relative max-w-5xl mx-auto">
                         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
                         {process.map((step, index) => (
                              <div key={index} className="relative mb-12 md:mb-16">
                                 <div className="md:flex md:items-center" style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}>
-                                    <div className="md:w-5/12"></div>
+                                    <div className="md:w-1/2 p-4 md:p-0"></div>
                                     <div className="hidden md:block">
-                                        <div className="absolute left-1/2 top-1/2 w-6 h-6 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 border-4 border-background flex items-center justify-center">
-                                            <div className="w-3 h-3 bg-background rounded-full"></div>
+                                        <div className="absolute left-1/2 top-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 border-4 border-background flex items-center justify-center font-bold text-primary-foreground">
+                                           {index + 1}
                                         </div>
                                     </div>
-                                    <div className="md:w-5/12">
-                                        <div className="p-6 bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg">
-                                            <p className="font-bold text-primary mb-2">Step {index + 1}</p>
-                                            <h3 className="text-xl font-bold font-headline mb-2">{step.title}</h3>
+                                    <div className="md:w-1/2 p-4 md:p-0">
+                                        <div className={`p-6 bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg shadow-lg md:mx-8`}>
+                                            <h3 className="text-xl font-bold font-headline mb-3 text-primary">{step.title}</h3>
                                             <p className="text-foreground/80">{step.description}</p>
                                         </div>
                                     </div>
@@ -107,11 +107,11 @@ export default function ServicePage({ params }: Props) {
             </section>
             
             {service.slug === 'ai-ml' && (
-              <section className="w-full py-12 md:py-24 bg-background">
-                <div className="px-4 md:px-6">
-                   <div className="text-center space-y-2 mb-12">
-                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">AI-Powered Vision Document Generator</h2>
-                     <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">Have an idea? Describe it below and let our AI create a starting vision document for you.</p>
+              <section className="w-full py-16 md:py-24 bg-background">
+                <div className="px-8 md:px-12">
+                   <div className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
+                     <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">AI-Powered Vision Document Generator</h2>
+                     <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">Have a brilliant idea? Describe it below and let our custom-trained AI create a foundational vision document to kickstart your project planning.</p>
                   </div>
                   <VisionDocumentGenerator />
                 </div>
@@ -119,13 +119,13 @@ export default function ServicePage({ params }: Props) {
             )}
 
             {service.subServices && (
-                 <section className="w-full py-12 md:py-24 bg-secondary/20">
-                    <div className="px-4 md:px-6">
-                        <div className="text-center space-y-2 mb-12">
-                             <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Key Offerings</h2>
-                             <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We provide top-tier expertise across a wide range of areas within {service.title}.</p>
+                 <section className="w-full py-16 md:py-24 bg-secondary/20">
+                    <div className="px-8 md:px-12">
+                        <div className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
+                             <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Key Offerings within {service.title}</h2>
+                             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We provide top-tier expertise across a wide range of specialized areas to deliver comprehensive and effective solutions.</p>
                         </div>
-                        <div className="flex flex-wrap justify-center gap-4">
+                        <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
                             {service.subServices.map(tech => (
                                 <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
                             ))}
@@ -134,16 +134,18 @@ export default function ServicePage({ params }: Props) {
                 </section>
             )}
 
-             <section className="w-full py-12 md:py-24">
-                <div className="px-4 md:px-6 text-center">
-                   <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
-                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Start Your Project?</h2>
+             <section className="w-full py-20 md:py-28">
+                <div className="px-8 md:px-12 text-center">
+                   <div className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
+                     <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Start Your {service.title} Project?</h2>
                      <p className="text-foreground/80 md:text-lg">
-                       Let's discuss how our {service.title} expertise can help you achieve your goals. Contact us today for a no-obligation consultation.
+                       Let's discuss how our expertise in {service.title} can help you achieve your strategic goals and overcome your biggest challenges. Contact us today for a complimentary, no-obligation consultation with one of our specialists.
                      </p>
-                     <Button asChild size="lg">
-                       <Link href="/contact">Get a Free Quote</Link>
-                     </Button>
+                      <div className="pt-4">
+                        <Button asChild size="lg" className="text-lg px-8 py-6">
+                           <Link href="/contact">Get a Free Quote</Link>
+                        </Button>
+                      </div>
                   </div>
                 </div>
               </section>

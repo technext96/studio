@@ -1,3 +1,4 @@
+
 import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
 
 export const navLinks = [
@@ -209,13 +210,22 @@ export const portfolio = [
     excerpt: 'Transforming Radiology Patient Care with a real-time support chatbot that provides instant, accurate information.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'medical chatbot interface',
-     details: {
+    summary: "Radiology departments face high patient inquiries, leading to administrative overhead and patient anxiety. We built a HIPAA-compliant, AI-powered chatbot to provide instant, 24/7 support for questions about procedures, preparations, and result status in a secure manner.",
+    details: {
         client: "MedScan AI",
         timeline: "5 Months",
-        industry: "Healthcare"
+        industry: "Healthcare",
+        product: "AI-Powered Radiology Chatbot",
     },
-    challenge: "Radiology departments face high volumes of patient inquiries about procedures, preparations, and results, leading to administrative overhead. Patients often experience anxiety due to long waiting times for information.",
-    solution: "We built a HIPAA-compliant, AI-powered chatbot that provides patients with instant, 24/7 support. The chatbot can answer questions about different radiology procedures, explain preparation instructions, and provide non-diagnostic result status, all in a secure and empathetic manner.",
+    keyFeatures: [
+        "24/7 Availability for Patient Queries",
+        "HIPAA-Compliant and Secure",
+        "Procedure and Preparation Information",
+        "Non-Diagnostic Result Status Updates",
+        "Multi-lingual Support",
+        "Integration with Hospital Information Systems (HIS)"
+    ],
+    techStack: ["Python", "Dialogflow", "FHIR", "GCP"],
   },
   {
     slug: 'ai-shopping-cooking',
@@ -224,13 +234,22 @@ export const portfolio = [
     excerpt: 'Enhancing grocery shopping experiences with an AI assistant for personalized recommendations and recipe generation.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'cooking ingredients kitchen',
-     details: {
+    summary: "To combat meal-planning fatigue and food waste, we developed an AI-powered mobile app that acts as a personal shopping and cooking assistant. Users get personalized recipes based on dietary needs and available ingredients, complete with an optimized shopping list.",
+    details: {
         client: "FreshPicks",
         timeline: "4 Months",
-        industry: "Retail & eCommerce"
+        industry: "Retail & eCommerce",
+        product: "AI Cooking & Shopping Assistant App"
     },
-    challenge: "Grocery shoppers often struggle with meal planning and finding recipes that match their dietary preferences and what's in their pantry. This leads to food waste and a frustrating shopping experience.",
-    solution: "We developed an AI-powered mobile app that acts as a personal shopping and cooking assistant. Users can input their dietary needs and available ingredients, and the app generates personalized recipes, creates a shopping list, and even suggests alternatives for items, optimizing the entire meal-planning process.",
+    keyFeatures: [
+        "Personalized Recipe Generation",
+        "Dietary Preference Filtering",
+        "Pantry Inventory Management",
+        "Automated Shopping List Creation",
+        "Ingredient Substitution Suggestions",
+        "Integration with Online Grocery Retailers"
+    ],
+    techStack: ["React Native", "Firebase", "Genkit", "Google Vision API"],
   },
   {
     slug: 'medical-insights-chatbot',
@@ -239,14 +258,73 @@ export const portfolio = [
     excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'doctor patient consultation',
-     details: {
+    summary: "Breast cancer patients need a reliable, 24/7 source of information. In partnership with oncologists, we developed a specialized AI chatbot trained on peer-reviewed medical literature to provide secure, evidence-based, and empathetic answers to non-diagnostic questions.",
+    details: {
         client: "Hope & Heal Foundation",
         timeline: "7 Months",
-        industry: "Healthcare"
+        industry: "Healthcare",
+        product: "AI Medical Information Chatbot"
     },
-    challenge: "Breast cancer patients and their families are often overwhelmed with information and have urgent questions that cannot wait for the next doctor's appointment. They need a reliable source of information that is available anytime.",
-    solution: "In partnership with oncologists, we developed a specialized AI chatbot trained on a vast corpus of peer-reviewed medical literature. The chatbot provides secure, evidence-based, and empathetic answers to non-diagnostic questions about breast cancer, treatments, side effects, and support resources.",
+    keyFeatures: [
+        "Trained on Vetted Medical Literature",
+        "Secure and Confidential",
+        "Empathetic and Natural Language Conversation",
+        "Information on Treatments, Side Effects, and Support",
+        "Resource Links to Trusted Organizations",
+        "Admin Dashboard for Content Curation"
+    ],
+    techStack: ["Genkit", "Pinecone", "Next.js", "GCP"],
   },
+  {
+    slug: 'ai-vision-prototyper',
+    title: 'AI Vision Prototyper',
+    category: 'AI & Prototyping',
+    excerpt: 'Generate interactive UI prototypes from simple text descriptions using the power of generative AI.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'ui design prototype',
+    demoUrl: '#',
+    purchaseUrl: '#',
+    summary: "The AI Vision Prototyper is a revolutionary tool that allows designers and developers to generate interactive UI prototypes from simple text descriptions. Leveraging generative AI, it interprets natural language to create high-fidelity mockups, drastically reducing the time from idea to prototype.",
+    details: {
+        product: "SaaS Application",
+        industry: "Software Development",
+        timeline: "6 Months"
+    },
+    keyFeatures: [
+        "Natural Language to UI Conversion",
+        "Generates Interactive Components",
+        "Supports Multiple Frameworks (React, Vue)",
+        "Collaborative Real-time Editing",
+        "Export to Code Snippets",
+        "Version History and Control"
+    ],
+    techStack: ["Next.js", "Genkit", "Firebase", "Vercel"],
+  },
+  {
+    slug: 'vr-real-estate-showcase',
+    title: 'VR Real Estate Showcase',
+    category: 'Real Estate & VR',
+    excerpt: 'Immersive virtual reality tours of properties for real estate agencies and potential buyers.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'virtual reality real estate',
+    demoUrl: '#',
+    purchaseUrl: '#',
+    summary: "The VR Real Estate Showcase provides an immersive and interactive way for potential buyers to tour properties from anywhere in the world. This platform uses high-resolution 360-degree imagery and VR technology to create a realistic and engaging experience, helping agents close deals faster.",
+    details: {
+        product: "Platform",
+        industry: "Real Estate",
+        timeline: "8 Months"
+    },
+    keyFeatures: [
+        "High-Fidelity Virtual Tours",
+        "Cross-Platform VR Headset Support",
+        "Agent-Guided Tour Mode",
+        "Interactive Hotspots for Property Details",
+        "Virtual Staging Capabilities",
+        "Lead Capture and Analytics Dashboard"
+    ],
+    techStack: ["A-Frame", "Three.js", "React", "Node.js"],
+  }
 ];
 
 

@@ -1,7 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { industries, portfolio } from "@/lib/constants";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -34,15 +35,29 @@ export default function IndustryPage({ params }: Props) {
         notFound();
     }
 
-    const relatedProjects = portfolio.filter(p => p.category.includes(industry.title) || p.details.industry === industry.title).slice(0, 2);
+    const relatedProjects = portfolio.filter(p => p.category.includes(industry.title) || (p.details && p.details.industry === industry.title)).slice(0, 2);
+
+    const industryChallenges = [
+        `Navigating complex regulatory and compliance requirements specific to the ${industry.title} sector.`,
+        "Integrating legacy systems with modern, cloud-native technologies to improve efficiency.",
+        `Leveraging data analytics and AI to gain a competitive edge and personalize user experiences.`,
+        `Ensuring robust cybersecurity measures to protect sensitive ${industry.title.toLowerCase()} data.`
+    ];
+
+    const ourSolutions = [
+        { title: "Custom Platform Development", description: `We build bespoke platforms for ${industry.title} that streamline operations, from patient management in Healthcare to supply chain optimization in Logistics.` },
+        { title: "AI & Machine Learning Integration", description: `Harnessing predictive analytics, automation, and data-driven insights to solve the most pressing challenges in the ${industry.title} industry.` },
+        { title: "Legacy System Modernization", description: "We help you migrate from outdated systems to scalable, secure, and efficient cloud-based infrastructures." },
+        { title: "Compliance & Security", description: `Our solutions are built with ${industry.title}-specific regulatory standards in mind, ensuring data integrity and security.` }
+    ];
 
     return (
         <>
-            <section className="w-full py-12 md:py-20 lg:py-24 bg-secondary/50 relative">
+            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-4 md:px-6 z-10 relative">
-                    <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-                        <div className="space-y-4">
+                <div className="px-8 md:px-12 z-10 relative">
+                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                        <div className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/industries">
                                     <ArrowLeft className="mr-2 h-4 w-4" />
@@ -55,8 +70,8 @@ export default function IndustryPage({ params }: Props) {
                                     {industry.title}
                                 </h1>
                              </div>
-                            <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                                {industry.description}
+                            <p className="max-w-2xl text-foreground/80 md:text-xl">
+                                {industry.description} We deliver tailored technology solutions that address the unique challenges and opportunities within the {industry.title.toLowerCase()} sector, driving innovation and digital transformation.
                             </p>
                         </div>
                          <Image
@@ -71,16 +86,49 @@ export default function IndustryPage({ params }: Props) {
                 </div>
             </section>
             
+             <section className="w-full py-16 md:py-24">
+                <div className="px-8 md:px-12">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+                        <div className="space-y-6">
+                            <h2 className="text-4xl font-headline font-bold">Common Challenges in {industry.title}</h2>
+                            <p className="text-foreground/80 text-lg">
+                                The {industry.title} sector is constantly evolving, facing unique pressures from technological disruption, regulatory shifts, and changing consumer expectations. We understand these complexities and build solutions to overcome them.
+                            </p>
+                            <ul className="space-y-4 text-foreground/80 pt-4">
+                                {industryChallenges.map((challenge, i) => (
+                                    <li key={i} className="flex items-start gap-4">
+                                        <CheckCircle2 className="text-primary h-6 w-6 mt-1 flex-shrink-0"/>
+                                        <span>{challenge}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="space-y-8">
+                           {ourSolutions.map((solution, i) => (
+                                <Card key={i} className="bg-card/50 backdrop-blur-sm border-primary/10">
+                                    <CardHeader>
+                                        <CardTitle className="font-headline text-2xl">{solution.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-foreground/80">{solution.description}</p>
+                                    </CardContent>
+                                </Card>
+                           ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {relatedProjects.length > 0 && (
-                <section id="portfolio" className="w-full py-12 md:py-24">
-                    <div className="px-4 md:px-6">
+                <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/20">
+                    <div className="px-8 md:px-12">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                        <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Related Case Studies</h2>
-                            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                                See our expertise in the {industry.title} industry in action.
+                        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Related Case Studies</h2>
+                            <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
+                                See our expertise in the {industry.title} industry in action. Explore how we've solved real-world problems for clients like you.
                             </p>
                         </div>
-                        <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8 max-w-5xl">
+                        <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-6xl">
                             {relatedProjects.map((project) => (
                             <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group">
                                 <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
@@ -93,9 +141,9 @@ export default function IndustryPage({ params }: Props) {
                                     className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
                                     <CardHeader>
-                                    <CardTitle className="font-headline">{project.title}</CardTitle>
+                                    <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                                     </CardHeader>
-                                    <CardContent>
+                                    <CardContent className="flex-grow">
                                     <p className="text-sm text-foreground/80">{project.excerpt}</p>
                                     </CardContent>
                                 </Card>
@@ -106,16 +154,18 @@ export default function IndustryPage({ params }: Props) {
                 </section>
             )}
 
-             <section className="w-full py-12 md:py-24 bg-secondary/20">
-                <div className="px-4 md:px-6 text-center">
-                   <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
-                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Innovate in the {industry.title} Sector?</h2>
+             <section className="w-full py-20 md:py-28">
+                <div className="px-8 md:px-12 text-center">
+                   <div className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
+                     <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Innovate in the {industry.title} Sector?</h2>
                      <p className="text-foreground/80 md:text-lg">
-                       Let's discuss how our tailored technology solutions can help you achieve your business goals. Contact us today for a strategic consultation.
+                       Let's discuss how our tailored technology solutions can help you achieve your business goals and set a new standard in your industry. Contact us today for a strategic consultation with our {industry.title} experts.
                      </p>
-                     <Button asChild size="lg">
-                       <Link href="/contact">Contact Our Experts</Link>
-                     </Button>
+                      <div className="pt-4">
+                        <Button asChild size="lg" className="text-lg px-8 py-6">
+                           <Link href="/contact">Contact Our Experts</Link>
+                        </Button>
+                      </div>
                   </div>
                 </div>
               </section>
