@@ -1,294 +1,209 @@
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group } from 'lucide-react';
 
-const webDevProcess = [
-    { title: "Discovery & Strategy", description: "We start by understanding your goals, audience, and market to define a clear roadmap for success." },
-    { title: "UI/UX Design", description: "Our designers create intuitive and beautiful interfaces focused on delivering a superior user experience."},
-    { title: "Agile Development", description: "We build your application in iterative sprints, allowing for flexibility and regular feedback."},
-    { title: "Quality Assurance", description: "Rigorous testing is performed throughout the development cycle to ensure a bug-free, high-quality product."},
-    { title: "Deployment & Support", description: "We handle the deployment process and offer ongoing support and maintenance to keep your application running smoothly."}
+export const navLinks = [
+    { 
+        title: "Services",
+        href: "/services",
+        description: "Explore our comprehensive technology solutions.",
+        items: [
+            { title: "AI/ML Services", href: "/services/ai-ml", description: "Unlock the power of Artificial Intelligence." },
+            { title: "Intelligent Automation", href: "/services/automation", description: "Streamline your business processes." },
+            { title: "Offshore Software Development", href: "/services/offshore", description: "Build your dream team with us." },
+            { title: "Custom Software Development", href: "/services/custom-software", description: "Tailored solutions for your unique needs." },
+            { title: "DevOps", href: "/services/devops", description: "Accelerate your development lifecycle." },
+            { title: "Marketing Services", href: "/services/marketing", description: "Grow your business with our expertise." },
+        ]
+    },
+    {
+        title: "Industries",
+        href: "/industries",
+        description: "Driving success across various sectors.",
+        items: [
+            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck/>, description: "Secure and innovative financial solutions." },
+            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart/>, description: "Optimizing supply chain management." },
+            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse/>, description: "Transforming patient care with technology." },
+            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory/>, description: "Enhancing production and efficiency." },
+            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart/>, description: "Creating seamless shopping experiences." },
+            { title: "Education", href: "/industries/education", icon: <BookOpen/>, description: "Empowering learning with AI." },
+        ]
+    },
+    {
+        title: "Portfolio",
+        href: "/portfolio",
+        description: "Our success stories and client achievements.",
+    },
+    {
+        title: "Company",
+        href: "#",
+        description: "Learn more about our team and vision.",
+        items: [
+            { title: "About Us", href: "/about", description: "Our vision, mission, and values." },
+            { title: "Careers", href: "/careers", description: "Join our team of innovators." },
+            { title: "Contact Us", href: "/contact", description: "Let's start a conversation." },
+        ]
+    },
+     {
+        title: "Resources",
+        href: "/blog",
+        description: "Insights and knowledge from our experts.",
+    },
 ];
 
-const talentProcess = [
-    { title: "Requirement Analysis", description: "We work closely with you to understand your technical needs, team culture, and project goals to create a precise candidate profile." },
-    { title: "Talent Sourcing & Vetting", description: "Our expert recruiters tap into our elite network to find the best candidates. Each undergoes a rigorous technical and cultural screening process."},
-    { title: "Candidate Matching", description: "We present you with a curated short-list of top-tier candidates who match your requirements, saving you time and effort."},
-    { title: "Seamless Integration", description: "We facilitate the hiring and onboarding process to ensure your new team member integrates smoothly and starts delivering value from day one."},
-    { title: "Ongoing Partnership", description: "We maintain a relationship with you and the placed talent to ensure long-term success and satisfaction."}
-];
 
 export const services = [
   {
-    slug: 'web-development',
-    title: 'Web Development',
+    slug: 'ai-ml',
+    title: 'AI/ML Services',
+    categoryFilter: 'AI',
+    description: 'Custom AI and Machine Learning solutions to automate processes, gain insights, and drive business growth.',
+    longDescription: "Leverage the power of Artificial Intelligence and Machine Learning to build intelligent applications, automate complex processes, and extract valuable insights from your data. Our experts deliver end-to-end AI solutions, from strategy to implementation.",
+    icon: <BrainCircuit className="w-10 h-10" />,
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'artificial intelligence brain',
+    subServices: [
+        "AI Strategy & Consultation", "AI Development Services", "AI Chatbot Development",
+        "Custom RAG Development", "Generative AI", "Secure & Private LLM Implementation",
+        "Machine Learning Development", "MLops"
+    ]
+  },
+  {
+    slug: 'automation',
+    title: 'Intelligent Automation',
+    categoryFilter: 'Automation',
+    description: 'Streamline operations and boost efficiency with our Robotic Process Automation (RPA) consulting and integration.',
+    longDescription: "Unlock new levels of efficiency by automating repetitive tasks and streamlining workflows. We provide expert RPA consulting and integration services using leading platforms to help you reduce costs and improve accuracy.",
+    icon: <Cog className="w-10 h-10" />,
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'automation gears process',
+    subServices: ["RPA Consulting & Integration", "HubSpot Automation", "Zoho Automation", "UIpath Development", "Opensource RPA Solutions"]
+  },
+  {
+    slug: 'offshore',
+    title: 'Offshore Software Development',
+    categoryFilter: 'Talent',
+    description: 'Scale your team with our top-tier offshore developers and dedicated development teams.',
+    longDescription: "Augment your team with our pre-vetted, elite tech professionals. We provide dedicated development teams and individual experts to help you accelerate your projects and scale your operations without the overhead of traditional hiring.",
+    icon: <Group className="w-10 h-10" />,
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'global team collaboration',
+    subServices: ["Hire Developers", "Offshore Development Services", "Dedicated Development Team"]
+  },
+  {
+    slug: 'custom-software',
+    title: 'Custom Software Development',
     categoryFilter: 'Web',
-    description: 'Creating high-performance, scalable, and secure web applications tailored to your business needs.',
-    longDescription: "We build high-performance, scalable, and secure web applications that drive business growth. From marketing sites to complex enterprise platforms, our solutions are engineered for excellence.",
+    description: 'Bespoke web, mobile, and MVP solutions built to meet your specific business objectives.',
+    longDescription: "We build tailored software solutions from the ground up to meet your unique business challenges. From rapid MVP development to scalable enterprise applications, our custom solutions are designed for performance, scalability, and success.",
     icon: <Code className="w-10 h-10" />,
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'web development code screen',
-    process: webDevProcess,
-    technologies: ["React", "Next.js", "Node.js", "TypeScript", "GraphQL", "PostgreSQL", "Docker", "Vercel"],
+    subServices: ["MVP Development & Consulting", "Custom Web App Development", "Mobile App Development", "Job Portal Development"]
   },
   {
-    slug: 'mobile-apps',
-    title: 'Mobile App Development',
-    categoryFilter: 'Mobile',
-    description: 'Building intuitive and engaging native and cross-platform mobile apps for iOS and Android.',
-    longDescription: 'We craft beautiful, high-performing mobile applications for both iOS and Android. Our team specializes in creating engaging user experiences that your audience will love.',
-    icon: <Smartphone className="w-10 h-10" />,
+    slug: 'devops',
+    title: 'DevOps',
+    categoryFilter: 'DevOps',
+    description: 'Accelerate your software delivery lifecycle with our comprehensive DevOps services.',
+    longDescription: "Our DevOps services bridge the gap between development and operations, enabling faster, more reliable software delivery. We implement CI/CD pipelines, containerization, and cloud automation to streamline your entire development lifecycle.",
+    icon: <Cloud className="w-10 h-10" />,
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'mobile app design interface',
-    process: webDevProcess,
-    technologies: ["React Native", "Swift", "Kotlin", "Flutter", "Firebase", "GraphQL"],
+    imageHint: 'cloud infrastructure devops',
+    subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "Containerization (Docker, Kubernetes)", "Cloud Automation", "Monitoring & Logging"]
   },
   {
-    slug: 'talent-placement',
-    title: 'Talent Placement',
-    categoryFilter: 'Talent',
-    description: 'Connecting you with elite, pre-vetted tech professionals to augment your team and accelerate your projects.',
-    longDescription: 'Finding the right talent is hard. We make it easy. We connect you with our exclusive network of world-class developers, designers, and project managers who are ready to integrate with your team and make an immediate impact.',
-    icon: <Users className="w-10 h-10" />,
+    slug: 'marketing',
+    title: 'Marketing Services',
+    categoryFilter: 'Marketing',
+    description: 'Data-driven digital marketing and automation services to fuel your growth.',
+    longDescription: "Power your growth with our expert marketing services. We specialize in marketing automation, HubSpot services, and data-driven digital marketing campaigns to help you attract, engage, and delight your customers.",
+    icon: <Zap className="w-10 h-10" />,
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'professional team meeting',
-    process: talentProcess,
-    technologies: ["Full-Stack Engineering", "UI/UX Design", "Project Management", "Quality Assurance", "DevOps Engineering", "AI & Data Science"],
+    imageHint: 'digital marketing analytics',
+    subServices: ["HubSpot Services", "Marketing Automation", "Digital Marketing Strategy"]
   },
-  {
-    slug: 'ai-integration',
-    title: 'AI & ML Integration',
-    categoryFilter: 'AI',
-    description: 'Integrating AI and machine learning to create smarter applications.',
-    longDescription: "Infuse your applications with the power of artificial intelligence. We specialize in integrating machine learning models, natural language processing, and computer vision to create intelligent, automated systems.",
-    icon: <Bot className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'artificial intelligence brain',
-    process: webDevProcess,
-    technologies: ["Python", "TensorFlow", "PyTorch", "Genkit", "LangChain", "OpenAI API", "Hugging Face"],
-  },
-  {
-    slug: 'generative-ai-solutions',
-    title: 'Generative AI Solutions',
-    categoryFilter: 'AI',
-    description: 'Building custom generative AI applications for content creation, data analysis, and more.',
-    longDescription: 'Harness the creative power of generative AI. We develop custom solutions using models like GPT and DALL-E for automated content generation, sophisticated data analysis, and unique user interactions.',
-    icon: <BrainCircuit className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'generative art abstract',
-    process: webDevProcess,
-    technologies: ["Genkit", "Next.js", "Vercel AI SDK", "GPT-4", "Gemini", "Replicate"],
-  },
-  {
-    slug: 'mvp-prototyping',
-    title: 'MVP & Prototyping',
-    categoryFilter: 'Web',
-    description: 'Rapidly building Minimum Viable Products to validate your business ideas quickly and efficiently.',
-    longDescription: 'Turn your idea into a tangible product, fast. Our MVP and prototyping service is designed to quickly build and launch a core version of your product, enabling you to gather user feedback and validate your market fit.',
-    icon: <PencilRuler className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'startup blueprint sketch',
-    process: webDevProcess,
-    technologies: ["Next.js", "Firebase", "Supabase", "Vercel", "Figma", "ShadCN UI"],
-  },
+];
+
+export const industries = [
+    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, description: "Secure, compliant, and innovative solutions for the financial industry.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'financial technology dashboard' },
+    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, description: "Optimizing supply chains with real-time tracking and predictive analytics.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'logistics cargo ship' },
+    { slug: "automotive", title: "Automotive", icon: <Building/>, description: "Connected car platforms, fleet management, and dealer software.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'automotive technology car' },
+    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, description: "HIPAA-compliant software, telemedicine platforms, and medical AI.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'healthcare medical technology' },
+    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, description: "IIoT solutions, process automation, and smart factory management.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'manufacturing factory robot' },
+    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, description: "Digital twin solutions, predictive maintenance, and energy trading platforms.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'oil rig platform' },
+    { slug: "insurance", title: "Insurance", icon: <Shield/>, description: "Insurtech platforms, policy management systems, and AI-powered claims processing.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'insurance protection concept' },
+    { slug: "travel", title: "Travel", icon: <Plane/>, description: "Booking engines, travel management software, and personalized itinerary planners.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'travel airplane sunset' },
+    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, description: "Threat detection platforms, security automation, and secure software development.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'cybersecurity lock code' },
+    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, description: "Custom e-commerce platforms, recommendation engines, and personalized shopping experiences.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'ecommerce online shopping' },
+    { slug: "education", title: "Education", icon: <BookOpen/>, description: "E-learning platforms, student information systems, and AI-powered tutoring.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'education online learning' },
+    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, description: "Streaming platforms, content management systems, and royalty management software.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'media entertainment cinema' },
+    { slug: "real-estate", title: "Real Estate", icon: <Home/>, description: "Property management software, VR property tours, and real estate analytics.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'real estate modern house' },
+    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, description: "OSS/BSS systems, network management tools, and customer self-service portals.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'telecommunication tower' },
+    { slug: "government", title: "Government", icon: <Building/>, description: "Digital transformation for public services, secure data management, and citizen engagement platforms.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'government building architecture' },
 ];
 
 export const portfolio = [
   {
-    slug: 'ai-vision-prototyper',
-    title: 'AI Vision Prototyper',
-    category: 'AI & Prototyping Tool',
-    excerpt: 'An interactive tool that lets you generate a product vision document using AI. Instantly validate your ideas.',
+    slug: 'personalized-learning-ai',
+    title: 'Personalized Learning with AI',
+    category: 'Education & AI',
+    excerpt: 'Empowering students through AI-driven educational experiences that adapt to individual learning styles.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'AI analysis dashboard',
-    demoUrl: '/services/ai-integration',
-    buyUrl: '#',
+    imageHint: 'student learning online',
     details: {
-        client: "Internal Project / SaaS",
-        timeline: "2 Weeks",
-        industry: "Software Development"
-    },
-    challenge: "Early-stage founders and product managers struggle to articulate and structure their product ideas. This leads to miscommunication, wasted time, and unfocused development efforts.",
-    solution: "We developed the AI Vision Prototyper, a tool directly integrated into our services page. It uses a powerful language model to take a user's raw idea and instantly generate a structured vision document, including a product name, tagline, target audience, problems to solve, and core features.",
-    keyFeatures: [
-      "Instant vision document generation",
-      "Structured output for clarity and focus",
-      "Defines target audience and key problems",
-      "Outlines core product features",
-      "Provides a shareable, professional-looking document",
-      "Helps validate business ideas in minutes"
-    ],
-    technologies: ["Next.js", "Genkit", "Vercel AI SDK", "ShadCN UI", "Tailwind CSS"],
-    results: {
-        summary: "This tool has become a powerful lead magnet and a showcase of our AI integration capabilities. It allows potential clients to experience the value we provide firsthand, leading to more qualified inquiries and a faster sales cycle.",
-        metrics: [
-            { value: "+300%", label: "User Engagement on Page" },
-            { value: "+50%", label: "Qualified Leads" },
-            { value: "95%", label: "Positive User Feedback" },
-        ]
-    }
-  },
-  {
-    slug: 'real-estate-vr',
-    title: 'VR Real Estate Showcase',
-    category: 'Web & Immersive Tech',
-    excerpt: 'A cutting-edge platform for real estate agencies to offer immersive VR tours of properties.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'virtual reality living room',
-    demoUrl: '#',
-    buyUrl: '#',
-    details: {
-        client: "Prop-V",
-        timeline: "3 Months",
-        industry: "Real Estate"
-    },
-    challenge: "Traditional property viewings are time-consuming and geographically restrictive. Prop-V wanted a way to allow potential buyers to tour properties from anywhere in the world, at any time.",
-    solution: "We built a web-based VR platform that allows real estate agents to upload 360-degree photos and create interactive virtual tours. The experience is accessible on desktop, mobile, and VR headsets. Users can virtually walk through properties, view floor plans, and get a true sense of the space.",
-    keyFeatures: [
-      "High-resolution VR tour streaming",
-      "Cross-device compatibility (VR, desktop, mobile)",
-      "Interactive hotspots with property details",
-      "Virtual staging capabilities",
-      "Agent-led guided tour mode",
-      "Lead capture forms integrated into the tour"
-    ],
-    technologies: ["A-Frame", "Three.js", "Next.js", "AWS S3", "WebSockets"],
-    results: {
-        summary: "The VR Showcase has transformed Prop-V's business model, enabling them to reach a global audience and close deals faster. It has set a new standard for property marketing in their region.",
-        metrics: [
-            { value: "+400%", label: "Viewing Reach" },
-            { value: "-50%", label: "Time-to-Offer" },
-            { value: "+20%", label: "Higher Engagement" },
-        ]
-    }
-  },
-  {
-    slug: 'ecommerce-platform',
-    title: 'Next-Gen E-commerce Platform',
-    category: 'Web Development',
-    excerpt: 'A scalable e-commerce solution that boosted sales by 40% through an optimized user experience.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'fashion online store',
-    details: {
-        client: "FashionForward Inc.",
-        timeline: "4 Months",
-        industry: "Retail & E-commerce"
-    },
-    challenge: "FashionForward Inc., a rising star in online retail, was hampered by an outdated, slow, and non-responsive e-commerce site. The platform suffered from high cart abandonment rates, poor mobile experience, and difficulty in managing inventory, which directly impacted sales and customer satisfaction.",
-    solution: "Code Harbor was tasked with a complete overhaul. We designed and developed a new e-commerce platform from the ground up using a modern tech stack centered on Next.js for superior performance and SEO. Our solution focused on three key areas: user experience, performance, and manageability.",
-    keyFeatures: [
-      "Intuitive, mobile-first UX/UI",
-      "Sub-second page loads via SSR & ISR",
-      "Frictionless Stripe checkout integration",
-      "Custom admin dashboard for inventory and order management",
-      "Advanced product search and filtering",
-      "Automated email marketing flows"
-    ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Stripe", "PostgreSQL", "Vercel"],
-    results: {
-        summary: "The new platform was a resounding success, delivering tangible business results within the first quarter of launch. The combination of a stellar user experience and lightning-fast performance created a frictionless shopping environment.",
-        metrics: [
-            { value: "+40%", label: "Increase in Sales" },
-            { value: "-60%", label: "Page Load Time" },
-            { value: "+75%", label: "Mobile Conversion Rate" },
-        ]
-    }
-  },
-  {
-    slug: 'logistics-dashboard',
-    title: 'AI-Powered Logistics Dashboard',
-    category: 'Enterprise Software & AI',
-    excerpt: 'A real-time data visualization tool for a major logistics firm, improving operational efficiency by 25%.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'logistics dashboard charts',
-    details: {
-        client: "Global-Trans",
+        client: "EduVation",
         timeline: "6 Months",
-        industry: "Logistics & Supply Chain"
+        industry: "Education"
     },
-    challenge: "Global-Trans faced significant challenges with delivery route optimization, predictive maintenance, and real-time shipment tracking. Their existing system was fragmented and unable to provide actionable insights from their vast operational data.",
-    solution: "We developed a centralized, AI-powered dashboard that unifies data streams and provides predictive analytics. The system uses machine learning algorithms to forecast demand, optimize routes in real-time, and predict vehicle maintenance needs, preventing costly downtime.",
-    keyFeatures: [
-      "Real-time GPS tracking of all shipments",
-      "Predictive analytics for delivery time estimation",
-      "AI-driven route optimization to reduce fuel costs",
-      "Automated alerts for potential delays",
-      "Vehicle maintenance prediction module",
-      "Comprehensive performance reporting"
-    ],
-    technologies: ["Python", "React", "Next.js", "Google Maps API", "TensorFlow", "Kubernetes", "AWS"],
-    results: {
-        summary: "The dashboard revolutionized Global-Trans's operations, leading to significant cost savings and improved customer satisfaction. The ability to make data-driven decisions has given them a substantial competitive edge.",
-        metrics: [
-            { value: "+25%", label: "Operational Efficiency" },
-            { value: "-15%", label: "Fuel Costs" },
-            { value: "-30%", label: "Delivery Delays" },
-        ]
-    }
+    challenge: "Traditional education often uses a one-size-fits-all approach. EduVation wanted to create a platform that could personalize learning paths for students, improving engagement and outcomes.",
+    solution: "We developed an AI-powered e-learning platform that analyzes student performance in real-time. It creates adaptive learning paths, suggests relevant content, and identifies areas where students need help, providing a truly personalized educational journey.",
   },
   {
-    slug: 'fitness-mobile-app',
-    title: 'Personalized Fitness Mobile App',
-    category: 'Mobile App Development',
-    excerpt: 'A cross-platform mobile app with over 100,000 downloads, featuring personalized workout plans and progress tracking.',
+    slug: 'medical-radiology-chatbot',
+    title: 'Medical Radiology Chatbot',
+    category: 'Healthcare & AI',
+    excerpt: 'Transforming Radiology Patient Care with a real-time support chatbot that provides instant, accurate information.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'fitness app interface',
-    details: {
-        client: "FitLife",
+    imageHint: 'medical chatbot interface',
+     details: {
+        client: "MedScan AI",
         timeline: "5 Months",
-        industry: "Health & Fitness"
+        industry: "Healthcare"
     },
-    challenge: "FitLife aimed to enter the crowded fitness app market with a product that offered true personalization. They needed an app that could adapt to a user's fitness level, goals, and available equipment, providing a unique experience for everyone.",
-    solution: "We built a sleek, cross-platform mobile app using React Native. The core of the app is a proprietary algorithm that generates dynamic workout plans. We also integrated social features, progress tracking, and gamification elements to keep users motivated and engaged.",
-    keyFeatures: [
-      "AI-based personalized workout generation",
-      "Video demonstrations for all exercises",
-      "Progress and body measurement tracking",
-      "Social challenges and leaderboards",
-      "Wearable device integration (Apple Watch, Fitbit)",
-      "Diet and nutrition suggestions"
-    ],
-    technologies: ["React Native", "Firebase", "Node.js", "PostgreSQL", "Google Fit API", "Apple HealthKit"],
-    results: {
-        summary: "The app quickly gained traction, achieving over 100,000 downloads in its first six months. User engagement was exceptionally high, with an average of 4 sessions per week per active user.",
-        metrics: [
-            { value: "100k+", label: "Downloads" },
-            { value: "4.8/5", label: "App Store Rating" },
-            { value: "+50%", label: "User Retention" },
-        ]
-    }
+    challenge: "Radiology departments face high volumes of patient inquiries about procedures, preparations, and results, leading to administrative overhead. Patients often experience anxiety due to long waiting times for information.",
+    solution: "We built a HIPAA-compliant, AI-powered chatbot that provides patients with instant, 24/7 support. The chatbot can answer questions about different radiology procedures, explain preparation instructions, and provide non-diagnostic result status, all in a secure and empathetic manner.",
   },
-   {
-    slug: 'saas-analytics',
-    title: 'Marketing SaaS Analytics Platform',
-    category: 'Cloud Solutions & Web Development',
-    excerpt: 'A multi-tenant SaaS platform providing deep business intelligence insights for marketing agencies.',
+  {
+    slug: 'ai-shopping-cooking',
+    title: 'AI-Powered Shopping and Cooking',
+    category: 'Retail & AI',
+    excerpt: 'Enhancing grocery shopping experiences with an AI assistant for personalized recommendations and recipe generation.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'saas dashboard analytics',
-    details: {
-        client: "MarketMinds",
-        timeline: "8 Months",
-        industry: "Marketing & Advertising"
+    imageHint: 'cooking ingredients kitchen',
+     details: {
+        client: "FreshPicks",
+        timeline: "4 Months",
+        industry: "Retail & eCommerce"
     },
-    challenge: "Marketing agencies struggle to consolidate campaign data from various platforms (Google Ads, Facebook, etc.). MarketMinds needed a unified platform that could aggregate this data and provide powerful, easy-to-understand analytics for their clients.",
-    solution: "We architected and built a scalable multi-tenant SaaS platform on AWS. The application features a robust data pipeline that ingests data from multiple third-party APIs. The front-end, built with Next.js and Recharts, offers customizable dashboards and automated reporting.",
-    keyFeatures: [
-      "Automated data aggregation from 10+ marketing platforms",
-      "Customizable, drag-and-drop dashboards",
-      "Automated PDF report generation and scheduling",
-      "Multi-tenant architecture with role-based access control",
-      "Performance anomaly detection alerts",
-      "White-labeling capabilities for agencies"
-    ],
-    technologies: ["Next.js", "Node.js", "Python", "AWS Lambda", "PostgreSQL", "Redis", "Docker"],
-    results: {
-        summary: "The platform has become an indispensable tool for marketing agencies, enabling them to save time on reporting and provide greater value to their clients. It currently serves over 200 agencies.",
-        metrics: [
-            { value: "200+", label: "Agency Customers" },
-            { value: "90%", label: "Time Saved on Reporting" },
-            { value: "$2M", label: "ARR in First Year" },
-        ]
-    }
+    challenge: "Grocery shoppers often struggle with meal planning and finding recipes that match their dietary preferences and what's in their pantry. This leads to food waste and a frustrating shopping experience.",
+    solution: "We developed an AI-powered mobile app that acts as a personal shopping and cooking assistant. Users can input their dietary needs and available ingredients, and the app generates personalized recipes, creates a shopping list, and even suggests alternatives for items, optimizing the entire meal-planning process.",
+  },
+  {
+    slug: 'medical-insights-chatbot',
+    title: 'Instant Medical Insights via AI Chatbot',
+    category: 'Healthcare & AI',
+    excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    imageHint: 'doctor patient consultation',
+     details: {
+        client: "Hope & Heal Foundation",
+        timeline: "7 Months",
+        industry: "Healthcare"
+    },
+    challenge: "Breast cancer patients and their families are often overwhelmed with information and have urgent questions that cannot wait for the next doctor's appointment. They need a reliable source of information that is available anytime.",
+    solution: "In partnership with oncologists, we developed a specialized AI chatbot trained on a vast corpus of peer-reviewed medical literature. The chatbot provides secure, evidence-based, and empathetic answers to non-diagnostic questions about breast cancer, treatments, side effects, and support resources.",
   },
 ];
+
 
 export const valuePropositions = [
     { title: 'Agile Methodology', description: 'We adapt to changing requirements and deliver value incrementally, keeping you in the loop at every stage.' },
@@ -328,5 +243,3 @@ export const blogPosts = [
     imageHint: 'augmented reality',
   },
 ];
-
-    

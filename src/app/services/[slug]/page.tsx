@@ -1,8 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio, services } from "@/lib/constants";
-import { Check, ArrowLeft } from "lucide-react";
+import { services } from "@/lib/constants";
+import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${service.title} Services`,
+    title: `${service.title}`,
     description: service.longDescription,
   };
 }
@@ -36,7 +35,13 @@ export default function ServicePage({ params }: Props) {
         notFound();
     }
 
-    const relatedProjects = portfolio.filter(p => p.category.includes(service.categoryFilter)).slice(0, 2);
+    // A simple process timeline for demonstration
+    const process = [
+        { title: "Discovery & Strategy", description: "We start by understanding your goals, audience, and market to define a clear roadmap for success." },
+        { title: "Design & Prototyping", description: "Our designers create intuitive and beautiful interfaces focused on delivering a superior user experience."},
+        { title: "Agile Development", description: "We build your application in iterative sprints, allowing for flexibility and regular feedback."},
+        { title: "Deployment & Support", description: "We handle the deployment process and offer ongoing support and maintenance to keep your application running smoothly."}
+    ];
 
     return (
         <>
@@ -73,12 +78,12 @@ export default function ServicePage({ params }: Props) {
             <section className="w-full py-12 md:py-24">
                 <div className="container px-4 md:px-6">
                     <div className="text-center space-y-2 mb-12">
-                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Our Process</h2>
+                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Our Approach</h2>
                          <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">A collaborative and transparent journey from idea to launch.</p>
                     </div>
                     <div className="relative">
                         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
-                        {service.process.map((step, index) => (
+                        {process.map((step, index) => (
                              <div key={index} className="relative mb-12 md:mb-16">
                                 <div className="md:flex md:items-center" style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}>
                                     <div className="md:w-5/12"></div>
@@ -88,11 +93,11 @@ export default function ServicePage({ params }: Props) {
                                         </div>
                                     </div>
                                     <div className="md:w-5/12">
-                                        <Card className="p-6 bg-card/50 backdrop-blur-sm border-primary/10">
+                                        <div className="p-6 bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg">
                                             <p className="font-bold text-primary mb-2">Step {index + 1}</p>
                                             <h3 className="text-xl font-bold font-headline mb-2">{step.title}</h3>
                                             <p className="text-foreground/80">{step.description}</p>
-                                        </Card>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +106,7 @@ export default function ServicePage({ params }: Props) {
                 </div>
             </section>
             
-            {service.slug === 'ai-integration' && (
+            {service.slug === 'ai-ml' && (
               <section className="w-full py-12 md:py-24 bg-background">
                 <div className="container px-4 md:px-6">
                    <div className="text-center space-y-2 mb-12">
@@ -113,72 +118,35 @@ export default function ServicePage({ params }: Props) {
               </section>
             )}
 
-            {service.slug === 'talent-placement' && (
-              <section className="w-full py-12 md:py-24 bg-background">
-                <div className="container px-4 md:px-6 text-center">
-                   <div className="space-y-4 max-w-3xl mx-auto">
-                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Build Your Dream Team?</h2>
-                     <p className="text-foreground/80 md:text-lg">
-                       Finding the right talent is crucial for success. Let us help you find the perfect fit for your team.
-                       We handle the screening and vetting process, so you can focus on building great products.
-                     </p>
-                     <Button asChild size="lg">
-                       <Link href="/contact">Find Talent Now</Link>
-                     </Button>
-                  </div>
-                </div>
-              </section>
-            )}
-
-
-             <section className="w-full py-12 md:py-24 bg-secondary/50">
-                <div className="container px-4 md:px-6">
-                    <div className="text-center space-y-2 mb-12">
-                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Areas of Expertise</h2>
-                         <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We provide top-tier talent across a wide range of modern technologies and disciplines.</p>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        {service.technologies.map(tech => (
-                            <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {relatedProjects.length > 0 && (
-                <section id="portfolio" className="w-full py-12 md:py-24">
+            {service.subServices && (
+                 <section className="w-full py-12 md:py-24 bg-secondary/20">
                     <div className="container px-4 md:px-6">
-                        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                        <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Related Work</h2>
-                            <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                            See our expertise in action.
-                            </p>
+                        <div className="text-center space-y-2 mb-12">
+                             <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Key Offerings</h2>
+                             <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We provide top-tier expertise across a wide range of areas within {service.title}.</p>
                         </div>
-                        <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8 max-w-5xl">
-                            {relatedProjects.map((project) => (
-                            <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group">
-                                <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                                    <Image
-                                    src={project.imageUrl}
-                                    data-ai-hint={project.imageHint}
-                                    width="600"
-                                    height="400"
-                                    alt={project.title}
-                                    className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                    <CardHeader>
-                                    <CardTitle className="font-headline">{project.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                    <p className="text-sm text-foreground/80">{project.excerpt}</p>
-                                    </CardContent>
-                                </Card>
-                            </Link>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {service.subServices.map(tech => (
+                                <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
                             ))}
                         </div>
                     </div>
                 </section>
             )}
+
+             <section className="w-full py-12 md:py-24">
+                <div className="container px-4 md:px-6 text-center">
+                   <div className="space-y-4 max-w-3xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-8 glow-effect">
+                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Start Your Project?</h2>
+                     <p className="text-foreground/80 md:text-lg">
+                       Let's discuss how our {service.title} expertise can help you achieve your goals. Contact us today for a no-obligation consultation.
+                     </p>
+                     <Button asChild size="lg">
+                       <Link href="/contact">Get a Free Quote</Link>
+                     </Button>
+                  </div>
+                </div>
+              </section>
 
         </>
     )

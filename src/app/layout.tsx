@@ -19,23 +19,23 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Technext | Custom Software & Web Development',
-    template: '%s | Technext',
+    default: 'Code Harbor | Custom Software & Web Development',
+    template: '%s | Code Harbor',
   },
-  description: 'Technext is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
-  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Technext'],
+  description: 'Code Harbor is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
+  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Code Harbor'],
   openGraph: {
-    title: 'Technext | Custom Software & Web Development',
+    title: 'Code Harbor | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://technext.dev', // Replace with your actual domain
-    siteName: 'Technext',
+    url: 'https://codeharbor.dev', // Replace with your actual domain
+    siteName: 'Code Harbor',
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#00ffff',
+  themeColor: '#77DD77',
 }
 
 export default function RootLayout({
@@ -49,7 +49,7 @@ export default function RootLayout({
         <div className="relative flex min-h-dvh flex-col bg-background">
           <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-16">{children}</main>
           <Footer />
         </div>
         <Toaster />

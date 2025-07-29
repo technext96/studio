@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Explore a selection of our finest projects and success stories. See how we've helped businesses like yours achieve their goals with custom software solutions.",
+  description: "Explore our portfolio, showcasing successful implementations of advanced technologies.",
 };
 
 export default function PortfolioPage() {
@@ -26,7 +26,7 @@ export default function PortfolioPage() {
 
       <section className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8">
             {portfolio.map((project, i) => (
               <div key={project.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/portfolio/${project.slug}`} className="group">

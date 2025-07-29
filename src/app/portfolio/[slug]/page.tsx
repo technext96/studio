@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { portfolio } from "@/lib/constants";
-import { ArrowLeft, CheckCircle, ExternalLink, ShoppingCart } from "lucide-react";
+import { ArrowLeft, ExternalLink, ShoppingCart } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,27 +48,6 @@ export default function PortfolioProjectPage({ params }: Props) {
             <p className="text-primary font-semibold">{project.category}</p>
             <h1>Case Study: {project.title}</h1>
             
-            {(project.demoUrl || project.buyUrl) && (
-                <div className="flex flex-col sm:flex-row gap-4 my-6">
-                    {project.demoUrl && (
-                        <Button asChild size="lg" className="flex-1 glow-effect">
-                            <Link href={project.demoUrl}>
-                                <ExternalLink className="mr-2"/>
-                                View Live Demo
-                            </Link>
-                        </Button>
-                    )}
-                    {project.buyUrl && (
-                        <Button asChild size="lg" variant="outline" className="flex-1 glow-effect">
-                            <Link href={project.buyUrl}>
-                                <ShoppingCart className="mr-2"/>
-                                Buy Now
-                            </Link>
-                        </Button>
-                    )}
-                </div>
-            )}
-
             <Image
               src={project.imageUrl}
               data-ai-hint={project.imageHint}
@@ -102,45 +81,6 @@ export default function PortfolioProjectPage({ params }: Props) {
             <p>
                 {project.solution}
             </p>
-
-            {project.keyFeatures && (
-                <div className="bg-secondary/20 rounded-lg p-8 my-8">
-                    <h3 className="font-headline not-prose mb-4 text-xl">Key Features</h3>
-                    <ul className="grid md:grid-cols-2 gap-x-8 gap-y-4 not-prose p-0 m-0">
-                        {project.keyFeatures.map(feature => (
-                            <li key={feature} className="flex items-start gap-3">
-                                <CheckCircle className="h-5 w-5 mt-1 text-primary flex-shrink-0" />
-                                <span>{feature}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-            
-            {project.technologies && (
-                <div className="my-8">
-                    <h3 className="font-headline not-prose mb-4 text-xl">Technology Stack</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {project.technologies.map(tech => (
-                            <Badge key={tech} variant="secondary" className="text-sm bg-primary/10 text-primary hover:bg-primary/20">{tech}</Badge>
-                        ))}
-                    </div>
-                </div>
-            )}
-
-
-            <h2>The Results</h2>
-            <p>
-                {project.results.summary}
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 my-8 text-center">
-                {project.results.metrics.map(metric => (
-                     <div key={metric.label} className="p-4 bg-secondary/20 rounded-lg border border-border/50">
-                        <p className="text-3xl font-bold text-primary font-headline">{metric.value}</p>
-                        <p className="text-sm text-foreground/80">{metric.label}</p>
-                    </div>
-                ))}
-            </div>
           </article>
         </div>
       </div>
@@ -153,5 +93,3 @@ export async function generateStaticParams() {
     slug: p.slug,
   }));
 }
-
-    

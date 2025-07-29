@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services, portfolio, valuePropositions, blogPosts } from "@/lib/constants";
+import { services, portfolio, industries } from "@/lib/constants";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,10 +17,10 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4 animate-fade-in-up">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
-                  Engineering Tomorrow
+                  Powering Your Growth Through Expert Technology
                 </h1>
                 <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                  Code Harbor crafts futuristic software solutions that power growth, innovation, and efficiency. From sleek web apps to robust enterprise systems, we bring your vision to life with cutting-edge technology.
+                  Delivering real-world solutions that solve challenges and accelerate business growth. Code Harbor crafts futuristic software solutions that power growth, innovation, and efficiency.
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect">
@@ -58,7 +58,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
-              {services.map((service, i) => (
+              {services.slice(0,6).map((service, i) => (
                 <div key={service.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect h-full flex flex-col">
                     <CardHeader>
@@ -79,21 +79,51 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* Industries Section */}
+        <section id="industries" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Industries We Serve</div>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Driving Client Success Through Innovation</h2>
+                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                  Delivering impactful and customized software solutions to meet unique industry challenges.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-12 text-center">
+              {industries.slice(0, 10).map((industry, i) => (
+                <Link href={`/industries/${industry.slug}`} key={industry.slug} className="group flex flex-col items-center gap-3 animate-fade-in-up" style={{ animationDelay: `${i * 0.05}s`}}>
+                    <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
+                        {industry.icon}
+                    </div>
+                    <p className="font-semibold text-sm transition-colors group-hover:text-primary">{industry.title}</p>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <Button asChild size="lg" variant="outline" className="glow-effect">
+                <Link href="/industries">View All Industries</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
 
         {/* Portfolio Section */}
-        <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
+        <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
                <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Portfolio</div>
                 <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Success Stories</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We're proud of the solutions we've delivered. Explore some of our recent projects that have made a real impact.
+                  Explore our portfolio, showcasing successful implementations of advanced technologies.
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 mt-12">
-              {portfolio.slice(0, 3).map((project, i) => (
+            <div className="mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8 mt-12 max-w-5xl">
+              {portfolio.slice(0, 2).map((project, i) => (
                  <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                     <Image
@@ -123,38 +153,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Commitment</div>
-              <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Your Partner in Innovation</h2>
-              <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                We're more than just developers; we're strategic partners dedicated to your success. Our process is built on collaboration, transparency, and a relentless pursuit of quality.
-              </p>
-              <ul className="grid gap-4">
-                {valuePropositions.map((prop, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">{prop.title}</h3>
-                      <p className="text-foreground/80">{prop.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-             <Image
-                src="https://placehold.co/600x600.png"
-                data-ai-hint="team collaboration futuristic"
-                width="600"
-                height="600"
-                alt="Why Choose Us"
-                className="mx-auto aspect-square overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
-              />
-          </div>
-        </section>
-
 
         {/* Blog Section */}
         <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
@@ -162,9 +160,9 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Blog</div>
-                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">From Our Labs</h2>
+                <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Your Gateway To Tech Intelligence</h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                  Insights, tutorials, and thoughts on the future of technology.
+                   Access thought leadership, trends, and innovation-driven business resources anytime.
                 </p>
               </div>
             </div>

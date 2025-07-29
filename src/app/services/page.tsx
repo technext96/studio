@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/50">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-2">
             <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl">Our Services</h1>
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
             {services.map((service) => (
-              <Card key={service.slug} className="group hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <Card key={service.slug} className="group hover:shadow-lg transition-shadow duration-300 flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
                 <CardHeader className="flex flex-row items-start gap-4">
                   <div className="text-primary mt-1">{service.icon}</div>
                   <div>
@@ -39,7 +39,7 @@ export default function ServicesPage() {
                 <CardFooter className="mt-auto">
                    <Button asChild variant="default" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                        <Link href={`/services/${service.slug}`}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        Explore Service <ArrowRight className="ml-2 h-4 w-4" />
                        </Link>
                     </Button>
                 </CardFooter>
