@@ -210,6 +210,8 @@ export const portfolio = [
     excerpt: 'The leading open-source food delivery solution for cafes and restaurants, offering full control and customization.',
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'food delivery app',
+    demoUrl: '#',
+    purchaseUrl: '#',
     details: {
         useCase: "Multi-vendor Food Delivery",
         industry: "Retail & eCommerce",
@@ -227,6 +229,18 @@ export const portfolio = [
         { title: "Rapid Market Entry", description: "The streamlined deployment process allows businesses to launch a fully functional delivery service in under two weeks." },
         { title: "Proven Scalability", description: "One client, Yalla, achieved 60,000 active users in their first year, demonstrating the platform's robustness and scalability." },
         { title: "High User Adoption", description: "The modern, feature-rich, and beautifully designed UI across all apps has led to a 4.7/5 rating from over 150+ users." }
+    ],
+    faq: [
+        { question: "Is your solution completely open-source?", answer: "Enatega’s frontend is fully open-source. Our backend, though proprietary, is shared with you during every new release, ensuring your system remains updated." },
+        { question: "What is Enatega and how does it work?", answer: "Enatega is a full-fledged food delivery solution that includes a customer app, rider app, restaurant app, and a powerful admin dashboard to manage the entire ecosystem." },
+        { question: "Does your solution offer customization?", answer: "Yes, absolutely. With full source code ownership, you can customize the platform to fit your specific business needs. We also partner with Ninjas Code for expert customization services." },
+        { question: "Where can I find tutorials & demo guides?", answer: "We provide live demos and thorough documentation to give you a complete overview of how Enatega works, ensuring you can set up with confidence." },
+        { question: "Can the software be used for any location?", answer: "Yes, Enatega is location-agnostic and supports multiple currencies, making it suitable for businesses anywhere in the world." },
+        { question: "Does the software support cash payments? What payment methods are supported?", answer: "Yes, it supports cash on delivery. It also integrates with major payment gateways like Stripe and PayPal for credit/debit card payments." },
+        { question: "Can I make changes to the app myself?", answer: "Yes, you receive the full source code, allowing you or your development team to make any changes you need." },
+        { question: "What kind of support do you offer after the purchase?", answer: "We offer 2 hours of free technical consultation for deployment or configuration. For further support, we have dedicated plans and also offer assistance through our partners." },
+        { question: "Are there any ongoing updates or maintenance plans available?", answer: "You get free lifetime updates with your purchase. We continually roll out new features and security patches to keep your platform modern and secure." },
+        { question: "Once I purchase the backend license, does Enatega have any claims to the ownership?", answer: "No. Once you purchase, you have complete ownership of the code and the platform. There are no recurring fees or claims from our side." },
     ]
   },
   {
@@ -250,7 +264,7 @@ export const portfolio = [
     techStack: ["React Native", "Firebase", "Genkit", "Google Vision API"],
   },
   {
-    slug: 'instant-medical-insights-chatbot',
+    slug: 'medical-insights-chatbot',
     title: 'Instant Medical Insights via AI Chatbot',
     category: 'Healthcare & AI',
     excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
@@ -310,3 +324,5 @@ export const blogPosts = [
     imageHint: 'augmented reality',
   },
 ];
+
+    

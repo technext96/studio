@@ -8,6 +8,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 type Props = {
   params: { slug: string };
@@ -36,7 +42,7 @@ export default function PortfolioProjectPage({ params }: Props) {
   }
 
   const renderSimpleDetails = () => (
-    <div className="prose prose-invert max-w-4xl mx-auto py-16 px-8 prose-h2:font-headline prose-h2:text-2xl prose-h2:text-primary prose-p:text-lg prose-p:text-foreground/80">
+    <div className="prose prose-invert max-w-none py-16 px-8 md:px-12 prose-h2:font-headline prose-h2:text-2xl prose-h2:text-primary prose-p:text-lg prose-p:text-foreground/80">
       <h2>Project Summary</h2>
       <p>{project.summary || "Summary not available."}</p>
       
@@ -171,6 +177,24 @@ export default function PortfolioProjectPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {project.faq && (
+        <section className="w-full py-16 md:py-24">
+            <div className="px-8 md:px-12 max-w-4xl mx-auto">
+                <h2 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl text-center mb-12">Frequently Asked Questions</h2>
+                <Accordion type="single" collapsible className="w-full">
+                    {project.faq.map((item, index) => (
+                        <AccordionItem value={`item-${index}`} key={index}>
+                            <AccordionTrigger className="text-left text-lg hover:no-underline">{item.question}</AccordionTrigger>
+                            <AccordionContent className="text-base text-foreground/80">
+                            {item.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+            </div>
+        </section>
+      )}
     </>
   );
 
@@ -253,3 +277,5 @@ export async function generateStaticParams() {
     slug: p.slug,
   }));
 }
+
+    
