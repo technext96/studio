@@ -1,4 +1,4 @@
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
 
 export const navLinks = [
     { 
@@ -6,12 +6,12 @@ export const navLinks = [
         href: "/services",
         description: "Explore our comprehensive technology solutions.",
         items: [
-            { title: "AI/ML Services", href: "/services/ai-ml", description: "Unlock the power of Artificial Intelligence." },
-            { title: "Intelligent Automation", href: "/services/automation", description: "Streamline your business processes." },
-            { title: "Offshore Software Development", href: "/services/offshore", description: "Build your dream team with us." },
-            { title: "Custom Software Development", href: "/services/custom-software", description: "Tailored solutions for your unique needs." },
-            { title: "DevOps", href: "/services/devops", description: "Accelerate your development lifecycle." },
-            { title: "Marketing Services", href: "/services/marketing", description: "Grow your business with our expertise." },
+            { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit className="h-5 w-5 text-primary" />, description: "Unlock the power of Artificial Intelligence." },
+            { title: "Intelligent Automation", href: "/services/automation", icon: <Cog className="h-5 w-5 text-primary" />, description: "Streamline your business processes." },
+            { title: "Offshore Software Development", href: "/services/offshore", icon: <Group className="h-5 w-5 text-primary" />, description: "Build your dream team with us." },
+            { title: "Custom Software Development", href: "/services/custom-software", icon: <Code className="h-5 w-5 text-primary" />, description: "Tailored solutions for your unique needs." },
+            { title: "DevOps", href: "/services/devops", icon: <Cloud className="h-5 w-5 text-primary" />, description: "Accelerate your development lifecycle." },
+            { title: "Marketing Services", href: "/services/marketing", icon: <Zap className="h-5 w-5 text-primary" />, description: "Grow your business with our expertise." },
         ]
     },
     {
@@ -24,7 +24,7 @@ export const navLinks = [
             { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary" />, description: "Transforming patient care with technology." },
             { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary" />, description: "Enhancing production and efficiency." },
             { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary" />, description: "Creating seamless shopping experiences." },
-            { title: "Education", href: "/industries/education", icon: <BookOpen className="h-5 w-5 text-primary" />, description: "Empowering learning with AI." },
+            { title: "Education", href: "/industries/education", icon: <GraduationCap className="h-5 w-5 text-primary" />, description: "Empowering learning with AI." },
         ]
     },
     {
@@ -37,8 +37,8 @@ export const navLinks = [
         href: "/blog",
         description: "Insights and knowledge from our experts.",
         items: [
-             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary" />, description: "Explore expert articles on AI, RPA, and custom software development." },
-             { title: "HubSpot Knowledge Base", href: "/blog", icon: <BookOpen className="h-5 w-5 text-primary" />, description: "Expert-curated content to streamline your HubSpot operations." },
+             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary" />, description: "Expert articles on AI, RPA, and custom software development." },
+             { title: "Courses", href: "/blog", icon: <Video className="h-5 w-5 text-primary" />, description: "Upskill your team with our hands-on tech courses and workshops." },
              { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary" />, description: "Gain expert analysis on AI trends and actionable strategies." },
              { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary" />, description: "Discover valuable ideas and tips for startup success." },
         ]
@@ -48,9 +48,9 @@ export const navLinks = [
         href: "/about",
         description: "Learn more about our team and vision.",
         items: [
-            { title: "About Us", href: "/about", description: "Our vision, mission, and values." },
-            { title: "Careers", href: "/careers", description: "Join our team of innovators." },
-            { title: "Contact Us", href: "/contact", description: "Let's start a conversation." },
+            { title: "About Us", href: "/about", icon: <Users className="h-5 w-5 text-primary" />, description: "Our vision, mission, and values." },
+            { title: "Careers", href: "/careers", icon: <Briefcase className="h-5 w-5 text-primary" />, description: "Join our team of innovators." },
+            { title: "Contact Us", href: "/contact", icon: <Phone className="h-5 w-5 text-primary" />, description: "Let's start a conversation." },
         ]
     },
 ];

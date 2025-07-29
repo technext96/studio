@@ -34,18 +34,20 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="flex items-center gap-2">
-            {icon}
-            <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="flex items-center gap-3">
+            <div className="text-primary transition-transform duration-300 group-hover:scale-110">{icon}</div>
+            <div>
+              <div className="text-sm font-medium leading-none">{title}</div>
+              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
           </div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground ml-7">
-            {children}
-          </p>
         </a>
       </NavigationMenuLink>
     </li>
@@ -56,8 +58,6 @@ ListItem.displayName = "ListItem";
 
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
-
-    const resourcesLink = navLinks.find(l => l.title === "Resources");
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -128,34 +128,36 @@ export default function Header() {
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
                                                 {link.title === "Resources" ? (
-                                                     <ul className="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                                                        <li className="row-span-3">
+                                                     <div className="grid grid-cols-[1fr_auto] gap-4 p-4 md:w-[550px] lg:w-[600px]">
+                                                        <ul className="grid grid-rows-4 gap-3">
+                                                            {link.items.map((item) => (
+                                                                <ListItem
+                                                                    key={item.title}
+                                                                    title={item.title}
+                                                                    href={item.href}
+                                                                    icon={item.icon}
+                                                                >
+                                                                    {item.description}
+                                                                </ListItem>
+                                                            ))}
+                                                        </ul>
+                                                         <div className="w-[200px]">
                                                             <NavigationMenuLink asChild>
-                                                            <a
-                                                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                                href="/"
-                                                            >
-                                                                <Image src="https://placehold.co/400x400.png" data-ai-hint="abstract technology" alt="Resources" width={400} height={400} className="rounded-md object-cover mb-4" />
-                                                                <div className="mb-2 mt-4 text-lg font-headline font-medium text-primary">
-                                                                    Your Gateway To Tech Intelligence
-                                                                </div>
-                                                                <p className="text-sm leading-tight text-muted-foreground">
-                                                                    Access thought leadership, trends, and innovation-driven business resources.
-                                                                </p>
-                                                            </a>
+                                                                <a
+                                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                                                    href="/blog"
+                                                                >
+                                                                    <Image src="https://placehold.co/400x400.png" data-ai-hint="abstract technology" alt="Resources" width={400} height={400} className="rounded-md object-cover mb-2" />
+                                                                    <div className="text-sm font-headline font-medium text-primary">
+                                                                        Tech Intelligence
+                                                                    </div>
+                                                                    <p className="text-xs leading-tight text-muted-foreground">
+                                                                        Access thought leadership, trends, and innovation-driven business resources.
+                                                                    </p>
+                                                                </a>
                                                             </NavigationMenuLink>
-                                                        </li>
-                                                         {link.items.map((item) => (
-                                                            <ListItem
-                                                                key={item.title}
-                                                                title={item.title}
-                                                                href={item.href}
-                                                                icon={item.icon}
-                                                            >
-                                                                {item.description}
-                                                            </ListItem>
-                                                        ))}
-                                                    </ul>
+                                                        </div>
+                                                    </div>
                                                 ) : (
                                                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                                         {link.items.map((item) => (
