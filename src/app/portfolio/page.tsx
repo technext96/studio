@@ -12,21 +12,21 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
+      <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="px-4 md:px-6 text-center z-10 relative">
-          <div className="space-y-2 animate-fade-in-up">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Our Work, Your Success</h1>
-            <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-              We take pride in our work. Explore a curated selection of our projects that demonstrate our passion for technology and our unwavering commitment to client success.
+        <div className="px-8 md:px-12 text-center z-10 relative">
+          <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Our Work, Your Success</h1>
+            <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
+              We take pride in our work and the value we deliver. Explore a curated selection of our projects that demonstrate our passion for technology, our innovative approach to problem-solving, and our unwavering commitment to client success.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-24">
-        <div className="px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 lg:gap-8">
+      <section className="w-full py-16 md:py-24">
+        <div className="px-8 md:px-12">
+          <div className="grid gap-8 md:grid-cols-2 lg:gap-10 max-w-7xl mx-auto">
             {portfolio.map((project, i) => (
               <div key={project.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/portfolio/${project.slug}`} className="group">
@@ -42,8 +42,8 @@ export default function PortfolioPage() {
                       />
                     </div>
                     <CardHeader>
-                      <p className="text-sm text-primary font-semibold">{project.category}</p>
-                      <CardTitle className="font-headline">{project.title}</CardTitle>
+                      <CardDescription className="text-sm text-primary font-semibold">{project.category}</CardDescription>
+                      <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
                       <p className="text-sm text-foreground/80">{project.excerpt}</p>

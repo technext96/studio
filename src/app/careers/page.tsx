@@ -39,33 +39,33 @@ const jobOpenings = [
 export default function CareersPage() {
     return (
         <>
-            <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
+            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-4 md:px-6 text-center z-10 relative">
-                    <div className="space-y-2 animate-fade-in-up">
-                        <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">Build the Future with Us</h1>
-                        <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
-                            Join a forward-thinking team that is passionate about technology and dedicated to building the future of software solutions. Your next great opportunity starts here.
+                <div className="px-8 md:px-12 text-center z-10 relative">
+                    <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+                        <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Build the Future with Us</h1>
+                        <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
+                            At Code Harbor, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
                         </p>
                     </div>
                 </div>
             </section>
 
-             <section className="w-full py-12 md:py-24">
-                <div className="px-4 md:px-6">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl font-headline font-bold">Life at Code Harbor</h2>
-                            <p className="text-foreground/80">
-                                At Code Harbor, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference.
+             <section className="w-full py-16 md:py-24">
+                <div className="px-8 md:px-12">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+                        <div className="space-y-6">
+                            <h2 className="text-4xl font-headline font-bold">Life at Code Harbor</h2>
+                            <p className="text-foreground/80 text-lg">
+                                At Code Harbor, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference and pushing the boundaries of technology.
                             </p>
-                            <ul className="space-y-2 text-foreground/80">
-                                <li className="flex items-center gap-2"><BrainCircuit className="text-primary h-5 w-5"/> Access to continuous learning, professional development opportunities, and tech conferences.</li>
-                                <li className="flex items-center gap-2"><Briefcase className="text-primary h-5 w-5"/> Flexible work arrangements, generous paid time off, and a focus on a healthy work-life balance.</li>
-                                <li className="flex items-center gap-2"><Users className="text-primary h-5 w-5"/> A collaborative, inclusive, and supportive work environment where every voice is heard and valued.</li>
+                            <ul className="space-y-4 text-foreground/80 text-lg pt-4">
+                                <li className="flex items-start gap-4"><BrainCircuit className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Access to continuous learning, professional development opportunities, and tech conferences.</span></li>
+                                <li className="flex items-start gap-4"><Briefcase className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Flexible work arrangements, generous paid time off, and a focus on a healthy work-life balance.</span></li>
+                                <li className="flex items-start gap-4"><Users className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>A collaborative, inclusive, and supportive work environment where every voice is heard and valued.</span></li>
                             </ul>
                         </div>
-                         <div className="grid grid-cols-2 gap-4">
+                         <div className="grid grid-cols-2 gap-6">
                             <img src="https://placehold.co/300x300.png" data-ai-hint="team working together" alt="Team at work" className="rounded-lg glow-effect" />
                              <img src="https://placehold.co/300x300.png" data-ai-hint="office fun activity" alt="Team fun" className="rounded-lg glow-effect" />
                         </div>
@@ -73,22 +73,22 @@ export default function CareersPage() {
                 </div>
             </section>
 
-            <section className="w-full py-12 md:py-24 bg-secondary/20">
-                <div className="px-4 md:px-6">
-                    <h2 className="text-3xl font-headline font-bold text-center mb-12">Current Open Positions</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
+            <section className="w-full py-16 md:py-24 bg-secondary/20">
+                <div className="px-8 md:px-12 max-w-6xl mx-auto">
+                    <h2 className="text-4xl font-headline font-bold text-center mb-16">Current Open Positions</h2>
+                    <div className="grid md:grid-cols-2 gap-10">
                         {jobOpenings.map((job, index) => (
-                            <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300">
+                            <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 flex flex-col">
                                 <CardHeader>
-                                    <CardTitle className="font-headline">{job.title}</CardTitle>
+                                    <CardTitle className="font-headline text-2xl">{job.title}</CardTitle>
                                     <CardDescription>
-                                        <div className="flex items-center gap-4 text-sm mt-2">
-                                            <span className="flex items-center gap-1"><Briefcase className="h-4 w-4"/> {job.department}</span>
-                                            <span className="flex items-center gap-1"><MapPin className="h-4 w-4"/> {job.location}</span>
+                                        <div className="flex items-center gap-6 text-sm mt-2 text-foreground/80">
+                                            <span className="flex items-center gap-2"><Briefcase className="h-4 w-4 text-primary"/> {job.department}</span>
+                                            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary"/> {job.location}</span>
                                         </div>
                                     </CardDescription>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <p className="text-foreground/80">{job.description}</p>
                                 </CardContent>
                                 <CardFooter>
