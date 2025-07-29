@@ -6,12 +6,12 @@ export const navLinks = [
         href: "/services",
         description: "Explore our comprehensive technology solutions.",
         items: [
-            { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit className="h-5 w-5 text-primary" />, description: "Unlock the power of Artificial Intelligence." },
-            { title: "Intelligent Automation", href: "/services/automation", icon: <Cog className="h-5 w-5 text-primary" />, description: "Streamline your business processes." },
-            { title: "Offshore Software Development", href: "/services/offshore", icon: <Group className="h-5 w-5 text-primary" />, description: "Build your dream team with us." },
-            { title: "Custom Software Development", href: "/services/custom-software", icon: <Code className="h-5 w-5 text-primary" />, description: "Tailored solutions for your unique needs." },
-            { title: "DevOps", href: "/services/devops", icon: <Cloud className="h-5 w-5 text-primary" />, description: "Accelerate your development lifecycle." },
-            { title: "Marketing Services", href: "/services/marketing", icon: <Zap className="h-5 w-5 text-primary" />, description: "Grow your business with our expertise." },
+            { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Unlock the power of Artificial Intelligence." },
+            { title: "Intelligent Automation", href: "/services/automation", icon: <Cog className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Streamline your business processes." },
+            { title: "Offshore Software Development", href: "/services/offshore", icon: <Group className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Build your dream team with us." },
+            { title: "Custom Software Development", href: "/services/custom-software", icon: <Code className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Tailored solutions for your unique needs." },
+            { title: "DevOps", href: "/services/devops", icon: <Cloud className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Accelerate your development lifecycle." },
+            { title: "Marketing Services", href: "/services/marketing", icon: <Zap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Grow your business with our expertise." },
         ]
     },
     {
@@ -19,12 +19,12 @@ export const navLinks = [
         href: "/industries",
         description: "Driving success across various sectors.",
         items: [
-            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck className="h-5 w-5 text-primary" />, description: "Secure and innovative financial solutions." },
-            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart className="h-5 w-5 text-primary" />, description: "Optimizing supply chain management." },
-            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary" />, description: "Transforming patient care with technology." },
-            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary" />, description: "Enhancing production and efficiency." },
-            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary" />, description: "Creating seamless shopping experiences." },
-            { title: "Education", href: "/industries/education", icon: <GraduationCap className="h-5 w-5 text-primary" />, description: "Empowering learning with AI." },
+            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Secure and innovative financial solutions." },
+            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Optimizing supply chain management." },
+            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming patient care with technology." },
+            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing production and efficiency." },
+            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Creating seamless shopping experiences." },
+            { title: "Education", href: "/industries/education", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Empowering learning with AI." },
         ]
     },
     {
@@ -37,10 +37,10 @@ export const navLinks = [
         href: "/blog",
         description: "Insights and knowledge from our experts.",
         items: [
-             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary" />, description: "Expert articles on AI, RPA, and custom software development." },
-             { title: "Courses", href: "/blog", icon: <Video className="h-5 w-5 text-primary" />, description: "Upskill your team with our hands-on tech courses and workshops." },
-             { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary" />, description: "Gain expert analysis on AI trends and actionable strategies." },
-             { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary" />, description: "Discover valuable ideas and tips for startup success." },
+             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Expert articles on AI, RPA, and custom software development." },
+             { title: "Courses", href: "/blog", icon: <Video className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Upskill your team with our hands-on tech courses and workshops." },
+             { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Gain expert analysis on AI trends and actionable strategies." },
+             { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Discover valuable ideas and tips for startup success." },
         ]
     },
     {
