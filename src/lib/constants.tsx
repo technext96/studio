@@ -28,11 +28,11 @@ export const navLinks = [
         ]
     },
     {
-        title: "Portfolio",
+        title: "Our Work",
         href: "/portfolio",
         description: "Our success stories and client achievements.",
         items: [
-             { title: "Personalized Learning with AI", href: "/portfolio/personalized-learning-ai", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Empowering students through AI-driven educational experiences." },
+             { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
              { title: "Medical Radiology Chatbot", href: "/portfolio/medical-radiology-chatbot", icon: <Bot className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming Radiology Patient Care with Real-time Support." },
              { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
              { title: "Instant Medical Insights via AI Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Providing breast cancer patients with secure and evidence-based answers." },
@@ -155,19 +155,52 @@ export const industries = [
 
 export const portfolio = [
   {
-    slug: 'personalized-learning-ai',
-    title: 'Personalized Learning with AI',
-    category: 'Education & AI',
-    excerpt: 'Empowering students through AI-driven educational experiences that adapt to individual learning styles.',
+    slug: 'ai-on-demand-learning-platform',
+    title: 'AI-Powered On-Demand Learning Platform',
+    category: 'On-demand eLearning & AI',
+    excerpt: 'Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'student learning online',
+    imageHint: 'e-learning platform interface',
     details: {
-        client: "EduVation",
-        timeline: "6 Months",
-        industry: "Education"
+        useCase: "AI Coaching tool for students",
+        industry: "On-demand eLearning",
+        headquarters: "Germany",
+        product: "AI-Powered On-Demand Coaching Tool",
+        results: "Personalized Learning Experience with Easy Access"
     },
-    challenge: "Traditional education often uses a one-size-fits-all approach. EduVation wanted to create a platform that could personalize learning paths for students, improving engagement and outcomes.",
-    solution: "We developed an AI-powered e-learning platform that analyzes student performance in real-time. It creates adaptive learning paths, suggests relevant content, and identifies areas where students need help, providing a truly personalized educational journey.",
+    summary: "The AI-powered coaching tool helps students learn interactively while ensuring age-appropriate content through behavior analysis. It features an admin panel for teachers to register subjects and a student panel for AI-driven tutoring. To enhance accessibility, we developed PWA with a chat-based interface, personalized learning plans, multilingual support, and Stripe payment integration. This platform allows students to easily sign up, purchase subscriptions, and engage in adaptive learning.",
+    solutions: {
+        forStudents: [
+            { title: "Easy Sign-Up & Profile Management", description: "Easily register or log in using email and password. Update your details, track your progress, and check your subscription status—all in one place." },
+            { title: "Subscription Management", description: "Users can simply manage their subscription plans, obtain clear pricing details, and renew them." },
+            { title: "Secure Payment Integration", description: "Integrated Stripe for seamless transactions. Students can purchase and use tokens for AI tutor interactions." },
+            { title: "Subject-Specific Tutors", description: "The platform offers quick access to diverse AI tutors specializing in Math, Science, History, and many more subjects." },
+            { title: "Interactive Chat System", description: "The platform features an interactive chat system for seamless learning. It also allows students to easily reference previous conversations through message threading." },
+            { title: "Instant Q&A Sessions", description: "AI tutors offer instant feedback and real-time text-based answers. Students can also receive push notifications for new messages and updates." }
+        ],
+        forAdmins: [
+            { title: "AI Tutor Setup & Customization", description: "Admins can create, edit, and manage AI tutor profiles, prompts, and subjects." },
+            { title: "Specialized Instructions", description: "AI tutors can be configured with unique teaching styles, personality traits, and predefined responses." },
+            { title: "User Controls", description: "Admins can easily view, edit, block, and unblock student accounts." },
+            { title: "Performance Insights", description: "Track student engagement, AI tutor effectiveness, and subscription trends." },
+            { title: "Report Generation", description: "Generate data-driven insights for platform optimization." }
+        ]
+    },
+    usps: [
+        { title: "Interactive Learning Environment", description: "Obtain real-time interactions, personalized recommendations, and customized learning paths tailored to each student's behavior." },
+        { title: "24/7 AI Tutor Availability", description: "Access your learning and AI tutors anytime and from anywhere while ensuring that students receive guidance without time restrictions." },
+        { title: "Cross-Platform Accessibility", description: "The PWA allows students to access the platform on any device, such as smartphones, tablets, or desktops, to ensure a seamless experience across all screen sizes." },
+        { title: "Age-Appropriate Learning Content", description: "The platform intelligently analyzes student behavior and provides content tailored to their age group and educational level." },
+        { title: "Career Guidance & Skill Development", description: "Get the career orientation tools that help students explore interests and potential career paths based on their interests and preferences." },
+        { title: "Data Security & Privacy", description: "Your privacy is important; that's why the platform protects your child's data and ensures a secure learning environment." }
+    ],
+    techStack: ["Node.js", "OpenAI API", "Swift", "ChatGPT"],
+    impacts: [
+        { title: "Enhanced User Experience", description: "AI-driven tutoring offers an easy-to-use interface that improves the learning experience. It provides personalized learning paths and interactive features, making education more engaging and effective." },
+        { title: "Greater User Retention", description: "The platform’s hyper-personalized coaching sessions are adapted to individual learning styles. This approach keeps students engaged and reduces dropout rates. As a result, long-term learning outcomes improve." },
+        { title: "Cost & Effort Savings", description: "The platform’s process automation reduced the need for manual work, lessened administrative tasks, and lowered costs. This change allowed teachers to spend more time on teaching instead of repeating tasks." },
+        { title: "Data Security Compliance", description: "The system has strong security measures to protect user data. It uses encrypted logins, stores data securely, and follows global privacy rules. This ensures that user information stays safe at all times." }
+    ]
   },
   {
     slug: 'medical-radiology-chatbot',
