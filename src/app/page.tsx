@@ -1,10 +1,16 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services, portfolio, industries } from "@/lib/constants";
+import { services, portfolio, industries, blogPosts, homePageFaqs } from "@/lib/constants";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export default function Home() {
   return (
@@ -168,7 +174,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-16 max-w-7xl">
-              {portfolio.slice(0, 3).map((post, i) => (
+              {blogPosts.slice(0, 3).map((post, i) => (
                 <Link href={`/blog/${post.slug}`} key={post.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                     <Image
@@ -196,6 +202,32 @@ export default function Home() {
               </Button>
             </div>
           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="w-full py-16 md:py-24 lg:py-32 bg-background">
+            <div className="px-8 md:px-12">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                    <div className="space-y-3">
+                        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Frequently Asked Questions</h2>
+                        <p className="max-w-3xl text-foreground/80 md:text-xl/relaxed">
+                            Have questions? We've got answers. Here are some of the most common queries we receive from our clients.
+                        </p>
+                    </div>
+                </div>
+                <div className="mx-auto mt-12 max-w-4xl">
+                    <Accordion type="single" collapsible className="w-full">
+                        {homePageFaqs.map((faq, index) => (
+                            <AccordionItem value={`item-${index}`} key={index}>
+                                <AccordionTrigger className="text-left text-lg hover:no-underline font-semibold">{faq.question}</AccordionTrigger>
+                                <AccordionContent className="text-base text-foreground/80">
+                                {faq.answer}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </div>
+            </div>
         </section>
 
         {/* CTA Section */}

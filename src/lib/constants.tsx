@@ -325,4 +325,26 @@ export const blogPosts = [
   },
 ];
 
+export const homePageFaqs = [
+    {
+        question: "What is your development process like?",
+        answer: "We follow an agile development methodology that allows for flexibility, transparency, and collaboration. Our process is divided into sprints, typically lasting two weeks, which include planning, design, development, testing, and a client review. This iterative approach ensures your project stays on track and you are involved at every stage."
+    },
+    {
+        question: "How long will it take to build my application?",
+        answer: "The timeline for a project varies greatly depending on its complexity, features, and the technologies involved. A simple MVP (Minimum Viable Product) might take 2-3 months, while a more complex enterprise-level application could take 6-12 months or more. After our initial discovery call, we can provide you with a detailed project roadmap and a more accurate timeline."
+    },
+    {
+        question: "How much will my project cost?",
+        answer: "Project costs are determined by the scope of work, the technology stack, and the team size required. We offer flexible engagement models, including fixed-price contracts for well-defined projects and time-and-materials for more dynamic requirements. We provide a detailed, transparent proposal after our initial consultation so you know exactly what to expect."
+    },
+    {
+        question: "What kind of technologies do you specialize in?",
+        answer: "We are a full-stack development agency with expertise in a wide range of modern technologies. Our core strengths are in building web and mobile applications using frameworks like Next.js and React, and we are specialists in integrating AI and Machine Learning using toolkits like Genkit. We always choose the best technology to fit the unique needs of your project."
+    },
+    {
+        question: "Do you provide support and maintenance after the project is launched?",
+        answer: "Yes, our partnership doesn't end at launch. We offer comprehensive support and maintenance packages to ensure your application remains secure, up-to-date, and performs optimally. We can provide ongoing technical support, bug fixes, performance monitoring, and help you plan and develop new features as your business grows."
+    }
+];
     
