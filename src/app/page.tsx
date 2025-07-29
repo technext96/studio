@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services, portfolio, industries } from "@/lib/constants";
+import { services, portfolio, industries, blogPosts } from "@/lib/constants";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
