@@ -9,6 +9,10 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description: "Discover how our technology solutions drive innovation and success across a wide range of industries, from Fintech to Healthcare.",
+  openGraph: {
+      title: 'Industries We Serve | Code Harbor',
+      description: "Discover how our technology solutions drive innovation and success across a wide range of industries.",
+  },
 };
 
 export default function IndustriesPage() {
@@ -17,7 +21,7 @@ export default function IndustriesPage() {
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-8 md:px-12 text-center z-10 relative">
-          <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+          <div className="space-y-4 animate-fade-in-up">
             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Industries We Serve with Distinction</h1>
             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
               We leverage deep industry knowledge to deliver impactful and customized software solutions that meet the unique challenges and regulatory demands of your sector. Our expertise isn't just technical—it's contextual.
@@ -28,7 +32,7 @@ export default function IndustriesPage() {
 
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry, i) => (
               <div key={industry.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.05}s` }}>
                 <Card className="group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">

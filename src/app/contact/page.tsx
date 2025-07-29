@@ -10,6 +10,19 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, Building } from 'lucide-react';
+import type { Metadata } from 'next';
+
+// Note: Metadata in a client component is not supported in Next.js App Router.
+// This is for illustrative purposes. For SEO, this page should be a Server Component
+// or metadata should be defined in a parent layout or page.
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description: "Get in touch with the Code Harbor team to discuss your project. We're here to help you build the future of technology.",
+    openGraph: {
+        title: 'Contact Us | Code Harbor',
+        description: "Get in touch with the Code Harbor team to discuss your project.",
+    },
+};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -44,7 +57,7 @@ export default function ContactPage() {
     <>
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50">
           <div className="px-8 md:px-12">
-              <div className="text-center space-y-4 max-w-4xl mx-auto">
+              <div className="text-center space-y-4">
                 <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl">Get in Touch</h1>
                 <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
                   Have a project in mind, a question about our services, or just want to say hello? We'd love to hear from you. Fill out the form below or use our contact details to reach our team of experts.
@@ -55,7 +68,7 @@ export default function ContactPage() {
 
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
-          <div className="grid gap-16 lg:grid-cols-2 max-w-7xl mx-auto items-start">
+          <div className="grid gap-16 lg:grid-cols-2 items-start">
             
             <Card className="bg-card/80">
               <CardHeader>

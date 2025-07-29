@@ -8,6 +8,10 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "About Us",
     description: "Learn about Code Harbor's mission, vision, and the values that drive our commitment to innovation and client success.",
+    openGraph: {
+        title: 'About Us | Code Harbor',
+        description: "Learn about Code Harbor's mission, vision, and the values that drive our commitment to innovation and client success.",
+    },
 };
 
 export default function AboutPage() {
@@ -16,7 +20,7 @@ export default function AboutPage() {
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 text-center z-10 relative">
-                    <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+                    <div className="space-y-4 animate-fade-in-up">
                         <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">We’re More Than a Team, We’re Architects of the Future</h1>
                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
                             We are a passionate collective of thinkers, creators, and problem-solvers dedicated to crafting reliable and scalable software solutions. Our foundation is built on a deep understanding of technology's potential to transform businesses and a commitment to ensuring our clients' long-term success.
@@ -27,7 +31,7 @@ export default function AboutPage() {
 
             <section className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
                             <div className="flex items-start gap-6">
                                 <div className="bg-primary/10 text-primary p-4 rounded-full flex-shrink-0"><Eye className="h-7 w-7" /></div>
@@ -58,7 +62,7 @@ export default function AboutPage() {
 
              <section className="w-full py-16 md:py-24 bg-secondary/20">
                 <div className="px-8 md:px-12">
-                     <div className="text-center space-y-3 mb-16 max-w-4xl mx-auto">
+                     <div className="text-center space-y-3 mb-16">
                          <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
                          <p className="max-w-3xl mx-auto text-foreground/80 md:text-lg">These are the fundamental principles that guide every decision we make, every line of code we write, and every relationship we build. They are the bedrock of our culture and the blueprint for our success.</p>
                     </div>
@@ -90,7 +94,7 @@ export default function AboutPage() {
             
             <section className="w-full py-20 md:py-28">
                 <div className="px-8 md:px-12 text-center">
-                   <div className="space-y-6 max-w-4xl mx-auto">
+                   <div className="space-y-6">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Join Our Team of Innovators</h2>
                      <p className="text-foreground/80 md:text-lg">
                        We are always searching for passionate, talented, and driven individuals to join our growing family. If you are a visionary who thrives on challenges and is ready to make a tangible impact on the future of technology, we invite you to explore our open positions and find your place at Code Harbor.

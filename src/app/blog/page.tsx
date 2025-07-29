@@ -8,6 +8,10 @@ import { format } from "date-fns";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Insights, tutorials, and thoughts on the future of technology from the Code Harbor team.",
+  openGraph: {
+      title: 'Blog | Code Harbor',
+      description: "Insights, tutorials, and thoughts on the future of technology from the Code Harbor team.",
+  },
 };
 
 export default function BlogPage() {

@@ -11,6 +11,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Code Harbor | Custom Software, AI, & Web Development Solutions',
+    description: 'Code Harbor delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
+    openGraph: {
+        title: 'Code Harbor | Custom Software, AI, & Web Development Solutions',
+        description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
+    },
+};
 
 export default function Home() {
   return (
@@ -44,7 +54,7 @@ export default function Home() {
                     data-ai-hint="abstract technology"
                     width="600"
                     height="400"
-                    alt="Hero"
+                    alt="Abstract technology representation"
                     className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full border-2 border-primary/20 glow-effect"
                   />
               </div>
@@ -64,7 +74,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-7xl items-start gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-3 mt-16">
+            <div className="mx-auto grid items-start gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-3 mt-16">
               {services.slice(0,6).map((service, i) => (
                 <div key={service.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect h-full flex flex-col">
@@ -99,7 +109,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mt-16 max-w-6xl text-center">
+            <div className="mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mt-16 text-center">
               {industries.slice(0, 10).map((industry, i) => (
                 <Link href={`/industries/${industry.slug}`} key={industry.slug} className="group flex flex-col items-center gap-4 animate-fade-in-up" style={{ animationDelay: `${i * 0.05}s`}}>
                     <div className="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
@@ -129,7 +139,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 mt-16 max-w-6xl">
+            <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 mt-16">
               {portfolio.slice(0, 2).map((project, i) => (
                  <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
@@ -173,7 +183,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-16 max-w-7xl">
+            <div className="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-16">
               {blogPosts.slice(0, 3).map((post, i) => (
                 <Link href={`/blog/${post.slug}`} key={post.slug} className="group animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                   <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
@@ -215,7 +225,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className="mx-auto mt-12 max-w-4xl">
+                <div className="mx-auto mt-12">
                     <Accordion type="single" collapsible className="w-full">
                         {homePageFaqs.map((faq, index) => (
                             <AccordionItem value={`item-${index}`} key={index}>
@@ -233,7 +243,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="w-full py-20 md:py-32">
             <div className="px-8 md:px-12">
-                <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-secondary/50 p-8 md:p-16 shadow-[0_0_40px_-15px_hsl(var(--primary)/0.3)] max-w-7xl mx-auto">
+                <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-secondary/50 p-8 md:p-16 shadow-[0_0_40px_-15px_hsl(var(--primary)/0.3)]">
                     <div className="absolute -top-1/2 -right-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,hsl(var(--primary)/0.1),transparent_70%)] -z-10 animate-pulse"></div>
                     <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center">
                         <div className="space-y-4">

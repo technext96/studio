@@ -17,20 +17,40 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
+const siteUrl = 'https://codeharbor.dev';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Code Harbor | Custom Software & Web Development',
     template: '%s | Code Harbor',
   },
   description: 'Code Harbor is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
-  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Code Harbor'],
+  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Code Harbor', 'AI development', 'automation'],
   openGraph: {
     title: 'Code Harbor | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://codeharbor.dev', // Replace with your actual domain
+    url: siteUrl,
     siteName: 'Code Harbor',
+    images: [
+      {
+        url: '/og-image.png', // Replace with your actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: 'Code Harbor - Custom Software & Web Development',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Code Harbor | Custom Software & Web Development',
+    description: 'High-performance solutions for your business needs.',
+    images: ['/og-image.png'], // Replace with your actual Twitter card image URL
+  },
+  alternates: {
+    canonical: '/',
   },
 };
 
@@ -43,9 +63,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Code Harbor',
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`, // Replace with your actual logo URL
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-234-567-890',
+      contactType: 'customer service',
+    },
+  };
+  
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable, spaceGrotesk.variable)}>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <div className="relative flex min-h-dvh flex-col bg-background">
           <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
           <Header />

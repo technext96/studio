@@ -6,7 +6,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Explore our portfolio, showcasing successful implementations of advanced technologies.",
+  description: "Explore our portfolio of successful projects, from AI-powered learning platforms to scalable food delivery solutions. See our expertise in action.",
+  openGraph: {
+      title: 'Our Work & Success Stories | Code Harbor',
+      description: "Explore our portfolio of successful projects and see how we solve complex challenges for our clients.",
+  },
 };
 
 export default function PortfolioPage() {
@@ -15,7 +19,7 @@ export default function PortfolioPage() {
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-8 md:px-12 text-center z-10 relative">
-          <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+          <div className="space-y-4 animate-fade-in-up">
             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Our Work, Your Success</h1>
             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
               We take pride in our work and the value we deliver. Explore a curated selection of our projects that demonstrate our passion for technology, our innovative approach to problem-solving, and our unwavering commitment to client success.
@@ -26,7 +30,7 @@ export default function PortfolioPage() {
 
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:gap-10 max-w-7xl mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
             {portfolio.map((project, i) => (
               <div key={project.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/portfolio/${project.slug}`} className="group">

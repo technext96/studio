@@ -7,6 +7,10 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "Careers",
     description: "Join our forward-thinking team at Code Harbor and help build the future of software solutions. Explore our open positions.",
+    openGraph: {
+        title: 'Careers | Code Harbor',
+        description: "Join our forward-thinking team at Code Harbor and help build the future of software solutions. Explore our open positions.",
+    },
 };
 
 const jobOpenings = [
@@ -42,7 +46,7 @@ export default function CareersPage() {
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 text-center z-10 relative">
-                    <div className="space-y-4 animate-fade-in-up max-w-4xl mx-auto">
+                    <div className="space-y-4 animate-fade-in-up">
                         <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
                             At Code Harbor, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
@@ -53,7 +57,7 @@ export default function CareersPage() {
 
              <section className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl font-headline font-bold">Life at Code Harbor</h2>
                             <p className="text-foreground/80 text-lg">
@@ -74,7 +78,7 @@ export default function CareersPage() {
             </section>
 
             <section className="w-full py-16 md:py-24 bg-secondary/20">
-                <div className="px-8 md:px-12 max-w-6xl mx-auto">
+                <div className="px-8 md:px-12">
                     <h2 className="text-4xl font-headline font-bold text-center mb-16">Current Open Positions</h2>
                     <div className="grid md:grid-cols-2 gap-10">
                         {jobOpenings.map((job, index) => (
