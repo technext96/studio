@@ -1,4 +1,4 @@
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users } from 'lucide-react';
 
 const webDevProcess = [
     { title: "Discovery & Strategy", description: "We start by understanding your goals, audience, and market to define a clear roadmap for success." },
@@ -6,6 +6,14 @@ const webDevProcess = [
     { title: "Agile Development", description: "We build your application in iterative sprints, allowing for flexibility and regular feedback."},
     { title: "Quality Assurance", description: "Rigorous testing is performed throughout the development cycle to ensure a bug-free, high-quality product."},
     { title: "Deployment & Support", description: "We handle the deployment process and offer ongoing support and maintenance to keep your application running smoothly."}
+];
+
+const talentProcess = [
+    { title: "Requirement Analysis", description: "We work closely with you to understand your technical needs, team culture, and project goals to create a precise candidate profile." },
+    { title: "Talent Sourcing & Vetting", description: "Our expert recruiters tap into our elite network to find the best candidates. Each undergoes a rigorous technical and cultural screening process."},
+    { title: "Candidate Matching", description: "We present you with a curated short-list of top-tier candidates who match your requirements, saving you time and effort."},
+    { title: "Seamless Integration", description: "We facilitate the hiring and onboarding process to ensure your new team member integrates smoothly and starts delivering value from day one."},
+    { title: "Ongoing Partnership", description: "We maintain a relationship with you and the placed talent to ensure long-term success and satisfaction."}
 ];
 
 export const services = [
@@ -34,16 +42,16 @@ export const services = [
     technologies: ["React Native", "Swift", "Kotlin", "Flutter", "Firebase", "GraphQL"],
   },
   {
-    slug: 'cloud-solutions',
-    title: 'Cloud Solutions',
-    categoryFilter: 'Cloud',
-    description: 'Leveraging cloud platforms for scalable and resilient infrastructure.',
-    longDescription: 'Unlock the power of the cloud with our expert services. We design and manage scalable, secure, and cost-efficient cloud infrastructures on platforms like AWS, Azure, and Google Cloud.',
-    icon: <Cloud className="w-10 h-10" />,
+    slug: 'talent-placement',
+    title: 'Talent Placement',
+    categoryFilter: 'Talent',
+    description: 'Connecting you with elite, pre-vetted tech professionals to augment your team and accelerate your projects.',
+    longDescription: 'Finding the right talent is hard. We make it easy. We connect you with our exclusive network of world-class developers, designers, and project managers who are ready to integrate with your team and make an immediate impact.',
+    icon: <Users className="w-10 h-10" />,
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'cloud infrastructure network',
-    process: webDevProcess,
-    technologies: ["AWS", "Azure", "Google Cloud", "Kubernetes", "Docker", "Terraform", "Serverless"],
+    imageHint: 'professional team meeting',
+    process: talentProcess,
+    technologies: ["Full-Stack Engineering", "UI/UX Design", "Project Management", "Quality Assurance", "DevOps Engineering", "AI & Data Science"],
   },
   {
     slug: 'ai-integration',

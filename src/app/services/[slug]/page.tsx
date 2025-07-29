@@ -113,12 +113,29 @@ export default function ServicePage({ params }: Props) {
               </section>
             )}
 
+            {service.slug === 'talent-placement' && (
+              <section className="w-full py-12 md:py-24 bg-background">
+                <div className="container px-4 md:px-6 text-center">
+                   <div className="space-y-4 max-w-3xl mx-auto">
+                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Build Your Dream Team?</h2>
+                     <p className="text-foreground/80 md:text-lg">
+                       Finding the right talent is crucial for success. Let us help you find the perfect fit for your team.
+                       We handle the screening and vetting process, so you can focus on building great products.
+                     </p>
+                     <Button asChild size="lg">
+                       <Link href="/contact">Find Talent Now</Link>
+                     </Button>
+                  </div>
+                </div>
+              </section>
+            )}
+
 
              <section className="w-full py-12 md:py-24 bg-secondary/50">
                 <div className="container px-4 md:px-6">
                     <div className="text-center space-y-2 mb-12">
-                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Technologies We Use</h2>
-                         <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We use a modern, battle-tested stack to deliver robust and efficient applications.</p>
+                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Areas of Expertise</h2>
+                         <p className="max-w-[700px] mx-auto text-foreground/80 md:text-lg">We provide top-tier talent across a wide range of modern technologies and disciplines.</p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-4">
                         {service.technologies.map(tech => (
