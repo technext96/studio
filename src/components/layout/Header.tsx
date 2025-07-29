@@ -22,11 +22,12 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navLinks } from "@/lib/constants";
 import React from "react";
+import Image from "next/image";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"a"> & { icon?: React.ReactNode }
+>(({ className, title, children, icon, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -38,8 +39,11 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="flex items-center gap-2">
+            {icon}
+            <div className="text-sm font-medium leading-none">{title}</div>
+          </div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground ml-7">
             {children}
           </p>
         </a>
@@ -52,6 +56,8 @@ ListItem.displayName = "ListItem";
 
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+
+    const resourcesLink = navLinks.find(l => l.title === "Resources");
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -121,17 +127,49 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                                    {link.items.map((item) => (
-                                                        <ListItem
-                                                            key={item.title}
-                                                            title={item.title}
-                                                            href={item.href}
-                                                        >
-                                                            {item.description}
-                                                        </ListItem>
-                                                    ))}
-                                                </ul>
+                                                {link.title === "Resources" ? (
+                                                     <ul className="grid gap-3 p-4 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
+                                                        <li className="row-span-3">
+                                                            <NavigationMenuLink asChild>
+                                                            <a
+                                                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                                                href="/"
+                                                            >
+                                                                <Image src="https://placehold.co/400x400.png" data-ai-hint="abstract technology" alt="Resources" width={400} height={400} className="rounded-md object-cover mb-4" />
+                                                                <div className="mb-2 mt-4 text-lg font-headline font-medium text-primary">
+                                                                    Your Gateway To Tech Intelligence
+                                                                </div>
+                                                                <p className="text-sm leading-tight text-muted-foreground">
+                                                                    Access thought leadership, trends, and innovation-driven business resources.
+                                                                </p>
+                                                            </a>
+                                                            </NavigationMenuLink>
+                                                        </li>
+                                                         {link.items.map((item) => (
+                                                            <ListItem
+                                                                key={item.title}
+                                                                title={item.title}
+                                                                href={item.href}
+                                                                icon={item.icon}
+                                                            >
+                                                                {item.description}
+                                                            </ListItem>
+                                                        ))}
+                                                    </ul>
+                                                ) : (
+                                                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                                        {link.items.map((item) => (
+                                                            <ListItem
+                                                                key={item.title}
+                                                                title={item.title}
+                                                                href={item.href}
+                                                                icon={item.icon}
+                                                            >
+                                                                {item.description}
+                                                            </ListItem>
+                                                        ))}
+                                                    </ul>
+                                                )}
                                             </NavigationMenuContent>
                                         </>
                                     ) : (

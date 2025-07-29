@@ -1,4 +1,4 @@
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket } from 'lucide-react';
 
 export const navLinks = [
     { 
@@ -19,12 +19,12 @@ export const navLinks = [
         href: "/industries",
         description: "Driving success across various sectors.",
         items: [
-            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck/>, description: "Secure and innovative financial solutions." },
-            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart/>, description: "Optimizing supply chain management." },
-            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse/>, description: "Transforming patient care with technology." },
-            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory/>, description: "Enhancing production and efficiency." },
-            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart/>, description: "Creating seamless shopping experiences." },
-            { title: "Education", href: "/industries/education", icon: <BookOpen/>, description: "Empowering learning with AI." },
+            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck className="h-5 w-5 text-primary" />, description: "Secure and innovative financial solutions." },
+            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart className="h-5 w-5 text-primary" />, description: "Optimizing supply chain management." },
+            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary" />, description: "Transforming patient care with technology." },
+            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary" />, description: "Enhancing production and efficiency." },
+            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary" />, description: "Creating seamless shopping experiences." },
+            { title: "Education", href: "/industries/education", icon: <BookOpen className="h-5 w-5 text-primary" />, description: "Empowering learning with AI." },
         ]
     },
     {
@@ -33,19 +33,25 @@ export const navLinks = [
         description: "Our success stories and client achievements.",
     },
     {
+        title: "Resources",
+        href: "/blog",
+        description: "Insights and knowledge from our experts.",
+        items: [
+             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary" />, description: "Explore expert articles on AI, RPA, and custom software development." },
+             { title: "HubSpot Knowledge Base", href: "/blog", icon: <BookOpen className="h-5 w-5 text-primary" />, description: "Expert-curated content to streamline your HubSpot operations." },
+             { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary" />, description: "Gain expert analysis on AI trends and actionable strategies." },
+             { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary" />, description: "Discover valuable ideas and tips for startup success." },
+        ]
+    },
+    {
         title: "Company",
-        href: "#",
+        href: "/about",
         description: "Learn more about our team and vision.",
         items: [
             { title: "About Us", href: "/about", description: "Our vision, mission, and values." },
             { title: "Careers", href: "/careers", description: "Join our team of innovators." },
             { title: "Contact Us", href: "/contact", description: "Let's start a conversation." },
         ]
-    },
-     {
-        title: "Resources",
-        href: "/blog",
-        description: "Insights and knowledge from our experts.",
     },
 ];
 
