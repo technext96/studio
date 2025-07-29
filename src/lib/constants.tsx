@@ -34,7 +34,7 @@ export const navLinks = [
         description: "Our success stories and client achievements.",
         items: [
              { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
-             { title: "Medical Radiology Chatbot", href: "/portfolio/medical-radiology-chatbot", icon: <Bot className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming Radiology Patient Care with Real-time Support." },
+             { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "The leading open-source food delivery solution for cafes and restaurants." },
              { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
              { title: "Instant Medical Insights via AI Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Providing breast cancer patients with secure and evidence-based answers." },
         ]
@@ -137,21 +137,21 @@ export const services = [
 ];
 
 export const industries = [
-    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, description: "Secure, compliant, and innovative solutions for the financial industry.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'financial technology dashboard' },
-    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, description: "Optimizing supply chains with real-time tracking and predictive analytics.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'logistics cargo ship' },
-    { slug: "automotive", title: "Automotive", icon: <Building/>, description: "Connected car platforms, fleet management, and dealer software.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'automotive technology car' },
-    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, description: "HIPAA-compliant software, telemedicine platforms, and medical AI.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'healthcare medical technology' },
-    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, description: "IIoT solutions, process automation, and smart factory management.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'manufacturing factory robot' },
-    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, description: "Digital twin solutions, predictive maintenance, and energy trading platforms.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'oil rig platform' },
-    { slug: "insurance", title: "Insurance", icon: <Shield/>, description: "Insurtech platforms, policy management systems, and AI-powered claims processing.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'insurance protection concept' },
-    { slug: "travel", title: "Travel", icon: <Plane/>, description: "Booking engines, travel management software, and personalized itinerary planners.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'travel airplane sunset' },
-    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, description: "Threat detection platforms, security automation, and secure software development.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'cybersecurity lock code' },
-    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, description: "Custom e-commerce platforms, recommendation engines, and personalized shopping experiences.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'ecommerce online shopping' },
-    { slug: "education", title: "Education", icon: <BookOpen/>, description: "E-learning platforms, student information systems, and AI-powered tutoring.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'education online learning' },
-    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, description: "Streaming platforms, content management systems, and royalty management software.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'media entertainment cinema' },
-    { slug: "real-estate", title: "Real Estate", icon: <Home/>, description: "Property management software, VR property tours, and real estate analytics.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'real estate modern house' },
-    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, description: "OSS/BSS systems, network management tools, and customer self-service portals.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'telecommunication tower' },
-    { slug: "government", title: "Government", icon: <Building/>, description: "Digital transformation for public services, secure data management, and citizen engagement platforms.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'government building architecture' },
+    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, description: "We deliver secure, compliant, and innovative digital solutions for the financial industry. Our expertise in blockchain, AI, and mobile banking helps clients navigate the complex world of finance, from payment gateways to algorithmic trading platforms, ensuring robust security and a seamless user experience.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'financial technology dashboard' },
+    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, description: "Our solutions optimize supply chains with real-time tracking, warehouse management systems, and predictive analytics for demand forecasting. We help logistics companies enhance efficiency, reduce costs, and improve delivery times through intelligent automation and data-driven insights.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'logistics cargo ship' },
+    { slug: "automotive", title: "Automotive", icon: <Building/>, description: "We develop connected car platforms, fleet management software, and dealership management systems that drive the automotive industry forward. Our expertise in IoT, telematics, and data analytics enables us to build solutions that enhance vehicle performance, safety, and the driver experience.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'automotive technology car' },
+    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, description: "We create HIPAA-compliant software, telemedicine platforms, and AI-powered diagnostic tools to revolutionize patient care. Our solutions improve clinical workflows, secure patient data, and facilitate remote consultations, making healthcare more accessible and efficient.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'healthcare medical technology' },
+    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, description: "We build IIoT solutions, process automation software, and smart factory management systems to optimize production. By leveraging data analytics and machine learning, we help manufacturers implement predictive maintenance, improve quality control, and streamline their operations for Industry 4.0.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'manufacturing factory robot' },
+    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, description: "Our digital solutions for the oil and gas sector include digital twin technology, predictive maintenance platforms, and energy trading systems. We help companies optimize asset performance, enhance safety, and make data-driven decisions in a volatile market.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'oil rig platform' },
+    { slug: "insurance", title: "Insurance", icon: <Shield/>, description: "We build modern insurtech platforms, policy management systems, and AI-powered claims processing applications. Our solutions help insurers automate underwriting, detect fraud, and deliver personalized customer experiences in a competitive digital landscape.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'insurance protection concept' },
+    { slug: "travel", title: "Travel", icon: <Plane/>, description: "We create custom booking engines, travel management software, and personalized itinerary planners for the travel industry. Our solutions leverage AI to offer tailored recommendations, streamline reservations, and enhance the overall travel experience for customers.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'travel airplane sunset' },
+    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, description: "We develop advanced threat detection platforms, security automation tools, and secure software solutions to protect businesses from cyber threats. Our expertise in encryption, threat intelligence, and secure coding practices ensures the integrity and resilience of your digital assets.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'cybersecurity lock code' },
+    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, description: "We build custom e-commerce platforms, AI-driven recommendation engines, and personalized shopping experiences that boost sales. Our solutions integrate seamlessly with inventory management, payment gateways, and CRM systems to create a unified and engaging retail ecosystem.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'ecommerce online shopping' },
+    { slug: "education", title: "Education", icon: <BookOpen/>, description: "We design e-learning platforms, student information systems, and AI-powered tutoring applications to transform the educational landscape. Our technology fosters personalized learning, simplifies administration, and makes education more accessible and engaging for students of all ages.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'education online learning' },
+    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, description: "We build robust streaming platforms, content management systems (CMS), and royalty management software for the media industry. Our solutions support high-quality content delivery, digital rights management, and audience engagement analytics to help creators and distributors thrive.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'media entertainment cinema' },
+    { slug: "real-estate", title: "Real Estate", icon: <Home/>, description: "We develop property management software, VR property tours, and real estate analytics platforms that are changing the way people buy and sell property. Our technology provides immersive experiences, simplifies transactions, and offers data-driven insights for agents, buyers, and sellers.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'real estate modern house' },
+    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, description: "Our solutions for the telecommunications industry include OSS/BSS systems, network management tools, and customer self-service portals. We help telecom companies automate operations, manage network infrastructure, and improve the customer experience in a rapidly evolving sector.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'telecommunication tower' },
+    { slug: "government", title: "Government", icon: <Building/>, description: "We drive digital transformation for public services with secure data management solutions, citizen engagement platforms, and streamlined administrative systems. Our technology helps government agencies improve efficiency, transparency, and the delivery of services to the public.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'government building architecture' },
 ];
 
 export const portfolio = [
@@ -204,28 +204,30 @@ export const portfolio = [
     ]
   },
   {
-    slug: 'medical-radiology-chatbot',
-    title: 'Medical Radiology Chatbot',
-    category: 'Healthcare & AI',
-    excerpt: 'Transforming Radiology Patient Care with a real-time support chatbot that provides instant, accurate information.',
+    slug: 'enatega-food-delivery',
+    title: 'Enatega - Open Source Food Delivery Solution',
+    category: 'Retail & eCommerce',
+    excerpt: 'The leading open-source food delivery solution for cafes and restaurants, offering full control and customization.',
     imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'medical chatbot interface',
-    summary: "Radiology departments face high patient inquiries, leading to administrative overhead and patient anxiety. We built a HIPAA-compliant, AI-powered chatbot to provide instant, 24/7 support for questions about procedures, preparations, and result status in a secure manner.",
+    imageHint: 'food delivery app',
     details: {
-        client: "MedScan AI",
-        timeline: "5 Months",
-        industry: "Healthcare",
-        product: "AI-Powered Radiology Chatbot",
+        useCase: "Multi-vendor Food Delivery",
+        industry: "Retail & eCommerce",
+        product: "Open Source Delivery Platform",
+        results: "Launched 100+ stores, saved $100k in commissions"
     },
+    summary: "Enatega is a comprehensive open-source food delivery solution that gives businesses full control over their platform. It enables a rapid launch (in as little as 5 days), offers deep customization to meet specific needs, and includes lifetime updates—all with complete code ownership.",
     keyFeatures: [
-        "24/7 Availability for Patient Queries",
-        "HIPAA-Compliant and Secure",
-        "Procedure and Preparation Information",
-        "Non-Diagnostic Result Status Updates",
-        "Multi-lingual Support",
-        "Integration with Hospital Information Systems (HIS)"
+        "Full Source Code Ownership", "No Additional or Hidden Charges", "All Essential Apps Included (Customer, Rider, Restaurant)",
+        "Powerful Admin Dashboard", "Lifetime Updates", "2 Hours Free Technical Consultation"
     ],
-    techStack: ["Python", "Dialogflow", "FHIR", "GCP"],
+    techStack: ["React Native", "Node.js", "GraphQL", "MongoDB", "Firebase"],
+    impacts: [
+        { title: "Significant Cost Savings", description: "Clients have saved over $100,000 in commissions by owning their platform instead of relying on third-party services." },
+        { title: "Rapid Market Entry", description: "The streamlined deployment process allows businesses to launch a fully functional delivery service in under two weeks." },
+        { title: "Proven Scalability", description: "One client, Yalla, achieved 60,000 active users in their first year, demonstrating the platform's robustness and scalability." },
+        { title: "High User Adoption", description: "The modern, feature-rich, and beautifully designed UI across all apps has led to a 4.7/5 rating from over 150+ users." }
+    ]
   },
   {
     slug: 'ai-shopping-cooking',
@@ -242,17 +244,13 @@ export const portfolio = [
         product: "AI Cooking & Shopping Assistant App"
     },
     keyFeatures: [
-        "Personalized Recipe Generation",
-        "Dietary Preference Filtering",
-        "Pantry Inventory Management",
-        "Automated Shopping List Creation",
-        "Ingredient Substitution Suggestions",
-        "Integration with Online Grocery Retailers"
+        "Personalized Recipe Generation", "Dietary Preference Filtering", "Pantry Inventory Management",
+        "Automated Shopping List Creation", "Ingredient Substitution Suggestions", "Integration with Online Grocery Retailers"
     ],
     techStack: ["React Native", "Firebase", "Genkit", "Google Vision API"],
   },
   {
-    slug: 'medical-insights-chatbot',
+    slug: 'instant-medical-insights-chatbot',
     title: 'Instant Medical Insights via AI Chatbot',
     category: 'Healthcare & AI',
     excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
@@ -266,65 +264,11 @@ export const portfolio = [
         product: "AI Medical Information Chatbot"
     },
     keyFeatures: [
-        "Trained on Vetted Medical Literature",
-        "Secure and Confidential",
-        "Empathetic and Natural Language Conversation",
-        "Information on Treatments, Side Effects, and Support",
-        "Resource Links to Trusted Organizations",
-        "Admin Dashboard for Content Curation"
+        "Trained on Vetted Medical Literature", "Secure and Confidential", "Empathetic and Natural Language Conversation",
+        "Information on Treatments & Side Effects", "Resource Links to Trusted Organizations", "Admin Dashboard for Content Curation"
     ],
     techStack: ["Genkit", "Pinecone", "Next.js", "GCP"],
   },
-  {
-    slug: 'ai-vision-prototyper',
-    title: 'AI Vision Prototyper',
-    category: 'AI & Prototyping',
-    excerpt: 'Generate interactive UI prototypes from simple text descriptions using the power of generative AI.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'ui design prototype',
-    demoUrl: '#',
-    purchaseUrl: '#',
-    summary: "The AI Vision Prototyper is a revolutionary tool that allows designers and developers to generate interactive UI prototypes from simple text descriptions. Leveraging generative AI, it interprets natural language to create high-fidelity mockups, drastically reducing the time from idea to prototype.",
-    details: {
-        product: "SaaS Application",
-        industry: "Software Development",
-        timeline: "6 Months"
-    },
-    keyFeatures: [
-        "Natural Language to UI Conversion",
-        "Generates Interactive Components",
-        "Supports Multiple Frameworks (React, Vue)",
-        "Collaborative Real-time Editing",
-        "Export to Code Snippets",
-        "Version History and Control"
-    ],
-    techStack: ["Next.js", "Genkit", "Firebase", "Vercel"],
-  },
-  {
-    slug: 'vr-real-estate-showcase',
-    title: 'VR Real Estate Showcase',
-    category: 'Real Estate & VR',
-    excerpt: 'Immersive virtual reality tours of properties for real estate agencies and potential buyers.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'virtual reality real estate',
-    demoUrl: '#',
-    purchaseUrl: '#',
-    summary: "The VR Real Estate Showcase provides an immersive and interactive way for potential buyers to tour properties from anywhere in the world. This platform uses high-resolution 360-degree imagery and VR technology to create a realistic and engaging experience, helping agents close deals faster.",
-    details: {
-        product: "Platform",
-        industry: "Real Estate",
-        timeline: "8 Months"
-    },
-    keyFeatures: [
-        "High-Fidelity Virtual Tours",
-        "Cross-Platform VR Headset Support",
-        "Agent-Guided Tour Mode",
-        "Interactive Hotspots for Property Details",
-        "Virtual Staging Capabilities",
-        "Lead Capture and Analytics Dashboard"
-    ],
-    techStack: ["A-Frame", "Three.js", "React", "Node.js"],
-  }
 ];
 
 
