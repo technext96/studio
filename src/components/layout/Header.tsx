@@ -127,7 +127,7 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                {link.title === "Resources" ? (
+                                                {link.title === "Resources" || link.title === "Portfolio" ? (
                                                      <div className="grid grid-cols-[1fr_auto] gap-4 p-4 md:w-[550px] lg:w-[600px]">
                                                         <ul className="grid grid-rows-4 gap-3">
                                                             {link.items.map((item) => (
@@ -145,14 +145,14 @@ export default function Header() {
                                                             <NavigationMenuLink asChild>
                                                                 <a
                                                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                                    href="/blog"
+                                                                    href={link.href}
                                                                 >
-                                                                    <Image src="https://placehold.co/400x400.png" data-ai-hint="abstract technology" alt="Resources" width={400} height={400} className="rounded-md object-cover mb-2" />
+                                                                    <Image src={link.title === "Portfolio" ? "https://placehold.co/400x400.png" : "https://placehold.co/400x400.png"}  data-ai-hint={link.title === "Portfolio" ? "portfolio success futuristic" : "abstract technology"} alt={link.title} width={400} height={400} className="rounded-md object-cover mb-2" />
                                                                     <div className="text-sm font-headline font-medium text-primary">
-                                                                        Tech Intelligence
+                                                                        {link.title === "Portfolio" ? "Success Stories" : "Tech Intelligence"}
                                                                     </div>
                                                                     <p className="text-xs leading-tight text-muted-foreground">
-                                                                        Access thought leadership, trends, and innovation-driven business resources.
+                                                                        {link.description}
                                                                     </p>
                                                                 </a>
                                                             </NavigationMenuLink>

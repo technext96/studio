@@ -1,7 +1,7 @@
 import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
 
 export const navLinks = [
-    { 
+    {
         title: "Services",
         href: "/services",
         description: "Explore our comprehensive technology solutions.",
@@ -31,6 +31,12 @@ export const navLinks = [
         title: "Portfolio",
         href: "/portfolio",
         description: "Our success stories and client achievements.",
+        items: [
+             { title: "Personalized Learning with AI", href: "/portfolio/personalized-learning-ai", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Empowering students through AI-driven educational experiences." },
+             { title: "Medical Radiology Chatbot", href: "/portfolio/medical-radiology-chatbot", icon: <Bot className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming Radiology Patient Care with Real-time Support." },
+             { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
+             { title: "Instant Medical Insights via AI Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Providing breast cancer patients with secure and evidence-based answers." },
+        ]
     },
     {
         title: "Resources",
@@ -48,9 +54,9 @@ export const navLinks = [
         href: "/about",
         description: "Learn more about our team and vision.",
         items: [
-            { title: "About Us", href: "/about", icon: <Users className="h-5 w-5 text-primary" />, description: "Our vision, mission, and values." },
-            { title: "Careers", href: "/careers", icon: <Briefcase className="h-5 w-5 text-primary" />, description: "Join our team of innovators." },
-            { title: "Contact Us", href: "/contact", icon: <Phone className="h-5 w-5 text-primary" />, description: "Let's start a conversation." },
+            { title: "About Us", href: "/about", icon: <Users className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Our vision, mission, and values." },
+            { title: "Careers", href: "/careers", icon: <Briefcase className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Join our team of innovators." },
+            { title: "Contact Us", href: "/contact", icon: <Phone className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Let's start a conversation." },
         ]
     },
 ];
