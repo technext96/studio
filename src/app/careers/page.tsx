@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { MapPin, Briefcase, BrainCircuit, Users } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { FadeIn } from '@/components/ui/fade-in';
 
 export const metadata: Metadata = {
     title: "Careers",
@@ -46,19 +47,19 @@ export default function CareersPage() {
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 text-center z-10 relative">
-                    <div className="space-y-4 animate-fade-in-up">
+                    <FadeIn className="space-y-4">
                         <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
                             At Code Harbor, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
                         </p>
-                    </div>
+                    </FadeIn>
                 </div>
             </section>
 
              <section className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-6">
+                        <FadeIn className="space-y-6">
                             <h2 className="text-4xl font-headline font-bold">Life at Code Harbor</h2>
                             <p className="text-foreground/80 text-lg">
                                 At Code Harbor, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference and pushing the boundaries of technology.
@@ -68,10 +69,10 @@ export default function CareersPage() {
                                 <li className="flex items-start gap-4"><Briefcase className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Flexible work arrangements, generous paid time off, and a focus on a healthy work-life balance.</span></li>
                                 <li className="flex items-start gap-4"><Users className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>A collaborative, inclusive, and supportive work environment where every voice is heard and valued.</span></li>
                             </ul>
-                        </div>
+                        </FadeIn>
                          <div className="grid grid-cols-2 gap-6">
-                            <img src="https://placehold.co/300x300.png" data-ai-hint="team working together" alt="Team at work" className="rounded-lg glow-effect" />
-                             <img src="https://placehold.co/300x300.png" data-ai-hint="office fun activity" alt="Team fun" className="rounded-lg glow-effect" />
+                            <FadeIn><img src="https://placehold.co/300x300.png" data-ai-hint="team working together" alt="Team at work" className="rounded-lg glow-effect" /></FadeIn>
+                             <FadeIn style={{animationDelay: '0.1s'}}><img src="https://placehold.co/300x300.png" data-ai-hint="office fun activity" alt="Team fun" className="rounded-lg glow-effect" /></FadeIn>
                         </div>
                     </div>
                 </div>
@@ -79,28 +80,30 @@ export default function CareersPage() {
 
             <section className="w-full py-16 md:py-24 bg-secondary/20">
                 <div className="px-8 md:px-12">
-                    <h2 className="text-4xl font-headline font-bold text-center mb-16">Current Open Positions</h2>
+                    <FadeIn><h2 className="text-4xl font-headline font-bold text-center mb-16">Current Open Positions</h2></FadeIn>
                     <div className="grid md:grid-cols-2 gap-10">
                         {jobOpenings.map((job, index) => (
-                            <Card key={index} className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 flex flex-col">
-                                <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">{job.title}</CardTitle>
-                                    <CardDescription>
-                                        <div className="flex items-center gap-6 text-sm mt-2 text-foreground/80">
-                                            <span className="flex items-center gap-2"><Briefcase className="h-4 w-4 text-primary"/> {job.department}</span>
-                                            <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary"/> {job.location}</span>
-                                        </div>
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <p className="text-foreground/80">{job.description}</p>
-                                </CardContent>
-                                <CardFooter>
-                                    <Button asChild>
-                                        <Link href={`mailto:careers@codeharbor.dev?subject=Application for ${job.title}`}>Apply Now</Link>
-                                    </Button>
-                                </CardFooter>
-                            </Card>
+                            <FadeIn key={index} style={{animationDelay: `${index * 0.1}s`}}>
+                                <Card className="bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
+                                    <CardHeader>
+                                        <CardTitle className="font-headline text-2xl">{job.title}</CardTitle>
+                                        <CardDescription>
+                                            <div className="flex items-center gap-6 text-sm mt-2 text-foreground/80">
+                                                <span className="flex items-center gap-2"><Briefcase className="h-4 w-4 text-primary"/> {job.department}</span>
+                                                <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary"/> {job.location}</span>
+                                            </div>
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow">
+                                        <p className="text-foreground/80">{job.description}</p>
+                                    </CardContent>
+                                    <CardFooter>
+                                        <Button asChild>
+                                            <Link href={`mailto:careers@codeharbor.dev?subject=Application for ${job.title}`}>Apply Now</Link>
+                                        </Button>
+                                    </CardFooter>
+                                </Card>
+                            </FadeIn>
                         ))}
                     </div>
                 </div>

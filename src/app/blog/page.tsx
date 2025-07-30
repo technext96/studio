@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -20,12 +21,12 @@ export default function BlogPage() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-4 md:px-6 text-center z-10 relative">
-          <div className="space-y-2 animate-fade-in-up">
+          <FadeIn className="space-y-2">
             <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">From Our Digital Labs</h1>
             <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
               Dive into our collection of expert insights, in-depth tutorials, and forward-thinking articles on the future of technology. Your resource for staying ahead in the digital age.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -33,7 +34,7 @@ export default function BlogPage() {
         <div className="px-4 md:px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
             {blogPosts.map((post, i) => (
-              <div key={post.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
+              <FadeIn key={post.slug} style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/blog/${post.slug}`} className="group">
                   <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_theme(colors.primary/0.5)] bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
                     <div className="overflow-hidden">
@@ -58,7 +59,7 @@ export default function BlogPage() {
                     </CardContent>
                   </Card>
                 </Link>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>

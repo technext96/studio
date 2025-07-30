@@ -3,6 +3,7 @@ import { portfolio } from "@/lib/constants";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -19,12 +20,12 @@ export default function PortfolioPage() {
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-8 md:px-12 text-center z-10 relative">
-          <div className="space-y-4 animate-fade-in-up">
+          <FadeIn className="space-y-4">
             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Our Work, Your Success</h1>
             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
               We take pride in our work and the value we deliver. Explore a curated selection of our projects that demonstrate our passion for technology, our innovative approach to problem-solving, and our unwavering commitment to client success.
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -32,7 +33,7 @@ export default function PortfolioPage() {
         <div className="px-8 md:px-12">
           <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
             {portfolio.map((project, i) => (
-              <div key={project.slug} className="animate-fade-in-up" style={{ animationDelay: `${i * 0.1}s`}}>
+              <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/portfolio/${project.slug}`} className="group">
                   <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_theme(colors.primary/0.5)] bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
                     <div className="overflow-hidden">
@@ -54,7 +55,7 @@ export default function PortfolioPage() {
                     </CardContent>
                   </Card>
                 </Link>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>

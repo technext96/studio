@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FadeIn } from "@/components/ui/fade-in";
 
 type Props = {
   params: { slug: string };
@@ -57,7 +58,7 @@ export default function IndustryPage({ params }: Props) {
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 z-10 relative">
                     <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-                        <div className="space-y-6">
+                        <FadeIn className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/industries">
                                     <ArrowLeft className="mr-2 h-4 w-4" />
@@ -73,15 +74,17 @@ export default function IndustryPage({ params }: Props) {
                             <p className="max-w-2xl text-foreground/80 md:text-xl">
                                 {industry.description} We deliver tailored technology solutions that address the unique challenges and opportunities within the {industry.title.toLowerCase()} sector, driving innovation and digital transformation.
                             </p>
-                        </div>
-                         <Image
-                            src={industry.imageUrl}
-                            data-ai-hint={industry.imageHint}
-                            width="600"
-                            height="400"
-                            alt={industry.title}
-                            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
-                        />
+                        </FadeIn>
+                         <FadeIn>
+                            <Image
+                                src={industry.imageUrl}
+                                data-ai-hint={industry.imageHint}
+                                width="600"
+                                height="400"
+                                alt={industry.title}
+                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
+                            />
+                        </FadeIn>
                     </div>
                 </div>
             </section>
@@ -89,7 +92,7 @@ export default function IndustryPage({ params }: Props) {
              <section className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
                     <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-                        <div className="space-y-6">
+                        <FadeIn className="space-y-6">
                             <h2 className="text-4xl font-headline font-bold">Common Challenges in {industry.title}</h2>
                             <p className="text-foreground/80 text-lg">
                                 The {industry.title} sector is constantly evolving, facing unique pressures from technological disruption, regulatory shifts, and changing consumer expectations. We understand these complexities and build solutions to overcome them.
@@ -102,17 +105,19 @@ export default function IndustryPage({ params }: Props) {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </FadeIn>
                         <div className="space-y-8">
                            {ourSolutions.map((solution, i) => (
-                                <Card key={i} className="bg-card/50 backdrop-blur-sm border-primary/10">
-                                    <CardHeader>
-                                        <CardTitle className="font-headline text-2xl">{solution.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-foreground/80">{solution.description}</p>
-                                    </CardContent>
-                                </Card>
+                                <FadeIn key={i} style={{ animationDelay: `${i * 0.1}s` }}>
+                                    <Card className="bg-card/50 backdrop-blur-sm border-primary/10">
+                                        <CardHeader>
+                                            <CardTitle className="font-headline text-2xl">{solution.title}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <p className="text-foreground/80">{solution.description}</p>
+                                        </CardContent>
+                                    </Card>
+                                </FadeIn>
                            ))}
                         </div>
                     </div>
@@ -122,32 +127,34 @@ export default function IndustryPage({ params }: Props) {
             {relatedProjects.length > 0 && (
                 <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/20">
                     <div className="px-8 md:px-12">
-                        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                        <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Related Case Studies</h2>
                             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
                                 See our expertise in the {industry.title} industry in action. Explore how we've solved real-world problems for clients like you.
                             </p>
-                        </div>
+                        </FadeIn>
                         <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-6xl">
-                            {relatedProjects.map((project) => (
-                            <Link href={`/portfolio/${project.slug}`} key={project.slug} className="group">
-                                <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                                    <Image
-                                    src={project.imageUrl}
-                                    data-ai-hint={project.imageHint}
-                                    width="600"
-                                    height="400"
-                                    alt={project.title}
-                                    className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                    <CardHeader>
-                                    <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="flex-grow">
-                                    <p className="text-sm text-foreground/80">{project.excerpt}</p>
-                                    </CardContent>
-                                </Card>
-                            </Link>
+                            {relatedProjects.map((project, i) => (
+                            <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
+                                <Link href={`/portfolio/${project.slug}`} className="group">
+                                    <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                                        <Image
+                                        src={project.imageUrl}
+                                        data-ai-hint={project.imageHint}
+                                        width="600"
+                                        height="400"
+                                        alt={project.title}
+                                        className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                        <CardHeader>
+                                        <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="flex-grow">
+                                        <p className="text-sm text-foreground/80">{project.excerpt}</p>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            </FadeIn>
                             ))}
                         </div>
                     </div>
@@ -156,7 +163,7 @@ export default function IndustryPage({ params }: Props) {
 
              <section className="w-full py-20 md:py-28">
                 <div className="px-8 md:px-12 text-center">
-                   <div className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
+                   <FadeIn className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Innovate in the {industry.title} Sector?</h2>
                      <p className="text-foreground/80 md:text-lg">
                        Let's discuss how our tailored technology solutions can help you achieve your business goals and set a new standard in your industry. Contact us today for a strategic consultation with our {industry.title} experts.
@@ -166,7 +173,7 @@ export default function IndustryPage({ params }: Props) {
                            <Link href="/contact">Contact Our Experts</Link>
                         </Button>
                       </div>
-                  </div>
+                  </FadeIn>
                 </div>
               </section>
         </>

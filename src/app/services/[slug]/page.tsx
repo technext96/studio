@@ -8,6 +8,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import VisionDocumentGenerator from "./VisionDocumentGenerator";
 import { Badge } from "@/components/ui/badge";
+import { FadeIn } from "@/components/ui/fade-in";
 
 type Props = {
   params: { slug: string };
@@ -50,7 +51,7 @@ export default function ServicePage({ params }: Props) {
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 z-10 relative">
                     <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-                        <div className="space-y-6">
+                        <FadeIn className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/services">
                                     <ArrowLeft className="mr-2 h-4 w-4" />
@@ -63,30 +64,32 @@ export default function ServicePage({ params }: Props) {
                             <p className="max-w-2xl text-foreground/80 md:text-xl">
                                 {service.longDescription} At Code Harbor, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
                             </p>
-                        </div>
-                         <Image
-                            src={service.imageUrl}
-                            data-ai-hint={service.imageHint}
-                            width="600"
-                            height="400"
-                            alt={service.title}
-                            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
-                        />
+                        </FadeIn>
+                         <FadeIn>
+                            <Image
+                                src={service.imageUrl}
+                                data-ai-hint={service.imageHint}
+                                width="600"
+                                height="400"
+                                alt={service.title}
+                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
+                            />
+                        </FadeIn>
                     </div>
                 </div>
             </section>
 
             <section className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
-                    <div className="text-center space-y-4 mb-16 max-w-4xl mx-auto">
+                    <FadeIn className="text-center space-y-4 mb-16 max-w-4xl mx-auto">
                          <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our End-to-End Approach</h2>
                          <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We follow a structured, collaborative, and transparent journey to transform your ambitious ideas into market-ready realities. Our process is designed for clarity, efficiency, and exceptional outcomes.</p>
-                    </div>
+                    </FadeIn>
                     <div className="relative max-w-5xl mx-auto">
                         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
                         {process.map((step, index) => (
                              <div key={index} className="relative mb-12 md:mb-16">
-                                <div className="md:flex md:items-center" style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}>
+                                <FadeIn className="md:flex md:items-center" style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}>
                                     <div className="md:w-1/2 p-4 md:p-0"></div>
                                     <div className="hidden md:block">
                                         <div className="absolute left-1/2 top-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 border-4 border-background flex items-center justify-center font-bold text-primary-foreground">
@@ -99,7 +102,7 @@ export default function ServicePage({ params }: Props) {
                                             <p className="text-foreground/80">{step.description}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </FadeIn>
                             </div>
                         ))}
                     </div>
@@ -109,11 +112,11 @@ export default function ServicePage({ params }: Props) {
             {service.slug === 'ai-ml' && (
               <section className="w-full py-16 md:py-24 bg-background">
                 <div className="px-8 md:px-12">
-                   <div className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
+                   <FadeIn className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">AI-Powered Vision Document Generator</h2>
                      <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">Have a brilliant idea? Describe it below and let our custom-trained AI create a foundational vision document to kickstart your project planning.</p>
-                  </div>
-                  <VisionDocumentGenerator />
+                  </FadeIn>
+                  <FadeIn><VisionDocumentGenerator /></FadeIn>
                 </div>
               </section>
             )}
@@ -121,22 +124,22 @@ export default function ServicePage({ params }: Props) {
             {service.subServices && (
                  <section className="w-full py-16 md:py-24 bg-secondary/20">
                     <div className="px-8 md:px-12">
-                        <div className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
+                        <FadeIn className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
                              <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Key Offerings within {service.title}</h2>
                              <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We provide top-tier expertise across a wide range of specialized areas to deliver comprehensive and effective solutions.</p>
-                        </div>
-                        <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+                        </FadeIn>
+                        <FadeIn className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
                             {service.subServices.map(tech => (
                                 <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
                             ))}
-                        </div>
+                        </FadeIn>
                     </div>
                 </section>
             )}
 
              <section className="w-full py-20 md:py-28">
                 <div className="px-8 md:px-12 text-center">
-                   <div className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
+                   <FadeIn className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Start Your {service.title} Project?</h2>
                      <p className="text-foreground/80 md:text-lg">
                        Let's discuss how our expertise in {service.title} can help you achieve your strategic goals and overcome your biggest challenges. Contact us today for a complimentary, no-obligation consultation with one of our specialists.
@@ -146,7 +149,7 @@ export default function ServicePage({ params }: Props) {
                            <Link href="/contact">Get a Free Quote</Link>
                         </Button>
                       </div>
-                  </div>
+                  </FadeIn>
                 </div>
               </section>
 
