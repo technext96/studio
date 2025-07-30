@@ -87,7 +87,7 @@ export default function BlogPostPage({ params }: Props) {
 
             <h2>Conclusion: Navigating the Future</h2>
             <p>
-              As we conclude our exploration, it's clear that the rise of {post.category} is not a fleeting trend but a fundamental evolution. The implications for business, society, and our daily lives will be profound. The key takeaway is not to fear this change but to embrace it, understand it, and strategically integrate it. At Code Harbor, we are not just observers of this revolution; we are architects of it, helping our clients navigate this new terrain and build the solutions of the future.
+              As we conclude our exploration, it's clear that the rise of {post.category} is not a fleeting trend but a fundamental evolution. The implications for business, society, and our daily lives will be profound. The key takeaway is not to fear this change but to embrace it, understand it, and strategically integrate it. At TechNext, we are not just observers of this revolution; we are architects of it, helping our clients navigate this new terrain and build the solutions of the future.
             </p>
           </article>
         </div>

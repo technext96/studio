@@ -10,28 +10,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, Building } from 'lucide-react';
-import type { Metadata } from 'next';
-
-// Note: Metadata in a client component is not supported in Next.js App Router.
-// This is for illustrative purposes. For SEO, this page should be a Server Component
-// or metadata should be defined in a parent layout or page.
-export const metadata: Metadata = {
-    title: "Contact Us",
-    description: "Get in touch with the TechNext team to discuss your project. We're here to help you build the future of technology.",
-    openGraph: {
-        title: 'Contact Us | TechNext',
-        description: "Get in touch with the TechNext team to discuss your project.",
-    },
-};
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <Button type="submit" className="w-full py-6 text-lg" disabled={pending}>
-      {pending ? 'Submitting...' : 'Send Message'}
-    </Button>
-  );
-}
 
 export default function ContactPage() {
   const initialState: State = { message: null, errors: {}, success: false };
@@ -102,7 +80,9 @@ export default function ContactPage() {
                     <Textarea id="details" name="details" placeholder="Tell us about your project, goals, and any specific requirements..." required minLength={10} rows={6} />
                     {state.errors?.details && <p className="text-sm font-medium text-destructive mt-1">{state.errors.details}</p>}
                   </div>
-                  <SubmitButton />
+                  <Button type="submit" className="w-full py-6 text-lg" disabled={false}>
+                    Send Message
+                  </Button>
                 </form>
               </CardContent>
             </Card>
