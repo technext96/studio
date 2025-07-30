@@ -75,12 +75,17 @@ const config = {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
-        }
+        },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "animate-gradient": "animate-gradient 15s ease infinite",
+        "fade-in-up": "fade-in-up 0.5s ease-out forwards",
       },
       backgroundImage: {
         'grid-pattern': "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='hsl(var(--primary)/0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e\")",

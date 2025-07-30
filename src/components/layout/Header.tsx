@@ -61,13 +61,15 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="flex h-16 items-center px-4 md:px-6">
-                <div className="mr-4 hidden md:flex">
-                    <Logo />
+            <div className="container flex h-16 items-center px-4 md:px-6">
+                <div className="flex items-center">
+                    <Link href="/" className="mr-6 hidden md:flex">
+                        <Logo />
+                    </Link>
                 </div>
 
                 {/* Mobile Menu */}
-                <div className="flex md:hidden">
+                <div className="md:hidden">
                      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
@@ -113,12 +115,13 @@ export default function Header() {
                         </SheetContent>
                     </Sheet>
                 </div>
-                 <div className="md:hidden flex-1 flex justify-center">
+
+                 <div className="flex-1 flex justify-center md:hidden">
                     <Logo/>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex flex-1 items-center justify-center">
+                <div className="hidden md:flex flex-1 items-center justify-start">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navLinks.map((link) => (
@@ -127,7 +130,7 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                {link.title === "Resources" || link.title === "Portfolio" ? (
+                                                {link.title === "Our Work" || link.title === "Resources" ? (
                                                      <div className="grid grid-cols-[1fr_auto] gap-4 p-4 md:w-[550px] lg:w-[600px]">
                                                         <ul className="grid grid-rows-4 gap-3">
                                                             {link.items.map((item) => (
@@ -147,9 +150,9 @@ export default function Header() {
                                                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                                                                     href={link.href}
                                                                 >
-                                                                    <Image src={link.title === "Portfolio" ? "https://placehold.co/400x400.png" : "https://placehold.co/400x400.png"}  data-ai-hint={link.title === "Portfolio" ? "portfolio success futuristic" : "abstract technology"} alt={link.title} width={400} height={400} className="rounded-md object-cover mb-2" />
+                                                                    <Image src={link.title === "Our Work" ? "https://placehold.co/400x400.png" : "https://placehold.co/400x400.png"}  data-ai-hint={link.title === "Our Work" ? "portfolio success futuristic" : "abstract technology"} alt={link.title} width={400} height={400} className="rounded-md object-cover mb-2" />
                                                                     <div className="text-sm font-headline font-medium text-primary">
-                                                                        {link.title === "Portfolio" ? "Success Stories" : "Tech Intelligence"}
+                                                                        {link.title === "Our Work" ? "Success Stories" : "Tech Intelligence"}
                                                                     </div>
                                                                     <p className="text-xs leading-tight text-muted-foreground">
                                                                         {link.description}
@@ -192,6 +195,7 @@ export default function Header() {
                         <Link href="/contact">Get a Quote</Link>
                     </Button>
                 </div>
+                 <div className="md:hidden w-10"></div> {/* Spacer for mobile to balance the menu button */}
             </div>
         </header>
     );
