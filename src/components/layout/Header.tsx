@@ -23,6 +23,7 @@ import {
 import { navLinks } from "@/lib/constants";
 import React from "react";
 import Image from "next/image";
+import { ScrollArea } from "../ui/scroll-area";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -61,12 +62,10 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 items-center px-4 md:px-6">
-                <div className="flex items-center">
-                    <Link href="/" className="mr-6 hidden md:flex">
-                        <Logo />
-                    </Link>
-                </div>
+            <div className="container flex h-16 max-w-none items-center justify-between px-4 md:px-6">
+                <Link href="/" className="mr-6 hidden md:flex">
+                    <Logo />
+                </Link>
 
                 {/* Mobile Menu */}
                 <div className="md:hidden">
@@ -77,47 +76,55 @@ export default function Header() {
                                 <span className="sr-only">Toggle Menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur p-0">
-                            <div className="flex flex-col h-full">
-                                <div className="p-4 border-b border-border/40 flex justify-between items-center">
+                        <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur flex flex-col p-0">
+                            <div className="p-4 border-b border-border/40 flex justify-between items-center">
+                                <SheetClose asChild>
+                                  <Link href="/">
                                     <Logo />
-                                    <SheetClose asChild>
-                                         <Button variant="ghost" size="icon">
-                                            <X className="h-6 w-6" />
-                                            <span className="sr-only">Close Menu</span>
-                                        </Button>
-                                    </SheetClose>
-                                </div>
-                                <nav className="flex flex-col gap-2 p-4 text-lg font-medium">
+                                  </Link>
+                                </SheetClose>
+                            </div>
+                            <ScrollArea className="flex-1">
+                               <nav className="flex flex-col gap-4 p-4 text-lg font-medium">
                                     {navLinks.map((link) =>
                                      link.items ? (
                                         <div key={link.title} className="flex flex-col gap-2">
-                                            <Link href={link.href} className="font-semibold text-primary" onClick={() => setIsSheetOpen(false)}>{link.title}</Link>
+                                            <SheetClose asChild>
+                                                <Link href={link.href} className="font-semibold text-primary">{link.title}</Link>
+                                            </SheetClose>
                                             {link.items.map((item) => (
-                                                <Link key={item.title} href={item.href} className="pl-4 text-foreground/80 hover:text-primary transition-colors" onClick={() => setIsSheetOpen(false)}>
-                                                    {item.title}
-                                                </Link>
+                                                <SheetClose asChild key={item.title}>
+                                                    <Link href={item.href} className="pl-4 text-foreground/80 hover:text-primary transition-colors text-base font-normal">
+                                                        {item.title}
+                                                    </Link>
+                                                </SheetClose>
                                             ))}
                                         </div>
                                      ) : (
-                                        <Link key={link.title} href={link.href} className="font-semibold text-primary" onClick={() => setIsSheetOpen(false)}>
-                                            {link.title}
-                                        </Link>
+                                        <SheetClose asChild key={link.title}>
+                                            <Link href={link.href} className="font-semibold text-primary">
+                                                {link.title}
+                                            </Link>
+                                        </SheetClose>
                                      )
                                     )}
                                 </nav>
-                                <div className="mt-auto p-4 border-t border-border/40">
+                            </ScrollArea>
+                            <div className="mt-auto p-4 border-t border-border/40">
+                                <SheetClose asChild>
                                     <Button asChild className="w-full glow-effect">
-                                        <Link href="/contact" onClick={() => setIsSheetOpen(false)}>Get a Quote</Link>
+                                        <Link href="/contact">Get a Quote</Link>
                                     </Button>
-                                </div>
+                                </SheetClose>
                             </div>
                         </SheetContent>
                     </Sheet>
                 </div>
 
-                 <div className="flex-1 flex justify-center md:hidden">
+                 <div className="flex md:hidden">
+                   <Link href="/">
                     <Logo/>
+                   </Link>
                 </div>
 
                 {/* Desktop Menu */}
@@ -195,7 +202,7 @@ export default function Header() {
                         <Link href="/contact">Get a Quote</Link>
                     </Button>
                 </div>
-                 <div className="md:hidden w-10"></div> {/* Spacer for mobile to balance the menu button */}
+                 <div className="md:hidden w-10 h-10"></div> {/* Spacer for mobile to balance the menu button */}
             </div>
         </header>
     );
