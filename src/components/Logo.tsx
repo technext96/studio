@@ -1,8 +1,7 @@
-import Link from 'next/link';
 
 const Logo = () => {
   return (
-    <Link href="/" className="flex items-center group" prefetch={false}>
+    <div className="flex items-center group">
       <svg
         width="130"
         height="32"
@@ -40,7 +39,7 @@ const Logo = () => {
          <path d="M68 5 L68 15 L78 5 L78 15" stroke="url(#logoGradient)" strokeWidth="2.5" />
 
       </svg>
-    </Link>
+    </div>
   );
 };
 
