@@ -3,9 +3,9 @@ const Logo = () => {
   return (
     <div className="flex items-center group">
       <svg
-        height="32"
+        height="28"
         viewBox="0 0 130 32"
-        className="h-8 w-auto"
+        className="h-7 w-auto"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -23,23 +23,23 @@ const Logo = () => {
           x="0"
           y="24"
           fontFamily="var(--font-space-grotesk), sans-serif"
-          fontSize="28"
+          fontSize="26"
           fontWeight="bold"
           fill="hsl(var(--foreground))"
         >
           Tech
         </text>
         <text
-          x="64"
+          x="60"
           y="24"
           fontFamily="var(--font-space-grotesk), sans-serif"
-          fontSize="28"
+          fontSize="26"
           fontWeight="bold"
           fill="url(#logoGradient)"
         >
           Next
         </text>
-         <path d="M68 5 L68 15 L78 5 L78 15" stroke="url(#logoGradient)" strokeWidth="2.5" />
+         <path d="M64 5 L64 15 L74 5 L74 15" stroke="url(#logoGradient)" strokeWidth="2.5" />
 
       </svg>
     </div>
