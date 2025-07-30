@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description: "Explore our portfolio of successful projects, from AI-powered learning platforms to scalable food delivery solutions. See our expertise in action.",
   openGraph: {
-      title: 'Our Work & Success Stories | Code Harbor',
+      title: 'Our Work & Success Stories | TechNext',
       description: "Explore our portfolio of successful projects and see how we solve complex challenges for our clients.",
   },
 };

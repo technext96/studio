@@ -17,10 +17,10 @@ import type { Metadata } from 'next';
 // or metadata should be defined in a parent layout or page.
 export const metadata: Metadata = {
     title: "Contact Us",
-    description: "Get in touch with the Code Harbor team to discuss your project. We're here to help you build the future of technology.",
+    description: "Get in touch with the TechNext team to discuss your project. We're here to help you build the future of technology.",
     openGraph: {
-        title: 'Contact Us | Code Harbor',
-        description: "Get in touch with the Code Harbor team to discuss your project.",
+        title: 'Contact Us | TechNext',
+        description: "Get in touch with the TechNext team to discuss your project.",
     },
 };
 
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xl">Email Us</h4>
-                    <a href="mailto:contact@codeharbor.dev" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">contact@codeharbor.dev</a>
+                    <a href="mailto:contact@technext.dev" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">contact@technext.dev</a>
                   </div>
                 </div>
                  <div className="flex items-start gap-6">

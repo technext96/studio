@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Industries We Serve",
   description: "Discover how our technology solutions drive innovation and success across a wide range of industries, from Fintech to Healthcare.",
   openGraph: {
-      title: 'Industries We Serve | Code Harbor',
+      title: 'Industries We Serve | TechNext',
       description: "Discover how our technology solutions drive innovation and success across a wide range of industries.",
   },
 };

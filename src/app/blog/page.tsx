@@ -8,10 +8,10 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Insights, tutorials, and thoughts on the future of technology from the Code Harbor team.",
+  description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
   openGraph: {
-      title: 'Blog | Code Harbor',
-      description: "Insights, tutorials, and thoughts on the future of technology from the Code Harbor team.",
+      title: 'Blog | TechNext',
+      description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
   },
 };
 
