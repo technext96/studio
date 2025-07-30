@@ -2,7 +2,7 @@
 'use client';
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -43,11 +43,11 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="flex items-center gap-3">
-            <div className="text-primary transition-transform duration-300 group-hover:scale-110">{icon}</div>
+          <div className="flex items-start gap-3">
+            <div className="text-primary transition-transform duration-300 group-hover:scale-110 mt-1">{icon}</div>
             <div>
               <div className="text-sm font-medium leading-none">{title}</div>
-              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
                 {children}
               </p>
             </div>
@@ -64,8 +64,20 @@ export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
 
     return (
-        <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6">
+        <header className="fixed top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+             <div className="bg-secondary/20 border-b border-border/40">
+                <div className="container flex h-8 max-w-none items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-6">
+                   <a href="mailto:sales@technext.dev" className="flex items-center gap-2 hover:text-primary transition-colors">
+                       <Mail className="h-3 w-3" />
+                       sales@technext.dev
+                   </a>
+                    <div className="flex items-center gap-2">
+                       <Phone className="h-3 w-3" />
+                       USA: 123-123-123
+                   </div>
+                </div>
+            </div>
+            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
                 <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
