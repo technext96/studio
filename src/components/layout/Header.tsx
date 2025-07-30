@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from "next/link";
@@ -65,12 +66,12 @@ export default function Header() {
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 max-w-none items-center justify-between px-4 md:px-6">
-                <Link href="/" className="mr-6 hidden md:flex">
+                <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
 
                 {/* Mobile Menu */}
-                <div className="md:hidden flex-none">
+                <div className="lg:hidden">
                      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
@@ -124,14 +125,14 @@ export default function Header() {
                     </Sheet>
                 </div>
 
-                 <div className="flex md:hidden flex-1 justify-center">
+                 <div className="flex lg:hidden flex-1 justify-center">
                    <Link href="/">
                     <Logo/>
                    </Link>
                 </div>
 
                 {/* Desktop Menu */}
-                 <div className="hidden md:flex flex-1 items-center justify-between gap-4">
+                 <div className="hidden lg:flex flex-1 items-center justify-end gap-4">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navLinks.map((link) => (
@@ -203,7 +204,7 @@ export default function Header() {
                         <Link href="/contact">Get a Quote</Link>
                     </Button>
                 </div>
-                 <div className="md:hidden flex-none w-10 h-10"></div> {/* Spacer for mobile to balance the menu button */}
+                 <div className="lg:hidden flex-none w-10 h-10"></div> {/* Spacer for mobile to balance the menu button */}
             </div>
         </header>
     );
