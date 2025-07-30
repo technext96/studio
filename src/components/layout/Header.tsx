@@ -124,14 +124,14 @@ export default function Header() {
                     </Sheet>
                 </div>
 
-                 <div className="flex md:hidden flex-none">
+                 <div className="flex md:hidden flex-1 justify-center">
                    <Link href="/">
                     <Logo/>
                    </Link>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex flex-1 items-center justify-start">
+                 <div className="hidden md:flex flex-1 items-center justify-between gap-4">
                     <NavigationMenu>
                         <NavigationMenuList>
                             {navLinks.map((link) => (
@@ -198,10 +198,8 @@ export default function Header() {
                             ))}
                         </NavigationMenuList>
                     </NavigationMenu>
-                </div>
 
-                <div className="hidden md:flex flex-none items-center justify-end">
-                     <Button asChild className="glow-effect">
+                     <Button asChild className="glow-effect flex-shrink-0">
                         <Link href="/contact">Get a Quote</Link>
                     </Button>
                 </div>
