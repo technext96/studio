@@ -3,7 +3,6 @@ const Logo = () => {
   return (
     <div className="flex items-center group">
       <svg
-        width="130"
         height="32"
         viewBox="0 0 130 32"
         className="h-8 w-auto"
