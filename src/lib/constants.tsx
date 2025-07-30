@@ -7,12 +7,12 @@ export const navLinks = [
         href: "/services",
         description: "Explore our comprehensive technology solutions.",
         items: [
-            { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Unlock the power of Artificial Intelligence." },
-            { title: "Intelligent Automation", href: "/services/automation", icon: <Cog className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Streamline your business processes." },
-            { title: "Offshore Software Development", href: "/services/offshore", icon: <Group className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Build your dream team with us." },
-            { title: "Custom Software Development", href: "/services/custom-software", icon: <Code className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Tailored solutions for your unique needs." },
-            { title: "DevOps", href: "/services/devops", icon: <Cloud className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Accelerate your development lifecycle." },
-            { title: "Marketing Services", href: "/services/marketing", icon: <Zap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Grow your business with our expertise." },
+            { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Unlock the power of Artificial Intelligence.", imageHint: "artificial intelligence brain" },
+            { title: "Intelligent Automation", href: "/services/automation", icon: <Cog className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Streamline your business processes.", imageHint: "automation gears process" },
+            { title: "Offshore Software Development", href: "/services/offshore", icon: <Group className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Build your dream team with us.", imageHint: "global team collaboration" },
+            { title: "Custom Software Development", href: "/services/custom-software", icon: <Code className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Tailored solutions for your unique needs.", imageHint: "web development code" },
+            { title: "DevOps", href: "/services/devops", icon: <Cloud className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Accelerate your development lifecycle.", imageHint: "cloud infrastructure devops" },
+            { title: "Marketing Services", href: "/services/marketing", icon: <Zap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Grow your business with our expertise.", imageHint: "digital marketing analytics" },
         ]
     },
     {
@@ -20,12 +20,12 @@ export const navLinks = [
         href: "/industries",
         description: "Driving success across various sectors.",
         items: [
-            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Secure and innovative financial solutions." },
-            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Optimizing supply chain management." },
-            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming patient care with technology." },
-            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing production and efficiency." },
-            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Creating seamless shopping experiences." },
-            { title: "Education", href: "/industries/education", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Empowering learning with AI." },
+            { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Secure and innovative financial solutions.", imageHint: "financial technology dashboard" },
+            { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Optimizing supply chain management.", imageHint: "logistics cargo ship" },
+            { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Transforming patient care with technology.", imageHint: "healthcare medical technology" },
+            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing production and efficiency.", imageHint: "manufacturing factory robot" },
+            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Creating seamless shopping experiences.", imageHint: "ecommerce online shopping" },
+            { title: "Education", href: "/industries/education", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Empowering learning with AI.", imageHint: "education online learning" },
         ]
     },
     {
@@ -55,9 +55,9 @@ export const navLinks = [
         href: "/about",
         description: "Learn more about our team and vision.",
         items: [
-            { title: "About Us", href: "/about", icon: <Users className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Our vision, mission, and values." },
-            { title: "Careers", href: "/careers", icon: <Briefcase className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Join our team of innovators." },
-            { title: "Contact Us", href: "/contact", icon: <Phone className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Let's start a conversation." },
+            { title: "About Us", href: "/about", icon: <Users className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Our vision, mission, and values.", imageHint: "team collaboration office" },
+            { title: "Careers", href: "/careers", icon: <Briefcase className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Join our team of innovators.", imageHint: "job interview recruitment" },
+            { title: "Contact Us", href: "/contact", icon: <Phone className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Let's start a conversation.", imageHint: "contact us handshake" },
         ]
     },
 ];
@@ -347,4 +347,6 @@ export const homePageFaqs = [
         answer: "Yes, our partnership doesn't end at launch. We offer comprehensive support and maintenance packages to ensure your application remains secure, up-to-date, and performs optimally. We can provide ongoing technical support, bug fixes, performance monitoring, and help you plan and develop new features as your business grows."
     }
 ];
+    
+
     
