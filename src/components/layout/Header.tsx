@@ -65,7 +65,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 max-w-none items-center justify-start px-4 gap-4 md:px-6">
+            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6">
                 <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
@@ -141,33 +141,19 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                 <ul className="grid grid-cols-2 gap-3 p-4 md:w-[600px] lg:w-[700px]">
+                                                 <ul className={cn(
+                                                    "grid gap-3 p-4 md:w-[500px]",
+                                                    link.items.length > 4 ? "lg:grid-cols-2 lg:w-[600px]" : "lg:w-[350px]"
+                                                    )}>
                                                      {link.items.map((item) => (
-                                                        <li key={item.title} className="col-span-1">
-                                                            <NavigationMenuLink asChild>
-                                                                <a
-                                                                    href={item.href}
-                                                                    className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md overflow-hidden relative"
-                                                                >
-                                                                    <Image 
-                                                                        src={`https://placehold.co/400x400.png`}
-                                                                        alt={item.title}
-                                                                        fill
-                                                                        className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110 object-cover"
-                                                                        data-ai-hint={item.imageHint || "abstract"}
-                                                                    />
-                                                                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors"></div>
-                                                                    <div className="relative z-10">
-                                                                        <div className="text-lg font-headline font-medium text-white group-hover:text-primary transition-colors">
-                                                                            {item.title}
-                                                                        </div>
-                                                                        <p className="text-sm leading-tight text-white/80">
-                                                                            {item.description}
-                                                                        </p>
-                                                                    </div>
-                                                                </a>
-                                                            </NavigationMenuLink>
-                                                        </li>
+                                                        <ListItem
+                                                          key={item.title}
+                                                          title={item.title}
+                                                          href={item.href}
+                                                          icon={item.icon}
+                                                        >
+                                                          {item.description}
+                                                        </ListItem>
                                                      ))}
                                                  </ul>
                                             </NavigationMenuContent>
@@ -193,5 +179,3 @@ export default function Header() {
         </header>
     );
 }
-
-    
