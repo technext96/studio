@@ -70,7 +70,7 @@ export default function Header() {
                 </Link>
 
                 {/* Mobile Menu */}
-                <div className="md:hidden">
+                <div className="md:hidden flex-none">
                      <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon">
@@ -79,9 +79,9 @@ export default function Header() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur flex flex-col p-0">
-                            <SheetHeader className="p-4 border-b border-border/40">
+                           <SheetHeader className="p-4 border-b border-border/40">
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                                <SheetClose asChild>
+                              <SheetClose asChild>
                                   <Link href="/">
                                     <Logo />
                                   </Link>
@@ -124,7 +124,7 @@ export default function Header() {
                     </Sheet>
                 </div>
 
-                 <div className="flex md:hidden">
+                 <div className="flex md:hidden flex-none">
                    <Link href="/">
                     <Logo/>
                    </Link>
@@ -200,12 +200,12 @@ export default function Header() {
                     </NavigationMenu>
                 </div>
 
-                <div className="hidden md:flex flex-none items-center justify-end space-x-4">
+                <div className="hidden md:flex flex-none items-center justify-end">
                      <Button asChild className="glow-effect">
                         <Link href="/contact">Get a Quote</Link>
                     </Button>
                 </div>
-                 <div className="md:hidden w-10 h-10"></div> {/* Spacer for mobile to balance the menu button */}
+                 <div className="md:hidden flex-none w-10 h-10"></div> {/* Spacer for mobile to balance the menu button */}
             </div>
         </header>
     );
