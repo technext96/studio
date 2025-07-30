@@ -79,7 +79,7 @@ export default function Header() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur flex flex-col p-0">
-                            <SheetHeader className="p-4 border-b border-border/40 flex justify-between items-center">
+                            <SheetHeader className="p-4 border-b border-border/40">
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
                                 <SheetClose asChild>
                                   <Link href="/">
