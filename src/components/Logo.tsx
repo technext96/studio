@@ -10,9 +10,13 @@ const Logo = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="logoGradient" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="0%" stopColor="hsl(var(--primary))" />
-            <stop offset="100%" stopColor="hsl(190 95% 40%)" />
+          <linearGradient id="logoGradient" x1="-100%" y1="50%" x2="100%" y2="50%">
+            <stop offset="0%" stopColor="hsl(var(--primary))">
+               <animate attributeName="stop-color" values="hsl(var(--primary));hsl(190 95% 40%);hsl(var(--primary))" dur="4s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="hsl(190 95% 40%)">
+               <animate attributeName="stop-color" values="hsl(190 95% 40%);hsl(var(--primary));hsl(190 95% 40%)" dur="4s" repeatCount="indefinite" />
+            </stop>
           </linearGradient>
         </defs>
         <text
