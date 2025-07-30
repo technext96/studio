@@ -65,7 +65,7 @@ export default function Header() {
 
     return (
         <header className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="container flex h-16 max-w-none items-center justify-between px-4 md:px-6">
+            <div className="container flex h-16 max-w-none items-center justify-start px-4 gap-4 md:px-6">
                 <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
@@ -133,7 +133,7 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                  <div className="hidden lg:flex flex-1 items-center justify-end gap-4">
-                    <NavigationMenu>
+                    <NavigationMenu className="flex-shrink">
                         <NavigationMenuList>
                             {navLinks.map((link) => (
                                 <NavigationMenuItem key={link.title}>
@@ -142,36 +142,36 @@ export default function Header() {
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
                                                 {link.title === "Our Work" || link.title === "Resources" ? (
-                                                     <div className="grid grid-cols-[1fr_auto] gap-4 p-4 md:w-[550px] lg:w-[600px]">
-                                                        <ul className="grid grid-rows-4 gap-3">
-                                                            {link.items.map((item) => (
-                                                                <ListItem
-                                                                    key={item.title}
-                                                                    title={item.title}
-                                                                    href={item.href}
-                                                                    icon={item.icon}
-                                                                >
-                                                                    {item.description}
-                                                                </ListItem>
-                                                            ))}
-                                                        </ul>
-                                                         <div className="w-[200px]">
-                                                            <NavigationMenuLink asChild>
-                                                                <a
-                                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                                    href={link.href}
-                                                                >
-                                                                    <Image src={link.title === "Our Work" ? "https://placehold.co/400x400.png" : "https://placehold.co/400x400.png"}  data-ai-hint={link.title === "Our Work" ? "portfolio success futuristic" : "abstract technology"} alt={link.title} width={400} height={400} className="rounded-md object-cover mb-2" />
-                                                                    <div className="text-sm font-headline font-medium text-primary">
-                                                                        {link.title === "Our Work" ? "Success Stories" : "Tech Intelligence"}
-                                                                    </div>
-                                                                    <p className="text-xs leading-tight text-muted-foreground">
-                                                                        {link.description}
-                                                                    </p>
-                                                                </a>
-                                                            </NavigationMenuLink>
-                                                        </div>
-                                                    </div>
+                                                     <ul className="grid grid-cols-2 gap-3 p-4 md:w-[600px] lg:w-[700px]">
+                                                         {link.items.map((item) => (
+                                                            <li key={item.title} className="col-span-1">
+                                                                <NavigationMenuLink asChild>
+                                                                    <a
+                                                                        href={item.href}
+                                                                        className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md overflow-hidden relative"
+                                                                    >
+                                                                        <Image 
+                                                                            src={item.imageHint === "portfolio success futuristic" ? "https://placehold.co/400x400.png" : "https://placehold.co/400x400.png"}
+                                                                            alt={item.title}
+                                                                            layout="fill"
+                                                                            objectFit="cover"
+                                                                            className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
+                                                                            data-ai-hint={item.imageHint || "abstract"}
+                                                                        />
+                                                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors"></div>
+                                                                        <div className="relative z-10">
+                                                                            <div className="text-lg font-headline font-medium text-white group-hover:text-primary transition-colors">
+                                                                                {item.title}
+                                                                            </div>
+                                                                            <p className="text-sm leading-tight text-white/80">
+                                                                                {item.description}
+                                                                            </p>
+                                                                        </div>
+                                                                    </a>
+                                                                </NavigationMenuLink>
+                                                            </li>
+                                                         ))}
+                                                     </ul>
                                                 ) : (
                                                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                                         {link.items.map((item) => (

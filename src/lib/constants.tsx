@@ -33,10 +33,10 @@ export const navLinks = [
         href: "/portfolio",
         description: "Our success stories and client achievements.",
         items: [
-             { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
-             { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "The leading open-source food delivery solution for cafes and restaurants." },
-             { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
-             { title: "Instant Medical Insights via AI Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Providing breast cancer patients with secure and evidence-based answers." },
+             { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning.", imageHint: "e-learning platform interface" },
+             { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "The leading open-source food delivery solution for cafes and restaurants.", imageHint: "food delivery app" },
+             { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Enhancing grocery experiences with AI for personalized recommendations.", imageHint: "cooking ingredients kitchen" },
+             { title: "Medical Insights Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Providing breast cancer patients with secure and evidence-based answers.", imageHint: "doctor patient consultation" },
         ]
     },
     {
@@ -44,10 +44,10 @@ export const navLinks = [
         href: "/blog",
         description: "Insights and knowledge from our experts.",
         items: [
-             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Expert articles on AI, RPA, and custom software development." },
-             { title: "Courses", href: "/blog", icon: <Video className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Upskill your team with our hands-on tech courses and workshops." },
-             { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Gain expert analysis on AI trends and actionable strategies." },
-             { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Discover valuable ideas and tips for startup success." },
+             { title: "Blog", href: "/blog", icon: <Newspaper className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Expert articles on AI, RPA, and custom software development.", imageHint: "expert writing article" },
+             { title: "Courses", href: "/blog", icon: <Video className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Upskill your team with our hands-on tech courses and workshops.", imageHint: "online course interface" },
+             { title: "Tech Insights", href: "/blog", icon: <Lightbulb className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Gain expert analysis on AI trends and actionable strategies.", imageHint: "glowing lightbulb idea" },
+             { title: "Startup Chronicles", href: "/blog", icon: <Rocket className="h-5 w-5 text-primary transition-transform duration-300 group-hover:scale-110" />, description: "Discover valuable ideas and tips for startup success.", imageHint: "rocket launch startup" },
         ]
     },
     {
