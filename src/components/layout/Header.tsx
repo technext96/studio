@@ -7,7 +7,9 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose
+  SheetClose,
+  SheetHeader,
+  SheetTitle
 } from "@/components/ui/sheet";
 import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
@@ -77,13 +79,14 @@ export default function Header() {
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur flex flex-col p-0">
-                            <div className="p-4 border-b border-border/40 flex justify-between items-center">
+                            <SheetHeader className="p-4 border-b border-border/40 flex justify-between items-center">
+                              <SheetTitle className="sr-only">Main Menu</SheetTitle>
                                 <SheetClose asChild>
                                   <Link href="/">
                                     <Logo />
                                   </Link>
                                 </SheetClose>
-                            </div>
+                            </SheetHeader>
                             <ScrollArea className="flex-1">
                                <nav className="flex flex-col gap-4 p-4 text-lg font-medium">
                                     {navLinks.map((link) =>
