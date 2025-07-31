@@ -74,10 +74,13 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="fixed top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className={cn(
+            "fixed top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300",
+            isScrolled ? 'pt-0' : 'pt-8'
+        )}>
              <div className={cn(
                 "bg-secondary/20 border-b border-border/40 transition-all duration-300",
-                isScrolled ? "-translate-y-full" : "translate-y-0"
+                isScrolled ? "-translate-y-full opacity-0 absolute" : "translate-y-0 opacity-100 relative"
              )}>
                 <div className="container flex h-8 max-w-none items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-6">
                    <a href="mailto:sales@technext.dev" className="flex items-center gap-2 hover:text-primary transition-colors">
