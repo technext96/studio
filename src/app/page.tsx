@@ -96,23 +96,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Promo Section */}
-        <section className="w-full py-16 md:py-24 bg-secondary/20">
-          <div className="px-8 md:px-12">
-            <FadeIn>
-              <Link href="/contact">
-                <Image
-                  src="/qr-promo.png"
-                  width={1280}
-                  height={1280}
-                  alt="Free QR Code App Promotion"
-                  className="rounded-lg glow-effect mx-auto"
-                />
-              </Link>
-            </FadeIn>
-          </div>
-        </section>
-
         {/* Services Section */}
         <section id="services" className="w-full py-16 md:py-24 lg:py-32 bg-background">
           <div className="px-8 md:px-12">

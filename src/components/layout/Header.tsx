@@ -24,7 +24,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { navLinks } from "@/lib/constants";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";
 
@@ -62,10 +62,23 @@ ListItem.displayName = "ListItem";
 
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 10);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <header className="fixed top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-             <div className="bg-secondary/20 border-b border-border/40">
+             <div className={cn(
+                "bg-secondary/20 border-b border-border/40 transition-all duration-300",
+                isScrolled ? "-translate-y-full" : "translate-y-0"
+             )}>
                 <div className="container flex h-8 max-w-none items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-6">
                    <a href="mailto:sales@technext.dev" className="flex items-center gap-2 hover:text-primary transition-colors">
                        <Mail className="h-3 w-3" />
@@ -77,7 +90,7 @@ export default function Header() {
                    </div>
                 </div>
             </div>
-            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
+            <div className="container flex h-16 max-w-none items-center justify-start px-4 gap-4 md:px-6 border-b border-border/40">
                 <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
@@ -157,6 +170,19 @@ export default function Header() {
                                                     "grid gap-3 p-4 md:w-[500px]",
                                                     link.items.length > 4 ? "lg:grid-cols-2 lg:w-[600px]" : "lg:w-[350px]"
                                                     )}>
+                                                     {link.image && (
+                                                        <li className="row-span-full lg:col-span-1">
+                                                            <NavigationMenuLink asChild>
+                                                                <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md" href={link.href}>
+                                                                    <div className="w-full h-48 relative mb-4">
+                                                                        {link.image}
+                                                                    </div>
+                                                                    <div className="mb-2 mt-4 text-lg font-bold font-headline">{link.title}</div>
+                                                                    <p className="text-sm leading-tight text-muted-foreground">{link.description}</p>
+                                                                </a>
+                                                            </NavigationMenuLink>
+                                                        </li>
+                                                     )}
                                                      {link.items.map((item) => (
                                                         <ListItem
                                                           key={item.title}
