@@ -43,8 +43,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="flex items-start gap-3">
-            <div className="text-primary transition-transform duration-300 group-hover:scale-110 mt-1">{icon}</div>
+          <div className="flex items-start gap-4">
+            <div className="text-primary transition-transform duration-300 group-hover:scale-110 mt-1 flex-shrink-0 w-6 h-6">{icon}</div>
             <div>
               <div className="text-sm font-medium leading-none">{title}</div>
               <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
@@ -168,17 +168,11 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                 <ul className={cn(
-                                                    "grid gap-3 p-4 md:w-[500px]",
-                                                    link.items.length > 4 ? "lg:grid-cols-2 lg:w-[600px]" : "lg:w-[350px]"
-                                                    )}>
+                                                 <ul className="grid gap-3 p-4 w-[350px]">
                                                      {link.image && (
-                                                        <li className="row-span-full lg:col-span-1">
+                                                        <li className="row-span-1">
                                                             <NavigationMenuLink asChild>
                                                                 <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md" href={link.href}>
-                                                                    <div className="w-full h-48 relative mb-4">
-                                                                        {link.image}
-                                                                    </div>
                                                                     <div className="mb-2 mt-4 text-lg font-bold font-headline">{link.title}</div>
                                                                     <p className="text-sm leading-tight text-muted-foreground">{link.description}</p>
                                                                 </a>
