@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { services, portfolio, industries, blogPosts, homePageFaqs } from "@/lib/constants";
@@ -60,6 +61,23 @@ export default function Home() {
                   />
               </FadeIn>
             </div>
+          </div>
+        </section>
+
+        {/* Promo Section */}
+        <section className="w-full py-16 md:py-24 bg-secondary/20">
+          <div className="px-8 md:px-12">
+            <FadeIn>
+              <Link href="/contact">
+                <Image
+                  src="/qr-promo.png"
+                  width={1280}
+                  height={1280}
+                  alt="Free QR Code App Promotion"
+                  className="rounded-lg glow-effect mx-auto"
+                />
+              </Link>
+            </FadeIn>
           </div>
         </section>
 
