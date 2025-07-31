@@ -168,11 +168,12 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                 <ul className={cn("grid gap-3 p-4 w-[450px]", (link.title === 'Services' || link.title === 'Industries') && 'md:grid-cols-2')}>
+                                                 <ul className={cn("grid gap-3 p-4 w-[450px]", (link.title === 'Services' || link.title === 'Industries') && 'grid-cols-2 lg:w-[600px]')}>
                                                      {link.image && (
                                                         <li className="row-span-3">
                                                             <NavigationMenuLink asChild>
                                                                 <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md" href={link.href}>
+                                                                    <div className="w-full h-32 mb-4">{link.image}</div>
                                                                     <div className="mb-2 mt-4 text-lg font-bold font-headline">{link.title}</div>
                                                                     <p className="text-sm leading-tight text-muted-foreground">{link.description}</p>
                                                                 </a>
