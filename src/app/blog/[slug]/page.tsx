@@ -60,14 +60,9 @@ export default function BlogPostPage({ params }: Props) {
               </div>
             </div>
 
-            <Image
-              src={post.imageUrl}
-              data-ai-hint={post.imageHint}
-              width={1200}
-              height={600}
-              alt={post.title}
-              className="rounded-lg my-8 border-2 border-primary/20 glow-effect"
-            />
+            <div className="rounded-lg my-8 border-2 border-primary/20 glow-effect aspect-video w-full object-cover bg-secondary/50 p-4">
+              {post.illustration}
+            </div>
 
             <h2>The Dawn of a New Era</h2>
             <p>
@@ -87,7 +82,7 @@ export default function BlogPostPage({ params }: Props) {
 
             <h2>Conclusion: Navigating the Future</h2>
             <p>
-              As we conclude our exploration, it's clear that the rise of {post.category} is not a fleeting trend but a fundamental evolution. The implications for business, society, and our daily lives will be profound. The key takeaway is not to fear this change but to embrace it, understand it, and strategically integrate it. At TechNext, we are not just observers of this revolution; we are architects of it, helping our clients navigate this new terrain and build the solutions of the future.
+              As we conclude our exploration, it's clear that the rise of {post.category} is not a fundamental evolution. The implications for business, society, and our daily lives will be profound. The key takeaway is not to fear this change but to embrace it, understand it, and strategically integrate it. At TechNext, we are not just observers of this revolution; we are architects of it, helping our clients navigate this new terrain and build the solutions of the future.
             </p>
           </article>
         </div>

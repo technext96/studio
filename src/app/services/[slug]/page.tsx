@@ -66,14 +66,9 @@ export default function ServicePage({ params }: Props) {
                             </p>
                         </FadeIn>
                          <FadeIn>
-                            <Image
-                                src={service.imageUrl}
-                                data-ai-hint={service.imageHint}
-                                width="600"
-                                height="400"
-                                alt={service.title}
-                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
-                            />
+                            <div className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect bg-secondary/50 p-4">
+                                {service.illustration}
+                            </div>
                         </FadeIn>
                     </div>
                 </div>

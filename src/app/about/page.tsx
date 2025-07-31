@@ -15,6 +15,44 @@ export const metadata: Metadata = {
     },
 };
 
+const TeamIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
+          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="hsl(var(--primary) / 0.2)">
+        <circle cx="256" cy="256" r="200" strokeWidth="1" />
+        <circle cx="256" cy="256" r="150" strokeWidth="1" />
+      </g>
+      <g fill="hsl(var(--primary))">
+        <circle cx="256" cy="106" r="30">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="156" cy="206" r="20">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="356" cy="206" r="20">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="186" cy="356" r="25">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+        <circle cx="326" cy="356" r="25">
+            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+      </g>
+      <g stroke="hsl(var(--primary) / 0.5)" strokeWidth="0.5">
+        <path d="M 256 136 L 166 196" />
+        <path d="M 256 136 L 346 196" />
+        <path d="M 156 226 L 196 331" />
+        <path d="M 356 226 L 316 331" />
+      </g>
+    </svg>
+);
+
 export default function AboutPage() {
     return (
         <>
@@ -50,14 +88,9 @@ export default function AboutPage() {
                             </div>
                         </FadeIn>
                         <FadeIn>
-                            <Image
-                                src="https://placehold.co/600x400.png"
-                                data-ai-hint="team collaboration futuristic"
-                                width={600}
-                                height={400}
-                                alt="Our Team Collaborating"
-                                className="rounded-lg glow-effect mx-auto"
-                            />
+                            <div className="rounded-lg glow-effect mx-auto aspect-square w-full max-w-md p-4">
+                               <TeamIllustration/>
+                            </div>
                         </FadeIn>
                     </div>
                 </div>

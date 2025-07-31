@@ -76,14 +76,9 @@ export default function IndustryPage({ params }: Props) {
                             </p>
                         </FadeIn>
                          <FadeIn>
-                            <Image
-                                src={industry.imageUrl}
-                                data-ai-hint={industry.imageHint}
-                                width="600"
-                                height="400"
-                                alt={industry.title}
-                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect"
-                            />
+                            <div className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect bg-secondary/50 p-4">
+                                {industry.illustration}
+                            </div>
                         </FadeIn>
                     </div>
                 </div>
@@ -138,14 +133,9 @@ export default function IndustryPage({ params }: Props) {
                             <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                                 <Link href={`/portfolio/${project.slug}`} className="group">
                                     <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                                        <Image
-                                        src={project.imageUrl}
-                                        data-ai-hint={project.imageHint}
-                                        width="600"
-                                        height="400"
-                                        alt={project.title}
-                                        className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                        />
+                                        <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                                            {project.illustration}
+                                        </div>
                                         <CardHeader>
                                         <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
                                         </CardHeader>

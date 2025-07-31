@@ -37,15 +37,8 @@ export default function BlogPage() {
               <FadeIn key={post.slug} style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/blog/${post.slug}`} className="group">
                   <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_theme(colors.primary/0.5)] bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
-                    <div className="overflow-hidden">
-                      <Image
-                        src={post.imageUrl}
-                        data-ai-hint={post.imageHint}
-                        width="600"
-                        height="400"
-                        alt={post.title}
-                        className="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
+                    <div className="overflow-hidden aspect-video w-full object-cover bg-secondary/50 p-4">
+                      {post.illustration}
                     </div>
                     <CardHeader>
                       <p className="text-sm text-primary font-semibold">{post.category}</p>

@@ -41,6 +41,58 @@ const jobOpenings = [
     }
 ];
 
+
+const TeamIllustration1 = () => (
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-c1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))"/>
+            <stop offset="100%" stopColor="hsl(var(--secondary))"/>
+            </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#grad-c1)" strokeWidth="2">
+            <path d="M 50 150 C 50 100, 100 50, 150 50 C 200 50, 250 100, 250 150 C 250 200, 200 250, 150 250 C 100 250, 50 200, 50 150 Z">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="20s" repeatCount="indefinite"/>
+            </path>
+            <path d="M 100 150 C 100 122.38, 122.38 100, 150 100 C 177.62 100, 200 122.38, 200 150 C 200 177.62, 177.62 200, 150 200 C 122.38 200, 100 177.62, 100 150Z">
+            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="15s" repeatCount="indefinite"/>
+            </path>
+        </g>
+        <g fill="hsl(var(--primary))">
+            <circle cx="150" cy="80" r="10"><animate attributeName="cy" values="80;90;80" dur="5s" repeatCount="indefinite"/></circle>
+            <circle cx="220" cy="150" r="10"><animate attributeName="cx" values="220;210;220" dur="5s" repeatCount="indefinite"/></circle>
+            <circle cx="80" cy="150" r="10"><animate attributeName="cx" values="80;90;80" dur="5s" repeatCount="indefinite"/></circle>
+            <circle cx="150" cy="220" r="10"><animate attributeName="cy" values="220;210;220" dur="5s" repeatCount="indefinite"/></circle>
+        </g>
+    </svg>
+);
+
+const TeamIllustration2 = () => (
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-c2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="hsl(var(--primary))" />
+            <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#grad-c2)" strokeWidth="1" opacity="0.5">
+            <rect x="50" y="50" width="200" height="200" rx="20">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="25s" repeatCount="indefinite" />
+            </rect>
+            <rect x="75" y="75" width="150" height="150" rx="15">
+            <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="20s" repeatCount="indefinite" />
+            </rect>
+            <rect x="100" y="100" width="100" height="100" rx="10">
+            <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="15s" repeatCount="indefinite" />
+            </rect>
+        </g>
+        <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="hsl(var(--primary))" fontSize="40" fontFamily="var(--font-headline)" fontWeight="bold">
+            Fun
+        </text>
+    </svg>
+);
+
+
 export default function CareersPage() {
     return (
         <>
@@ -71,8 +123,8 @@ export default function CareersPage() {
                             </ul>
                         </FadeIn>
                          <div className="grid grid-cols-2 gap-6">
-                            <FadeIn><img src="https://placehold.co/300x300.png" data-ai-hint="team working together" alt="Team at work" className="rounded-lg glow-effect" /></FadeIn>
-                             <FadeIn style={{animationDelay: '0.1s'}}><img src="https://placehold.co/300x300.png" data-ai-hint="office fun activity" alt="Team fun" className="rounded-lg glow-effect" /></FadeIn>
+                            <FadeIn><div className="rounded-lg glow-effect aspect-square"><TeamIllustration1/></div></FadeIn>
+                             <FadeIn style={{animationDelay: '0.1s'}}><div className="rounded-lg glow-effect aspect-square"><TeamIllustration2/></div></FadeIn>
                         </div>
                     </div>
                 </div>

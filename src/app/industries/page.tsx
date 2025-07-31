@@ -37,14 +37,9 @@ export default function IndustriesPage() {
             {industries.map((industry, i) => (
               <FadeIn key={industry.slug} style={{ animationDelay: `${i * 0.05}s` }}>
                 <Card className="group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
-                   <Image
-                      src={industry.imageUrl}
-                      data-ai-hint={industry.imageHint}
-                      width="600"
-                      height="300"
-                      alt={industry.title}
-                      className="aspect-video w-full object-cover"
-                    />
+                   <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                      {industry.illustration}
+                    </div>
                   <CardHeader className="flex flex-row items-start gap-4">
                     <div className="text-primary mt-1 flex-shrink-0">{industry.icon}</div>
                     <div>

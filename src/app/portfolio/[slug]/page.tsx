@@ -238,15 +238,10 @@ export default function PortfolioProjectPage({ params }: Props) {
                   )}
               </div>
             )}
-
-            <Image
-              src={project.imageUrl}
-              data-ai-hint={project.imageHint}
-              width={1200}
-              height={600}
-              alt={project.title}
-              className="rounded-lg my-12 border-2 border-primary/20 glow-effect"
-            />
+            
+            <div className="rounded-lg my-12 border-2 border-primary/20 glow-effect aspect-video w-full object-cover bg-secondary/50 p-4">
+              {project.illustration}
+            </div>
           </div>
         </div>
       </section>
@@ -277,5 +272,3 @@ export async function generateStaticParams() {
     slug: p.slug,
   }));
 }
-
-    

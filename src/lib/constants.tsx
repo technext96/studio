@@ -1,6 +1,123 @@
 
 import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Image as ImageIcon } from 'lucide-react';
 
+const AiMlIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <defs>
+        <linearGradient id="grad-aiml" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
+          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
+        </linearGradient>
+      </defs>
+      <path d="M256 96 C192 96 192 224 256 224 S 320 96 256 96" fill="none" stroke="url(#grad-aiml)" strokeWidth="2">
+        <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="10s" repeatCount="indefinite" />
+      </path>
+      <path d="M256 288 C192 288 192 416 256 416 S 320 288 256 288" fill="none" stroke="url(#grad-aiml)" strokeWidth="2">
+        <animateTransform attributeName="transform" type="rotate" from="360 256 256" to="0 256 256" dur="10s" repeatCount="indefinite" />
+      </path>
+      <circle cx="256" cy="256" r="32" fill="hsl(var(--primary))" />
+      <g fill="hsl(var(--foreground))" opacity="0.7">
+        <circle cx="256" cy="256" r="4" />
+      </g>
+    </svg>
+  );
+  
+  const AutomationIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <defs>
+        <linearGradient id="grad-auto" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
+          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="url(#grad-auto)" strokeWidth="4">
+        <path d="M 256,128 a 128,128 0 1,0 0,256 a 128,128 0 1,0 0,-256" opacity="0.5" />
+        <path d="M 256,160 a 96,96 0 1,0 0,192 a 96,96 0 1,0 0,-192" />
+      </g>
+      <Cog className="lucide lucide-cog text-primary" x="224" y="224" width="64" height="64">
+         <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="5s" repeatCount="indefinite" />
+      </Cog>
+    </svg>
+  );
+  
+  const OffshoreIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+       <defs>
+        <linearGradient id="grad-off" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
+          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
+        </linearGradient>
+      </defs>
+      <circle cx="256" cy="256" r="160" fill="none" stroke="url(#grad-off)" strokeWidth="2" opacity="0.3"/>
+      <circle cx="256" cy="256" r="120" fill="hsl(var(--primary) / 0.1)"/>
+      <Users className="lucide lucide-users text-primary" x="224" y="224" width="64" height="64" />
+      <g fill="hsl(var(--primary))">
+        <circle cx="120" cy="120" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" /></circle>
+        <circle cx="392" cy="120" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="1s"/></circle>
+        <circle cx="120" cy="392" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="2s"/></circle>
+        <circle cx="392" cy="392" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="3s"/></circle>
+      </g>
+    </svg>
+  );
+  
+  const CustomSoftwareIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M128 128 L384 128 L384 384 L128 384 Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" rx="10"/>
+        <polyline points="160,224 192,256 160,288" stroke="hsl(var(--primary))" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="224" y1="208" x2="256" y2="304" stroke="hsl(var(--primary))" strokeWidth="2"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+    </svg>
+  );
+  
+  const DevOpsIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <Cloud className="text-primary" x="128" y="128" width="256" height="256" strokeWidth="1" opacity="0.5">
+          <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
+        </Cloud>
+        <Cog className="text-primary" x="192" y="192" width="64" height="64">
+            <animateTransform attributeName="transform" type="rotate" from="0 224 224" to="360 224 224" dur="5s" repeatCount="indefinite"/>
+        </Cog>
+        <Rocket className="text-primary" x="256" y="256" width="64" height="64">
+            <animateTransform attributeName="transform" type="translate" values="0 0; -10 -10; 0 0" dur="2s" repeatCount="indefinite"/>
+        </Rocket>
+    </svg>
+  );
+  
+  const MarketingIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M 128 384 L 256 128 L 384 384 Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" />
+        <line x1="128" y1="384" x2="384" y2="384" stroke="hsl(var(--primary))" strokeWidth="2"/>
+        <circle cx="256" cy="256" r="32" fill="hsl(var(--primary) / 0.5)">
+           <animate attributeName="r" values="32;40;32" dur="3s" repeatCount="indefinite" />
+        </circle>
+    </svg>
+  );
+
+  const FintechIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const LogisticsIllustration = () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const AutomotiveIllustration = () => <Building className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const HealthcareIllustration = () => <HeartPulse className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const ManufacturingIllustration = () => <Factory className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const OilGasIllustration = () => <Fuel className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const InsuranceIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const TravelIllustration = () => <Plane className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const CybersecurityIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const EcommerceIllustration = () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const EducationIllustration = () => <BookOpen className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const MediaIllustration = () => <Clapperboard className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const RealEstateIllustration = () => <Home className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const TelecomIllustration = () => <Phone className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const GovernmentIllustration = () => <Building className="w-full h-full text-primary" strokeWidth="0.5"/>
+
+  const AiLearningIllustration = () => <GraduationCap className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const FoodDeliveryIllustration = () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const AiShoppingIllustration = () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const MedicalChatbotIllustration = () => <HeartPulse className="w-full h-full text-primary" strokeWidth="0.5"/>
+
+  const QuantumIllustration = () => <BrainCircuit className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const GenAiIllustration = () => <Bot className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const SpatialIllustration = () => <PencilRuler className="w-full h-full text-primary" strokeWidth="0.5"/>
+
 export const navLinks = [
     {
         title: "Services",
@@ -54,8 +171,7 @@ export const navLinks = [
         title: "Company",
         href: "/about",
         description: "We’re More Than a Team, We’re a Family. Expertly crafting reliable, scalable solutions focused on your long-term success.",
-        image: "https://placehold.co/300x400.png",
-        imageHint: "team family",
+        image: <TeamIllustration />,
         items: [
             { title: "About Us", href: "/about", icon: <Users />, description: "Solving business challenges through intelligent software solutions." },
             { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join a forward-thinking team that is building the future of software solutions." },
@@ -64,6 +180,32 @@ export const navLinks = [
         ]
     },
 ];
+
+const TeamIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
+      <g fill="none" stroke="hsl(var(--primary) / 0.2)">
+        <circle cx="256" cy="256" r="200" strokeWidth="1" />
+        <circle cx="256" cy="256" r="150" strokeWidth="1" />
+      </g>
+      <g fill="hsl(var(--primary))">
+        <circle cx="256" cy="106" r="30">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="156" cy="206" r="20">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="356" cy="206" r="20">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="186" cy="356" r="25">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+        <circle cx="326" cy="356" r="25">
+            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+      </g>
+    </svg>
+);
 
 
 export const services = [
@@ -74,8 +216,7 @@ export const services = [
     description: 'Custom AI and Machine Learning solutions to automate processes, gain insights, and drive business growth.',
     longDescription: "Leverage the power of Artificial Intelligence and Machine Learning to build intelligent applications, automate complex processes, and extract valuable insights from your data. Our experts deliver end-to-end AI solutions, from strategy to implementation.",
     icon: <BrainCircuit className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'artificial intelligence brain',
+    illustration: <AiMlIllustration />,
     subServices: [
         "AI Strategy & Consultation", "AI Development Services", "AI Chatbot Development",
         "Custom RAG Development", "Generative AI", "Secure & Private LLM Implementation",
@@ -89,8 +230,7 @@ export const services = [
     description: 'Streamline operations and boost efficiency with our Robotic Process Automation (RPA) consulting and integration.',
     longDescription: "Unlock new levels of efficiency by automating repetitive tasks and streamlining workflows. We provide expert RPA consulting and integration services using leading platforms to help you reduce costs and improve accuracy.",
     icon: <Cog className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'automation gears process',
+    illustration: <AutomationIllustration />,
     subServices: ["RPA Consulting & Integration", "HubSpot Automation", "Zoho Automation", "UIpath Development", "Opensource RPA Solutions"]
   },
   {
@@ -100,8 +240,7 @@ export const services = [
     description: 'Scale your team with our top-tier offshore developers and dedicated development teams.',
     longDescription: "Augment your team with our pre-vetted, elite tech professionals. We provide dedicated development teams and individual experts to help you accelerate your projects and scale your operations without the overhead of traditional hiring.",
     icon: <Group className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'global team collaboration',
+    illustration: <OffshoreIllustration />,
     subServices: ["Hire Developers", "Offshore Development Services", "Dedicated Development Team"]
   },
   {
@@ -111,8 +250,7 @@ export const services = [
     description: 'Bespoke web, mobile, and MVP solutions built to meet your specific business objectives.',
     longDescription: "We build tailored software solutions from the ground up to meet your unique business challenges. From rapid MVP development to scalable enterprise applications, our custom solutions are designed for performance, scalability, and success.",
     icon: <Code className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'web development code screen',
+    illustration: <CustomSoftwareIllustration />,
     subServices: ["MVP Development & Consulting", "Custom Web App Development", "Mobile App Development", "Job Portal Development"]
   },
   {
@@ -122,8 +260,7 @@ export const services = [
     description: 'Accelerate your software delivery lifecycle with our comprehensive DevOps services.',
     longDescription: "Our DevOps services bridge the gap between development and operations, enabling faster, more reliable software delivery. We implement CI/CD pipelines, containerization, and cloud automation to streamline your entire development lifecycle.",
     icon: <Cloud className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'cloud infrastructure devops',
+    illustration: <DevOpsIllustration />,
     subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "Containerization (Docker, Kubernetes)", "Cloud Automation", "Monitoring & Logging"]
   },
   {
@@ -133,28 +270,27 @@ export const services = [
     description: 'Data-driven digital marketing and automation services to fuel your growth.',
     longDescription: "Power your growth with our expert marketing services. We specialize in marketing automation, HubSpot services, and data-driven digital marketing campaigns to help you attract, engage, and delight your customers.",
     icon: <Zap className="w-10 h-10" />,
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'digital marketing analytics',
+    illustration: <MarketingIllustration />,
     subServices: ["HubSpot Services", "Marketing Automation", "Digital Marketing Strategy"]
   },
 ];
 
 export const industries = [
-    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, description: "We deliver secure, compliant, and innovative digital solutions for the financial industry. Our expertise in blockchain, AI, and mobile banking helps clients navigate the complex world of finance, from payment gateways to algorithmic trading platforms, ensuring robust security and a seamless user experience.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'financial technology dashboard' },
-    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, description: "Our solutions optimize supply chains with real-time tracking, warehouse management systems, and predictive analytics for demand forecasting. We help logistics companies enhance efficiency, reduce costs, and improve delivery times through intelligent automation and data-driven insights.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'logistics cargo ship' },
-    { slug: "automotive", title: "Automotive", icon: <Building/>, description: "We develop connected car platforms, fleet management software, and dealership management systems that drive the automotive industry forward. Our expertise in IoT, telematics, and data analytics enables us to build solutions that enhance vehicle performance, safety, and the driver experience.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'automotive technology car' },
-    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, description: "We create HIPAA-compliant software, telemedicine platforms, and AI-powered diagnostic tools to revolutionize patient care. Our solutions improve clinical workflows, secure patient data, and facilitate remote consultations, making healthcare more accessible and efficient.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'healthcare medical technology' },
-    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, description: "We build IIoT solutions, process automation software, and smart factory management systems to optimize production. By leveraging data analytics and machine learning, we help manufacturers implement predictive maintenance, improve quality control, and streamline their operations for Industry 4.0.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'manufacturing factory robot' },
-    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, description: "Our digital solutions for the oil and gas sector include digital twin technology, predictive maintenance platforms, and energy trading systems. We help companies optimize asset performance, enhance safety, and make data-driven decisions in a volatile market.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'oil rig platform' },
-    { slug: "insurance", title: "Insurance", icon: <Shield/>, description: "We build modern insurtech platforms, policy management systems, and AI-powered claims processing applications. Our solutions help insurers automate underwriting, detect fraud, and deliver personalized customer experiences in a competitive digital landscape.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'insurance protection concept' },
-    { slug: "travel", title: "Travel", icon: <Plane/>, description: "We create custom booking engines, travel management software, and personalized itinerary planners for the travel industry. Our solutions leverage AI to offer tailored recommendations, streamline reservations, and enhance the overall travel experience for customers.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'travel airplane sunset' },
-    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, description: "We develop advanced threat detection platforms, security automation tools, and secure software solutions to protect businesses from cyber threats. Our expertise in encryption, threat intelligence, and secure coding practices ensures the integrity and resilience of your digital assets.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'cybersecurity lock code' },
-    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, description: "We build custom e-commerce platforms, AI-driven recommendation engines, and personalized shopping experiences that boost sales. Our solutions integrate seamlessly with inventory management, payment gateways, and CRM systems to create a unified and engaging retail ecosystem.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'ecommerce online shopping' },
-    { slug: "education", title: "Education", icon: <BookOpen/>, description: "We design e-learning platforms, student information systems, and AI-powered tutoring applications to transform the educational landscape. Our technology fosters personalized learning, simplifies administration, and makes education more accessible and engaging for students of all ages.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'education online learning' },
-    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, description: "We build robust streaming platforms, content management systems (CMS), and royalty management software for the media industry. Our solutions support high-quality content delivery, digital rights management, and audience engagement analytics to help creators and distributors thrive.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'media entertainment cinema' },
-    { slug: "real-estate", title: "Real Estate", icon: <Home/>, description: "We develop property management software, VR property tours, and real estate analytics platforms that are changing the way people buy and sell property. Our technology provides immersive experiences, simplifies transactions, and offers data-driven insights for agents, buyers, and sellers.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'real estate modern house' },
-    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, description: "Our solutions for the telecommunications industry include OSS/BSS systems, network management tools, and customer self-service portals. We help telecom companies automate operations, manage network infrastructure, and improve the customer experience in a rapidly evolving sector.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'telecommunication tower' },
-    { slug: "government", title: "Government", icon: <Building/>, description: "We drive digital transformation for public services with secure data management solutions, citizen engagement platforms, and streamlined administrative systems. Our technology helps government agencies improve efficiency, transparency, and the delivery of services to the public.", imageUrl: 'https://placehold.co/600x400.png', imageHint: 'government building architecture' },
+    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, illustration: <FintechIllustration/>, description: "We deliver secure, compliant, and innovative digital solutions for the financial industry. Our expertise in blockchain, AI, and mobile banking helps clients navigate the complex world of finance, from payment gateways to algorithmic trading platforms, ensuring robust security and a seamless user experience." },
+    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, illustration: <LogisticsIllustration/>, description: "Our solutions optimize supply chains with real-time tracking, warehouse management systems, and predictive analytics for demand forecasting. We help logistics companies enhance efficiency, reduce costs, and improve delivery times through intelligent automation and data-driven insights." },
+    { slug: "automotive", title: "Automotive", icon: <Building/>, illustration: <AutomotiveIllustration/>, description: "We develop connected car platforms, fleet management software, and dealership management systems that drive the automotive industry forward. Our expertise in IoT, telematics, and data analytics enables us to build solutions that enhance vehicle performance, safety, and the driver experience." },
+    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, illustration: <HealthcareIllustration/>, description: "We create HIPAA-compliant software, telemedicine platforms, and AI-powered diagnostic tools to revolutionize patient care. Our solutions improve clinical workflows, secure patient data, and facilitate remote consultations, making healthcare more accessible and efficient." },
+    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, illustration: <ManufacturingIllustration/>, description: "We build IIoT solutions, process automation software, and smart factory management systems to optimize production. By leveraging data analytics and machine learning, we help manufacturers implement predictive maintenance, improve quality control, and streamline their operations for Industry 4.0." },
+    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, illustration: <OilGasIllustration/>, description: "Our digital solutions for the oil and gas sector include digital twin technology, predictive maintenance platforms, and energy trading systems. We help companies optimize asset performance, enhance safety, and make data-driven decisions in a volatile market." },
+    { slug: "insurance", title: "Insurance", icon: <Shield/>, illustration: <InsuranceIllustration/>, description: "We build modern insurtech platforms, policy management systems, and AI-powered claims processing applications. Our solutions help insurers automate underwriting, detect fraud, and deliver personalized customer experiences in a competitive digital landscape." },
+    { slug: "travel", title: "Travel", icon: <Plane/>, illustration: <TravelIllustration/>, description: "We create custom booking engines, travel management software, and personalized itinerary planners for the travel industry. Our solutions leverage AI to offer tailored recommendations, streamline reservations, and enhance the overall travel experience for customers." },
+    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, illustration: <CybersecurityIllustration/>, description: "We develop advanced threat detection platforms, security automation tools, and secure software solutions to protect businesses from cyber threats. Our expertise in encryption, threat intelligence, and secure coding practices ensures the integrity and resilience of your digital assets." },
+    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, illustration: <EcommerceIllustration/>, description: "We build custom e-commerce platforms, AI-driven recommendation engines, and personalized shopping experiences that boost sales. Our solutions integrate seamlessly with inventory management, payment gateways, and CRM systems to create a unified and engaging retail ecosystem." },
+    { slug: "education", title: "Education", icon: <BookOpen/>, illustration: <EducationIllustration/>, description: "We design e-learning platforms, student information systems, and AI-powered tutoring applications to transform the educational landscape. Our technology fosters personalized learning, simplifies administration, and makes education more accessible and engaging for students of all ages." },
+    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, illustration: <MediaIllustration/>, description: "We build robust streaming platforms, content management systems (CMS), and royalty management software for the media industry. Our solutions support high-quality content delivery, digital rights management, and audience engagement analytics to help creators and distributors thrive." },
+    { slug: "real-estate", title: "Real Estate", icon: <Home/>, illustration: <RealEstateIllustration/>, description: "We develop property management software, VR property tours, and real estate analytics platforms that are changing the way people buy and sell property. Our technology provides immersive experiences, simplifies transactions, and offers data-driven insights for agents, buyers, and sellers." },
+    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, illustration: <TelecomIllustration/>, description: "Our solutions for the telecommunications industry include OSS/BSS systems, network management tools, and customer self-service portals. We help telecom companies automate operations, manage network infrastructure, and improve the customer experience in a rapidly evolving sector." },
+    { slug: "government", title: "Government", icon: <Building/>, illustration: <GovernmentIllustration/>, description: "We drive digital transformation for public services with secure data management solutions, citizen engagement platforms, and streamlined administrative systems. Our technology helps government agencies improve efficiency, transparency, and the delivery of services to the public." },
 ];
 
 export const portfolio = [
@@ -163,8 +299,7 @@ export const portfolio = [
     title: 'AI-Powered On-Demand Learning Platform',
     category: 'On-demand eLearning & AI',
     excerpt: 'Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'e-learning platform interface',
+    illustration: <AiLearningIllustration/>,
     details: {
         useCase: "AI Coaching tool for students",
         industry: "On-demand eLearning",
@@ -211,8 +346,7 @@ export const portfolio = [
     title: 'Enatega - Open Source Food Delivery Solution',
     category: 'Retail & eCommerce',
     excerpt: 'The leading open-source food delivery solution for cafes and restaurants, offering full control and customization.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'food delivery app',
+    illustration: <FoodDeliveryIllustration/>,
     demoUrl: '#',
     purchaseUrl: '#',
     details: {
@@ -251,8 +385,7 @@ export const portfolio = [
     title: 'AI-Powered Shopping and Cooking',
     category: 'Retail & AI',
     excerpt: 'Enhancing grocery shopping experiences with an AI assistant for personalized recommendations and recipe generation.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'cooking ingredients kitchen',
+    illustration: <AiShoppingIllustration/>,
     summary: "To combat meal-planning fatigue and food waste, we developed an AI-powered mobile app that acts as a personal shopping and cooking assistant. Users get personalized recipes based on dietary needs and available ingredients, complete with an optimized shopping list.",
     details: {
         client: "FreshPicks",
@@ -271,8 +404,7 @@ export const portfolio = [
     title: 'Instant Medical Insights via AI Chatbot',
     category: 'Healthcare & AI',
     excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'doctor patient consultation',
+    illustration: <MedicalChatbotIllustration/>,
     summary: "Breast cancer patients need a reliable, 24/7 source of information. In partnership with oncologists, we developed a specialized AI chatbot trained on peer-reviewed medical literature to provide secure, evidence-based, and empathetic answers to non-diagnostic questions.",
     details: {
         client: "Hope & Heal Foundation",
@@ -303,8 +435,7 @@ export const blogPosts = [
     author: 'Dr. Evelyn Reed',
     date: '2024-07-22',
     excerpt: 'A beginner-friendly dive into the mind-bending world of quantum computing and its potential to revolutionize industries.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'quantum circuit',
+    illustration: <QuantumIllustration/>,
   },
   {
     slug: 'building-with-gen-ai',
@@ -313,8 +444,7 @@ export const blogPosts = [
     author: 'Jian Li',
     date: '2024-07-15',
     excerpt: 'Learn how to leverage large language models to build real-world applications that are both smart and scalable.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'neural network',
+    illustration: <GenAiIllustration/>,
   },
   {
     slug: 'the-rise-of-spatial-computing',
@@ -323,8 +453,7 @@ export const blogPosts = [
     author: 'Alex Chen',
     date: '2024-07-05',
     excerpt: 'Exploring how WebXR and new hardware are merging the digital and physical worlds, creating new immersive experiences.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'augmented reality',
+    illustration: <SpatialIllustration/>,
   },
 ];
 
@@ -350,6 +479,3 @@ export const homePageFaqs = [
         answer: "Yes, our partnership doesn't end at launch. We offer comprehensive support and maintenance packages to ensure your application remains secure, up-to-date, and performs optimally. We can provide ongoing technical support, bug fixes, performance monitoring, and help you plan and develop new features as your business grows."
     }
 ];
-    
-
-    
