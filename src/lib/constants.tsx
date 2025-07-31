@@ -1,13 +1,11 @@
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Image as ImageIcon } from 'lucide-react';
 
 export const navLinks = [
     {
         title: "Services",
         href: "/services",
         description: "Explore our comprehensive technology solutions.",
-        image: "https://placehold.co/300x400.png",
-        imageHint: "abstract technology",
         items: [
             { title: "AI/ML Services", href: "/services/ai-ml", icon: <BrainCircuit />, description: "Unlock the power of Artificial Intelligence." },
             { title: "Intelligent Automation", href: "/services/automation", icon: <Cog />, description: "Streamline your business processes." },
@@ -21,8 +19,6 @@ export const navLinks = [
         title: "Industries",
         href: "/industries",
         description: "Driving success across various sectors.",
-        image: "https://placehold.co/300x400.png",
-        imageHint: "cityscape technology",
         items: [
             { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck />, description: "Secure and innovative financial solutions." },
             { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart />, description: "Optimizing supply chain management." },
@@ -36,8 +32,6 @@ export const navLinks = [
         title: "Our Work",
         href: "/portfolio",
         description: "Our success stories and client achievements.",
-        image: "https://placehold.co/300x400.png",
-        imageHint: "successful project launch",
         items: [
              { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
              { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for cafes and restaurants." },
@@ -49,8 +43,6 @@ export const navLinks = [
         title: "Resources",
         href: "/blog",
         description: "Insights and knowledge from our experts.",
-        image: "https://placehold.co/300x400.png",
-        imageHint: "knowledge sharing library",
         items: [
              { title: "Blog", href: "/blog", icon: <Newspaper />, description: "Expert articles on AI, RPA, and custom software development." },
              { title: "Courses", href: "/blog", icon: <Video />, description: "Upskill your team with our hands-on tech courses and workshops." },
@@ -68,6 +60,7 @@ export const navLinks = [
             { title: "About Us", href: "/about", icon: <Users />, description: "Solving business challenges through intelligent software solutions." },
             { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join a forward-thinking team that is building the future of software solutions." },
             { title: "Contact Us", href: "/contact", icon: <Phone />, description: "Have questions in your mind, we are just a click away! Get in touch now." },
+            { title: "Photo Example", href: "/photo-example", icon: <ImageIcon />, description: "Learn how to add photos to your website." },
         ]
     },
 ];
