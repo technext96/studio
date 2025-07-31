@@ -86,7 +86,7 @@ export default function RootLayout({
         <div className="relative flex min-h-dvh flex-col bg-background">
           <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
           <Header />
-          <main className="flex-1 pt-24">{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <Toaster />

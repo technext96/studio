@@ -1,4 +1,5 @@
 
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -200,7 +201,7 @@ export default function PortfolioProjectPage({ params }: Props) {
 
   return (
     <>
-      <section className="w-full py-20 md:py-28 lg:py-36 bg-background relative overflow-hidden">
+      <section className="w-full py-20 md:py-28 lg:py-36 bg-background relative overflow-hidden pt-24">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-8 md:px-12 z-10 relative">
           <div className="max-w-5xl mx-auto">

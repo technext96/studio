@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { industries, portfolio } from "@/lib/constants";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
@@ -54,7 +55,7 @@ export default function IndustryPage({ params }: Props) {
 
     return (
         <>
-            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative">
+            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative pt-24">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 z-10 relative">
                     <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">

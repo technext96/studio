@@ -76,7 +76,6 @@ export default function Header() {
     return (
         <header className={cn(
             "fixed top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 transition-all duration-300",
-            isScrolled ? 'pt-0' : 'pt-8'
         )}>
              <div className={cn(
                 "bg-secondary/20 border-b border-border/40 transition-all duration-300",
@@ -93,7 +92,7 @@ export default function Header() {
                    </div>
                 </div>
             </div>
-            <div className="container flex h-16 max-w-none items-center justify-start px-4 gap-4 md:px-6 border-b border-border/40">
+            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
                 <Link href="/" className="mr-6 hidden lg:flex">
                     <Logo />
                 </Link>
@@ -161,7 +160,7 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                  <div className="hidden lg:flex flex-1 items-center justify-end gap-4">
-                    <NavigationMenu className="flex-shrink">
+                    <NavigationMenu className="flex-shrink-0">
                         <NavigationMenuList>
                             {navLinks.map((link) => (
                                 <NavigationMenuItem key={link.title}>

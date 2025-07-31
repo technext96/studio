@@ -66,7 +66,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-24 md:py-36 lg:py-48 relative overflow-hidden">
+        <section className="w-full pt-24 md:pt-36 lg:pt-48 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10"></div>
           <div className="px-8 md:px-12 z-20 relative">
