@@ -168,9 +168,9 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                 <ul className="grid gap-3 p-4 w-[350px]">
+                                                 <ul className={cn("grid gap-3 p-4 w-[450px]", (link.title === 'Services' || link.title === 'Industries') && 'md:grid-cols-2')}>
                                                      {link.image && (
-                                                        <li className="row-span-1">
+                                                        <li className="row-span-3">
                                                             <NavigationMenuLink asChild>
                                                                 <a className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md" href={link.href}>
                                                                     <div className="mb-2 mt-4 text-lg font-bold font-headline">{link.title}</div>
