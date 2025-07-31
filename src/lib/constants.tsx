@@ -118,6 +118,32 @@ const AiMlIllustration = () => (
   const GenAiIllustration = () => <Bot className="w-full h-full text-primary" strokeWidth="0.5"/>
   const SpatialIllustration = () => <PencilRuler className="w-full h-full text-primary" strokeWidth="0.5"/>
 
+const TeamIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
+      <g fill="none" stroke="hsl(var(--primary) / 0.2)">
+        <circle cx="256" cy="256" r="200" strokeWidth="1" />
+        <circle cx="256" cy="256" r="150" strokeWidth="1" />
+      </g>
+      <g fill="hsl(var(--primary))">
+        <circle cx="256" cy="106" r="30">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="156" cy="206" r="20">
+          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="356" cy="206" r="20">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
+        </circle>
+        <circle cx="186" cy="356" r="25">
+           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+        <circle cx="326" cy="356" r="25">
+            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
+        </circle>
+      </g>
+    </svg>
+);
+
 export const navLinks = [
     {
         title: "Services",
@@ -180,32 +206,6 @@ export const navLinks = [
         ]
     },
 ];
-
-const TeamIllustration = () => (
-    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
-      <g fill="none" stroke="hsl(var(--primary) / 0.2)">
-        <circle cx="256" cy="256" r="200" strokeWidth="1" />
-        <circle cx="256" cy="256" r="150" strokeWidth="1" />
-      </g>
-      <g fill="hsl(var(--primary))">
-        <circle cx="256" cy="106" r="30">
-          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="20s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="156" cy="206" r="20">
-          <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
-        </circle>
-        <circle cx="356" cy="206" r="20">
-           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="18s" repeatCount="indefinite" begin="-2s"/>
-        </circle>
-        <circle cx="186" cy="356" r="25">
-           <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
-        </circle>
-        <circle cx="326" cy="356" r="25">
-            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="22s" repeatCount="indefinite" begin="-4s"/>
-        </circle>
-      </g>
-    </svg>
-);
 
 
 export const services = [
