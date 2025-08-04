@@ -23,14 +23,14 @@ const siteUrl = 'https://technext96.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'TechNext | Custom Software & Web Development',
+    default: 'TechNext | Custom Software, AI, & Web Development Solutions',
     template: '%s | TechNext',
   },
-  description: 'TechNext is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
+  description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
   keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'TechNext', 'AI development', 'automation'],
   openGraph: {
-    title: 'TechNext | Custom Software & Web Development',
-    description: 'High-performance solutions for your business needs.',
+    title: 'TechNext | Custom Software, AI, & Web Development Solutions',
+    description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
