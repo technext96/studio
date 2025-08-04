@@ -1,6 +1,6 @@
 
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -163,7 +163,7 @@ export const navLinks = [
             { title: "Intelligent Automation", href: "/services/automation", icon: <Cog />, description: "Streamline your business processes." },
             { title: "Offshore Software Development", href: "/services/offshore", icon: <Group />, description: "Build your dream team with us." },
             { title: "Custom Software Development", href: "/services/custom-software", icon: <Code />, description: "Tailored solutions for your unique needs." },
-            { title: "DevOps", href: "/services/devops", icon: <Cloud />, description: "Accelerate your development lifecycle." },
+            { title: "Web Development Training", href: "/solutions/training-program", icon: <BookUser />, description: "A 6-month program to become a web developer." },
             { title: "Marketing Services", href: "/services/marketing", icon: <Zap />, description: "Grow your business with our expertise." },
         ]
     },
@@ -175,376 +175,354 @@ export const navLinks = [
             { title: "Fintech", href: "/industries/fintech", icon: <ShieldCheck />, description: "Secure and innovative financial solutions." },
             { title: "Logistics", href: "/industries/logistics", icon: <ShoppingCart />, description: "Optimizing supply chain management." },
             { title: "Healthcare", href: "/industries/healthcare", icon: <HeartPulse />, description: "Transforming patient care with technology." },
-            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory />, description: "Enhancing production and efficiency." },
-            { title: "Retail & eCommerce", href: "/industries/ecommerce", icon: <ShoppingCart />, description: "Creating seamless shopping experiences." },
-            { title: "Education", href: "/industries/education", icon: <GraduationCap />, description: "Empowering learning with AI." },
+            { title: "Manufacturing", href: "/industries/manufacturing", icon: <Factory />, description: "Automating and optimizing production lines." },
+            { title: "Education", href: "/industries/education", icon: <BookOpen />, description: "Innovative solutions for modern learning." },
+            { title: "Real Estate", href: "/industries/real-estate", icon: <Home />, description: "Digital tools for property management." },
         ]
     },
-    {
+     {
         title: "Our Work",
         href: "/portfolio",
-        description: "Our success stories and client achievements.",
+        description: "Explore our portfolio of successful projects and white-label solutions.",
         items: [
-             { title: "CampiX.AI - Ad Platform", href: "/solutions/campix", icon: <Bot />, description: "Your autonomous AI marketing department. Launch, manage, and scale ad campaigns." },
-             { title: "White-Label Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "Launch your own carpooling startup in a box. No coding needed." },
-             { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A proxy-proof QR code attendance system for events and businesses." },
-             { title: "AI Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming coaching barriers with AI-powered on-demand learning." },
-             { title: "Food Delivery Solution", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for restaurants." },
-        ]
-    },
-    {
-        title: "Resources",
-        href: "/blog",
-        description: "Insights and knowledge from our experts.",
-        items: [
-             { title: "Blog", href: "/blog", icon: <Newspaper />, description: "Expert articles on AI, RPA, and custom software development." },
+            { title: "Case Studies", href: "/portfolio", icon: <Briefcase />, description: "See how we've helped businesses succeed." },
+            { title: "Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "A white-label solution to launch your ride-sharing startup." },
+            { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A proxy-proof attendance system for modern workplaces." },
+            { title: "CampiX.AI", href: "/solutions/campix", icon: <Bot />, description: "An autonomous AI platform for ad campaigns." },
         ]
     },
     {
         title: "Company",
         href: "/about",
-        description: "We’re More Than a Team, We’re a Family. Expertly crafting reliable, scalable solutions focused on your long-term success.",
-        image: <TeamIllustration />,
+        description: "Learn more about our mission and team.",
         items: [
-            { title: "About Us", href: "/about", icon: <Users />, description: "Solving business challenges through intelligent software solutions." },
-            { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join a forward-thinking team that is building the future of software solutions." },
-            { title: "Contact Us", href: "/contact", icon: <Phone />, description: "Have questions in your mind, we are just a click away! Get in touch now." },
+            { title: "About Us", href: "/about", icon: <Users />, description: "Our mission, vision, and values." },
+            { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join our team of innovators." },
+            { title: "Contact Us", href: "/contact", icon: <Mail />, description: "Get in touch with our experts." },
         ]
     },
+     {
+        title: "Blog",
+        href: "/blog",
+    }
 ];
 
-
 export const services = [
-  {
-    slug: 'ai-ml',
-    title: 'AI/ML Services',
-    categoryFilter: 'AI',
-    description: 'Custom AI and Machine Learning solutions to automate processes, gain insights, and drive business growth.',
-    longDescription: "Leverage the power of Artificial Intelligence and Machine Learning to build intelligent applications, automate complex processes, and extract valuable insights from your data. Our experts deliver end-to-end AI solutions, from strategy to implementation.",
-    icon: <BrainCircuit className="w-10 h-10" />,
-    illustration: <AiMlIllustration />,
-    subServices: [
-        "AI Strategy & Consultation", "AI Development Services", "AI Chatbot Development",
-        "Custom RAG Development", "Generative AI", "Secure & Private LLM Implementation",
-        "Machine Learning Development", "MLops"
-    ]
-  },
-  {
-    slug: 'automation',
-    title: 'Intelligent Automation',
-    categoryFilter: 'Automation',
-    description: 'Streamline operations and boost efficiency with our Robotic Process Automation (RPA) consulting and integration.',
-    longDescription: "Unlock new levels of efficiency by automating repetitive tasks and streamlining workflows. We provide expert RPA consulting and integration services using leading platforms to help you reduce costs and improve accuracy.",
-    icon: <Cog className="w-10 h-10" />,
-    illustration: <AutomationIllustration />,
-    subServices: ["RPA Consulting & Integration", "HubSpot Automation", "Zoho Automation", "UIpath Development", "Opensource RPA Solutions"]
-  },
-  {
-    slug: 'offshore',
-    title: 'Offshore Software Development',
-    categoryFilter: 'Talent',
-    description: 'Scale your team with our top-tier offshore developers and dedicated development teams.',
-    longDescription: "Augment your team with our pre-vetted, elite tech professionals. We provide dedicated development teams and individual experts to help you accelerate your projects and scale your operations without the overhead of traditional hiring.",
-    icon: <Group className="w-10 h-10" />,
-    illustration: <OffshoreIllustration />,
-    subServices: ["Hire Developers", "Offshore Development Services", "Dedicated Development Team"]
-  },
-  {
-    slug: 'custom-software',
-    title: 'Custom Software Development',
-    categoryFilter: 'Web',
-    description: 'Bespoke web, mobile, and MVP solutions built to meet your specific business objectives.',
-    longDescription: "We build tailored software solutions from the ground up to meet your unique business challenges. From rapid MVP development to scalable enterprise applications, our custom solutions are designed for performance, scalability, and success.",
-    icon: <Code className="w-10 h-10" />,
-    illustration: <CustomSoftwareIllustration />,
-    subServices: ["MVP Development & Consulting", "Custom Web App Development", "Mobile App Development", "Job Portal Development"]
-  },
-  {
-    slug: 'devops',
-    title: 'DevOps',
-    categoryFilter: 'DevOps',
-    description: 'Accelerate your software delivery lifecycle with our comprehensive DevOps services.',
-    longDescription: "Our DevOps services bridge the gap between development and operations, enabling faster, more reliable software delivery. We implement CI/CD pipelines, containerization, and cloud automation to streamline your entire development lifecycle.",
-    icon: <Cloud className="w-10 h-10" />,
-    illustration: <DevOpsIllustration />,
-    subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "Containerization (Docker, Kubernetes)", "Cloud Automation", "Monitoring & Logging"]
-  },
-  {
-    slug: 'marketing',
-    title: 'Marketing Services',
-    categoryFilter: 'Marketing',
-    description: 'Data-driven digital marketing and automation services to fuel your growth.',
-    longDescription: "Power your growth with our expert marketing services. We specialize in marketing automation, HubSpot services, and data-driven digital marketing campaigns to help you attract, engage, and delight your customers.",
-    icon: <Zap className="w-10 h-10" />,
-    illustration: <MarketingIllustration />,
-    subServices: ["HubSpot Services", "Marketing Automation", "Digital Marketing Strategy"]
-  },
+    { 
+      slug: 'ai-ml', 
+      title: 'AI/ML Services', 
+      description: 'Leverage the power of Artificial Intelligence and Machine Learning to build intelligent applications.', 
+      longDescription: 'Our AI/ML services help you integrate cutting-edge artificial intelligence into your business operations. From predictive analytics and natural language processing to computer vision, we build custom models and solutions that drive efficiency, personalization, and innovation.',
+      icon: <BrainCircuit className="h-10 w-10"/>, 
+      illustration: <AiMlIllustration />,
+      subServices: ["Natural Language Processing", "Predictive Analytics", "Computer Vision", "Recommendation Engines", "Custom AI Model Development", "Generative AI"]
+    },
+    { 
+      slug: 'automation', 
+      title: 'Intelligent Automation', 
+      description: 'Streamline your business processes and reduce manual effort with our automation solutions.', 
+      longDescription: 'We design and implement intelligent automation systems that streamline your workflows, reduce operational costs, and minimize human error. Our solutions range from robotic process automation (RPA) to complex, AI-driven workflow orchestration, freeing up your team to focus on high-value tasks.',
+      icon: <Cog className="h-10 w-10"/>, 
+      illustration: <AutomationIllustration />,
+      subServices: ["Robotic Process Automation (RPA)", "Business Process Automation (BPA)", "AI-Powered Workflow Orchestration", "Automated Data Entry & Processing", "Chatbot & Virtual Assistant Integration"]
+    },
+    { 
+      slug: 'offshore', 
+      title: 'Offshore Software Development', 
+      description: 'Build a dedicated, high-performing development team with our offshore services.', 
+      longDescription: "Expand your development capacity with our flexible offshore team model. We provide access to a pool of highly skilled, vetted engineers who integrate seamlessly with your existing team. Whether you need to scale for a specific project or build a long-term dedicated team, we offer a cost-effective and efficient solution.",
+      icon: <Users className="h-10 w-10"/>, 
+      illustration: <OffshoreIllustration />,
+      subServices: ["Dedicated Development Teams", "Staff Augmentation", "Project-Based Outsourcing", "Offshore QA & Testing", "Long-term Technical Partnerships"]
+    },
+    { 
+      slug: 'custom-software', 
+      title: 'Custom Software Development', 
+      description: 'Get tailor-made software solutions designed specifically for your unique business needs.', 
+      longDescription: 'We specialize in building bespoke software solutions from the ground up. Our team works closely with you to understand your unique challenges and opportunities, delivering a product that is perfectly aligned with your vision. We handle the full lifecycle, from ideation and design to development, deployment, and support.',
+      icon: <Code className="h-10 w-10"/>, 
+      illustration: <CustomSoftwareIllustration />,
+      subServices: ["Enterprise Software Development", "SaaS Application Development", "API & Systems Integration", "Product Prototyping & MVP", "Cloud-Native Applications"]
+    },
+    { 
+      slug: 'devops', 
+      title: 'DevOps & Cloud Solutions', 
+      description: 'Accelerate your development lifecycle and improve application reliability with our DevOps expertise.', 
+      longDescription: 'Our DevOps services help you build a culture of collaboration and automation, accelerating your development pipeline while improving security and reliability. We implement CI/CD, containerization, and infrastructure-as-code to ensure you can deliver high-quality software faster and more consistently.',
+      icon: <Cloud className="h-10 w-10"/>, 
+      illustration: <DevOpsIllustration />,
+      subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "Cloud Migration & Management", "Containerization (Docker, Kubernetes)", "Performance Monitoring & Optimization"]
+    },
+    { 
+      slug: 'marketing', 
+      title: 'Digital Marketing Services', 
+      description: 'Grow your online presence and reach your target audience with our data-driven marketing strategies.', 
+      longDescription: 'Our digital marketing services are designed to enhance your online visibility and drive measurable growth. We combine technical SEO, content marketing, and performance advertising to create a holistic strategy that attracts, engages, and converts your target audience, maximizing your return on investment.',
+      icon: <Zap className="h-10 w-10"/>, 
+      illustration: <MarketingIllustration />,
+      subServices: ["Search Engine Optimization (SEO)", "Content Marketing", "Pay-Per-Click (PPC) Advertising", "Social Media Management", "Conversion Rate Optimization (CRO)"]
+    }
 ];
 
 export const industries = [
-    { slug: "fintech", title: "Fintech", icon: <ShieldCheck/>, illustration: <FintechIllustration/>, description: "We deliver secure, compliant, and innovative digital solutions for the financial industry. Our expertise in blockchain, AI, and mobile banking helps clients navigate the complex world of finance, from payment gateways to algorithmic trading platforms, ensuring robust security and a seamless user experience." },
-    { slug: "logistics", title: "Logistics", icon: <ShoppingCart/>, illustration: <LogisticsIllustration/>, description: "Our solutions optimize supply chains with real-time tracking, warehouse management systems, and predictive analytics for demand forecasting. We help logistics companies enhance efficiency, reduce costs, and improve delivery times through intelligent automation and data-driven insights." },
-    { slug: "automotive", title: "Automotive", icon: <Building/>, illustration: <AutomotiveIllustration/>, description: "We develop connected car platforms, fleet management software, and dealership management systems that drive the automotive industry forward. Our expertise in IoT, telematics, and data analytics enables us to build solutions that enhance vehicle performance, safety, and the driver experience." },
-    { slug: "healthcare", title: "Healthcare", icon: <HeartPulse/>, illustration: <HealthcareIllustration/>, description: "We create HIPAA-compliant software, telemedicine platforms, and AI-powered diagnostic tools to revolutionize patient care. Our solutions improve clinical workflows, secure patient data, and facilitate remote consultations, making healthcare more accessible and efficient." },
-    { slug: "manufacturing", title: "Manufacturing", icon: <Factory/>, illustration: <ManufacturingIllustration/>, description: "We build IIoT solutions, process automation software, and smart factory management systems to optimize production. By leveraging data analytics and machine learning, we help manufacturers implement predictive maintenance, improve quality control, and streamline their operations for Industry 4.0." },
-    { slug: "oil-gas", title: "Oil and Gas", icon: <Fuel/>, illustration: <OilGasIllustration/>, description: "Our digital solutions for the oil and gas sector include digital twin technology, predictive maintenance platforms, and energy trading systems. We help companies optimize asset performance, enhance safety, and make data-driven decisions in a volatile market." },
-    { slug: "insurance", title: "Insurance", icon: <Shield/>, illustration: <InsuranceIllustration/>, description: "We build modern insurtech platforms, policy management systems, and AI-powered claims processing applications. Our solutions help insurers automate underwriting, detect fraud, and deliver personalized customer experiences in a competitive digital landscape." },
-    { slug: "travel", title: "Travel", icon: <Plane/>, illustration: <TravelIllustration/>, description: "We create custom booking engines, travel management software, and personalized itinerary planners for the travel industry. Our solutions leverage AI to offer tailored recommendations, streamline reservations, and enhance the overall travel experience for customers." },
-    { slug: "cybersecurity", title: "Cybersecurity", icon: <ShieldCheck/>, illustration: <CybersecurityIllustration/>, description: "We develop advanced threat detection platforms, security automation tools, and secure software solutions to protect businesses from cyber threats. Our expertise in encryption, threat intelligence, and secure coding practices ensures the integrity and resilience of your digital assets." },
-    { slug: "ecommerce", title: "Retail & eCommerce", icon: <ShoppingCart/>, illustration: <EcommerceIllustration/>, description: "We build custom e-commerce platforms, AI-driven recommendation engines, and personalized shopping experiences that boost sales. Our solutions integrate seamlessly with inventory management, payment gateways, and CRM systems to create a unified and engaging retail ecosystem." },
-    { slug: "education", title: "Education", icon: <BookOpen/>, illustration: <EducationIllustration/>, description: "We design e-learning platforms, student information systems, and AI-powered tutoring applications to transform the educational landscape. Our technology fosters personalized learning, simplifies administration, and makes education more accessible and engaging for students of all ages." },
-    { slug: "media-entertainment", title: "Media & Entertainment", icon: <Clapperboard/>, illustration: <MediaIllustration/>, description: "We build robust streaming platforms, content management systems (CMS), and royalty management software for the media industry. Our solutions support high-quality content delivery, digital rights management, and audience engagement analytics to help creators and distributors thrive." },
-    { slug: "real-estate", title: "Real Estate", icon: <Home/>, illustration: <RealEstateIllustration/>, description: "We develop property management software, VR property tours, and real estate analytics platforms that are changing the way people buy and sell property. Our technology provides immersive experiences, simplifies transactions, and offers data-driven insights for agents, buyers, and sellers." },
-    { slug: "telecom", title: "Telecommunication", icon: <Phone/>, illustration: <TelecomIllustration/>, description: "Our solutions for the telecommunications industry include OSS/BSS systems, network management tools, and customer self-service portals. We help telecom companies automate operations, manage network infrastructure, and improve the customer experience in a rapidly evolving sector." },
-    { slug: "government", title: "Government", icon: <Building/>, illustration: <GovernmentIllustration/>, description: "We drive digital transformation for public services with secure data management solutions, citizen engagement platforms, and streamlined administrative systems. Our technology helps government agencies improve efficiency, transparency, and the delivery of services to the public." },
+    { slug: 'fintech', title: 'Fintech', description: 'Secure, scalable, and compliant solutions for the financial industry.', icon: <ShieldCheck className="w-10 h-10"/>, illustration: <FintechIllustration />},
+    { slug: 'logistics', title: 'Logistics', description: 'Optimizing supply chains with real-time tracking and automation.', icon: <ShoppingCart className="w-10 h-10"/>, illustration: <LogisticsIllustration /> },
+    { slug: 'automotive', title: 'Automotive', description: 'Connected car platforms and dealership management systems.', icon: <Building className="w-10 h-10"/>, illustration: <AutomotiveIllustration /> },
+    { slug: 'healthcare', title: 'Healthcare', description: 'HIPAA-compliant software for telehealth and patient management.', icon: <HeartPulse className="w-10 h-10"/>, illustration: <HealthcareIllustration /> },
+    { slug: 'manufacturing', title: 'Manufacturing', description: 'IIoT solutions for smart factories and predictive maintenance.', icon: <Factory className="w-10 h-10"/>, illustration: <ManufacturingIllustration /> },
+    { slug: 'oil-gas', title: 'Oil & Gas', description: 'Data analytics and automation for exploration and production.', icon: <Fuel className="w-10 h-10"/>, illustration: <OilGasIllustration /> },
+    { slug: 'insurance', title: 'Insurance', description: 'AI-powered claims processing and policy management systems.', icon: <Shield className="w-10 h-10"/>, illustration: <InsuranceIllustration /> },
+    { slug: 'travel', title: 'Travel & Hospitality', description: 'Booking engines, and guest management platforms.', icon: <Plane className="w-10 h-10"/>, illustration: <TravelIllustration /> },
+    { slug: 'cybersecurity', title: 'Cybersecurity', description: 'Advanced threat detection and security automation tools.', icon: <ShieldCheck className="w-10 h-10"/>, illustration: <CybersecurityIllustration /> },
+    { slug: 'ecommerce', title: 'E-commerce', description: 'Scalable online stores and AI-powered recommendation engines.', icon: <ShoppingCart className="w-10 h-10"/>, illustration: <EcommerceIllustration /> },
+    { slug: 'education', title: 'Education', description: 'E-learning platforms and student information systems.', icon: <BookOpen className="w-10 h-10"/>, illustration: <EducationIllustration /> },
+    { slug: 'media', title: 'Media & Entertainment', description: 'Content management systems and streaming platforms.', icon: <Clapperboard className="w-10 h-10"/>, illustration: <MediaIllustration /> },
+    { slug: 'real-estate', title: 'Real Estate', description: 'Property management software and virtual tour solutions.', icon: <Home className="w-10 h-10"/>, illustration: <RealEstateIllustration /> },
+    { slug: 'telecom', title: 'Telecommunications', description: 'Network management and customer support automation.', icon: <Phone className="w-10 h-10"/>, illustration: <TelecomIllustration /> },
+    { slug: 'government', title: 'Government', description: 'Secure and efficient digital services for public sector agencies.', icon: <Building className="w-10 h-10"/>, illustration: <GovernmentIllustration /> }
 ];
 
 export const portfolio = [
-  {
-    slug: 'ai-on-demand-learning-platform',
-    title: 'AI-Powered On-Demand Learning Platform',
-    category: 'On-demand eLearning & AI',
-    excerpt: 'Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning.',
-    illustration: <AiLearningIllustration/>,
-    details: {
-        useCase: "AI Coaching tool for students",
-        industry: "On-demand eLearning",
-        headquarters: "Germany",
-        product: "AI-Powered On-Demand Coaching Tool",
-        results: "Personalized Learning Experience with Easy Access"
-    },
-    summary: "The AI-powered coaching tool helps students learn interactively while ensuring age-appropriate content through behavior analysis. It features an admin panel for teachers to register subjects and a student panel for AI-driven tutoring. To enhance accessibility, we developed PWA with a chat-based interface, personalized learning plans, multilingual support, and Stripe payment integration. This platform allows students to easily sign up, purchase subscriptions, and engage in adaptive learning.",
-    solutions: {
-        forStudents: [
-            { title: "Easy Sign-Up & Profile Management", description: "Easily register or log in using email and password. Update your details, track your progress, and check your subscription status—all in one place." },
-            { title: "Subscription Management", description: "Users can simply manage their subscription plans, obtain clear pricing details, and renew them." },
-            { title: "Secure Payment Integration", description: "Integrated Stripe for seamless transactions. Students can purchase and use tokens for AI tutor interactions." },
-            { title: "Subject-Specific Tutors", description: "The platform offers quick access to diverse AI tutors specializing in Math, Science, History, and many more subjects." },
-            { title: "Interactive Chat System", description: "The platform features an interactive chat system for seamless learning. It also allows students to easily reference previous conversations through message threading." },
-            { title: "Instant Q&A Sessions", description: "AI tutors offer instant feedback and real-time text-based answers. Students can also receive push notifications for new messages and updates." }
+    { 
+        slug: 'ai-learning-platform', 
+        title: 'AI-Powered Adaptive Learning Platform', 
+        category: 'Education Technology',
+        excerpt: 'A platform that uses AI to create personalized learning paths for students, adapting to their pace and style for improved outcomes.',
+        illustration: <AiLearningIllustration/>,
+        details: {
+            useCase: "AI Tutor & Course Builder",
+            industry: "Education",
+            headquarters: "San Francisco, USA",
+            product: "Web & Mobile Platform",
+            results: "40% increase in student engagement",
+            timeline: "8 months",
+        },
+        summary: "We partnered with an EdTech visionary to build a platform that revolutionizes online learning. The system uses machine learning algorithms to analyze student performance in real-time, identifying strengths and weaknesses to dynamically adjust the curriculum. This ensures that every student receives a truly personalized education.",
+        solutions: {
+            forStudents: [
+                { title: "Personalized Learning Paths", description: "The AI creates a unique learning journey for each student, focusing on areas that need improvement." },
+                { title: "Interactive Content", description: "Engaging video lessons, quizzes, and assignments to make learning fun and effective." },
+                { title: "Real-time Feedback", description: "Instant feedback on assignments helps students understand their mistakes and learn faster." },
+            ],
+            forAdmins: [
+                 { title: "Automated Course Creation", description: "AI assists instructors in creating and structuring course content, saving time and effort." },
+                 { title: "Performance Analytics", description: "A comprehensive dashboard provides deep insights into student performance and engagement." },
+                 { title: "Secure & Scalable", description: "The platform is built on a modern, scalable architecture to handle a growing user base." },
+            ]
+        },
+        usps: [
+            { title: "Truly Adaptive Learning", description: "Unlike static courses, our platform continuously adapts to each student's needs, creating a more effective learning experience." },
+            { title: "AI-Powered Content Curation", description: "The AI can suggest relevant articles, videos, and exercises from around the web to supplement the core curriculum." },
+            { title: "Predictive Analytics", description: "The system can predict which students are at risk of falling behind, allowing instructors to intervene proactively." }
         ],
-        forAdmins: [
-            { title: "AI Tutor Setup & Customization", description: "Admins can create, edit, and manage AI tutor profiles, prompts, and subjects." },
-            { title: "Specialized Instructions", description: "AI tutors can be configured with unique teaching styles, personality traits, and predefined responses." },
-            { title: "User Controls", description: "Admins can easily view, edit, block, and unblock student accounts." },
-            { title: "Performance Insights", description: "Track student engagement, AI tutor effectiveness, and subscription trends." },
-            { title: "Report Generation", description: "Generate data-driven insights for platform optimization." }
+        techStack: ["Next.js", "React Native", "Python (Django)", "PostgreSQL", "TensorFlow", "AWS"],
+        impacts: [
+            { title: "Increased Engagement", description: "Gamified elements and personalized content led to a 40% increase in daily active users." },
+            { title: "Improved Outcomes", description: "Students using the platform showed a 25% improvement in test scores compared to traditional online courses." }
+        ],
+        faq: [
+            { question: "Is the platform mobile-friendly?", answer: "Yes, we developed both a responsive web application and native mobile apps for iOS and Android." },
+            { question: "How does the AI personalization work?", answer: "It uses a combination of collaborative filtering and content-based models to recommend the most relevant learning materials for each student." }
+        ],
+        demoUrl: "https://www.youtube.com/@technext-096",
+        purchaseUrl: "https://codecanyon.net/user/technext-96/portfolio"
+    },
+    { 
+        slug: 'food-delivery-super-app', 
+        title: 'Scalable Food Delivery Super App', 
+        category: 'Logistics & E-commerce',
+        excerpt: 'A comprehensive food delivery platform with separate apps for customers, restaurants, and drivers, all managed by a powerful admin panel.',
+        illustration: <FoodDeliveryIllustration/>,
+        summary: "This project involved creating a full-featured food delivery ecosystem. We built a customer-facing app for ordering, a restaurant app for managing menus and orders, a driver app for handling deliveries, and a central admin panel to oversee the entire operation. The system is designed for high scalability and performance.",
+        keyFeatures: [
+            "Real-time order tracking",
+            "Multi-language and currency support",
+            "Stripe and PayPal integration",
+            "Push notifications for order status",
+            "Driver location tracking",
+            "Commission and payout management"
+        ],
+        demoUrl: "https://www.youtube.com/@technext-096",
+    },
+    { 
+        slug: 'ai-powered-shopping-assistant', 
+        title: 'AI-Powered Personal Shopping Assistant', 
+        category: 'E-commerce & AI',
+        excerpt: 'An AI chatbot that helps users find the perfect product through conversational search, offering personalized recommendations and style advice.',
+        illustration: <AiShoppingIllustration/>,
+        summary: "We developed an AI-driven chatbot for a major e-commerce platform to enhance the user shopping experience. The chatbot understands natural language queries, asks clarifying questions, and provides personalized product recommendations based on user preferences, browsing history, and current trends.",
+        keyFeatures: [
+            "Natural Language Understanding (NLU)",
+            "Conversational product search",
+            "Personalized recommendations",
+            "Integration with e-commerce backend",
+            "Style and fit advice",
+            "Order tracking via chat"
         ]
     },
-    usps: [
-        { title: "Interactive Learning Environment", description: "Obtain real-time interactions, personalized recommendations, and customized learning paths tailored to each student's behavior." },
-        { title: "24/7 AI Tutor Availability", description: "Access your learning and AI tutors anytime and from anywhere while ensuring that students receive guidance without time restrictions." },
-        { title: "Cross-Platform Accessibility", description: "The PWA allows students to access the platform on any device, such as smartphones, tablets, or desktops, to ensure a seamless experience across all screen sizes." },
-        { title: "Age-Appropriate Learning Content", description: "The platform intelligently analyzes student behavior and provides content tailored to their age group and educational level." },
-        { title: "Career Guidance & Skill Development", description: "Get the career orientation tools that help students explore interests and potential career paths based on their interests and preferences." },
-        { title: "Data Security & Privacy", description: "Your privacy is important; that's why the platform protects your child's data and ensures a secure learning environment." }
-    ],
-    techStack: ["Node.js", "OpenAI API", "Swift", "ChatGPT"],
-    impacts: [
-        { title: "Enhanced User Experience", description: "AI-driven tutoring offers an easy-to-use interface that improves the learning experience. It provides personalized learning paths and interactive features, making education more engaging and effective." },
-        { title: "Greater User Retention", description: "The platform’s hyper-personalized coaching sessions are adapted to individual learning styles. This approach keeps students engaged and reduces dropout rates. As a result, long-term learning outcomes improve." },
-        { title: "Cost & Effort Savings", description: "The platform’s process automation reduced the need for manual work, lessened administrative tasks, and lowered costs. This change allowed teachers to spend more time on teaching instead of repeating tasks." },
-        { title: "Data Security Compliance", description: "The system has strong security measures to protect user data. It uses encrypted logins, stores data securely, and follows global privacy rules. This ensures that user information stays safe at all times." }
-    ]
-  },
-  {
-    slug: 'enatega-food-delivery',
-    title: 'Enatega - Open Source Food Delivery Solution',
-    category: 'Retail & eCommerce',
-    excerpt: 'The leading open-source food delivery solution for cafes and restaurants, offering full control and customization.',
-    illustration: <FoodDeliveryIllustration/>,
-    demoUrl: '#',
-    purchaseUrl: '#',
-    details: {
-        useCase: "Multi-vendor Food Delivery",
-        industry: "Retail & eCommerce",
-        product: "Open Source Delivery Platform",
-        results: "Launched 100+ stores, saved $100k in commissions"
-    },
-    summary: "Enatega is a comprehensive open-source food delivery solution that gives businesses full control over their platform. It enables a rapid launch (in as little as 5 days), offers deep customization to meet specific needs, and includes lifetime updates—all with complete code ownership.",
-    keyFeatures: [
-        "Full Source Code Ownership", "No Additional or Hidden Charges", "All Essential Apps Included (Customer, Rider, Restaurant)",
-        "Powerful Admin Dashboard", "Lifetime Updates", "2 Hours Free Technical Consultation"
-    ],
-    techStack: ["React Native", "Node.js", "GraphQL", "MongoDB", "Firebase"],
-    impacts: [
-        { title: "Significant Cost Savings", description: "Clients have saved over $100,000 in commissions by owning their platform instead of relying on third-party services." },
-        { title: "Rapid Market Entry", description: "The streamlined deployment process allows businesses to launch a fully functional delivery service in under two weeks." },
-        { title: "Proven Scalability", description: "One client, Yalla, achieved 60,000 active users in their first year, demonstrating the platform's robustness and scalability." },
-        { title: "High User Adoption", description: "The modern, feature-rich, and beautifully designed UI across all apps has led to a 4.7/5 rating from over 150+ users." }
-    ],
-    faq: [
-        { question: "Is your solution completely open-source?", answer: "Enatega’s frontend is fully open-source. Our backend, though proprietary, is shared with you during every new release, ensuring your system remains updated." },
-        { question: "What is Enatega and how does it work?", answer: "Enatega is a full-fledged food delivery solution that includes a customer app, rider app, restaurant app, and a powerful admin dashboard to manage the entire ecosystem." },
-        { question: "Does your solution offer customization?", answer: "Yes, absolutely. With full source code ownership, you can customize the platform to fit your specific business needs. We also partner with Ninjas Code for expert customization services." },
-        { question: "Where can I find tutorials & demo guides?", answer: "We provide live demos and thorough documentation to give you a complete overview of how Enatega works, ensuring you can set up with confidence." },
-        { question: "Can the software be used for any location?", answer: "Yes, Enatega is location-agnostic and supports multiple currencies, making it suitable for businesses anywhere in the world." },
-        { question: "Does the software support cash payments? What payment methods are supported?", answer: "Yes, it supports cash on delivery. It also integrates with major payment gateways like Stripe and PayPal for credit/debit card payments." },
-        { question: "Can I make changes to the app myself?", answer: "Yes, you receive the full source code, allowing you or your development team to make any changes you need." },
-        { question: "What kind of support do you offer after the purchase?", answer: "We offer 2 hours of free technical consultation for deployment or configuration. For further support, we have dedicated plans and also offer assistance through our partners." },
-        { question: "Are there any ongoing updates or maintenance plans available?", answer: "You get free lifetime updates with your purchase. We continually roll out new features and security patches to keep your platform modern and secure." },
-        { question: "Once I purchase the backend license, does Enatega have any claims to the ownership?", answer: "No. Once you purchase, you have complete ownership of the code and the platform. There are no recurring fees or claims from our side." },
-    ]
-  },
-  {
-    slug: 'ai-shopping-cooking',
-    title: 'AI-Powered Shopping and Cooking',
-    category: 'Retail & AI',
-    excerpt: 'Enhancing grocery shopping experiences with an AI assistant for personalized recommendations and recipe generation.',
-    illustration: <AiShoppingIllustration/>,
-    summary: "To combat meal-planning fatigue and food waste, we developed an AI-powered mobile app that acts as a personal shopping and cooking assistant. Users get personalized recipes based on dietary needs and available ingredients, complete with an optimized shopping list.",
-    details: {
-        client: "FreshPicks",
-        timeline: "4 Months",
-        industry: "Retail & eCommerce",
-        product: "AI Cooking & Shopping Assistant App"
-    },
-    keyFeatures: [
-        "Personalized Recipe Generation", "Dietary Preference Filtering", "Pantry Inventory Management",
-        "Automated Shopping List Creation", "Ingredient Substitution Suggestions", "Integration with Online Grocery Retailers"
-    ],
-    techStack: ["React Native", "Firebase", "Genkit", "Google Vision API"],
-  },
-  {
-    slug: 'medical-insights-chatbot',
-    title: 'Instant Medical Insights via AI Chatbot',
-    category: 'Healthcare & AI',
-    excerpt: 'Providing breast cancer patients with secure and evidence-based answers to their most pressing questions.',
-    illustration: <MedicalChatbotIllustration/>,
-    summary: "Breast cancer patients need a reliable, 24/7 source of information. In partnership with oncologists, we developed a specialized AI chatbot trained on peer-reviewed medical literature to provide secure, evidence-based, and empathetic answers to non-diagnostic questions.",
-    details: {
-        client: "Hope & Heal Foundation",
-        timeline: "7 Months",
-        industry: "Healthcare",
-        product: "AI Medical Information Chatbot"
-    },
-    keyFeatures: [
-        "Trained on Vetted Medical Literature", "Secure and Confidential", "Empathetic and Natural Language Conversation",
-        "Information on Treatments & Side Effects", "Resource Links to Trusted Organizations", "Admin Dashboard for Content Curation"
-    ],
-    techStack: ["Genkit", "Pinecone", "Next.js", "GCP"],
-  },
-];
-
-
-export const valuePropositions = [
-    { title: 'Agile Methodology', description: 'We adapt to changing requirements and deliver value incrementally, keeping you in the loop at every stage.' },
-    { title: 'Quality First', description: 'Our rigorous testing and QA processes ensure your product is reliable, secure, and bug-free.' },
-    { title: 'Transparent Communication', description: 'We believe in open and honest communication, providing regular updates and clear roadmaps.' },
+    { 
+        slug: 'telehealth-chatbot', 
+        title: 'HIPAA-Compliant Medical Chatbot', 
+        category: 'Healthcare & AI',
+        excerpt: 'An intelligent chatbot that provides initial patient screening, answers common medical questions, and schedules appointments, all within a secure, HIPAA-compliant environment.',
+        illustration: <MedicalChatbotIllustration/>,
+        summary: "Our team built a sophisticated medical chatbot for a healthcare provider to improve patient engagement and reduce the load on support staff. The chatbot is trained on a vast medical knowledge base and can handle a wide range of queries, from symptom checking to appointment booking, while ensuring patient data is always secure.",
+        keyFeatures: [
+            "HIPAA-compliant data handling",
+            "AI-driven symptom checker",
+            "Appointment scheduling",
+            "Medication reminder notifications",
+            "Integration with EHR systems",
+            "24/7 patient support"
+        ]
+    }
 ];
 
 export const blogPosts = [
-  {
-    slug: 'floating-whatsapp-fab',
-    title: 'How to Add a Floating WhatsApp FAB to Your Website or App',
-    category: 'Tutorial',
-    author: 'TechNext Team',
-    date: '2025-08-04',
-    excerpt: 'Boost your conversions by adding a floating WhatsApp button with a pre-filled greeting to your website or mobile app. Learn how in just 5 minutes.',
-    illustration: <WhatsAppFabIllustration/>,
-  },
-  {
-    slug: 'devops-culture-not-just-tools',
-    title: 'DevOps Is a Culture, Not Just a Toolbox',
-    category: 'DevOps',
-    author: 'Maria Rodriguez',
-    date: '2024-06-28',
-    excerpt: 'Beyond CI/CD pipelines: How fostering a collaborative culture is the key to true DevOps success and faster, more reliable releases.',
-    illustration: <DevopsCultureIllustration/>,
-  },
-  {
-    slug: 'microservices-vs-monoliths',
-    title: 'Microservices vs. Monolith: Choosing the Right Architecture',
-    category: 'Architecture',
-    author: 'David Kim',
-    date: '2024-06-20',
-    excerpt: 'A pragmatic guide to understanding the trade-offs between monolithic and microservices architectures for your next project.',
-    illustration: <MicroservicesIllustration/>,
-  },
-  {
-    slug: 'the-future-is-serverless',
-    title: 'The Future Is Serverless: A 2025 Perspective',
-    category: 'Cloud',
-    author: 'Priya Patel',
-    date: '2024-06-12',
-    excerpt: 'How serverless computing is reducing operational overhead and enabling developers to build highly scalable applications at a lower cost.',
-    illustration: <ServerlessIllustration/>,
-  },
-  {
-    slug: 'web3-beyond-the-hype',
-    title: 'Web3 and Decentralization: Beyond the Hype',
-    category: 'Future Tech',
-    author: 'Sam Carter',
-    date: '2024-06-05',
-    excerpt: 'Cutting through the noise to explore the real-world applications of blockchain, smart contracts, and decentralized identity.',
-    illustration: <Web3Illustration/>,
-  },
-  {
-    slug: 'green-tech-sustainable-software',
-    title: 'Green Tech: Building Sustainable Software',
-    category: 'Cloud',
-    author: 'Anya Sharma',
-    date: '2024-05-29',
-    excerpt: 'How optimizing code, choosing efficient infrastructure, and adopting sustainable practices can reduce the carbon footprint of your applications.',
-    illustration: <GreenTechIllustration/>,
-  },
-  {
-    slug: 'no-code-low-code-revolution',
-    title: 'The No-Code/Low-Code Revolution: Empowering Citizen Developers',
-    category: 'Automation',
-    author: 'Ben Thompson',
-    date: '2024-05-21',
-    excerpt: 'Exploring how no-code and low-code platforms are democratizing software development and accelerating business innovation.',
-    illustration: <NoCodeIllustration/>,
-  },
-  {
-    slug: 'quantum-computing-explained',
-    title: 'Quantum Computing: The Next Frontier',
-    category: 'Future Tech',
-    author: 'Dr. Evelyn Reed',
-    date: '2024-07-22',
-    excerpt: 'A beginner-friendly dive into the mind-bending world of quantum computing and its potential to revolutionize industries.',
-    illustration: <QuantumIllustration/>,
-  },
-  {
-    slug: 'building-with-gen-ai',
-    title: 'Practical Generative AI: From Prompts to Products',
-    category: 'AI/ML',
-    author: 'Jian Li',
-    date: '2024-07-15',
-    excerpt: 'Learn how to leverage large language models to build real-world applications that are both smart and scalable.',
-    illustration: <GenAiIllustration/>,
-  },
-  {
-    slug: 'the-rise-of-spatial-computing',
-    title: 'The Rise of Spatial Computing',
-    category: 'Web Development',
-    author: 'Alex Chen',
-    date: '2024-07-05',
-    excerpt: 'Exploring how WebXR and new hardware are merging the digital and physical worlds, creating new immersive experiences.',
-    illustration: <SpatialIllustration/>,
-  },
+    { 
+        slug: 'quantum-computing-future', 
+        title: 'Is Quantum Computing the Future of Everything?',
+        excerpt: 'Quantum computing promises to solve problems that are currently intractable for even the most powerful supercomputers. But what is it, and how close are we to a quantum future?',
+        category: 'Emerging Tech',
+        author: 'Jane Doe',
+        date: '2024-07-28',
+        illustration: <QuantumIllustration/>,
+    },
+    { 
+        slug: 'generative-ai-disruption', 
+        title: 'The Generative AI Revolution: Reshaping Industries',
+        excerpt: 'From code generation to art creation, generative AI is disrupting every industry. We explore the latest advancements and what they mean for your business.',
+        category: 'Artificial Intelligence',
+        author: 'John Smith',
+        date: '2024-07-25',
+        illustration: <GenAiIllustration/>,
+    },
+    { 
+        slug: 'spatial-computing-next-frontier', 
+        title: 'Spatial Computing: The Next Frontier After Mobile',
+        excerpt: 'With the launch of new mixed-reality headsets, spatial computing is poised to become the next major computing platform. What is it and how can you prepare?',
+        category: 'Future of UX/UI',
+        author: 'Emily White',
+        date: '2024-07-22',
+        illustration: <SpatialIllustration/>,
+    },
+     {
+        slug: "floating-whatsapp-fab",
+        title: "How to Add a Floating WhatsApp FAB to Your Website",
+        excerpt: "Boost conversions by adding a floating WhatsApp button with a pre-filled greeting to your website or app. Learn how in just 5 minutes.",
+        category: "Web Development",
+        author: "TechNext Team",
+        date: "2024-08-04",
+        illustration: <WhatsAppFabIllustration />,
+    },
+    {
+        slug: "devops-culture-not-tools",
+        title: "Why DevOps is a Culture, Not Just a Set of Tools",
+        excerpt: "Many companies adopt DevOps tools but fail to see results. The key is fostering a culture of collaboration and shared responsibility. Here's how.",
+        category: "DevOps & Cloud",
+        author: "Alex Johnson",
+        date: "2024-08-01",
+        illustration: <DevopsCultureIllustration />,
+    },
+    {
+        slug: "microservices-architecture-guide",
+        title: "A Pragmatist's Guide to Microservices Architecture",
+        excerpt: "Microservices offer scalability and flexibility, but they come with complexity. Is this architecture right for your project? A balanced look at the pros and cons.",
+        category: "Software Architecture",
+        author: "Samantha Lee",
+        date: "2024-07-29",
+        illustration: <MicroservicesIllustration />,
+    },
+    {
+        slug: "serverless-future-of-cloud",
+        title: "Serverless Computing: The End of Server Management?",
+        excerpt: "Serverless is changing how we build and deploy applications, promising lower costs and infinite scalability. We dive into the benefits and the pitfalls.",
+        category: "DevOps & Cloud",
+        author: "David Chen",
+        date: "2024-07-26",
+        illustration: <ServerlessIllustration />,
+    },
+    {
+        slug: "web3-beyond-the-hype",
+        title: "Web3 and Decentralization: Beyond the Hype",
+        excerpt: "What is Web3 really about? A look at the core technologies like blockchain and smart contracts, and their potential to build a more decentralized internet.",
+        category: "Emerging Tech",
+        author: "Maria Garcia",
+        date: "2024-07-23",
+        illustration: <Web3Illustration />,
+    },
+    {
+        slug: "green-tech-sustainable-software",
+        title: "Green Tech: Building Sustainable and Efficient Software",
+        excerpt: "The carbon footprint of the tech industry is growing. Learn about the principles of green software engineering and how to build more sustainable applications.",
+        category: "Software Engineering",
+        author: "Chris Williams",
+        date: "2024-07-20",
+        illustration: <GreenTechIllustration />,
+    },
+    {
+        slug: "no-code-low-code-revolution",
+        title: "The No-Code/Low-Code Revolution: Who is it For?",
+        excerpt: "No-code platforms are empowering non-developers to build applications. What does this mean for the future of software development and professional developers?",
+        category: "Industry Trends",
+        author: "Jessica Brown",
+        date: "2024-07-17",
+        illustration: <NoCodeIllustration />,
+    }
 ];
 
 export const homePageFaqs = [
     {
-        question: "What is your development process like?",
-        answer: "We follow an agile development methodology that allows for flexibility, transparency, and collaboration. Our process is divided into sprints, typically lasting two weeks, which include planning, design, development, testing, and a client review. This iterative approach ensures your project stays on track and you are involved at every stage."
-    },
-    {
-        question: "How long will it take to build my application?",
-        answer: "The timeline for a project varies greatly depending on its complexity, features, and the technologies involved. A simple MVP (Minimum Viable Product) might take 2-3 months, while a more complex enterprise-level application could take 6-12 months or more. After our initial discovery call, we can provide you with a detailed project roadmap and a more accurate timeline."
-    },
-    {
-        question: "How much will my project cost?",
-        answer: "Project costs are determined by the scope of work, the technology stack, and the team size required. We offer flexible engagement models, including fixed-price contracts for well-defined projects and time-and-materials for more dynamic requirements. We provide a detailed, transparent proposal after our initial consultation so you know exactly what to expect."
-    },
-    {
         question: "What kind of technologies do you specialize in?",
-        answer: "We are a full-stack development agency with expertise in a wide range of modern technologies. Our core strengths are in building web and mobile applications using frameworks like Next.js and React, and we are specialists in integrating AI and Machine Learning using toolkits like Genkit. We always choose the best technology to fit the unique needs of your project."
+        answer: "We specialize in a wide range of modern technologies, including AI/ML (TensorFlow, PyTorch), web development (Next.js, React, Node.js), mobile development (React Native), and cloud/DevOps (Docker, Kubernetes, AWS, Google Cloud). We are always adapting to the latest, most effective tools for the job."
     },
     {
-        question: "Do you provide support and maintenance after the project is launched?",
-        answer: "Yes, our partnership doesn't end at launch. We offer comprehensive support and maintenance packages to ensure your application remains secure, up-to-date, and performs optimally. We can provide ongoing technical support, bug fixes, performance monitoring, and help you plan and develop new features as your business grows."
+        question: "How does the offshore development model work?",
+        answer: "Our offshore model provides you with dedicated, highly skilled developers who work as an extension of your team. We handle all the administrative and logistical aspects, allowing you to focus on your project. You get the talent you need at a competitive price, with full transparency and control."
+    },
+    {
+        question: "What is your project management process like?",
+        answer: "We follow an agile development methodology, typically using Scrum. This involves breaking the project into two-week sprints, with regular stand-ups, sprint planning, and retrospectives. This ensures continuous feedback, adaptability, and transparency throughout the project lifecycle."
+    },
+    {
+        question: "How do you ensure the quality of the software you deliver?",
+        answer: "Quality is at the core of our process. We employ a multi-layered approach including automated testing (unit, integration, end-to-end), manual testing, peer code reviews, and continuous integration/continuous deployment (CI/CD) pipelines to catch issues early and ensure a robust, reliable final product."
+    },
+    {
+        question: "Can you take over an existing project?",
+        answer: "Absolutely. We have extensive experience in taking over, modernizing, and scaling existing software projects. Our process begins with a thorough code audit and discovery phase to understand the current state of the application, after which we create a detailed plan for improvement and future development."
+    }
+];
+
+export const valuePropositions = [
+    {
+        title: "Deep Technical Expertise",
+        description: "Our team consists of highly skilled engineers who are experts in their fields. We are committed to staying at the forefront of technology to deliver innovative and effective solutions.",
+        icon: <Code className="w-8 h-8"/>
+    },
+    {
+        title: "Client-Centric Approach",
+        description: "We believe in building true partnerships. We listen to your needs, understand your goals, and work collaboratively to ensure your success is our success.",
+        icon: <Handshake className="w-8 h-8"/>
+    },
+    {
+        title: "Transparent Communication",
+        description: "We maintain open and honest communication throughout the entire project lifecycle. You’ll always know the status of your project and have a direct line to our team.",
+        icon: <Newspaper className="w-8 h-8"/>
+    },
+     {
+        title: "Agile & Adaptive",
+        description: "We embrace agile methodologies to remain flexible and responsive to changing requirements. This allows us to deliver high-quality software faster and more efficiently.",
+        icon: <Zap className="w-8 h-8"/>
+    },
+     {
+        title: "Focus on ROI",
+        description: "We are not just a technology vendor; we are a strategic partner invested in your growth. We focus on delivering solutions that provide a tangible return on your investment.",
+        icon: <Lightbulb className="w-8 h-8"/>
+    },
+      {
+        title: "End-to-End Solutions",
+        description: "From initial concept and strategy to deployment and ongoing support, we provide a comprehensive range of services to cover all your digital needs.",
+        icon: <Rocket className="w-8 h-8"/>
     }
 ];
