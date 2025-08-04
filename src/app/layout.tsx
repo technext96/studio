@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | TechNext',
   },
   description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
-  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'TechNext', 'AI development', 'automation'],
+  keywords: ['custom software development', 'AI/ML services', 'web development', 'intelligent automation', 'offshore development', 'TechNext'],
   openGraph: {
     title: 'TechNext | Custom Software, AI, & Web Development Solutions',
     description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
@@ -72,7 +72,7 @@ export default function RootLayout({
     logo: `${siteUrl}/logo.png`, // Replace with your actual logo URL
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-555-123-4567',
+      telephone: '+92-349-1089456',
       contactType: 'customer service',
     },
   };

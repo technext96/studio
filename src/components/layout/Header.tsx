@@ -2,7 +2,7 @@
 'use client';
 
 import Link from "next/link";
-import { Menu, X, Mail, Phone } from "lucide-react";
+import { Menu, X, Mail, Phone, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -82,13 +82,13 @@ export default function Header() {
                 isScrolled ? "-translate-y-full opacity-0 absolute" : "translate-y-0 opacity-100 relative"
              )}>
                 <div className="container flex h-8 max-w-none items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-6">
-                   <a href="mailto:sales@technext.dev" className="flex items-center gap-2 hover:text-primary transition-colors">
+                   <a href="mailto:technext96@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                        <Mail className="h-3 w-3" />
-                       sales@technext.dev
+                       technext96@gmail.com
                    </a>
                     <div className="flex items-center gap-2">
                        <Phone className="h-3 w-3" />
-                       +1 (555) 123-4567
+                       +92 349 1089456
                    </div>
                 </div>
             </div>

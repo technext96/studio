@@ -35,7 +35,7 @@ export default function Footer() {
                                 </a>
                              </Button>
                              <Button variant="ghost" size="icon" asChild>
-                                <a href="mailto:contact@technext.dev" aria-label="Email">
+                                <a href="mailto:technext96@gmail.com" aria-label="Email">
                                     <Mail className="w-5 h-5" />
                                 </a>
                              </Button>
@@ -78,10 +78,10 @@ export default function Footer() {
                         <div className="space-y-2 text-sm">
                            <p>123 Innovation Drive,<br/>Tech City, 54321</p>
                            <p>
-                                <a href="mailto:contact@technext.dev" className="hover:text-primary transition-colors">contact@technext.dev</a>
+                                <a href="mailto:technext96@gmail.com" className="hover:text-primary transition-colors">technext96@gmail.com</a>
                            </p>
                            <p>
-                                <a href="tel:+15551234567" className="hover:text-primary transition-colors">+1 (555) 123-4567</a>
+                                <a href="tel:+923491089456" className="hover:text-primary transition-colors">+92 349 1089456</a>
                            </p>
                         </div>
                     </div>

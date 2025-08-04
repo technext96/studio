@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <Label htmlFor="phone">Phone Number (Optional)</Label>
-                    <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 123-4567" />
+                    <Input id="phone" name="phone" type="tel" placeholder="+92 349 1089456" />
                   </div>
                   <div>
                     <Label htmlFor="details">Project Details</Label>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xl">Email Us</h4>
-                    <a href="mailto:contact@technext.dev" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">contact@technext.dev</a>
+                    <a href="mailto:technext96@gmail.com" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">technext96@gmail.com</a>
                   </div>
                 </div>
                  <div className="flex items-start gap-6">
@@ -114,7 +114,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xl">Call Us</h4>
-                    <a href="tel:+15551234567" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">+1 (555) 123-4567</a>
+                    <a href="tel:+923491089456" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">+92 349 1089456</a>
                   </div>
                 </div>
               </div>

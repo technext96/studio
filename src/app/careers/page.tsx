@@ -151,7 +151,7 @@ export default function CareersPage() {
                                     </CardContent>
                                     <CardFooter>
                                         <Button asChild>
-                                            <Link href={`mailto:careers@technext.dev?subject=Application for ${job.title}`}>Apply Now</Link>
+                                            <Link href={`mailto:technext96@gmail.com?subject=Application for ${job.title}`}>Apply Now</Link>
                                         </Button>
                                     </CardFooter>
                                 </Card>
