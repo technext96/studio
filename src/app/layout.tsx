@@ -7,8 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Link from 'next/link';
-import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import ChatWidget from '@/components/ChatWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,8 +27,8 @@ export const metadata: Metadata = {
     default: 'TechNext | Custom Software, AI, & Web Development Solutions',
     template: '%s | TechNext',
   },
-  description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
-  keywords: ['custom software development', 'AI/ML services', 'web development', 'intelligent automation', 'offshore development', 'TechNext'],
+  description: "TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.",
+  keywords: ["custom software development", "AI/ML services", "web development", "intelligent automation", "offshore development", "TechNext"],
   openGraph: {
     title: 'TechNext | Custom Software, AI, & Web Development Solutions',
     description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'TechNext',
     images: [
       {
-        url: '/og-image.png', // Replace with your actual OG image URL
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'TechNext - Custom Software & Web Development',
@@ -50,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TechNext | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
-    images: ['/og-image.png'], // Replace with your actual Twitter card image URL
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: '/',
@@ -71,7 +70,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'TechNext',
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`, // Replace with your actual logo URL
+    logo: `${siteUrl}/logo.png`, 
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+92-349-1089456',
@@ -79,9 +78,6 @@ export default function RootLayout({
     },
   };
   
-  const whatsappNumber = "923491089456";
-  const whatsappMessage = "Hello! I found your website and I'm interested in your services. Could we discuss further?";
-
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable, spaceGrotesk.variable)}>
@@ -97,15 +93,7 @@ export default function RootLayout({
         </div>
         <Toaster />
         <SpeedInsights />
-        <Link 
-          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition-colors duration-300 transform hover:scale-110"
-          aria-label="Chat on WhatsApp"
-        >
-          <WhatsAppIcon className="w-8 h-8"/>
-        </Link>
+        <ChatWidget />
       </body>
     </html>
   );
