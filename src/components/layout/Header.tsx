@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from "next/link";
@@ -23,7 +24,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { navLinks } from "@/lib/constants";
+import { navLinks } from "@/lib/data";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";

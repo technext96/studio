@@ -1,5 +1,6 @@
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { industries } from "@/lib/constants";
+import { industries } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";

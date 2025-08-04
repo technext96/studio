@@ -1,9 +1,10 @@
 
 
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio } from "@/lib/constants";
+import { portfolio } from "@/lib/data";
 import { ArrowLeft, CheckCircle2, Bot, GraduationCap, HeartPulse, ShoppingCart, Briefcase, Factory, User, Rocket, Shield, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";

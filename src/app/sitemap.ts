@@ -1,5 +1,6 @@
+
 import { MetadataRoute } from 'next'
-import { services, industries, portfolio, blogPosts } from '@/lib/constants';
+import { services, industries, portfolio, blogPosts } from '@/lib/data';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://technext96.com';

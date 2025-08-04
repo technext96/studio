@@ -1,7 +1,8 @@
 
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { blogPosts } from "@/lib/constants";
+import { blogPosts } from "@/lib/data";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";

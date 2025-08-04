@@ -1,6 +1,7 @@
+
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/lib/constants";
+import { navLinks } from "@/lib/data";
 import { Mail, Github, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 
