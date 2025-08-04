@@ -7,6 +7,8 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from 'next/link';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -77,6 +79,9 @@ export default function RootLayout({
     },
   };
   
+  const whatsappNumber = "923491089456";
+  const whatsappMessage = "Hello! I found your website and I'm interested in your services. Could we discuss further?";
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable, spaceGrotesk.variable)}>
@@ -92,6 +97,15 @@ export default function RootLayout({
         </div>
         <Toaster />
         <SpeedInsights />
+        <Link 
+          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-[#128C7E] transition-colors duration-300 transform hover:scale-110"
+          aria-label="Chat on WhatsApp"
+        >
+          <WhatsAppIcon className="w-8 h-8"/>
+        </Link>
       </body>
     </html>
   );
