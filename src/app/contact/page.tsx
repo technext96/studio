@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
 import { submitContactForm, type State } from './actions';
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
@@ -13,7 +13,7 @@ import { Mail, Phone, Building } from 'lucide-react';
 
 export default function ContactPage() {
   const initialState: State = { message: null, errors: {}, success: false };
-  const [state, dispatch] = useFormState(submitContactForm, initialState);
+  const [state, dispatch] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
 
   useEffect(() => {
