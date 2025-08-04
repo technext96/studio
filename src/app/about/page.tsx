@@ -8,10 +8,10 @@ import { FadeIn } from '@/components/ui/fade-in';
 
 export const metadata: Metadata = {
     title: "About Us",
-    description: "Learn about Code Harbor's mission, vision, and the values that drive our commitment to innovation and client success.",
+    description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success.",
     openGraph: {
-        title: 'About Us | Code Harbor',
-        description: "Learn about Code Harbor's mission, vision, and the values that drive our commitment to innovation and client success.",
+        title: 'About Us | TechNext',
+        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success.",
     },
 };
 
@@ -133,7 +133,7 @@ export default function AboutPage() {
                    <FadeIn className="space-y-6">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Join Our Team of Innovators</h2>
                      <p className="text-foreground/80 md:text-lg">
-                       We are always searching for passionate, talented, and driven individuals to join our growing family. If you are a visionary who thrives on challenges and is ready to make a tangible impact on the future of technology, we invite you to explore our open positions and find your place at Code Harbor.
+                       We are always searching for passionate, talented, and driven individuals to join our growing family. If you are a visionary who thrives on challenges and is ready to make a tangible impact on the future of technology, we invite you to explore our open positions and find your place at TechNext.
                      </p>
                      <div className="pt-4">
                          <Button asChild size="lg" className="text-lg px-8 py-6">

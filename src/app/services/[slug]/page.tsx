@@ -63,7 +63,7 @@ export default function ServicePage({ params }: Props) {
                                 {service.title}
                             </h1>
                             <p className="max-w-2xl text-foreground/80 md:text-xl">
-                                {service.longDescription} At Code Harbor, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
+                                {service.longDescription} At TechNext, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
                             </p>
                         </FadeIn>
                          <FadeIn>

@@ -105,7 +105,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xl">Email Us</h4>
-                    <a href="mailto:contact@codeharbor.dev" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">contact@codeharbor.dev</a>
+                    <a href="mailto:contact@technext.dev" className="text-foreground/80 text-lg hover:text-primary transition-colors mt-1 block">contact@technext.dev</a>
                   </div>
                 </div>
                  <div className="flex items-start gap-6">

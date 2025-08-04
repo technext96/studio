@@ -16,10 +16,10 @@ import { Metadata } from "next";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-    title: 'Code Harbor | Custom Software, AI, & Web Development Solutions',
-    description: 'Code Harbor delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
+    title: 'TechNext | Custom Software, AI, & Web Development Solutions',
+    description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
     openGraph: {
-        title: 'Code Harbor | Custom Software, AI, & Web Development Solutions',
+        title: 'TechNext | Custom Software, AI, & Web Development Solutions',
         description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
     },
 };
@@ -76,7 +76,7 @@ export default function Home() {
                   Powering Your Growth Through Expert Technology
                 </h1>
                 <p className="max-w-2xl text-foreground/80 md:text-xl">
-                  Delivering real-world solutions that solve challenges and accelerate business growth. Code Harbor crafts futuristic software solutions that power growth, innovation, and efficiency. We transform complex challenges into high-impact digital products that secure your place in the future.
+                  Delivering real-world solutions that solve challenges and accelerate business growth. TechNext crafts futuristic software solutions that power growth, innovation, and efficiency. We transform complex challenges into high-impact digital products that secure your place in the future.
                 </p>
                 <div className="flex flex-col gap-4 min-[400px]:flex-row pt-4">
                   <Button asChild size="lg" className="text-lg px-8 py-6">
