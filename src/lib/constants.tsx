@@ -93,6 +93,12 @@ const MarketingIllustration = () => (
     </svg>
   );
 
+const EthicalAiIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5" />;
+const DataPrivacyIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5" />;
+const FundingIllustration = () => <Zap className="w-full h-full text-primary" strokeWidth="0.5" />;
+const SaasScaleIllustration = () => <Rocket className="w-full h-full text-primary" strokeWidth="0.5" />;
+const HybridWorkIllustration = () => <Home className="w-full h-full text-primary" strokeWidth="0.5" />;
+
 export const illustrationMap: { [key: string]: React.FC } = {
     customSoftware: CustomSoftwareIllustration,
     aiMl: AiMlIllustration,
@@ -129,11 +135,11 @@ export const illustrationMap: { [key: string]: React.FC } = {
     web3: () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>,
     greenTech: () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>,
     noCode: () => <Code className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    hybridWork: () => <Home className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    funding: () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    ethicalAi: () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    dataPrivacy: () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    saasScale: () => <Rocket className="w-full h-full text-primary" strokeWidth="0.5"/>,
+    hybridWork: HybridWorkIllustration,
+    funding: FundingIllustration,
+    ethicalAi: EthicalAiIllustration,
+    dataPrivacy: DataPrivacyIllustration,
+    saasScale: SaasScaleIllustration,
 };
 
 export const iconMap: { [key: string]: React.FC<{className?: string}> } = {
