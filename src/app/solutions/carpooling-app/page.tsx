@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { FadeIn } from '@/components/ui/fade-in';
 import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, MessageSquare } from 'lucide-react';
 import { Metadata } from 'next';
