@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { services, industries, portfolio, blogPosts } from '@/lib/constants';
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://technext-six.vercel.app';
+  const siteUrl = 'https://technext96.com';
 
   const staticRoutes = [
     {

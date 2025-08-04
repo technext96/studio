@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-const siteUrl = 'https://technext-six.vercel.app';
+const siteUrl = 'https://technext96.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
