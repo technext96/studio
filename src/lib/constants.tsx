@@ -1,6 +1,6 @@
 
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail, Database, BarChart, Server, Palette, Search, CodeXml, Component } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -125,6 +125,11 @@ const AiMlIllustration = () => (
   const Web3Illustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>
   const GreenTechIllustration = () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>
   const NoCodeIllustration = () => <Code className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const HybridWorkIllustration = () => <Home className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const FundingIllustration = () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const EthicalAiIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const DataPrivacyIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const SaaSScaleIllustration = () => <Rocket className="w-full h-full text-primary" strokeWidth="0.5"/>
 
 
 const TeamIllustration = () => (
@@ -413,6 +418,51 @@ export const valuePropositions = [
 
 export const blogPosts = [
     {
+        title: "The Ethics of AI: Navigating the New Frontier of Decision-Making",
+        slug: "ai-ethics-frontier",
+        author: "Dr. Alistair Finch",
+        date: "2025-09-05",
+        category: "Tech Insights",
+        excerpt: "As AI becomes more integrated into our lives, the ethical implications of its decisions become more critical. This post explores the challenges of bias, transparency, and accountability in AI systems.",
+        illustration: <EthicalAiIllustration />
+    },
+    {
+        title: "Data Privacy in the Age of Big Data: A Guide for Startups",
+        slug: "data-privacy-for-startups",
+        author: "Priya Sharma",
+        date: "2025-09-02",
+        category: "Tech Insights",
+        excerpt: "For startups, building user trust is paramount. A key component of that trust is a robust data privacy strategy. Learn the fundamentals of GDPR, CCPA, and how to build privacy-first products.",
+        illustration: <DataPrivacyIllustration />
+    },
+    {
+        title: "Bootstrapping vs. VC Funding: Which Path Is Right for Your Startup?",
+        slug: "bootstrapping-vs-vc-funding",
+        author: "Alex Chen",
+        date: "2025-08-30",
+        category: "Startup Chronicles",
+        excerpt: "The path to funding can define a startup's journey. We break down the pros and cons of bootstrapping your company versus seeking venture capital, helping you decide which route aligns with your vision.",
+        illustration: <FundingIllustration />
+    },
+    {
+        title: "Scaling a SaaS Product: From 10 to 10,000 Users",
+        slug: "scaling-saas-product",
+        author: "Brenda Rodriguez",
+        date: "2025-08-28",
+        category: "Startup Chronicles",
+        excerpt: "Scaling a SaaS product presents a unique set of challenges, from technical architecture to customer support. This article covers key strategies for managing growth without compromising quality or user experience.",
+        illustration: <SaaSScaleIllustration />
+    },
+    {
+        title: "The Future of Work is Hybrid: Building a Strong Remote-First Culture",
+        slug: "hybrid-work-culture",
+        author: "David Lee",
+        date: "2025-08-25",
+        category: "Startup Chronicles",
+        excerpt: "The shift to hybrid work is here to stay. Learn how to build a thriving company culture that supports both in-office and remote employees, fostering collaboration, and maintaining productivity.",
+        illustration: <HybridWorkIllustration />
+    },
+    {
         title: "The Rise of Quantum Computing: What It Means for Business",
         slug: "quantum-computing-business",
         author: "Dr. Evelyn Reed",
@@ -501,15 +551,6 @@ export const blogPosts = [
         category: "Software Development",
         excerpt: "No-code and low-code platforms are democratizing software development, enabling anyone to build applications without writing a single line of code. This article explores the impact of this trend on business, IT, and the future of work.",
         illustration: <NoCodeIllustration />
-    },
-    {
-        title: "Building a High-Performance Team: Lessons from Silicon Valley",
-        slug: "high-performance-teams",
-        author: "Jessica Miller",
-        date: "2025-06-17",
-        category: "Team Building",
-        excerpt: "What makes a team truly high-performing? This article distills key lessons from Silicon Valley's most successful companies, covering everything from psychological safety and radical candor to effective goal-setting and continuous feedback.",
-        illustration: <Group />
     },
 ];
 
