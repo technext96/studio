@@ -195,7 +195,7 @@ export const navLinks = [
         image: <CustomSoftwareIllustration />,
         items: [
             { title: "Portfolio", href: "/portfolio", icon: <Newspaper />, description: "See our case studies and success stories." },
-            { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A proxy-proof attendance solution." },
+            { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A proxy-proof attendance solution for modern workplaces." },
             { title: "Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "A white-label carpooling startup in a box." },
             { title: "Training Program", href: "/solutions/training-program", icon: <BookUser />, description: "Our 6-month web dev training program." },
             { title: "CampiX.AI", href: "/solutions/campix", icon: <Bot />, description: "Autonomous AI-powered ad campaigns." },
@@ -278,7 +278,7 @@ export const services = [
 export const industries = [
     { title: 'Fintech', slug: 'fintech', icon: <ShieldCheck className="w-9 h-9"/>, illustration: <FintechIllustration/>, description: 'Developing secure payment gateways, trading platforms, and personalized financial advisory tools.' },
     { title: 'Logistics', slug: 'logistics', icon: <ShoppingCart className="w-9 h-9"/>, illustration: <LogisticsIllustration/>, description: 'Optimizing supply chains with real-time tracking, inventory management, and route planning systems.' },
-    { title: 'Automotive', slug: 'automotive', icon: <Building className="w-9 h-9"/>, illustration: <AutomotiveIllustration/>, description: 'Building connected car platforms, predictive maintenance systems, and fleet management solutions.' },
+    { title: 'Automotive', slug: 'automotive', icon: <Car className="w-9 h-9"/>, illustration: <AutomotiveIllustration/>, description: 'Building connected car platforms, predictive maintenance systems, and fleet management solutions.' },
     { title: 'Healthcare', slug: 'healthcare', icon: <HeartPulse className="w-9 h-9"/>, illustration: <HealthcareIllustration/>, description: 'Creating EHR systems, telemedicine platforms, and AI-powered diagnostic tools.' },
     { title: 'Manufacturing', slug: 'manufacturing', icon: <Factory className="w-9 h-9"/>, illustration: <ManufacturingIllustration/>, description: 'Implementing IoT for smart factories, predictive quality control, and supply chain visibility.' },
     { title: 'Oil & Gas', slug: 'oil-gas', icon: <Fuel className="w-9 h-9"/>, illustration: <OilGasIllustration/>, description: 'Developing solutions for exploration data analysis, asset management, and operational safety.' },
