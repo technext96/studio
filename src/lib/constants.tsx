@@ -119,6 +119,13 @@ const AiMlIllustration = () => (
   const GenAiIllustration = () => <Bot className="w-full h-full text-primary" strokeWidth="0.5"/>
   const SpatialIllustration = () => <PencilRuler className="w-full h-full text-primary" strokeWidth="0.5"/>
   const WhatsAppFabIllustration = () => <MessageSquare className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const DevopsCultureIllustration = () => <Users className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const MicroservicesIllustration = () => <Cog className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const ServerlessIllustration = () => <Cloud className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const Web3Illustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const GreenTechIllustration = () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const NoCodeIllustration = () => <Code className="w-full h-full text-primary" strokeWidth="0.5"/>
+
 
 const TeamIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
@@ -182,8 +189,6 @@ export const navLinks = [
              { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A white-label QR code attendance system for events and businesses." },
              { title: "AI Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming coaching barriers with AI-powered on-demand learning." },
              { title: "Food Delivery Solution", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for restaurants." },
-             { title: "AI Cooking Assistant", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart />, description: "Enhancing grocery shopping with AI for personalized recommendations." },
-             { title: "AI Medical Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse />, description: "Providing patients with secure and evidence-based answers." },
         ]
     },
     {
@@ -463,6 +468,60 @@ export const blogPosts = [
     date: '2024-07-05',
     excerpt: 'Exploring how WebXR and new hardware are merging the digital and physical worlds, creating new immersive experiences.',
     illustration: <SpatialIllustration/>,
+  },
+  {
+    slug: 'devops-culture-not-just-tools',
+    title: 'DevOps Is a Culture, Not Just a Toolbox',
+    category: 'DevOps',
+    author: 'Maria Rodriguez',
+    date: '2024-06-28',
+    excerpt: 'Beyond CI/CD pipelines: How fostering a collaborative culture is the key to true DevOps success and faster, more reliable releases.',
+    illustration: <DevopsCultureIllustration/>,
+  },
+  {
+    slug: 'microservices-vs-monoliths',
+    title: 'Microservices vs. Monolith: Choosing the Right Architecture',
+    category: 'Architecture',
+    author: 'David Kim',
+    date: '2024-06-20',
+    excerpt: 'A pragmatic guide to understanding the trade-offs between monolithic and microservices architectures for your next project.',
+    illustration: <MicroservicesIllustration/>,
+  },
+  {
+    slug: 'the-future-is-serverless',
+    title: 'The Future Is Serverless: A 2025 Perspective',
+    category: 'Cloud',
+    author: 'Priya Patel',
+    date: '2024-06-12',
+    excerpt: 'How serverless computing is reducing operational overhead and enabling developers to build highly scalable applications at a lower cost.',
+    illustration: <ServerlessIllustration/>,
+  },
+  {
+    slug: 'web3-beyond-the-hype',
+    title: 'Web3 and Decentralization: Beyond the Hype',
+    category: 'Future Tech',
+    author: 'Sam Carter',
+    date: '2024-06-05',
+    excerpt: 'Cutting through the noise to explore the real-world applications of blockchain, smart contracts, and decentralized identity.',
+    illustration: <Web3Illustration/>,
+  },
+  {
+    slug: 'green-tech-sustainable-software',
+    title: 'Green Tech: Building Sustainable Software',
+    category: 'Cloud',
+    author: 'Anya Sharma',
+    date: '2024-05-29',
+    excerpt: 'How optimizing code, choosing efficient infrastructure, and adopting sustainable practices can reduce the carbon footprint of your applications.',
+    illustration: <GreenTechIllustration/>,
+  },
+  {
+    slug: 'no-code-low-code-revolution',
+    title: 'The No-Code/Low-Code Revolution: Empowering Citizen Developers',
+    category: 'Automation',
+    author: 'Ben Thompson',
+    date: '2024-05-21',
+    excerpt: 'Exploring how no-code and low-code platforms are democratizing software development and accelerating business innovation.',
+    illustration: <NoCodeIllustration/>,
   },
 ];
 
