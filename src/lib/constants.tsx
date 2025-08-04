@@ -1,5 +1,6 @@
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
+
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -176,6 +177,7 @@ export const navLinks = [
         href: "/portfolio",
         description: "Our success stories and client achievements.",
         items: [
+             { title: "White-Label Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "Launch your own carpooling startup in a box. No coding needed." },
              { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
              { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for cafes and restaurants." },
              { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
