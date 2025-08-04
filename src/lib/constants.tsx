@@ -180,10 +180,10 @@ export const navLinks = [
         items: [
              { title: "White-Label Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "Launch your own carpooling startup in a box. No coding needed." },
              { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A white-label QR code attendance system for events and businesses." },
-             { title: "AI On-Demand Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming Barriers to Traditional Coaching with AI-Powered On-Demand Learning." },
-             { title: "Enatega Food Delivery", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for cafes and restaurants." },
-             { title: "AI-Powered Shopping and Cooking", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart />, description: "Enhancing grocery experiences with AI for personalized recommendations." },
-             { title: "Medical Insights Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse />, description: "Providing breast cancer patients with secure and evidence-based answers." },
+             { title: "AI Learning Platform", href: "/portfolio/ai-on-demand-learning-platform", icon: <GraduationCap />, description: "Overcoming coaching barriers with AI-powered on-demand learning." },
+             { title: "Food Delivery Solution", href: "/portfolio/enatega-food-delivery", icon: <ShoppingCart />, description: "The leading open-source food delivery solution for restaurants." },
+             { title: "AI Cooking Assistant", href: "/portfolio/ai-shopping-cooking", icon: <ShoppingCart />, description: "Enhancing grocery shopping with AI for personalized recommendations." },
+             { title: "AI Medical Chatbot", href: "/portfolio/medical-insights-chatbot", icon: <HeartPulse />, description: "Providing patients with secure and evidence-based answers." },
         ]
     },
     {
@@ -192,9 +192,6 @@ export const navLinks = [
         description: "Insights and knowledge from our experts.",
         items: [
              { title: "Blog", href: "/blog", icon: <Newspaper />, description: "Expert articles on AI, RPA, and custom software development." },
-             { title: "Courses", href: "/blog", icon: <Video />, description: "Upskill your team with our hands-on tech courses and workshops." },
-             { title: "Tech Insights", href: "/blog", icon: <Lightbulb />, description: "Gain expert analysis on AI trends and actionable strategies." },
-             { title: "Startup Chronicles", href: "/blog", icon: <Rocket />, description: "Discover valuable ideas and tips for startup success." },
         ]
     },
     {
@@ -206,7 +203,6 @@ export const navLinks = [
             { title: "About Us", href: "/about", icon: <Users />, description: "Solving business challenges through intelligent software solutions." },
             { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join a forward-thinking team that is building the future of software solutions." },
             { title: "Contact Us", href: "/contact", icon: <Phone />, description: "Have questions in your mind, we are just a click away! Get in touch now." },
-            { title: "Photo Example", href: "/photo-example", icon: <Code />, description: "Learn how to add photos to your website." },
         ]
     },
 ];
