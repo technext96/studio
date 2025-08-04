@@ -96,7 +96,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-xl">Our Office</h4>
-                    <p className="text-foreground/80 text-lg mt-1">123 Innovation Drive, Tech City, 54321</p>
+                    <p className="text-foreground/80 text-lg mt-1">Khurshaid Khan Plaza, Charbagh Swat</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">
