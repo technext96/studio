@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { industries } from "@/lib/data";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { iconMap } from "@/lib/constants";
 
 export default function IndustriesSection() {
     return (
@@ -18,16 +19,18 @@ export default function IndustriesSection() {
                     </div>
                 </FadeIn>
                 <div className="mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mt-16 text-center">
-                    {industries.slice(0, 10).map((industry, i) => (
+                    {industries.slice(0, 10).map((industry, i) => {
+                        const Icon = iconMap[industry.icon];
+                        return (
                         <FadeIn key={industry.slug} style={{ animationDelay: `${i * 0.05}s` }}>
                             <Link href={`/industries/${industry.slug}`} className="group flex flex-col items-center gap-4">
                                 <div className="w-20 h-20 rounded-full bg-primary/10 text-primary flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
-                                    {industry.icon}
+                                    {Icon && <Icon className="w-10 h-10" />}
                                 </div>
                                 <p className="font-semibold text-md transition-colors group-hover:text-primary">{industry.title}</p>
                             </Link>
                         </FadeIn>
-                    ))}
+                    )})}
                 </div>
                 <FadeIn className="mt-16 text-center">
                     <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">

@@ -28,6 +28,7 @@ import { navLinks } from "@/lib/data";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";
+import { iconMap, illustrationMap } from "@/lib/constants";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -181,16 +182,18 @@ export default function Header() {
                                                             </NavigationMenuLink>
                                                         </li>
                                                      )}
-                                                     {link.items.map((item) => (
+                                                     {link.items.map((item) => {
+                                                        const Icon = item.icon ? iconMap[item.icon] : null;
+                                                        return (
                                                         <ListItem
                                                           key={item.title}
                                                           title={item.title}
                                                           href={item.href}
-                                                          icon={item.icon}
+                                                          icon={Icon ? <Icon /> : undefined}
                                                         >
                                                           {item.description}
                                                         </ListItem>
-                                                     ))}
+                                                     )})}
                                                  </ul>
                                             </NavigationMenuContent>
                                         </>

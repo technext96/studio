@@ -5,6 +5,7 @@ import { services } from "@/lib/data";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { iconMap } from "@/lib/constants";
 
 export default function ServicesSection() {
     return (
@@ -20,11 +21,13 @@ export default function ServicesSection() {
                     </div>
                 </FadeIn>
                 <div className="mx-auto grid items-start gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-3 mt-16">
-                    {services.slice(0, 6).map((service, i) => (
+                    {services.slice(0, 6).map((service, i) => {
+                        const Icon = iconMap[service.icon];
+                        return (
                         <FadeIn key={service.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                             <Card className="group bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect h-full flex flex-col">
                                 <CardHeader>
-                                    <div className="mb-4 text-primary">{service.icon}</div>
+                                    <div className="mb-4 text-primary">{Icon && <Icon className="w-10 h-10" />}</div>
                                     <CardTitle className="font-headline">{service.title}</CardTitle>
                                     <CardDescription>{service.description}</CardDescription>
                                 </CardHeader>
@@ -37,7 +40,7 @@ export default function ServicesSection() {
                                 </CardFooter>
                             </Card>
                         </FadeIn>
-                    ))}
+                    )})}
                 </div>
             </div>
         </section>

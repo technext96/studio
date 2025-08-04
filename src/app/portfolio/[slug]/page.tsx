@@ -1,6 +1,5 @@
 
 
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,6 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { illustrationMap } from "@/lib/constants";
 
 type Props = {
   params: { slug: string };
@@ -42,6 +42,9 @@ export default function PortfolioProjectPage({ params }: Props) {
   if (!project) {
     notFound();
   }
+  
+  const Illustration = illustrationMap[project.illustration];
+
 
   const renderSimpleDetails = () => (
     <div className="prose prose-invert max-w-none py-16 px-8 md:px-12 prose-h2:font-headline prose-h2:text-2xl prose-h2:text-primary prose-p:text-lg prose-p:text-foreground/80">
@@ -242,7 +245,7 @@ export default function PortfolioProjectPage({ params }: Props) {
             )}
             
             <div className="rounded-lg my-12 border-2 border-primary/20 glow-effect aspect-video w-full object-cover bg-secondary/50 p-4">
-              {project.illustration}
+              {Illustration && <Illustration />}
             </div>
           </div>
         </div>

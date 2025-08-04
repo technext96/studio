@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { illustrationMap } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -33,12 +34,14 @@ export default function PortfolioPage() {
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
           <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
-            {portfolio.map((project, i) => (
+            {portfolio.map((project, i) => {
+              const Illustration = illustrationMap[project.illustration];
+              return (
               <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/portfolio/${project.slug}`} className="group">
                   <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_theme(colors.primary/0.5)] bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
                     <div className="overflow-hidden aspect-video w-full object-cover bg-secondary/50 p-4">
-                      {project.illustration}
+                      {Illustration && <Illustration />}
                     </div>
                     <CardHeader>
                       <CardDescription className="text-sm text-primary font-semibold">{project.category}</CardDescription>
@@ -50,7 +53,7 @@ export default function PortfolioPage() {
                   </Card>
                 </Link>
               </FadeIn>
-            ))}
+            )})}
           </div>
         </div>
       </section>

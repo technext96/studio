@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
+import { iconMap } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -33,11 +34,13 @@ export default function ServicesPage() {
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-            {services.map((service, i) => (
+            {services.map((service, i) => {
+              const Icon = iconMap[service.icon];
+              return (
               <FadeIn key={service.slug} style={{ animationDelay: `${i * 0.05}s`}}>
                   <Card className="group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
                     <CardHeader className="flex flex-row items-start gap-6">
-                      <div className="text-primary mt-1 flex-shrink-0">{service.icon}</div>
+                      <div className="text-primary mt-1 flex-shrink-0">{Icon && <Icon className="w-10 h-10" />}</div>
                       <div>
                         <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
                         <CardDescription className="mt-2 text-base">{service.description}</CardDescription>
@@ -52,7 +55,7 @@ export default function ServicesPage() {
                     </CardFooter>
                   </Card>
               </FadeIn>
-            ))}
+            )})}
           </div>
         </div>
       </section>

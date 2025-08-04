@@ -1,6 +1,5 @@
 
 
-
 import { Button } from "@/components/ui/button";
 import { services } from "@/lib/data";
 import { ArrowLeft } from "lucide-react";
@@ -11,6 +10,7 @@ import { notFound } from "next/navigation";
 import VisionDocumentGenerator from "./VisionDocumentGenerator";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/ui/fade-in";
+import { illustrationMap } from "@/lib/constants";
 
 type Props = {
   params: { slug: string };
@@ -38,6 +38,8 @@ export default function ServicePage({ params }: Props) {
     if (!service) {
         notFound();
     }
+
+    const Illustration = illustrationMap[service.illustration];
 
     const process = [
         { title: "1. Discovery & Strategic Planning", description: "Every successful project begins with a deep understanding of your vision. We collaborate closely with you to define objectives, analyze market dynamics, and map out a strategic roadmap. This foundational step ensures our efforts are perfectly aligned with your business goals from day one." },
@@ -69,7 +71,7 @@ export default function ServicePage({ params }: Props) {
                         </FadeIn>
                          <FadeIn>
                             <div className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect bg-secondary/50 p-4">
-                                {service.illustration}
+                                {Illustration && <Illustration />}
                             </div>
                         </FadeIn>
                     </div>

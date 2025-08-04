@@ -1,6 +1,5 @@
 
 
-
 import { Button } from "@/components/ui/button";
 import { industries, portfolio } from "@/lib/data";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
@@ -10,6 +9,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/ui/fade-in";
+import { illustrationMap, iconMap } from "@/lib/constants";
 
 type Props = {
   params: { slug: string };
@@ -54,6 +54,9 @@ export default function IndustryPage({ params }: Props) {
         { title: "Compliance & Security", description: `Our solutions are built with ${industry.title}-specific regulatory standards in mind, ensuring data integrity and security.` }
     ];
 
+    const Illustration = illustrationMap[industry.illustration];
+    const Icon = iconMap[industry.icon];
+
     return (
         <>
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative pt-24">
@@ -68,7 +71,7 @@ export default function IndustryPage({ params }: Props) {
                                 </Link>
                             </Button>
                              <div className="flex items-center gap-4">
-                                <div className="text-primary">{industry.icon}</div>
+                                <div className="text-primary">{Icon && <Icon className="w-10 h-10" />}</div>
                                 <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
                                     {industry.title}
                                 </h1>
@@ -79,7 +82,7 @@ export default function IndustryPage({ params }: Props) {
                         </FadeIn>
                          <FadeIn>
                             <div className="mx-auto aspect-video overflow-hidden rounded-xl object-cover border-2 border-primary/20 glow-effect bg-secondary/50 p-4">
-                                {industry.illustration}
+                                {Illustration && <Illustration />}
                             </div>
                         </FadeIn>
                     </div>
@@ -131,23 +134,25 @@ export default function IndustryPage({ params }: Props) {
                             </p>
                         </FadeIn>
                         <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-6xl">
-                            {relatedProjects.map((project, i) => (
-                            <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
-                                <Link href={`/portfolio/${project.slug}`} className="group">
-                                    <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                                        <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
-                                            {project.illustration}
-                                        </div>
-                                        <CardHeader>
-                                        <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-                                        </CardHeader>
-                                        <CardContent className="flex-grow">
-                                        <p className="text-sm text-foreground/80">{project.excerpt}</p>
-                                        </CardContent>
-                                    </Card>
-                                </Link>
-                            </FadeIn>
-                            ))}
+                            {relatedProjects.map((project, i) => {
+                                const ProjectIllustration = illustrationMap[project.illustration];
+                                return (
+                                <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
+                                    <Link href={`/portfolio/${project.slug}`} className="group">
+                                        <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                                            <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                                                {ProjectIllustration && <ProjectIllustration/>}
+                                            </div>
+                                            <CardHeader>
+                                            <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                                            </CardHeader>
+                                            <CardContent className="flex-grow">
+                                            <p className="text-sm text-foreground/80">{project.excerpt}</p>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
+                                </FadeIn>
+                            )})}
                         </div>
                     </div>
                 </section>

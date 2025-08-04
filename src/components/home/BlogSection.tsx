@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { blogPosts } from "@/lib/data";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { illustrationMap } from "@/lib/constants";
 
 export default function BlogSection() {
     return (
@@ -19,12 +20,14 @@ export default function BlogSection() {
                     </div>
                 </FadeIn>
                 <div className="mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-16">
-                    {blogPosts.slice(0, 3).map((post, i) => (
+                    {blogPosts.slice(0, 3).map((post, i) => {
+                        const Illustration = illustrationMap[post.illustration];
+                        return (
                         <FadeIn key={post.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                             <Link href={`/blog/${post.slug}`} className="group">
                                 <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                                     <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
-                                        {post.illustration}
+                                        {Illustration && <Illustration />}
                                     </div>
                                     <CardHeader>
                                         <p className="text-sm text-primary font-semibold">{post.category}</p>
@@ -36,7 +39,7 @@ export default function BlogSection() {
                                 </Card>
                             </Link>
                         </FadeIn>
-                    ))}
+                    )})}
                 </div>
                 <FadeIn className="mt-16 text-center">
                     <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">

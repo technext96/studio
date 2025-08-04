@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { portfolio } from "@/lib/data";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
+import { illustrationMap } from "@/lib/constants";
 
 export default function PortfolioSection() {
     return (
@@ -19,12 +20,14 @@ export default function PortfolioSection() {
                     </div>
                 </FadeIn>
                 <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 mt-16">
-                    {portfolio.slice(0, 2).map((project, i) => (
+                    {portfolio.slice(0, 2).map((project, i) => {
+                        const Illustration = illustrationMap[project.illustration];
+                        return (
                         <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                             <Link href={`/portfolio/${project.slug}`} className="group">
                                 <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                                     <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
-                                        {project.illustration}
+                                        {Illustration && <Illustration />}
                                     </div>
                                     <CardHeader>
                                         <CardDescription>{project.category}</CardDescription>
@@ -36,7 +39,7 @@ export default function PortfolioSection() {
                                 </Card>
                             </Link>
                         </FadeIn>
-                    ))}
+                    )})}
                 </div>
                 <FadeIn className="mt-16 text-center">
                     <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">

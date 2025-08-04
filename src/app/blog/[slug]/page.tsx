@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
+import { illustrationMap } from "@/lib/constants";
 
 type Props = {
   params: { slug: string };
@@ -34,6 +35,8 @@ export default function BlogPostPage({ params }: Props) {
   if (!post) {
     notFound();
   }
+
+  const Illustration = illustrationMap[post.illustration];
 
   return (
     <div className="w-full py-16 md:py-24 lg:py-28">
@@ -62,7 +65,7 @@ export default function BlogPostPage({ params }: Props) {
             </div>
 
             <div className="rounded-lg my-8 border-2 border-primary/20 glow-effect aspect-video w-full object-cover bg-secondary/50 p-4">
-              {post.illustration}
+              {Illustration && <Illustration />}
             </div>
 
             <h2>The Dawn of a New Era</h2>
