@@ -1,6 +1,6 @@
 
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -118,6 +118,7 @@ const AiMlIllustration = () => (
   const QuantumIllustration = () => <BrainCircuit className="w-full h-full text-primary" strokeWidth="0.5"/>
   const GenAiIllustration = () => <Bot className="w-full h-full text-primary" strokeWidth="0.5"/>
   const SpatialIllustration = () => <PencilRuler className="w-full h-full text-primary" strokeWidth="0.5"/>
+  const WhatsAppFabIllustration = () => <MessageSquare className="w-full h-full text-primary" strokeWidth="0.5"/>
 
 const TeamIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-cover">
@@ -431,6 +432,15 @@ export const valuePropositions = [
 ];
 
 export const blogPosts = [
+  {
+    slug: 'floating-whatsapp-fab',
+    title: 'How to Add a Floating WhatsApp FAB to Your Website or App',
+    category: 'Tutorial',
+    author: 'TechNext Team',
+    date: '2025-08-04',
+    excerpt: 'Boost your conversions by adding a floating WhatsApp button with a pre-filled greeting to your website or mobile app. Learn how in just 5 minutes.',
+    illustration: <WhatsAppFabIllustration/>,
+  },
   {
     slug: 'quantum-computing-explained',
     title: 'Quantum Computing: The Next Frontier',
