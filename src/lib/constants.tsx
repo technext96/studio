@@ -1,5 +1,5 @@
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Image as ImageIcon } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -202,7 +202,7 @@ export const navLinks = [
             { title: "About Us", href: "/about", icon: <Users />, description: "Solving business challenges through intelligent software solutions." },
             { title: "Careers", href: "/careers", icon: <Briefcase />, description: "Join a forward-thinking team that is building the future of software solutions." },
             { title: "Contact Us", href: "/contact", icon: <Phone />, description: "Have questions in your mind, we are just a click away! Get in touch now." },
-            { title: "Photo Example", href: "/photo-example", icon: <ImageIcon />, description: "Learn how to add photos to your website." },
+            { title: "Photo Example", href: "/photo-example", icon: <Code />, description: "Learn how to add photos to your website." },
         ]
     },
 ];

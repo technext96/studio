@@ -48,7 +48,7 @@ export default function ServicePage({ params }: Props) {
 
     return (
         <>
-            <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative pt-24">
+            <section className="w-full py-20 md:py-28 bg-secondary/50 relative">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 z-10 relative">
                     <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
@@ -63,7 +63,7 @@ export default function ServicePage({ params }: Props) {
                                 {service.title}
                             </h1>
                             <p className="max-w-2xl text-foreground/80 md:text-xl">
-                                {service.longDescription} At TechNext, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
+                                {service.longDescription} At Code Harbor, we don't just build software; we architect solutions that drive progress and create lasting value for your business.
                             </p>
                         </FadeIn>
                          <FadeIn>

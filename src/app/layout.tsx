@@ -18,35 +18,35 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-const siteUrl = 'https://technext.dev';
+const siteUrl = 'https://technext-six.vercel.app';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'TechNext | Custom Software & Web Development',
-    template: '%s | TechNext',
+    default: 'Code Harbor | Custom Software & Web Development',
+    template: '%s | Code Harbor',
   },
-  description: 'TechNext is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
-  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'TechNext', 'AI development', 'automation'],
+  description: 'Code Harbor is a premium software house delivering custom web development, mobile apps, and enterprise solutions. We turn your ideas into reality.',
+  keywords: ['software development', 'web development', 'mobile apps', 'custom software', 'nextjs', 'react', 'Code Harbor', 'AI development', 'automation'],
   openGraph: {
-    title: 'TechNext | Custom Software & Web Development',
+    title: 'Code Harbor | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    siteName: 'TechNext',
+    siteName: 'Code Harbor',
     images: [
       {
         url: '/og-image.png', // Replace with your actual OG image URL
         width: 1200,
         height: 630,
-        alt: 'TechNext - Custom Software & Web Development',
+        alt: 'Code Harbor - Custom Software & Web Development',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TechNext | Custom Software & Web Development',
+    title: 'Code Harbor | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
     images: ['/og-image.png'], // Replace with your actual Twitter card image URL
   },
@@ -67,12 +67,12 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'TechNext',
+    name: 'Code Harbor',
     url: siteUrl,
     logo: `${siteUrl}/logo.png`, // Replace with your actual logo URL
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-234-567-890',
+      telephone: '+1-555-123-4567',
       contactType: 'customer service',
     },
   };

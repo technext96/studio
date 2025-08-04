@@ -7,10 +7,10 @@ import { FadeIn } from '@/components/ui/fade-in';
 
 export const metadata: Metadata = {
     title: "Careers",
-    description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open positions.",
+    description: "Join our forward-thinking team at Code Harbor and help build the future of software solutions. Explore our open positions.",
     openGraph: {
-        title: 'Careers | TechNext',
-        description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open positions.",
+        title: 'Careers | Code Harbor',
+        description: "Join our forward-thinking team at Code Harbor and help build the future of software solutions. Explore our open positions.",
     },
 };
 
@@ -102,7 +102,7 @@ export default function CareersPage() {
                     <FadeIn className="space-y-4">
                         <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
-                            At TechNext, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
+                            At Code Harbor, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
                         </p>
                     </FadeIn>
                 </div>
@@ -112,9 +112,9 @@ export default function CareersPage() {
                 <div className="px-8 md:px-12">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <FadeIn className="space-y-6">
-                            <h2 className="text-4xl font-headline font-bold">Life at TechNext</h2>
+                            <h2 className="text-4xl font-headline font-bold">Life at Code Harbor</h2>
                             <p className="text-foreground/80 text-lg">
-                                At TechNext, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference and pushing the boundaries of technology.
+                                At Code Harbor, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference and pushing the boundaries of technology.
                             </p>
                             <ul className="space-y-4 text-foreground/80 text-lg pt-4">
                                 <li className="flex items-start gap-4"><BrainCircuit className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Access to continuous learning, professional development opportunities, and tech conferences.</span></li>
@@ -151,7 +151,7 @@ export default function CareersPage() {
                                     </CardContent>
                                     <CardFooter>
                                         <Button asChild>
-                                            <Link href={`mailto:careers@technext.dev?subject=Application for ${job.title}`}>Apply Now</Link>
+                                            <Link href={`mailto:careers@codeharbor.dev?subject=Application for ${job.title}`}>Apply Now</Link>
                                         </Button>
                                     </CardFooter>
                                 </Card>
