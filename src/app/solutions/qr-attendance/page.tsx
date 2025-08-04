@@ -60,7 +60,7 @@ export default function QRAttendancePage() {
         {
             icon: <HardHat className="h-8 w-8 text-primary" />,
             title: "Construction & Field Sites",
-            description: "Use geolocation fencing to manage attendance for a mobile workforce across multiple job sites accurately."
+            description: "Use geolocation fencing to manage a mobile workforce across multiple job sites accurately."
         },
         {
             icon: <GraduationCap className="h-8 w-8 text-primary" />,
@@ -163,15 +163,15 @@ export default function QRAttendancePage() {
                         </p>
                     </FadeIn>
                     <FadeIn>
-                        <div className="max-w-4xl mx-auto aspect-video rounded-xl border-2 border-primary/20 glow-effect bg-secondary/50 flex items-center justify-center">
-                             <Image 
-                                src="https://placehold.co/1280x720.png"
-                                data-ai-hint="app dashboard interface"
-                                alt="Video placeholder for QR attendance system demo"
-                                width={1280}
-                                height={720}
-                                className="rounded-lg"
-                             />
+                        <div className="max-w-4xl mx-auto aspect-video rounded-xl border-2 border-primary/20 glow-effect bg-secondary/50 overflow-hidden">
+                             <iframe 
+                                className="w-full h-full"
+                                src="https://www.youtube.com/embed/scFgfFTyq6Q"
+                                title="YouTube video player" 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowFullScreen>
+                            </iframe>
                         </div>
                     </FadeIn>
                 </div>
