@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FadeIn } from '@/components/ui/fade-in';
-import { CheckCircle2, QrCode, Smartphone, BarChart, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, QrCode, Smartphone, BarChart, ShieldCheck, Wifi, MapPin, Building, HardHat, GraduationCap, Mail } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,37 +20,52 @@ export default function QRAttendancePage() {
 
     const features = [
         { 
+            icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
+            title: "Device Verification", 
+            description: "Bind each employee to a single device, making it impossible for them to have a friend check in on their behalf from another phone."
+        },
+        { 
+            icon: <Wifi className="h-8 w-8 text-primary"/>,
+            title: "Wi-Fi Validation", 
+            description: "Restrict check-ins to your office Wi-Fi network. If they're not on your network, they can't check in."
+        },
+        { 
+            icon: <MapPin className="h-8 w-8 text-primary"/>,
+            title: "Geolocation Fencing", 
+            description: "Ensure employees are physically at the workplace by setting a GPS-based boundary for allowed check-ins."
+        },
+        { 
             icon: <Smartphone className="h-8 w-8 text-primary"/>,
             title: "Mobile-First Design", 
-            description: "Access from any smartphone or tablet with our intuitive interface optimized for touchscreens." 
+            description: "A beautiful, intuitive interface that works flawlessly on any smartphone, tablet, or desktop. No app installation required."
         },
         { 
             icon: <BarChart className="h-8 w-8 text-primary"/>,
-            title: "Real-Time Tracking", 
-            description: "Get instant attendance updates and smart notifications when someone checks in or out." 
+            title: "Real-Time Dashboard", 
+            description: "Monitor attendance live, track who is in and who is out, and generate detailed reports with just a few clicks."
         },
         { 
-            icon: <ShieldCheck className="h-8 w-8 text-primary"/>,
-            title: "Secure & Reliable", 
-            description: "All data is protected with 256-bit encryption, secure cloud storage, and regular backups." 
+            icon: <QrCode className="h-8 w-8 text-primary"/>,
+            title: "Dynamic QR Codes", 
+            description: "For added security, QR codes can be set to refresh periodically, preventing screenshot abuse."
         },
     ];
 
-    const steps = [
+    const useCases = [
         {
-            step: 1,
-            title: "Generate QR Codes",
-            description: "Create unique, secure QR codes for your events, classes, or workplace in seconds."
+            icon: <Building className="h-8 w-8 text-primary" />,
+            title: "Corporate Offices",
+            description: "Track employee and visitor check-ins effortlessly while ensuring only on-site staff can mark their attendance."
         },
         {
-            step: 2,
-            title: "Attendees Scan In",
-            description: "Participants use their phone cameras to quickly scan and register their attendance. No app install needed."
+            icon: <HardHat className="h-8 w-8 text-primary" />,
+            title: "Construction & Field Sites",
+            description: "Use geolocation fencing to manage attendance for a mobile workforce across multiple job sites accurately."
         },
         {
-            step: 3,
-            title: "Access Real-Time Data",
-            description: "View attendance reports, get analytics, and export data instantly from your live dashboard."
+            icon: <GraduationCap className="h-8 w-8 text-primary" />,
+            title: "Schools & Universities",
+            description: "Simplify student attendance for classes and events, preventing academic dishonesty with secure check-ins."
         }
     ];
 
@@ -99,40 +114,42 @@ export default function QRAttendancePage() {
             <section id="features" className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
                     <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
+                        <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Security First</div>
                         <h2 className="text-4xl font-headline font-bold">Powerful Features, Simple to Use</h2>
                         <p className="text-foreground/80 md:text-lg">
-                            Designed to streamline your attendance process from start to finish.
+                            Our system is packed with features designed to eliminate time theft and streamline your attendance process from start to finish.
                         </p>
                     </FadeIn>
-                    <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {features.map((feature, i) => (
-                             <FadeIn key={feature.title} style={{ animationDelay: `${i * 0.1}s` }} className="flex flex-col items-center gap-4">
-                                {feature.icon}
-                                <h3 className="font-headline text-2xl font-bold">{feature.title}</h3>
-                                <p className="text-foreground/80">{feature.description}</p>
+                             <FadeIn key={feature.title} style={{ animationDelay: `${i * 0.05}s` }}>
+                                <Card className="bg-card/50 backdrop-blur-sm border-primary/10 h-full p-6 text-center flex flex-col items-center">
+                                    <div className="mb-4">{feature.icon}</div>
+                                    <h3 className="font-headline text-xl font-bold mb-2">{feature.title}</h3>
+                                    <p className="text-foreground/80 text-sm">{feature.description}</p>
+                                </Card>
                             </FadeIn>
                         ))}
                     </div>
                 </div>
             </section>
 
-             <section id="how-it-works" className="w-full py-16 md:py-24 bg-secondary/20">
+             <section id="use-cases" className="w-full py-16 md:py-24 bg-secondary/20">
                 <div className="px-8 md:px-12">
-                    <FadeIn className="text-center space-y-3 mb-16 max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-headline font-bold">Get Started in 3 Simple Steps</h2>
+                    <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
+                        <h2 className="text-4xl font-headline font-bold">Perfect For Any Workplace</h2>
+                        <p className="text-foreground/80 md:text-lg">
+                            Our secure attendance solution is flexible enough to fit the unique needs of any organization.
+                        </p>
                     </FadeIn>
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
-                        <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2 hidden md:block"></div>
-                         <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary -translate-y-1/2 hidden md:block animate-pulse"></div>
-                       {steps.map((step, i) => (
-                         <FadeIn key={step.step} style={{ animationDelay: `${i * 0.15}s` }} className="relative flex flex-col items-center text-center p-4">
-                            <div className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl font-bold border-4 border-background mb-6 z-10">
-                                {step.step}
-                            </div>
-                            <h3 className="font-headline text-2xl font-bold mb-2">{step.title}</h3>
-                            <p className="text-foreground/80">{step.description}</p>
-                         </FadeIn>
-                       ))}
+                     <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto text-center">
+                        {useCases.map((useCase, i) => (
+                             <FadeIn key={useCase.title} style={{ animationDelay: `${i * 0.1}s` }} className="flex flex-col items-center gap-4">
+                                {useCase.icon}
+                                <h3 className="font-headline text-2xl font-bold">{useCase.title}</h3>
+                                <p className="text-foreground/80">{useCase.description}</p>
+                            </FadeIn>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -160,6 +177,59 @@ export default function QRAttendancePage() {
                 </div>
             </section>
 
+            <section id="pricing" className="w-full py-16 md:py-24 bg-secondary/20">
+                <div className="px-8 md:px-12">
+                    <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
+                        <h2 className="text-4xl font-headline font-bold">Get a System That Pays for Itself</h2>
+                        <p className="text-foreground/80 md:text-lg">
+                           One-time payment for a lifetime license. Stop revenue loss from time theft and get a positive ROI in months.
+                        </p>
+                    </FadeIn>
+                    <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+                        <FadeIn>
+                             <Card className="bg-card/50 backdrop-blur-sm border-primary/10 h-full flex flex-col">
+                                <CardHeader>
+                                    <CardTitle className="font-headline text-3xl">Standard Package</CardTitle>
+                                    <CardDescription className="text-4xl font-bold text-primary pt-2">$1,999</CardDescription>
+                                </CardHeader>
+                                <CardContent className="flex-grow space-y-4">
+                                     <p className="text-foreground/80">The complete, secure solution for up to 100 employees. Deployed and branded for you.</p>
+                                     <ul className="space-y-2">
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Device & Wi-Fi Verification</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Admin Dashboard & Reporting</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Your Custom Branding</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Full Source Code Included</span></li>
+                                     </ul>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button asChild className="w-full text-lg py-6"><Link href="/contact?plan=qr-standard">Get Started</Link></Button>
+                                </CardFooter>
+                             </Card>
+                        </FadeIn>
+                        <FadeIn style={{ animationDelay: `0.1s` }}>
+                             <Card className="bg-card/80 backdrop-blur-sm border-primary/50 h-full flex flex-col ring-2 ring-primary shadow-[0_0_20px_theme(colors.primary/0.5)]">
+                                <CardHeader>
+                                    <CardTitle className="font-headline text-3xl">Enterprise Package</CardTitle>
+                                    <CardDescription className="text-4xl font-bold text-primary pt-2">Contact Us</CardDescription>
+                                </CardHeader>
+                                <CardContent className="flex-grow space-y-4">
+                                     <p className="text-foreground/80">For larger organizations or those needing custom integrations and features.</p>
+                                     <ul className="space-y-2">
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Everything in Standard, plus:</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Unlimited Employees & Locations</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>HRIS/Payroll Integration</span></li>
+                                        <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary"/><span>Dedicated Technical Support</span></li>
+                                     </ul>
+                                </CardContent>
+                                <CardFooter>
+                                     <Button asChild className="w-full text-lg py-6"><Link href="/contact?plan=qr-enterprise">Request a Quote</Link></Button>
+                                </CardFooter>
+                             </Card>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+
              <section className="w-full py-20 md:py-28">
                 <div className="px-8 md:px-12 text-center">
                    <FadeIn className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
@@ -169,7 +239,10 @@ export default function QRAttendancePage() {
                      </p>
                       <div className="pt-4">
                         <Button asChild size="lg" className="text-lg px-8 py-6">
-                           <Link href="/contact">Get a Quote</Link>
+                           <Link href="mailto:technext96@gmail.com?subject=QR Attendance Demo Request">
+                                <Mail className="mr-2 h-5 w-5"/>
+                                Email for a Live Demo
+                            </Link>
                         </Button>
                       </div>
                   </FadeIn>
@@ -178,3 +251,5 @@ export default function QRAttendancePage() {
         </>
     )
 }
+
+    
