@@ -197,7 +197,7 @@ export const navLinks = [
             { title: "Portfolio", href: "/portfolio", icon: <Newspaper />, description: "See our case studies and success stories." },
             { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: <QrCode />, description: "A proxy-proof attendance solution for modern workplaces." },
             { title: "Carpooling App", href: "/solutions/carpooling-app", icon: <Car />, description: "A white-label carpooling startup in a box." },
-            { title: "Training Program", href: "/solutions/training-program", icon: <BookUser />, description: "Our 6-month web dev training program." },
+            { title: "Training Programs", href: "/solutions/training-program", icon: <BookUser />, description: "Our expert-led curricula for developers, designers, and more." },
             { title: "CampiX.AI", href: "/solutions/campix", icon: <Bot />, description: "Autonomous AI-powered ad campaigns." },
         ]
     },
