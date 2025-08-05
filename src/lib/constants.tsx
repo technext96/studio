@@ -24,74 +24,153 @@ const AiMlIllustration = () => (
   
 const AutomationIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <defs>
-        <linearGradient id="grad-auto" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
-          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
-        </linearGradient>
-      </defs>
-      <g fill="none" stroke="url(#grad-auto)" strokeWidth="4">
-        <path d="M 256,128 a 128,128 0 1,0 0,256 a 128,128 0 1,0 0,-256" opacity="0.5" />
-        <path d="M 256,160 a 96,96 0 1,0 0,192 a 96,96 0 1,0 0,-192" />
-      </g>
-      <Cog className="lucide lucide-cog text-primary" x="224" y="224" width="64" height="64">
-         <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="5s" repeatCount="indefinite" />
-      </Cog>
+        <defs>
+            <linearGradient id="grad-automation-gears" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <g stroke="url(#grad-automation-gears)">
+            <path fill="none" strokeWidth="12" d="M 201.2,126.9 C 192.5,129.5, 184.2,133.4, 176.7,138.4 L 145.4,116.5 C 149.3,108.5, 154.3,101.1, 160.1,94.4 L 189.4,112.5 C 193.3,116.6, 197.4,121.5, 201.2,126.9 Z">
+                 <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="10s" repeatCount="indefinite" />
+            </path>
+            <path fill="hsl(var(--primary)/.1)" strokeWidth="8" d="M 334.6,396.9 C 326.2,402.2, 317.1,406.4, 307.5,409.3 L 297,372.4 C 304.5,369.9, 311.5,366.4, 317.8,362.1 L 334.6,396.9 Z">
+                 <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="-360 256 256" dur="8s" repeatCount="indefinite" />
+            </path>
+        </g>
+        <g fill="hsl(var(--primary))" stroke="hsl(var(--foreground))" strokeWidth="2">
+            <circle cx="256" cy="256" r="40" />
+            <path d="m 256,296 v 40 l -20,10 v -40 z" />
+            <path d="m 256,296 v 40 l 20,10 v -40 z" />
+             <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="6s" repeatCount="indefinite" />
+        </g>
     </svg>
-  );
+);
   
 const OffshoreIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-       <defs>
-        <linearGradient id="grad-off" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity:1}} />
-          <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity:1}} />
-        </linearGradient>
-      </defs>
-      <circle cx="256" cy="256" r="160" fill="none" stroke="url(#grad-off)" strokeWidth="2" opacity="0.3"/>
-      <circle cx="256" cy="256" r="120" fill="hsl(var(--primary) / 0.1)"/>
-      <Users className="lucide lucide-users text-primary" x="224" y="224" width="64" height="64" />
-      <g fill="hsl(var(--primary))">
-        <circle cx="120" cy="120" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" /></circle>
-        <circle cx="392" cy="120" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="1s"/></circle>
-        <circle cx="120" cy="392" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="2s"/></circle>
-        <circle cx="392" cy="392" r="20"><animate attributeName="r" values="20;25;20" dur="4s" repeatCount="indefinite" begin="3s"/></circle>
-      </g>
+        <defs>
+            <linearGradient id="grad-offshore-world" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))"/>
+                <stop offset="100%" stopColor="hsl(var(--secondary))"/>
+            </linearGradient>
+        </defs>
+        <circle cx="256" cy="256" r="160" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))"/>
+        <path d="M256,96 A160,160 0 0,1 256,416" fill="none" stroke="url(#grad-offshore-world)" strokeWidth="4"/>
+        <path d="M256,96 A160,160 0 0,0 256,416" fill="none" stroke="url(#grad-offshore-world)" strokeWidth="4" strokeDasharray="8 8"/>
+        <g fill="hsl(var(--primary))">
+            <circle cx="180" cy="180" r="20"><animate attributeName="r" values="15;25;15" dur="5s" repeatCount="indefinite" /></circle>
+            <circle cx="332" cy="332" r="20"><animate attributeName="r" values="15;25;15" dur="5s" repeatCount="indefinite" begin="2.5s" /></circle>
+        </g>
     </svg>
-  );
+);
   
 const CustomSoftwareIllustration = () => (
-    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <path d="M128 128 L384 128 L384 384 L128 384 Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" rx="10"/>
-        <polyline points="160,224 192,256 160,288" stroke="hsl(var(--primary))" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <line x1="224" y1="208" x2="256" y2="304" stroke="hsl(var(--primary))" strokeWidth="2"/>
-        <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+   <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-custom-sw" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <rect x="100" y="100" width="312" height="312" rx="20" fill="hsl(var(--primary)/0.1)" stroke="hsl(var(--border))" />
+        <path d="M164,164 h184 v184 h-184 z" fill="none" stroke="url(#grad-custom-sw)" strokeWidth="4" strokeDasharray="10 10">
+           <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+        </path>
+        <Cog className="lucide lucide-cog text-primary" x="224" y="224" width="64" height="64">
+            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="8s" repeatCount="indefinite" />
+        </Cog>
     </svg>
-  );
+);
   
 const DevOpsIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <Cloud className="text-primary" x="128" y="128" width="256" height="256" strokeWidth="1" opacity="0.5">
-          <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite" />
-        </Cloud>
-        <Cog className="text-primary" x="192" y="192" width="64" height="64">
-            <animateTransform attributeName="transform" type="rotate" from="0 224 224" to="360 224 224" dur="5s" repeatCount="indefinite"/>
-        </Cog>
-        <Rocket className="text-primary" x="256" y="256" width="64" height="64">
-            <animateTransform attributeName="transform" type="translate" values="0 0; -10 -10; 0 0" dur="2s" repeatCount="indefinite"/>
-        </Rocket>
+        <defs>
+            <linearGradient id="grad-devops-flow" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <path d="M128,256 a128,128 0 1,0 256,0 a128,128 0 1,0 -256,0" fill="none" stroke="hsl(var(--border))" strokeWidth="2" />
+        <g fill="hsl(var(--primary))">
+            <circle cx="128" cy="256" r="24">
+                 <animateMotion path="M0,0 a128,128 0 1,0 256,0 a128,128 0 1,0 -256,0" dur="8s" repeatCount="indefinite" rotate="auto" />
+            </circle>
+            <circle cx="128" cy="256" r="24">
+                 <animateMotion path="M0,0 a128,128 0 1,0 256,0 a128,128 0 1,0 -256,0" dur="8s" begin="4s" repeatCount="indefinite" rotate="auto" />
+            </circle>
+        </g>
+        <Rocket className="lucide lucide-rocket text-primary" x="224" y="224" width="64" height="64" />
     </svg>
-  );
+);
   
 const MarketingIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-        <path d="M 128 384 L 256 128 L 384 384 Z" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" />
-        <line x1="128" y1="384" x2="384" y2="384" stroke="hsl(var(--primary))" strokeWidth="2"/>
-        <circle cx="256" cy="256" r="32" fill="hsl(var(--primary) / 0.5)">
-           <animate attributeName="r" values="32;40;32" dur="3s" repeatCount="indefinite" />
-        </circle>
+        <path d="M 128 384 L 256 128 L 384 384 Z" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" strokeWidth="2" />
+        <line x1="128" y1="384" x2="384" y2="384" stroke="hsl(var(--primary))" strokeWidth="4"/>
+        <g fill="hsl(var(--primary))">
+            <circle cx="256" cy="256" r="32">
+               <animate attributeName="r" values="32;40;32" dur="3s" repeatCount="indefinite" />
+            </circle>
+             <path d="M256,224 L256,128">
+                <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="6s" repeatCount="indefinite" />
+            </path>
+        </g>
+        <Lightbulb className="lucide lucide-lightbulb text-primary-foreground" x="232" y="232" width="48" height="48" />
     </svg>
-  );
+);
+
+const EcommerceIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-ecommerce-cart" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <path d="M128,128 L160,320 L384,320 L416,128 Z" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" />
+        <line x1="128" y1="128" x2="160" y2="320" stroke="url(#grad-ecommerce-cart)" strokeWidth="4"/>
+        <line x1="160" y1="320" x2="384" y2="320" stroke="url(#grad-ecommerce-cart)" strokeWidth="4"/>
+        <ShoppingCart className="lucide lucide-shopping-cart text-primary" x="224" y="192" width="64" height="64" >
+             <animateTransform attributeName="transform" type="translate" values="0 0; 5 0; 0 0; -5 0; 0 0" dur="3s" repeatCount="indefinite" />
+        </ShoppingCart>
+        <circle cx="192" cy="352" r="16" fill="hsl(var(--primary))" />
+        <circle cx="352" cy="352" r="16" fill="hsl(var(--primary))" />
+    </svg>
+);
+
+const CybersecurityIllustration = () => (
+     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-cyber-shield" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <path d="M256,128 C256,128 128,160 128,256 L128,384 L256,448 L384,384 L384,256 C384,160 256,128 256,128 Z" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" />
+        <path d="M256,128 C256,128 128,160 128,256 L128,384 L256,448 L384,384 L384,256 C384,160 256,128 256,128 Z" fill="none" stroke="url(#grad-cyber-shield)" strokeWidth="4" >
+             <animate attributeName="stroke-dasharray" values="0 1000; 500 500; 1000 0" dur="4s" repeatCount="indefinite" />
+        </path>
+        <ShieldCheck className="lucide lucide-shield-check text-primary" x="224" y="240" width="64" height="64" />
+    </svg>
+);
+
+const FintechIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+         <defs>
+            <linearGradient id="grad-fintech-chart" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <path d="M128,384 L192,320 L256,352 L320,288 L384,320" fill="none" stroke="url(#grad-fintech-chart)" strokeWidth="4">
+            <animate attributeName="d" values="M128,384 L192,320 L256,352 L320,288 L384,320; M128,384 L192,352 L256,320 L320,352 L384,288; M128,384 L192,320 L256,352 L320,288 L384,320" dur="4s" repeatCount="indefinite" />
+        </path>
+        <rect x="100" y="100" width="312" height="312" rx="20" fill="none" stroke="hsl(var(--border))" />
+        <circle cx="128" cy="128" r="8" fill="hsl(var(--primary))" />
+        <circle cx="384" cy="128" r="8" fill="hsl(var(--primary))" />
+    </svg>
+);
 
 const RideshareIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -118,9 +197,57 @@ const RideshareIllustration = () => (
         </g>
     </svg>
 );
-const EthicalAiIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5" />;
-const DataPrivacyIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5" />;
-const SaasScaleIllustration = () => <Rocket className="w-full h-full text-primary" strokeWidth="0.5" />;
+
+const EthicalAiIllustration = () => (
+     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-ethical-ai" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <Handshake className="lucide lucide-handshake text-primary" x="192" y="192" width="128" height="128" strokeWidth="1.5"/>
+        <path d="M192,192 a160,160 0 0,1 128,128" fill="none" stroke="url(#grad-ethical-ai)" strokeWidth="4">
+             <animate attributeName="stroke-dasharray" values="0 500; 500 0" dur="5s" repeatCount="indefinite" />
+        </path>
+         <path d="M320,192 a160,160 0 0,0 -128,128" fill="none" stroke="url(#grad-ethical-ai)" strokeWidth="4">
+              <animate attributeName="stroke-dasharray" values="0 500; 500 0" dur="5s" begin="2.5s" repeatCount="indefinite" />
+        </path>
+    </svg>
+);
+
+const DataPrivacyIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <Shield className="text-primary/20" x="96" y="96" width="320" height="320" strokeWidth="1"/>
+        <g>
+            <line x1="256" y1="160" x2="256" y2="352" stroke="hsl(var(--primary))" strokeWidth="4"/>
+            <line x1="224" y1="192" x2="288" y2="192" stroke="hsl(var(--primary))" strokeWidth="4"/>
+            <circle cx="256" cy="224" r="24" fill="none" stroke="hsl(var(--primary))" strokeWidth="4"/>
+            <path d="M224,288 a32,32 0 1,1 64,0" fill="none" stroke="hsl(var(--primary))" strokeWidth="4"/>
+             <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="3s" repeatCount="indefinite" />
+        </g>
+    </svg>
+);
+
+const SaasScaleIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M128,384 h256" stroke="hsl(var(--border))" strokeWidth="2"/>
+        <path d="M160,384 v-64 h64 v64" fill="hsl(var(--primary)/.2)" stroke="hsl(var(--primary))"/>
+        <path d="M224,320 v-128 h64 v128" fill="hsl(var(--primary)/.5)" stroke="hsl(var(--primary))"/>
+        <path d="M288,192 v-64 h64 v64" fill="hsl(var(--primary))" stroke="hsl(var(--primary))"/>
+        <g>
+            <circle cx="192" cy="288" r="8" fill="hsl(var(--foreground))" opacity="0.5">
+                <animate attributeName="cy" values="288;128;288" dur="4s" repeatCount="indefinite" />
+            </circle>
+             <circle cx="256" cy="160" r="8" fill="hsl(var(--foreground))" opacity="0.5">
+                <animate attributeName="cy" values="160;352;160" dur="5s" begin="1s" repeatCount="indefinite" />
+            </circle>
+             <circle cx="320" cy="128" r="8" fill="hsl(var(--foreground))" opacity="0.5">
+                <animate attributeName="cy" values="128;288;128" dur="3s" begin="2s" repeatCount="indefinite" />
+            </circle>
+        </g>
+    </svg>
+);
 
 export const illustrationMap: { [key: string]: React.FC } = {
     customSoftware: CustomSoftwareIllustration,
@@ -129,16 +256,16 @@ export const illustrationMap: { [key: string]: React.FC } = {
     offshore: OffshoreIllustration,
     devops: DevOpsIllustration,
     marketing: MarketingIllustration,
-    fintech: () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>,
+    fintech: FintechIllustration,
     logistics: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    automotive: () => <Building className="w-full h-full text-primary" strokeWidth="0.5"/>,
+    automotive: () => <Car className="w-full h-full text-primary" strokeWidth="0.5"/>,
     healthcare: () => <HeartPulse className="w-full h-full text-primary" strokeWidth="0.5"/>,
     manufacturing: () => <Factory className="w-full h-full text-primary" strokeWidth="0.5"/>,
     oilGas: () => <Fuel className="w-full h-full text-primary" strokeWidth="0.5"/>,
     insurance: () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>,
     travel: () => <Plane className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    cybersecurity: () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    ecommerce: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
+    cybersecurity: CybersecurityIllustration,
+    ecommerce: EcommerceIllustration,
     education: () => <BookOpen className="w-full h-full text-primary" strokeWidth="0.5"/>,
     media: () => <Clapperboard className="w-full h-full text-primary" strokeWidth="0.5"/>,
     realEstate: () => <Home className="w-full h-full text-primary" strokeWidth="0.5"/>,
