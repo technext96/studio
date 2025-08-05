@@ -24,9 +24,7 @@ export default function ChatWidget() {
 
   const whatsappNumber = "923491089456";
   const whatsappMessage = "Hello! I found your website and I'm interested in your services. Could we discuss further?";
-  const salesEmail = "technext96@gmail.com";
-  const salesSubject = "Sales Inquiry from Website";
-
+  
   const toggleOpen = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
@@ -58,10 +56,10 @@ export default function ChatWidget() {
                                 </Link>
                             </Button>
                             <Button asChild variant="outline" className="w-full">
-                                <a href={`mailto:${salesEmail}?subject=${encodeURIComponent(salesSubject)}`}>
+                                <Link href="/contact">
                                     <Phone className="w-4 h-4 mr-2" />
                                     Talk to Sales
-                                </a>
+                                </Link>
                             </Button>
                         </div>
                     </CardContent>

@@ -1,14 +1,40 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { useFormState } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, Building } from 'lucide-react';
-import Link from 'next/link';
+import { submitContactForm, type State } from './actions';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ContactPage() {
+  const initialState: State = { success: false, message: null };
+  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast({
+          title: 'Success!',
+          description: state.message,
+        });
+        formRef.current?.reset();
+      } else {
+        toast({
+          title: 'Error',
+          description: state.message,
+          variant: 'destructive',
+        });
+      }
+    }
+  }, [state, toast]);
+
   return (
     <>
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50">
@@ -33,15 +59,15 @@ export default function ContactPage() {
               </CardHeader>
               <CardContent>
                 <form 
-                  action="mailto:technext96@gmail.com" 
-                  method="get" 
-                  encType="text/plain"
+                  ref={formRef}
+                  action={formAction}
                   className="space-y-6"
                 >
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <Label htmlFor="name">Full Name</Label>
                       <Input id="name" name="name" placeholder="John Doe" required />
+                      {state.errors?.name && <p className="text-destructive text-sm mt-1">{state.errors.name[0]}</p>}
                     </div>
                     <div>
                       <Label htmlFor="company">Company Name (Optional)</Label>
@@ -51,14 +77,16 @@ export default function ContactPage() {
                   <div>
                     <Label htmlFor="email">Email Address</Label>
                     <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+                    {state.errors?.email && <p className="text-destructive text-sm mt-1">{state.errors.email[0]}</p>}
                   </div>
                    <div>
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" name="subject" placeholder="Project Inquiry" required />
+                    <Label htmlFor="phone">Phone Number (Optional)</Label>
+                    <Input id="phone" name="phone" placeholder="+1 (555) 123-4567" />
                   </div>
                   <div>
-                    <Label htmlFor="body">Project Details</Label>
-                    <Textarea id="body" name="body" placeholder="Tell us about your project, goals, and any specific requirements..." required minLength={10} rows={6} />
+                    <Label htmlFor="details">Project Details</Label>
+                    <Textarea id="details" name="details" placeholder="Tell us about your project, goals, and any specific requirements..." required minLength={10} rows={6} />
+                    {state.errors?.details && <p className="text-destructive text-sm mt-1">{state.errors.details[0]}</p>}
                   </div>
                   <Button type="submit" className="w-full py-6 text-lg">
                     Send Message
