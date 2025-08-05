@@ -1,9 +1,9 @@
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { FadeIn } from '@/components/ui/fade-in';
-import { CheckCircle, Code, GitBranch, LayoutTemplate, Lightbulb, Mail, MessageSquare, PlayCircle, Projector, Send, Database, Server, Palette, Search, BarChart, Figma, CodeXml, Component, BrainCircuit } from 'lucide-react';
+import { CheckCircle, Code, GitBranch, LayoutTemplate, Lightbulb, Mail, MessageSquare, PlayCircle, Projector, Send, Server, Palette, Search, ExternalLink, HelpCircle, ClipboardCheck } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -21,100 +21,406 @@ export const metadata: Metadata = {
 const curriculums = {
     frontend: {
         "Weeks 1-2: Web Foundations": [
-            { title: "HTML Basics", details: "Learn the fundamental structure of web pages, including semantic tags, forms, and accessibility.", resources: [{ type: "video", label: "HTML Full Course" }] },
-            { title: "CSS Basics", details: "Understand how to style web pages, covering selectors, properties, the box model, and basic responsive design.", resources: [{ type: "video", label: "CSS for Beginners" }] },
+            { 
+                title: "HTML Basics", 
+                details: "Learn the fundamental structure of web pages, including semantic tags, forms, and accessibility.", 
+                resources: [{ type: "video", label: "HTML Full Course", url: "https://www.youtube.com/watch?v=kUMe1FH4CHE" }],
+                task: "Build a simple personal portfolio page using only HTML. Include a header, a section about yourself, a list of projects (can be placeholders), and a basic contact form.",
+                questions: [
+                    "What is the purpose of semantic HTML tags like `<header>`, `<footer>`, and `<article>`?",
+                    "Describe the difference between `<div>` and `<span>`.",
+                    "What are the essential attributes for an `<input>` tag within a form?"
+                ]
+            },
+            { 
+                title: "CSS Basics", 
+                details: "Understand how to style web pages, covering selectors, properties, the box model, and basic responsive design.", 
+                resources: [{ type: "video", label: "CSS for Beginners", url: "https://www.youtube.com/watch?v=Edsxf_NB4ug" }],
+                task: "Style the personal portfolio page you created. Add colors, fonts, and spacing. Use the box model to align elements and ensure it looks good on both desktop and mobile screens using media queries.",
+                questions: [
+                    "Explain the CSS box model (margin, border, padding, content).",
+                    "What is the difference between a class selector and an ID selector in CSS?",
+                    "How do you use a media query to apply styles only for screens smaller than 600px?"
+                ]
+            },
         ],
         "Weeks 3-5: Advanced CSS & DOM": [
-            { title: "The Document Object Model (DOM)", details: "A deep dive into what the DOM is and its relationship with HTML and JavaScript.", resources: [{ type: "video", label: "What is the DOM?" }, { type: "article", label: "DOM Explained" }] },
-            { title: "Flexbox & CSS Grid", details: "Master modern CSS layout modules for creating complex responsive structures.", resources: [{ type: "video", label: "Flexbox & Grid Course" }, { type: "exercise", label: "Flexbox Froggy" }, { type: "exercise", label: "Grid Garden" }] },
+            { 
+                title: "The Document Object Model (DOM)", 
+                details: "A deep dive into what the DOM is and its relationship with HTML and JavaScript.", 
+                resources: [{ type: "video", label: "What is the DOM?", url: "https://www.youtube.com/watch?v=H21jgfF-3A8" }, { type: "article", label: "DOM Explained", url: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" }],
+                task: "Create a simple webpage with a button. Using the browser's developer console, write JavaScript to select the button and change its text when clicked.",
+                questions: [
+                    "What is the DOM and how does it relate to your HTML file?",
+                    "What is the difference between `getElementById`, `getElementsByClassName`, and `querySelector`?",
+                ]
+            },
+            { 
+                title: "Flexbox & CSS Grid", 
+                details: "Master modern CSS layout modules for creating complex responsive structures.", 
+                resources: [{ type: "video", label: "Flexbox & Grid Course", url: "https://www.youtube.com/watch?v=Rz-h_g_8g_Y" }, { type: "exercise", label: "Flexbox Froggy", url: "https://flexboxfroggy.com/" }, { type: "exercise", label: "Grid Garden", url: "https://cssgridgarden.com/" }],
+                task: "Rebuild the layout of your portfolio page using Flexbox for component alignment (like navigation bars) and CSS Grid for the main page structure (like a project gallery).",
+                questions: [
+                    "When would you choose to use Flexbox over CSS Grid, and vice-versa?",
+                    "What is the difference between `justify-content` and `align-items` in Flexbox?",
+                    "How do you create a three-column responsive grid using CSS Grid?",
+                ]
+            },
         ],
         "Weeks 6-12: JavaScript Fundamentals & Advanced": [
-            { title: "JavaScript Basics", details: "Covering variables, data types, operators, control flow, functions, objects, and arrays. Includes problem-solving exercises.", resources: [{ type: "exercise", label: "JS Basics Problems" }, { type: "article", label: "Array Methods" }] },
-            { title: "Asynchronous JavaScript", details: "Learn about API calls, Promises, and async/await for handling asynchronous operations.", resources: [{ type: "video", label: "Async JS Explained" }] },
-            { title: "DOM Manipulation with JS", details: "Interactively change the content and style of your web pages using JavaScript.", resources: [{ type: "video", label: "DOM Manipulation Guide" }] },
+            { 
+                title: "JavaScript Basics", 
+                details: "Covering variables, data types, operators, control flow, functions, objects, and arrays. Includes problem-solving exercises.", 
+                resources: [{ type: "exercise", label: "JS Basics Problems", url: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/" }, { type: "article", label: "Array Methods", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" }],
+                task: "Create a simple 'To-Do List' application. Users should be able to add items to a list, and click on items to mark them as complete (e.g., by adding a line-through style).",
+                questions: [
+                    "Explain the difference between `let`, `const`, and `var`.",
+                    "What is the difference between `==` and `===` in JavaScript?",
+                    "How does the `.map()` array method work? Provide an example.",
+                ]
+            },
+            { 
+                title: "Asynchronous JavaScript", 
+                details: "Learn about API calls, Promises, and async/await for handling asynchronous operations.", 
+                resources: [{ type: "video", label: "Async JS Explained", url: "https://www.youtube.com/watch?v=ZYb_gwLdKZw" }],
+                task: "Use the Fetch API to get data from a public API (e.g., the JSONPlaceholder API) and display the results on your webpage. Handle loading and error states.",
+                questions: [
+                    "What is a Promise in JavaScript?",
+                    "Explain the difference between `.then()` and `async/await` syntax.",
+                    "What is the purpose of the `try...catch` block when using `async/await`?",
+                ]
+            },
         ],
         "Weeks 13-20: React.js Deep Dive": [
-            { title: "React Fundamentals", details: "Learn the most popular JavaScript library for UI. Covering components, state, props, hooks, and the virtual DOM.", resources: [{ type: "video", label: "React Full Course" }] },
-            { title: "State Management", details: "Understand advanced state management concepts and libraries like Redux or Zustand.", resources: [{ type: "video", label: "React State Management" }] },
-            { title: "Building a Dashboard", details: "A multi-day task to build a complete dashboard application, applying all the React concepts you've learned.", resources: [{ type: "project", label: "Dashboard Build Guide" }] },
+            { 
+                title: "React Fundamentals", 
+                details: "Learn the most popular JavaScript library for UI. Covering components, state, props, hooks, and the virtual DOM.", 
+                resources: [{ type: "video", label: "React Full Course", url: "https://www.youtube.com/watch?v=SqcY0GlETPk" }],
+                task: "Rebuild your 'To-Do List' application using React. Manage the list of to-dos in the component's state. Break the UI down into components like `TodoList`, `TodoItem`, and `AddTodoForm`.",
+                 questions: [
+                    "What is JSX?",
+                    "Explain the concept of 'state' and 'props' in React.",
+                    "What is the purpose of the `useEffect` hook?",
+                ]
+            },
+            { 
+                title: "State Management", 
+                details: "Understand advanced state management concepts and libraries like Redux or Zustand.", 
+                resources: [{ type: "video", label: "React State Management", url: "https://www.youtube.com/watch?v=F6W5Pz_S4Jc" }],
+                task: "Build a simple shopping cart application. Use a state management library to manage the cart's state globally, allowing different components to add items to the cart and display the total.",
+                questions: [
+                    "Why would you need a global state management library instead of just using component state?",
+                    "What is the difference between client-side state and server-side state?",
+                ]
+            },
         ],
         "Weeks 21-24: Final Project & Career Prep": [
-            { title: "Capstone Project", details: "Build a complete, real-world application from a selection of projects like an E-commerce Store or Recipe Finder.", resources: [{ type: "project", label: "Choose Your Final Project" }] },
-            { title: "Career Preparation", details: "Finalize your portfolio, set up your CV with project links, optimize your LinkedIn profile, and prepare for interviews.", resources: [{ type: "action", label: "CV & LinkedIn Setup" }] },
+            { 
+                title: "Capstone Project", 
+                details: "Build a complete, real-world application from a selection of projects like an E-commerce Store or Recipe Finder.", 
+                resources: [{ type: "project", label: "Choose Your Final Project", url: "https://github.com/florinpop17/app-ideas" }],
+                task: "Choose a project from the provided list and build it from scratch using Next.js/React. Deploy the final application to a hosting service like Vercel or Netlify.",
+                questions: [
+                    "What were the biggest challenges you faced in your capstone project and how did you overcome them?",
+                    "How did you structure your components and state for this large project?",
+                ]
+            },
+            { 
+                title: "Career Preparation", 
+                details: "Finalize your portfolio, set up your CV with project links, optimize your LinkedIn profile, and prepare for interviews.", 
+                resources: [{ type: "action", label: "CV & LinkedIn Setup", url: "#" }],
+                task: "Create a professional CV, update your LinkedIn to showcase your new skills and projects, and practice common frontend interview questions.",
+                questions: [
+                    "How would you explain your final project to a non-technical recruiter?",
+                    "What are your career goals for the next 1-2 years as a frontend developer?",
+                ]
+            },
         ],
     },
     backend: {
         "Weeks 1-4: Programming & Database Fundamentals": [
-            { title: "Python/Node.js Basics", details: "Choose a language and master its core concepts, including syntax, data structures, and control flow.", resources: [{ type: "video", label: "Python for Beginners" }, { type: "video", label: "Node.js Full Course" }] },
-            { title: "SQL & Relational Databases", details: "Learn SQL fundamentals and how to design and interact with databases like PostgreSQL or MySQL.", resources: [{ type: "video", label: "SQL in 60 Minutes" }, { type: "exercise", label: "SQLBolt" }] },
-            { title: "Introduction to NoSQL", details: "Understand the concepts behind NoSQL databases like MongoDB.", resources: [{ type: "video", label: "MongoDB Explained" }] },
+            { 
+                title: "Python/Node.js Basics", 
+                details: "Choose a language and master its core concepts, including syntax, data structures, and control flow.", 
+                resources: [{ type: "video", label: "Python for Beginners", url: "https://www.youtube.com/watch?v=eWRfhZUzrAc" }, { type: "video", label: "Node.js Full Course", url: "https://www.youtube.com/watch?v=f2EqECiTBL8" }],
+                task: "Write a command-line script that can read and write data to a local text file, for example, a simple note-taking application.",
+                questions: [
+                    "What are the main data types in your chosen language?",
+                    "Explain the concept of a 'module' or 'package' in your language's ecosystem.",
+                ]
+            },
+            { 
+                title: "SQL & Relational Databases", 
+                details: "Learn SQL fundamentals and how to design and interact with databases like PostgreSQL or MySQL.", 
+                resources: [{ type: "video", label: "SQL in 60 Minutes", url: "https://www.youtube.com/watch?v=p3qvj9hO_Bo" }, { type: "exercise", label: "SQLBolt", url: "https://sqlbolt.com/" }],
+                task: "Design a simple database schema for a blog (with tables for users, posts, and comments). Write SQL queries to create these tables, insert data, and retrieve all posts by a specific user.",
+                questions: [
+                    "What is a primary key and a foreign key?",
+                    "Explain the difference between an INNER JOIN and a LEFT JOIN.",
+                    "What is database normalization?",
+                ]
+            },
         ],
         "Weeks 5-10: API Development": [
-            { title: "Building RESTful APIs", details: "Learn the principles of REST and build your first API using a framework like Express (Node.js) or FastAPI (Python).", resources: [{ type: "video", label: "Build a REST API" }] },
-            { title: "Authentication & Authorization", details: "Implement secure user authentication using JWT, OAuth, and sessions.", resources: [{ type: "article", label: "The JWT Handbook" }] },
-            { title: "Introduction to GraphQL", details: "Explore an alternative to REST and build a basic GraphQL API.", resources: [{ type: "video", label: "GraphQL Full Course" }] },
+            { 
+                title: "Building RESTful APIs", 
+                details: "Learn the principles of REST and build your first API using a framework like Express (Node.js) or FastAPI (Python).", 
+                resources: [{ type: "video", label: "Build a REST API", url: "https://www.youtube.com/watch?v=pKd0Rpw7O48" }],
+                task: "Build a REST API for the blog database you designed. Create endpoints to GET all posts, GET a single post by ID, CREATE a new post, UPDATE a post, and DELETE a post.",
+                questions: [
+                    "What are the main HTTP methods and what do they represent?",
+                    "What is a status code, and what do 200, 201, 404, and 500 mean?",
+                    "What is the difference between `PUT` and `PATCH`?",
+                ]
+            },
+            { 
+                title: "Authentication & Authorization", 
+                details: "Implement secure user authentication using JWT, OAuth, and sessions.", 
+                resources: [{ type: "article", label: "The JWT Handbook", url: "https://jwt.io/introduction" }],
+                task: "Add authentication to your blog API. Create endpoints for user registration and login. Protect the CREATE, UPDATE, and DELETE endpoints so that only the authenticated user who created the post can modify it.",
+                questions: [
+                    "What is a JSON Web Token (JWT) and how does it work?",
+                    "What is the difference between authentication and authorization?",
+                    "Why is it important to hash passwords before storing them in a database?",
+                ]
+            },
         ],
         "Weeks 11-18: DevOps & Cloud Infrastructure": [
-            { title: "Git & Version Control", details: "Master Git for collaboration, branching, and managing code history.", resources: [{ type: "exercise", label: "Learn Git Branching" }] },
-            { title: "Containerization with Docker", details: "Learn to package and run your applications in isolated containers using Docker.", resources: [{ type: "video", label: "Docker for Beginners" }] },
-            { title: "Cloud Fundamentals (AWS/GCP)", details: "Deploy your application on a major cloud provider and learn about core services.", resources: [{ type: "video", label: "AWS Fundamentals" }] },
+            { 
+                title: "Git & Version Control", 
+                details: "Master Git for collaboration, branching, and managing code history.", 
+                resources: [{ type: "exercise", label: "Learn Git Branching", url: "https://learngitbranching.js.org/" }],
+                task: "Create a new repository for your API project on GitHub. Use a feature-branch workflow: create a new branch for a new feature (e.g., adding comments), commit your changes, and then create a pull request to merge it back into the main branch.",
+                questions: [
+                    "What is the difference between `git fetch` and `git pull`?",
+                    "Explain the concept of a pull request (or merge request).",
+                ]
+            },
+            { 
+                title: "Containerization with Docker", 
+                details: "Learn to package and run your applications in isolated containers using Docker.", 
+                resources: [{ type: "video", label: "Docker for Beginners", url: "https://www.youtube.com/watch?v=3c-iBn73dDE" }],
+                task: "Write a Dockerfile for your blog API. Build a Docker image and run it as a container. Then, write a `docker-compose.yml` file to run both your API and your PostgreSQL database together.",
+                questions: [
+                    "What problem does Docker solve?",
+                    "What is the difference between a Docker image and a Docker container?",
+                    "What is the purpose of `docker-compose`?",
+                ]
+            },
         ],
         "Weeks 19-24: Final Project & System Design": [
-            { title: "System Design Basics", details: "Learn the fundamentals of designing scalable, reliable, and maintainable backend systems.", resources: [{ type: "article", label: "System Design Primer" }] },
-            { title: "Capstone Project", details: "Build a complete backend for a real-world application, such as a social media clone or a booking system.", resources: [{ type: "project", label: "Choose Your Final Project" }] },
+            { 
+                title: "System Design Basics", 
+                details: "Learn the fundamentals of designing scalable, reliable, and maintainable backend systems.", 
+                resources: [{ type: "article", label: "System Design Primer", url: "https://github.com/donnemartin/system-design-primer" }],
+                task: "Design the high-level architecture for a URL shortening service like Bitly. Think about the API endpoints, database schema, and how you would handle scaling to millions of users.",
+                questions: [
+                    "What is a load balancer and why is it useful?",
+                    "Explain the concept of database sharding.",
+                    "What are the trade-offs between monolithic and microservices architectures?",
+                ]
+            },
+            { 
+                title: "Capstone Project", 
+                details: "Build a complete backend for a real-world application, such as a social media clone or a booking system.", 
+                resources: [{ type: "project", label: "Choose Your Final Project", url: "https://github.com/florinpop17/app-ideas" }],
+                task: "Choose a project and build the complete backend API for it. It should include a database, authentication, and be fully containerized with Docker. Deploy the final application to a cloud provider like AWS or Google Cloud.",
+                questions: [
+                    "What were the most difficult design decisions you had to make in your project?",
+                    "How would your architecture change if you needed to support 10x more users?",
+                ]
+            },
         ],
     },
     uiux: {
         "Weeks 1-4: Design Foundations & User Research": [
-            { title: "Intro to UI/UX", details: "Understand the core principles of User Interface and User Experience design.", resources: [{ type: "video", label: "Google UX Design Course" }] },
-            { title: "Figma Fundamentals", details: "Master the industry-standard design tool, from basic shapes to auto layout and components.", resources: [{ type: "video", label: "Figma for Beginners" }] },
-            { title: "User Research & Personas", details: "Learn how to conduct user interviews, surveys, and create user personas to guide your design decisions.", resources: [{ type: "article", label: "Guide to User Research" }] },
+            { 
+                title: "Figma Fundamentals", 
+                details: "Master the industry-standard design tool, from basic shapes to auto layout and components.", 
+                resources: [{ type: "video", label: "Figma for Beginners", url: "https://www.youtube.com/watch?v=jwN_tdY4_2s" }],
+                task: "Recreate the user interface of your favorite mobile app's login screen in Figma. Focus on matching the layout, colors, and typography.",
+                questions: [
+                    "What is 'auto layout' in Figma and what problem does it solve?",
+                    "What is the purpose of creating 'components' in your design file?",
+                ]
+            },
+            { 
+                title: "User Research & Personas", 
+                details: "Learn how to conduct user interviews, surveys, and create user personas to guide your design decisions.", 
+                resources: [{ type: "article", label: "Guide to User Research", url: "https://maze.co/guides/user-research/" }],
+                task: "Define a target audience for a hypothetical coffee ordering app. Write a short survey to understand their needs and create one user persona based on your imagined findings.",
+                questions: [
+                    "What is the difference between qualitative and quantitative research?",
+                    "Why are user personas a valuable tool in the design process?",
+                ]
+            },
         ],
         "Weeks 5-10: Wireframing, Prototyping & UI Design": [
-            { title: "Information Architecture", details: "Learn how to organize and structure content in a way that is intuitive for users.", resources: [{ type: "article", label: "IA Heuristics" }] },
-            { title: "Wireframing & Prototyping", details: "Create low-fidelity wireframes and build interactive prototypes in Figma.", resources: [{ type: "video", label: "Prototyping in Figma" }] },
-            { title: "Visual Design Principles", details: "Study color theory, typography, and composition to create beautiful and effective user interfaces.", resources: [{ type: "exercise", label: "Color Theory Challenge" }] },
+            { 
+                title: "Wireframing & Prototyping", 
+                details: "Create low-fidelity wireframes and build interactive prototypes in Figma.", 
+                resources: [{ type: "video", label: "Prototyping in Figma", url: "https://www.youtube.com/watch?v=dEzuS9v22T4" }],
+                task: "Create a low-fidelity wireframe for the main screens of your coffee ordering app (e.g., browsing menu, customizing a drink, checkout). Then, link them together into a clickable prototype in Figma.",
+                questions: [
+                    "What is the purpose of wireframing before moving to high-fidelity visual design?",
+                    "What is a user flow?",
+                ]
+            },
+            { 
+                title: "Visual Design Principles", 
+                details: "Study color theory, typography, and composition to create beautiful and effective user interfaces.", 
+                resources: [{ type: "exercise", label: "Color Theory Challenge", url: "https://color.method.ac/" }],
+                task: "Create a style guide for your coffee app. Choose a color palette, select typography, and define spacing and button styles. Apply this style guide to your wireframes to create a high-fidelity design.",
+                questions: [
+                    "What is the 60-30-10 rule in color design?",
+                    "Why is visual hierarchy important in UI design?",
+                ]
+            },
         ],
         "Weeks 11-18: Design Systems & User Testing": [
-            { title: "Building a Design System", details: "Learn to create a library of reusable components to ensure consistency and speed up your workflow.", resources: [{ type: "video", label: "Intro to Design Systems" }] },
-            { title: "Usability Testing", details: "Plan and conduct usability tests to get feedback on your designs and identify areas for improvement.", resources: [{ type: "article", label: "How to Conduct a Usability Test" }] },
-            { title: "Design Handoff", details: "Learn the best practices for handing off your designs to developers to ensure a smooth implementation.", resources: [{ type: "article", label: "Designer-Developer Collaboration" }] },
+            { 
+                title: "Building a Design System", 
+                details: "Learn to create a library of reusable components to ensure consistency and speed up your workflow.", 
+                resources: [{ type: "video", label: "Intro to Design Systems", url: "https://www.youtube.com/watch?v=_Zt_if_a-28" }],
+                task: "Create a basic design system in Figma for your coffee app. It should include color styles, text styles, and reusable components for buttons, input fields, and cards.",
+                questions: [
+                    "What are the benefits of using a design system?",
+                    "What is the difference between a component and an instance in Figma?",
+                ]
+            },
+            { 
+                title: "Usability Testing", 
+                details: "Plan and conduct usability tests to get feedback on your designs and identify areas for improvement.", 
+                resources: [{ type: "article", label: "How to Conduct a Usability Test", url: "https://www.nngroup.com/articles/usability-testing-101/" }],
+                task: "Write a usability test plan for your coffee app prototype. Ask a friend or family member to complete a task (e.g., 'Order a large latte with oat milk') and observe where they struggle.",
+                questions: [
+                    "What is a common mistake to avoid when conducting a usability test?",
+                    "What kind of insights can you gain from a usability test?",
+                ]
+            },
         ],
         "Weeks 19-24: Portfolio & Final Project": [
-            { title: "Portfolio Development", details: "Create a professional design portfolio that showcases your skills and projects.", resources: [{ type: "article", label: "Building a UX Portfolio" }] },
-            { title: "Capstone Project", details: "Design a complete mobile or web application from scratch, covering the entire design process from research to a high-fidelity prototype.", resources: [{ type: "project", label: "Choose Your Final Project" }] },
+            { 
+                title: "Portfolio Development", 
+                details: "Create a professional design portfolio that showcases your skills and projects.", 
+                resources: [{ type: "article", label: "Building a UX Portfolio", url: "https://uxdesign.cc/how-to-build-a-ux-portfolio-64A1901B6191" }],
+                task: "Create a portfolio case study for your coffee app project. Describe the problem, your process (research, wireframing, testing), and show your final designs.",
+                questions: [
+                    "What are the most important things to include in a portfolio case study?",
+                    "How do you tell a compelling story about your design process?",
+                ]
+            },
+            { 
+                title: "Capstone Project", 
+                details: "Design a complete mobile or web application from scratch, covering the entire design process from research to a high-fidelity prototype.", 
+                resources: [{ type: "project", label: "Choose Your Final Project", url: "https://github.com/florinpop17/app-ideas" }],
+                task: "Choose a new app idea and take it through the entire design process: research, personas, wireframing, prototyping, high-fidelity design, and usability testing. Create a second, comprehensive case study for your portfolio.",
+                questions: [
+                    "How did you apply feedback from usability testing to improve your final design?",
+                    "What would you do differently if you were to start this project over again?",
+                ]
+            },
         ],
     },
     seo: {
         "Weeks 1-4: SEO Fundamentals": [
-            { title: "How Search Engines Work", details: "Understand the basics of crawling, indexing, and ranking.", resources: [{ type: "video", label: "Google Search Explained" }] },
-            { title: "Keyword Research", details: "Learn how to find and analyze keywords that your target audience is searching for.", resources: [{ type: "article", label: "Ahrefs' Keyword Research Guide" }] },
-            { title: "On-Page SEO", details: "Master title tags, meta descriptions, header tags, and content optimization.", resources: [{ type: "video", label: "On-Page SEO Tutorial" }] },
+            { 
+                title: "How Search Engines Work", 
+                details: "Understand the basics of crawling, indexing, and ranking.", 
+                resources: [{ type: "video", label: "Google Search Explained", url: "https://www.youtube.com/watch?v=0eKVizvYSUQ" }],
+                task: "Perform a Google search for a topic you are interested in. Analyze the top 3 results and identify why you think Google ranked them highly (e.g., content quality, backlinks, site authority).",
+                questions: [
+                    "What is the difference between crawling and indexing?",
+                    "What is a search engine results page (SERP)?",
+                ]
+            },
+            { 
+                title: "Keyword Research", 
+                details: "Learn how to find and analyze keywords that your target audience is searching for.", 
+                resources: [{ type: "article", label: "Ahrefs' Keyword Research Guide", url: "https://ahrefs.com/blog/keyword-research/" }],
+                task: "Choose a niche (e.g., 'vegan baking'). Use a free keyword research tool (like Ubersuggest or Google Keyword Planner) to find 10 relevant keywords. Analyze their search volume and difficulty.",
+                questions: [
+                    "What is the difference between a short-tail and a long-tail keyword?",
+                    "What is 'search intent' and why is it important?",
+                ]
+            },
         ],
         "Weeks 5-10: Technical & Off-Page SEO": [
-            { title: "Technical SEO", details: "Dive into sitemaps, robots.txt, schema markup, site speed, and mobile-friendliness.", resources: [{ type: "article", label: "SEMRush Technical SEO Guide" }] },
-            { title: "Link Building", details: "Understand the importance of backlinks and learn strategies for acquiring high-quality links.", resources: [{ type: "video", label: "Link Building for Beginners" }] },
-            { title: "Local SEO (GEO)", details: "Optimize for local search with Google Business Profile, local citations, and location-based keywords.", resources: [{ type: "article", label: "BrightLocal's Guide to Local SEO" }] },
+            { 
+                title: "On-Page SEO", 
+                details: "Master title tags, meta descriptions, header tags, and content optimization.", 
+                resources: [{ type: "video", label: "On-Page SEO Tutorial", url: "https://www.youtube.com/watch?v=gDYyAAdtDgo" }],
+                task: "Write a short blog post (300-500 words) about one of the keywords you found. Ensure you have a compelling title tag, a meta description, and use your target keyword naturally in the content and headers.",
+                 questions: [
+                    "What is the ideal length for a title tag?",
+                    "Why are header tags (H1, H2, H3) important for SEO?",
+                ]
+            },
+            { 
+                title: "Technical SEO", 
+                details: "Dive into sitemaps, robots.txt, schema markup, site speed, and mobile-friendliness.", 
+                resources: [{ type: "article", label: "SEMRush Technical SEO Guide", url: "https://www.semrush.com/blog/technical-seo-guide/" }],
+                task: "Use Google's PageSpeed Insights to analyze the performance of your favorite website. Identify the main issues affecting its speed and mobile-friendliness.",
+                questions: [
+                    "What is the purpose of a `robots.txt` file?",
+                    "What is schema markup and how does it help SEO?",
+                ]
+            },
         ],
         "Weeks 11-18: Analytics & Content Strategy": [
-            { title: "Google Analytics 4", details: "Learn how to set up, navigate, and interpret data in GA4 to track your SEO performance.", resources: [{ type: "video", label: "GA4 for Beginners" }] },
-            { title: "Content Strategy for SEO", details: "Develop a content plan that attracts your target audience and ranks well in search engines.", resources: [{ type: "article", label: "HubSpot's Content Strategy Guide" }] },
-            { title: "App Store Optimization (ASO)", details: "Learn the fundamentals of optimizing app listings on the Apple App Store and Google Play Store.", resources: [{ type: "video", label: "ASO Explained" }] },
+            { 
+                title: "Link Building", 
+                details: "Understand the importance of backlinks and learn strategies for acquiring high-quality links.", 
+                resources: [{ type: "video", label: "Link Building for Beginners", url: "https://www.youtube.com/watch?v=5tRQ3y_5O_I" }],
+                task: "Find a broken link on a reputable website in your chosen niche. Write a brief outreach email to the site owner, letting them know about the broken link and suggesting your blog post as a potential replacement.",
+                questions: [
+                    "What makes a backlink 'high-quality'?",
+                    "What is the difference between 'dofollow' and 'nofollow' links?",
+                ]
+            },
+            { 
+                title: "Google Analytics 4", 
+                details: "Learn how to set up, navigate, and interpret data in GA4 to track your SEO performance.", 
+                resources: [{ type: "video", label: "GA4 for Beginners", url: "https://www.youtube.com/watch?v=uC0a_w0YvM4" }],
+                task: "If you have a personal website, set up a Google Analytics 4 property. Explore the reports to find out how many users you had in the last 7 days and where they came from (e.g., Organic Search, Direct).",
+                questions: [
+                    "What is the difference between a 'user' and a 'session' in Google Analytics?",
+                    "What is 'bounce rate' and what can it tell you about your page?",
+                ]
+            },
         ],
         "Weeks 19-24: Final Project & Reporting": [
-            { title: "SEO Audit", details: "Learn how to conduct a comprehensive SEO audit for a real website.", resources: [{ type: "project", label: "Perform an SEO Audit" }] },
-            { title: "Reporting & KPIs", details: "Create meaningful SEO reports that demonstrate value and track key performance indicators.", resources: [{ type: "article", label: "Essential SEO KPIs" }] },
+            { 
+                title: "SEO Audit", 
+                details: "Learn how to conduct a comprehensive SEO audit for a real website.", 
+                resources: [{ type: "project", label: "Perform an SEO Audit", url: "https://backlinko.com/seo-audit" }],
+                task: "Perform a basic SEO audit on a small local business's website. Create a short report outlining 3-5 key areas for improvement, covering on-page, technical, and off-page factors.",
+                questions: [
+                    "What are the main components of a technical SEO audit?",
+                    "How do you prioritize the recommendations from your audit?",
+                ]
+            },
+             { 
+                title: "App Store Optimization (ASO)", 
+                details: "Learn the fundamentals of optimizing app listings on the Apple App Store and Google Play Store.", 
+                resources: [{ type: "video", label: "ASO Explained", url: "https://www.youtube.com/watch?v=x_4DFpCjHAs" }],
+                task: "Analyze the app store listing for a popular app. Evaluate its title, subtitle, description, and screenshots. Identify what it does well and where it could be improved.",
+                questions: [
+                    "What are the most important ranking factors in ASO?",
+                    "How is ASO different from traditional web SEO?",
+                ]
+            },
         ],
     }
 };
 
 const getResourceIcon = (type: string) => {
     switch (type) {
-        case "video": return <PlayCircle className="h-4 w-4 text-muted-foreground"/>;
-        case "article": return <Projector className="h-4 w-4 text-muted-foreground"/>;
-        case "exercise": return <Lightbulb className="h-4 w-4 text-muted-foreground"/>;
-        case "project": return <GitBranch className="h-4 w-4 text-muted-foreground"/>;
-        default: return <CheckCircle className="h-4 w-4 text-muted-foreground"/>;
+        case "video": return <PlayCircle className="h-5 w-5 text-muted-foreground"/>;
+        case "article": return <Projector className="h-5 w-5 text-muted-foreground"/>;
+        case "exercise": return <Lightbulb className="h-5 w-5 text-muted-foreground"/>;
+        case "project": return <GitBranch className="h-5 w-5 text-muted-foreground"/>;
+        default: return <CheckCircle className="h-5 w-5 text-muted-foreground"/>;
     }
 }
 
@@ -122,7 +428,7 @@ const TrainingCurriculum = ({ curriculum }: { curriculum: typeof curriculums.fro
     <Accordion type="single" collapsible className="w-full">
         {Object.entries(curriculum).map(([week, topics]) => (
             <AccordionItem key={week} value={week}>
-                <AccordionTrigger className="text-xl font-headline hover:no-underline">{week}</AccordionTrigger>
+                <AccordionTrigger className="text-xl font-headline hover:no-underline text-left">{week}</AccordionTrigger>
                 <AccordionContent className="space-y-4 pt-4">
                     {topics.map(topic => (
                         <Card key={topic.title} className="bg-background/50">
@@ -131,16 +437,29 @@ const TrainingCurriculum = ({ curriculum }: { curriculum: typeof curriculums.fro
                                 <CardDescription>{topic.details}</CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Key Resources:</h4>
-                                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                                <h4 className="text-sm font-semibold mb-3 text-muted-foreground">Key Resources:</h4>
+                                <div className="flex flex-wrap gap-x-6 gap-y-3">
                                     {topic.resources.map(res => (
-                                        <div key={res.label} className="flex items-center gap-2 text-sm">
+                                        <a key={res.label} href={res.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary hover:underline">
                                             {getResourceIcon(res.type)}
                                             <span>{res.label}</span>
-                                        </div>
+                                            <ExternalLink className="h-4 w-4" />
+                                        </a>
                                     ))}
                                 </div>
                             </CardContent>
+                             <CardFooter className="flex-col items-start gap-4 bg-secondary/30 p-6 pt-4">
+                                <div className="w-full">
+                                    <h4 className="font-semibold text-foreground flex items-center gap-2 mb-2"><ClipboardCheck className="h-5 w-5 text-primary" />Your Task</h4>
+                                    <p className="text-sm text-foreground/80">{topic.task}</p>
+                                </div>
+                                <div className="w-full">
+                                    <h4 className="font-semibold text-foreground flex items-center gap-2 mb-2"><HelpCircle className="h-5 w-5 text-primary" />Knowledge Check</h4>
+                                    <ul className="list-disc list-inside space-y-1 text-sm text-foreground/80">
+                                        {topic.questions.map((q, i) => <li key={i}>{q}</li>)}
+                                    </ul>
+                                </div>
+                            </CardFooter>
                         </Card>
                     ))}
                 </AccordionContent>
@@ -186,10 +505,10 @@ export default function TrainingProgramPage() {
                     <FadeIn className="max-w-6xl mx-auto">
                         <Tabs defaultValue="frontend" className="w-full">
                             <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">
-                                <TabsTrigger value="frontend" className="py-3 flex-col gap-1 h-full"><CodeXml/>Frontend Developer</TabsTrigger>
-                                <TabsTrigger value="backend" className="py-3 flex-col gap-1 h-full"><Server/>Backend Developer</TabsTrigger>
-                                <TabsTrigger value="uiux" className="py-3 flex-col gap-1 h-full"><Palette/>UI/UX Designer</TabsTrigger>
-                                <TabsTrigger value="seo" className="py-3 flex-col gap-1 h-full"><Search/>SEO & ASO</TabsTrigger>
+                                <TabsTrigger value="frontend" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Code/>Frontend</TabsTrigger>
+                                <TabsTrigger value="backend" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Server/>Backend</TabsTrigger>
+                                <TabsTrigger value="uiux" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Palette/>UI/UX</TabsTrigger>
+                                <TabsTrigger value="seo" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Search/>SEO & ASO</TabsTrigger>
                             </TabsList>
                             <TabsContent value="frontend" className="pt-8">
                                 <TrainingCurriculum curriculum={curriculums.frontend} />
@@ -235,3 +554,5 @@ export default function TrainingProgramPage() {
         </>
     );
 }
+
+    
