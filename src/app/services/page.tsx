@@ -1,6 +1,6 @@
 
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services } from "@/lib/data";
+import { services } from "@/lib/data.tsx";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";

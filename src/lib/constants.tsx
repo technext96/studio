@@ -1,5 +1,5 @@
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail, ArrowRight } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -93,11 +93,34 @@ const MarketingIllustration = () => (
     </svg>
   );
 
-const EthicalAiIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5" />;
-const DataPrivacyIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5" />;
-const FundingIllustration = () => <Zap className="w-full h-full text-primary" strokeWidth="0.5" />;
+const RideshareIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M 50 400 Q 256 300, 462 400" fill="none" stroke="hsl(var(--border))" strokeWidth="8" strokeDasharray="20 15" />
+        <g>
+            <path d="M 100 380 L 120 340 L 200 340 L 220 380 Z" fill="hsl(var(--primary))" />
+            <rect x="110" y="380" width="100" height="20" rx="5" fill="hsl(var(--secondary))" />
+            <circle cx="130" cy="400" r="12" fill="hsl(var(--foreground))" />
+            <circle cx="190" cy="400" r="12" fill="hsl(var(--foreground))" />
+            <animateTransform 
+                attributeName="transform"
+                type="translate"
+                values="0,0; 250,0; 0,0; 0,0"
+                dur="8s"
+                repeatCount="indefinite" />
+        </g>
+        <g fill="hsl(var(--primary) / 0.7)">
+            <path d="M 150 150 C 150 120, 200 120, 200 150 C 200 180, 175 220, 175 220 C 175 220, 150 180, 150 150 Z" />
+            <circle cx="175" cy="150" r="10" />
+        </g>
+         <g fill="hsl(var(--primary) / 0.7)">
+            <path d="M 350 180 C 350 150, 400 150, 400 180 C 400 210, 375 250, 375 250 C 375 250, 350 210, 350 180 Z" />
+            <circle cx="375" cy="180" r="10" />
+        </g>
+    </svg>
+);
+const EthicalAiIllustration = () => <ShieldCheck className="w-full h-full text-primary" strokeWidth="0.5" />;
+const DataPrivacyIllustration = () => <Shield className="w-full h-full text-primary" strokeWidth="0.5" />;
 const SaasScaleIllustration = () => <Rocket className="w-full h-full text-primary" strokeWidth="0.5" />;
-const HybridWorkIllustration = () => <Home className="w-full h-full text-primary" strokeWidth="0.5" />;
 
 export const illustrationMap: { [key: string]: React.FC } = {
     customSoftware: CustomSoftwareIllustration,
@@ -125,18 +148,7 @@ export const illustrationMap: { [key: string]: React.FC } = {
     foodDelivery: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
     aiShopping: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
     medicalChatbot: () => <HeartPulse className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    quantum: () => <BrainCircuit className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    genAi: () => <Bot className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    spatial: () => <PencilRuler className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    whatsappFab: () => <MessageSquare className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    devopsCulture: () => <Users className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    microservices: () => <Cog className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    serverless: () => <Cloud className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    web3: () => <Shield className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    greenTech: () => <Zap className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    noCode: () => <Code className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    hybridWork: HybridWorkIllustration,
-    funding: FundingIllustration,
+    rideshare: RideshareIllustration,
     ethicalAi: EthicalAiIllustration,
     dataPrivacy: DataPrivacyIllustration,
     saasScale: SaasScaleIllustration,
@@ -171,4 +183,23 @@ export const iconMap: { [key: string]: React.FC<{className?: string}> } = {
     bookUser: (props) => <BookUser {...props} />,
     users: (props) => <Users {...props} />,
     mail: (props) => <Mail {...props} />,
+    arrowRight: (props) => <ArrowRight {...props} />,
 };
+
+export const valuePropositions = [
+    {
+        icon: BrainCircuit,
+        title: "Innovation at the Core",
+        description: "We are driven by a relentless curiosity to explore emerging technologies and find creative, cutting-edge solutions to complex problems. We don't just follow trends; we aim to set them."
+    },
+    {
+        icon: ShieldCheck,
+        title: "Unwavering Integrity",
+        description: "We operate with transparency and honesty. Trust is the foundation of our relationships, and we build it with our clients and team members through every interaction."
+    },
+    {
+        icon: Users,
+        title: "Collaborative Partnership",
+        description: "We believe that the most brilliant results are born from teamwork. We unite with our clients, combining diverse perspectives and expertise to achieve common goals and deliver exceptional value."
+    }
+];

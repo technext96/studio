@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio } from "@/lib/data";
+import { portfolio } from "@/lib/data.tsx";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";

@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { services } from "@/lib/data";
+import { services } from "@/lib/data.tsx";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";

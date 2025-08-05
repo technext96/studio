@@ -5,7 +5,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { homePageFaqs } from "@/lib/data";
+import { homePageFaqs } from "@/lib/data.tsx";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export default function FaqSection() {

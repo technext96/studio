@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { blogPosts } from "@/lib/data";
+import { blogPosts } from "@/lib/data.tsx";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,7 +48,7 @@ export default function BlogPage() {
                       <p className="text-sm text-primary font-semibold">{post.category}</p>
                       <CardTitle className="font-headline">{post.title}</CardTitle>
                       <CardDescription>
-                        By {post.author} on {format(new Date(post.date), "MMMM d, yyyy")}
+                        By {post.author.name} on {format(new Date(post.date), "MMMM d, yyyy")}
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="flex-grow">

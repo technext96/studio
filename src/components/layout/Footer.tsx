@@ -1,7 +1,7 @@
 
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { navLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data.tsx";
 import { Mail, Github, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 

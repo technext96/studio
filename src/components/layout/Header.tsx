@@ -3,7 +3,7 @@
 'use client';
 
 import Link from "next/link";
-import { Menu, X, Mail, Phone, Code } from "lucide-react";
+import { Menu, X, Mail, Phone, Code, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -24,7 +24,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { navLinks } from "@/lib/data";
+import { navLinks } from "@/lib/data.tsx";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ScrollArea } from "../ui/scroll-area";
@@ -170,7 +170,13 @@ export default function Header() {
                                         <>
                                             <NavigationMenuTrigger>{link.title}</NavigationMenuTrigger>
                                             <NavigationMenuContent>
-                                                 <ul className={cn("grid gap-3 p-4 w-[450px]", (link.title === 'Services' || link.title === 'Industries') && 'grid-cols-2 lg:w-[600px]')}>
+                                                 <ul className={cn(
+                                                     "grid gap-3 p-4 w-[450px]",
+                                                     link.title === 'Services' && 'grid-cols-2 lg:w-[600px]',
+                                                     link.title === 'Industries' && 'grid-cols-2 lg:w-[600px]',
+                                                     link.title === 'Our Work' && 'lg:w-[450px]',
+                                                     link.title === 'Company' && 'lg:w-[450px]'
+                                                 )}>
                                                      {link.image && (
                                                         <li className="row-span-3">
                                                             <NavigationMenuLink asChild>
@@ -182,27 +188,42 @@ export default function Header() {
                                                             </NavigationMenuLink>
                                                         </li>
                                                      )}
-                                                     {link.items.map((item) => {
-                                                        const Icon = item.icon ? iconMap[item.icon] : null;
-                                                        return (
+                                                     {
+                                                        (link.title === 'Services' ? link.items.slice(0, 5) : 
+                                                        link.title === 'Industries' ? link.items.slice(0, 5) : 
+                                                        link.items).map((item) => {
+                                                            const Icon = item.icon ? iconMap[item.icon as string] : null;
+                                                            return (
+                                                            <ListItem
+                                                                key={item.title}
+                                                                title={item.title}
+                                                                href={item.href}
+                                                                icon={Icon ? <Icon /> : undefined}
+                                                            >
+                                                                {item.description}
+                                                            </ListItem>
+                                                            )
+                                                        })
+                                                     }
+                                                     {(link.title === 'Services' || link.title === 'Industries') && (
                                                         <ListItem
-                                                          key={item.title}
-                                                          title={item.title}
-                                                          href={item.href}
-                                                          icon={Icon ? <Icon /> : undefined}
+                                                            title={`Explore All ${link.title}`}
+                                                            href={link.href}
+                                                            icon={<ArrowRight />}
+                                                            className="bg-secondary/50 hover:bg-secondary col-span-2"
                                                         >
-                                                          {item.description}
+                                                            View all our solutions and expertise in this area.
                                                         </ListItem>
-                                                     )})}
+                                                     )}
                                                  </ul>
                                             </NavigationMenuContent>
                                         </>
                                     ) : (
-                                        <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "font-semibold")}>
-                                            <Link href={link.href}>
+                                        <Link href={link.href} legacyBehavior passHref>
+                                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "font-semibold")}>
                                                 {link.title}
-                                            </Link>
-                                        </NavigationMenuLink>
+                                            </NavigationMenuLink>
+                                        </Link>
                                     )}
                                 </NavigationMenuItem>
                             ))}

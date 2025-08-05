@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio } from "@/lib/data";
+import { portfolio } from "@/lib/data.tsx";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { illustrationMap } from "@/lib/constants";

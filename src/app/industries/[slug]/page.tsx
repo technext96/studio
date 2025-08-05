@@ -1,7 +1,7 @@
 
 
 import { Button } from "@/components/ui/button";
-import { industries, portfolio } from "@/lib/data";
+import { industries, portfolio } from "@/lib/data.tsx";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";

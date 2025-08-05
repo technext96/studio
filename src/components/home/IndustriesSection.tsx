@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { industries } from "@/lib/data";
+import { industries } from "@/lib/data.tsx";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { iconMap } from "@/lib/constants";

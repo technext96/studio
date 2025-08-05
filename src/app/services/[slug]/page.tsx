@@ -1,7 +1,7 @@
 
 
 import { Button } from "@/components/ui/button";
-import { services } from "@/lib/data";
+import { services } from "@/lib/data.tsx";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
