@@ -7,6 +7,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import ChatWidget from '@/components/ChatWidget';
 
 const inter = Inter({
@@ -93,6 +94,7 @@ export default function RootLayout({
         </div>
         <Toaster />
         <SpeedInsights />
+        <Analytics />
         <ChatWidget />
       </body>
     </html>
