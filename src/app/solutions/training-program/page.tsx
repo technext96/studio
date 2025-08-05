@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { FadeIn } from '@/components/ui/fade-in';
-import { CheckCircle, Code, GitBranch, LayoutTemplate, Lightbulb, Mail, MessageSquare, PlayCircle, Projector, Send, Server, Palette, Search, ExternalLink, HelpCircle, ClipboardCheck } from 'lucide-react';
+import { CheckCircle, Code, GitBranch, LayoutTemplate, Lightbulb, Mail, MessageSquare, PlayCircle, Projector, Send, Server, Palette, Search, ExternalLink, HelpCircle, ClipboardCheck, Smartphone } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -411,6 +411,202 @@ const curriculums = {
                 ]
             },
         ],
+    },
+    reactNative: {
+        "Weeks 1-4: Foundations & Core Concepts": [
+            { 
+                title: "React & JavaScript Refresher", 
+                details: "Revisit core React concepts like JSX, components, state, props, and hooks. Solidify modern JavaScript (ES6+) knowledge.", 
+                resources: [{ type: "video", label: "React Official Tutorial", url: "https://react.dev/learn" }, { type: "article", label: "JavaScript.info", url: "https://javascript.info/" }],
+                task: "Create a simple web-based counter application using React that has buttons to increment, decrement, and reset the count. This will refresh your state management skills.",
+                questions: [
+                    "What is the difference between state and props?",
+                    "Explain the purpose of the `useState` and `useEffect` hooks.",
+                    "What is JSX and how is it different from HTML?"
+                ]
+            },
+            { 
+                title: "Intro to React Native & Expo", 
+                details: "Set up your development environment with Expo. Learn about core components like `View`, `Text`, `Image`, `StyleSheet`, and the basic project structure.", 
+                resources: [{ type: "video", label: "React Native Full Course", url: "https://www.youtube.com/watch?v=0-S5a0eXPoc" }],
+                task: "Create a new React Native project using Expo. Build a simple 'Welcome' screen with a logo, a title, and a short paragraph of text, using the core components.",
+                questions: [
+                    "What is the difference between React and React Native?",
+                    "What role does Expo play in React Native development?",
+                    "How does styling in React Native differ from styling for the web with CSS?"
+                ]
+            },
+        ],
+        "Weeks 5-10: Building UIs & Navigation": [
+            { 
+                title: "Layout with Flexbox", 
+                details: "Master Flexbox for building responsive layouts in React Native. Understand concepts like `flexDirection`, `justifyContent`, and `alignItems`.", 
+                resources: [{ type: "exercise", label: "Flexbox Froggy", url: "https://flexboxfroggy.com/" }, { type: "article", label: "React Native Layout Guide", url: "https://reactnative.dev/docs/flexbox" }],
+                task: "Build a UI that mimics a social media profile screen. It should have a profile picture at the top, followed by user stats (posts, followers, following) in a row, and a grid of photos below.",
+                questions: [
+                    "What is the default `flexDirection` in React Native?",
+                    "How do you center an item both horizontally and vertically inside a container?",
+                    "What is the difference between `justifyContent` and `alignItems`?",
+                ]
+            },
+            { 
+                title: "Handling User Input & Lists", 
+                details: "Learn to use `TextInput` for forms, `Button` and `TouchableOpacity` for actions, and `ScrollView`/`FlatList` for displaying long lists of data.", 
+                resources: [{ type: "video", label: "React Native Lists", url: "https://www.youtube.com/watch?v=zQc_i2_2aM0" }],
+                task: "Build a basic search screen. Include a `TextInput` for the user to type a query, a `Button` to submit, and display the results in a scrollable `FlatList`.",
+                questions: [
+                    "Why is `FlatList` more performant than `ScrollView` for long lists?",
+                    "What is the purpose of the `onPress` prop on a `Button`?",
+                    "How do you manage the value of a `TextInput` component?",
+                ]
+            },
+        ],
+        "Weeks 11-18: Navigation & Device APIs": [
+            { 
+                title: "Navigation with React Navigation", 
+                details: "Implement navigation between screens using the most popular library, React Navigation. Learn about Stack, Tab, and Drawer navigators.", 
+                resources: [{ type: "article", label: "React Navigation Docs", url: "https://reactnavigation.org/docs/getting-started/" }],
+                task: "Create a multi-screen app. The first screen should have a button that navigates to a second, 'Details' screen. Then, implement a tab navigator to switch between a 'Home' screen and a 'Settings' screen.",
+                questions: [
+                    "What is the difference between a Stack navigator and a Tab navigator?",
+                    "How do you pass data from one screen to another using React Navigation?",
+                    "What is a navigation stack?",
+                ]
+            },
+            { 
+                title: "Accessing Native Device APIs", 
+                details: "Learn to use native device features like the Camera, Photo Library, and AsyncStorage for local storage using Expo's rich set of APIs.", 
+                resources: [{ type: "video", label: "Expo Camera & Image Picker", url: "https://www.youtube.com/watch?v=Cn9b_T0M8aA" }],
+                task: "Build a feature where a user can press a button to open the device's camera, take a photo, and then display that photo on the screen.",
+                questions: [
+                    "Why do you need to ask for permissions before using APIs like the Camera or Location?",
+                    "What is `AsyncStorage` used for?",
+                    "What is the purpose of the `expo-image-picker` library?",
+                ]
+            },
+        ],
+        "Weeks 19-24: State, Data & Deployment": [
+            { 
+                title: "Advanced State & Data Management", 
+                details: "Manage global app state with Zustand or Redux Toolkit. Fetch data from remote APIs using `fetch` or Axios and handle loading/error states.", 
+                resources: [{ type: "article", label: "Zustand State Management", url: "https://docs.pmnd.rs/zustand/getting-started/introduction" }],
+                task: "Create an app that fetches a list of users from a public API (like JSONPlaceholder). Store the user list in a global Zustand store. Display the list on one screen, and on a separate 'Profile' screen, display the details of a selected user from the global store.",
+                questions: [
+                    "When should you use global state instead of local component state?",
+                    "How do you handle API loading and error states in your UI?",
+                    "What is the purpose of the `useEffect` hook when fetching data?",
+                ]
+            },
+            { 
+                title: "Final Project & Publishing", 
+                details: "Build a complete, multi-screen app from scratch. Learn how to create a build of your app and submit it to the Apple App Store and Google Play Store using Expo Application Services (EAS).", 
+                resources: [{ type: "project", label: "Choose Your Final Project", url: "https://github.com/florinpop17/app-ideas" }, { type: "article", label: "EAS Build Guide", url: "https://docs.expo.dev/build/introduction/" }],
+                task: "Build a complete weather app that uses the device's location to fetch and display the current weather from a free weather API. Then, use EAS Build to create an `apk` (Android) or `ipa` (iOS) file ready for submission.",
+                questions: [
+                    "What is EAS (Expo Application Services)?",
+                    "What are the main steps involved in publishing an app to the app stores?",
+                    "What is the difference between a development build and a production build?",
+                ]
+            },
+        ],
+    },
+    devops: {
+        "Weeks 1-4: Foundations of DevOps & Git": [
+            {
+                title: "DevOps Culture & Principles",
+                details: "Understand the 'Why' behind DevOps. Learn about CAMS (Culture, Automation, Measurement, Sharing) and the philosophy of breaking down silos.",
+                resources: [{ type: "video", label: "What is DevOps?", url: "https://www.youtube.com/watch?v=J_Q3g_g2iTw" }, { type: "article", label: "The Phoenix Project (Book)", url: "https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/0988262592" }],
+                task: "Write a one-page summary explaining how a traditional 'waterfall' development process differs from a DevOps approach, focusing on the feedback loop and deployment frequency.",
+                questions: [
+                    "What problem is DevOps trying to solve?",
+                    "What are the three ways of DevOps?",
+                    "What does 'shifting left' mean in a DevOps context?",
+                ],
+            },
+            {
+                title: "Mastering Git & Version Control",
+                details: "Go beyond `git add/commit/push`. Master branching strategies (GitFlow), handling merge conflicts, and using Git for effective team collaboration.",
+                resources: [{ type: "exercise", label: "Learn Git Branching", url: "https://learngitbranching.js.org/" }],
+                task: "Create a repository on GitHub. Create a `develop` branch from `main`. Create a new feature branch from `develop`, make a change, and commit it. Open a Pull Request to merge the feature into `develop`.",
+                questions: [
+                    "What is the difference between `git merge` and `git rebase`?",
+                    "What is a Pull Request (or Merge Request)?",
+                    "What is the purpose of a `.gitignore` file?",
+                ],
+            },
+        ],
+        "Weeks 5-10: CI/CD Pipelines": [
+            {
+                title: "Continuous Integration with GitHub Actions",
+                details: "Learn to build your first CI pipeline. Automate the process of building, testing, and linting your code every time a change is pushed.",
+                resources: [{ type: "video", label: "GitHub Actions Tutorial", url: "https://www.youtube.com/watch?v=R8_veQiY-9s" }],
+                task: "Take a simple Node.js application. Create a GitHub Actions workflow file (`.github/workflows/ci.yml`) that triggers on every push. The workflow should install dependencies, run linting, and execute unit tests.",
+                questions: [
+                    "What is Continuous Integration (CI)?",
+                    "What is a 'workflow' in the context of GitHub Actions?",
+                    "Why is it important to run tests automatically in a CI pipeline?",
+                ],
+            },
+            {
+                title: "Continuous Delivery/Deployment",
+                details: "Extend your CI pipeline to a CD pipeline. Learn to automatically deploy your application to a staging or production environment after tests pass.",
+                resources: [{ type: "article", label: "Continuous Delivery Guide", url: "https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment" }],
+                task: "Create a second job in your GitHub Actions workflow that deploys your application to a free hosting service (like Vercel or Netlify) but only when changes are merged into the `main` branch.",
+                questions: [
+                    "What is the difference between Continuous Delivery and Continuous Deployment?",
+                    "What is a 'deployment environment' (e.g., staging, production)?",
+                    "Why are feature flags a useful technique in CD?",
+                ],
+            },
+        ],
+        "Weeks 11-18: Containerization & Cloud": [
+            {
+                title: "Containerization with Docker",
+                details: "Learn to package applications and their dependencies into portable containers using Docker. Write Dockerfiles and manage multiple containers with Docker Compose.",
+                resources: [{ type: "video", label: "Docker Full Course", url: "https://www.youtube.com/watch?v=3c-iBn73dDE" }],
+                task: "Write a Dockerfile for the Node.js application. Build an image from it and run it as a container. Then, create a `docker-compose.yml` file to run the app container and a database container (e.g., Postgres) together.",
+                questions: [
+                    "What problems does Docker solve?",
+                    "What is the difference between a Docker image and a Docker container?",
+                    "What is the purpose of Docker Compose?",
+                ],
+            },
+            {
+                title: "Cloud Fundamentals (AWS/GCP)",
+                details: "Understand the core services of a major cloud provider: compute (EC2/Compute Engine), storage (S3/Cloud Storage), and networking (VPC).",
+                resources: [{ type: "video", label: "AWS in 10 minutes", url: "https://www.youtube.com/watch?v=r4YIdn2eTm4" }],
+                task: "Create a free-tier account on AWS or GCP. Manually launch a small virtual machine (EC2 or Compute Engine), connect to it via SSH, and install a simple web server like Nginx.",
+                questions: [
+                    "What is the difference between IaaS, PaaS, and SaaS?",
+                    "What is a Virtual Private Cloud (VPC)?",
+                    "What is object storage (like S3) used for?",
+                ],
+            },
+        ],
+        "Weeks 19-24: Infrastructure as Code & Final Project": [
+            {
+                title: "Infrastructure as Code (IaC) with Terraform",
+                details: "Stop configuring infrastructure manually. Learn to define and manage your cloud resources using a declarative IaC tool like Terraform.",
+                resources: [{ type: "article", label: "Terraform Tutorial", url: "https://developer.hashicorp.com/terraform/tutorials/aws-get-started" }],
+                task: "Write a Terraform configuration file that automates the process from the previous week: it should define and create a VPC and a virtual machine on AWS or GCP when you run `terraform apply`.",
+                questions: [
+                    "Why is Infrastructure as Code important for DevOps?",
+                    "What is 'declarative' configuration?",
+                    "What is the 'state file' in Terraform and why is it important?",
+                ],
+            },
+            {
+                title: "Capstone Project: Fully Automated Pipeline",
+                details: "Combine everything you've learned. Build a complete CI/CD pipeline that takes a containerized application, provisions the necessary cloud infrastructure using Terraform, and deploys the container to that infrastructure.",
+                resources: [{ type: "project", label: "CI/CD Project Ideas", url: "https://github.com/bregman-arie/devops-exercises" }],
+                task: "Take your containerized Node.js app. Create a GitHub Actions pipeline that, on a push to `main`, uses Terraform to ensure the cloud infrastructure is up-to-date and then deploys the latest Docker image to the server.",
+                questions: [
+                    "How did you manage sensitive information (like API keys or cloud credentials) in your pipeline?",
+                    "What was the most challenging part of connecting all the different tools (Git, Docker, Terraform, Cloud)?",
+                    "How would you add monitoring and alerting to your deployed application?",
+                ],
+            },
+        ],
     }
 };
 
@@ -504,9 +700,11 @@ export default function TrainingProgramPage() {
                     </FadeIn>
                     <FadeIn className="max-w-6xl mx-auto">
                         <Tabs defaultValue="frontend" className="w-full">
-                            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">
+                            <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto">
                                 <TabsTrigger value="frontend" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Code/>Frontend</TabsTrigger>
                                 <TabsTrigger value="backend" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Server/>Backend</TabsTrigger>
+                                <TabsTrigger value="reactNative" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Smartphone/>React Native</TabsTrigger>
+                                <TabsTrigger value="devops" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><GitBranch/>DevOps</TabsTrigger>
                                 <TabsTrigger value="uiux" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Palette/>UI/UX</TabsTrigger>
                                 <TabsTrigger value="seo" className="py-3 flex flex-col sm:flex-row items-center justify-center gap-2 h-full"><Search/>SEO & ASO</TabsTrigger>
                             </TabsList>
@@ -515,6 +713,12 @@ export default function TrainingProgramPage() {
                             </TabsContent>
                             <TabsContent value="backend" className="pt-8">
                                 <TrainingCurriculum curriculum={curriculums.backend} />
+                            </TabsContent>
+                             <TabsContent value="reactNative" className="pt-8">
+                                <TrainingCurriculum curriculum={curriculums.reactNative as any} />
+                            </TabsContent>
+                             <TabsContent value="devops" className="pt-8">
+                                <TrainingCurriculum curriculum={curriculums.devops as any} />
                             </TabsContent>
                             <TabsContent value="uiux" className="pt-8">
                                 <TrainingCurriculum curriculum={curriculums.uiux} />
@@ -554,5 +758,3 @@ export default function TrainingProgramPage() {
         </>
     );
 }
-
-    
