@@ -1,20 +1,17 @@
 
 import { Metadata } from "next";
-import HeroSection from "@/components/home/HeroSection";
-import ValuePropositionsSection from "@/components/home/ValuePropositionsSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import IndustriesSection from "@/components/home/IndustriesSection";
-import PortfolioSection from "@/components/home/PortfolioSection";
-import BlogSection from "@/components/home/BlogSection";
-import FaqSection from "@/components/home/FaqSection";
-import CtaSection from "@/components/home/CtaSection";
+import HeroSectionV2 from "@/components/home-v2/HeroSectionV2";
+import ServicesSectionV2 from "@/components/home-v2/ServicesSectionV2";
+import ProcessSection from "@/components/home-v2/ProcessSection";
+import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
+import PortfolioAndBlogSection from "@/components/home/PortfolioAndBlogSection";
 
 export const metadata: Metadata = {
-    title: 'TechNext | Custom Software, AI, & Web Development Solutions',
-    description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
+    title: 'TechNext | Elite Software Engineering & AI Solutions',
+    description: 'TechNext architects elite custom software, AI-powered systems, and scalable web solutions to give your business a decisive competitive edge. Partner with us for innovation that performs.',
     openGraph: {
-        title: 'TechNext | Custom Software, AI, & Web Development Solutions',
-        description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
+        title: 'TechNext | Elite Software Engineering & AI Solutions',
+        description: 'We build high-performance, scalable software solutions that deliver measurable results and a powerful ROI.',
     },
 };
 
@@ -22,14 +19,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
-        <HeroSection />
-        <ValuePropositionsSection />
-        <ServicesSection />
-        <IndustriesSection />
-        <PortfolioSection />
-        <BlogSection />
-        <FaqSection />
-        <CtaSection />
+        <HeroSectionV2 />
+        <ServicesSectionV2 />
+        <ProcessSection />
+        <PortfolioAndBlogSection />
+        <CtaSectionV2 />
       </main>
     </div>
   );
