@@ -76,7 +76,13 @@ export default function RootLayout({
       '@type': 'ContactPoint',
       telephone: '+92-349-1089456',
       contactType: 'customer service',
+      email: 'technext96@gmail.com'
     },
+    sameAs: [
+      'https://github.com/technext96/',
+      'https://www.youtube.com/@technext-096',
+      'https://www.linkedin.com/company/technext96'
+    ]
   };
   
   return (

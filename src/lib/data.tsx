@@ -151,11 +151,11 @@ export const portfolio = [
 export const blogPosts = [
     {
         slug: 'white-label-rideshare-app',
-        title: 'Launch Your Ride-Sharing Business with a White-Label App',
+        title: 'White-Label Ride-Sharing App | Launch Your Uber-like Business Today',
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-08-05',
         category: 'Business Solutions',
-        excerpt: 'Discover how a white-label rideshare app can be your turn-key solution to entering the booming mobility market without the high costs of custom development.',
+        excerpt: 'Start your ride-sharing business with our white-label solution. Cost-effective, scalable, and fully customizable. Launch your Uber-like app in days.',
         illustration: "rideshare",
         keyTakeaways: [
             "Market Opportunity: The ride-sharing market is expanding, offering a prime opportunity for new businesses.",

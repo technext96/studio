@@ -8,11 +8,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: "Launch Your Own Carpooling App | White-Label Solution",
-    description: "Buy a ready-to-launch carpooling app with an admin dashboard & mobile frontend. Our white-label carpooling solution is your startup in a box. No coding needed.",
+    title: "White-Label Carpooling App Solution | Launch Your Startup Fast",
+    description: "Buy our ready-to-launch, white-label carpooling app solution with an admin dashboard & mobile apps. Your startup in a box—no coding needed. Go to market in weeks.",
     openGraph: {
-        title: "Launch Your Own Carpooling App | White-Label Solution",
-        description: "Buy a ready-to-launch carpooling app with an admin dashboard & mobile frontend. Our white-label carpooling solution is your startup in a box. No coding needed.",
+        title: "White-Label Carpooling App Solution | Launch Your Startup Fast",
+        description: "Buy our ready-to-launch, white-label carpooling app solution with an admin dashboard & mobile apps. Your startup in a box—no coding needed. Go to market in weeks.",
     },
 };
 
@@ -117,10 +117,10 @@ export default function CarpoolingSolutionPage() {
                     <div className="grid lg:grid-cols-2 gap-8 items-center">
                         <FadeIn className="space-y-6 text-center lg:text-left">
                             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
-                                Launch Your Own Carpooling App
+                                Your White-Label Carpooling App Solution
                             </h1>
                             <p className="max-w-xl mx-auto lg:mx-0 text-foreground/80 md:text-xl">
-                                Your ready-made carpooling startup in a box. Get a fully-functional, white-label solution with a mobile app and admin panel, and launch under your brand.
+                                Your ready-made carpool startup in a box. Get a fully-functional, white-label carpooling solution with mobile apps and an admin panel, and launch under your brand in weeks.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                                 <Button size="lg" className="text-lg px-8 py-6">
@@ -149,9 +149,9 @@ export default function CarpoolingSolutionPage() {
                 <div className="px-8 md:px-12">
                     <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
                         <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">What You Get</div>
-                        <h2 className="text-4xl font-headline font-bold">A Complete Business-in-a-Box</h2>
+                        <h2 className="text-4xl font-headline font-bold">A Complete Carpool App Solution</h2>
                         <p className="text-foreground/80 md:text-lg">
-                            We provide everything you need to operate a successful carpooling service. This isn't just software; it's a full business opportunity.
+                            We provide everything you need to operate a successful carpooling service. This isn't just software; it's a full business opportunity for your rideshare carpool startup.
                         </p>
                     </FadeIn>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -174,7 +174,7 @@ export default function CarpoolingSolutionPage() {
             <section id="audience" className="w-full py-16 md:py-24 bg-secondary/20">
                 <div className="px-8 md:px-12">
                     <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
-                        <h2 className="text-4xl font-headline font-bold">Who Is This For?</h2>
+                        <h2 className="text-4xl font-headline font-bold">Who Is This Custom Carpool Mobile App For?</h2>
                         <p className="text-foreground/80 md:text-lg">
                             Our white-label solution is perfect for visionaries who want to tap into the mobility market without building from scratch.
                         </p>
@@ -267,6 +267,9 @@ export default function CarpoolingSolutionPage() {
                              </Card>
                         </FadeIn>
                     </div>
+                     <FadeIn className="text-center mt-12">
+                        <p className="text-foreground/80">Looking for a full ride-hailing app instead? Check out our <Link href="/blog/white-label-rideshare-app" className="text-primary underline hover:no-underline">white-label ride-sharing app</Link> solution.</p>
+                    </FadeIn>
                 </div>
             </section>
             
