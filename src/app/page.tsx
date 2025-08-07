@@ -1,6 +1,7 @@
 
 import { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
+import ValuePropositionsSection from "@/components/home/ValuePropositionsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import IndustriesSection from "@/components/home/IndustriesSection";
 import PortfolioSection from "@/components/home/PortfolioSection";
@@ -22,6 +23,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         <HeroSection />
+        <ValuePropositionsSection />
         <ServicesSection />
         <IndustriesSection />
         <PortfolioSection />
