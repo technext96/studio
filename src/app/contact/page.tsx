@@ -2,14 +2,32 @@
 
 import { useEffect, useRef } from 'react';
 import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { Mail, Phone, Building } from 'lucide-react';
+import { Mail, Phone, Building, Loader2 } from 'lucide-react';
 import { submitContactForm, type State } from './actions';
 import { useToast } from '@/hooks/use-toast';
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" className="w-full py-6 text-lg" disabled={pending}>
+      {pending ? (
+        <>
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+          Sending...
+        </>
+      ) : (
+        'Send Message'
+      )}
+    </Button>
+  );
+}
 
 export default function ContactPage() {
   const initialState: State = { success: false, message: null };
@@ -88,9 +106,7 @@ export default function ContactPage() {
                     <Textarea id="details" name="details" placeholder="Tell us about your project, goals, and any specific requirements..." required minLength={10} rows={6} />
                     {state.errors?.details && <p className="text-destructive text-sm mt-1">{state.errors.details[0]}</p>}
                   </div>
-                  <Button type="submit" className="w-full py-6 text-lg">
-                    Send Message
-                  </Button>
+                  <SubmitButton />
                 </form>
               </CardContent>
             </Card>
