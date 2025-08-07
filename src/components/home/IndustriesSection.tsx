@@ -14,7 +14,7 @@ export default function IndustriesSection() {
                         <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Industries We Serve</div>
                         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Driving Client Success Through Innovation</h2>
                         <p className="max-w-3xl text-foreground/80 md:text-xl/relaxed">
-                            Delivering impactful and customized software solutions to meet unique industry challenges. Our deep domain expertise ensures that we speak your language and understand what it takes to succeed.
+                            Delivering impactful and customized software solutions to meet unique industry challenges. Our deep domain expertise ensures that we speak your language and understand what it takes to succeed. Explore our work in key sectors like <Link href="/industries/fintech" className="text-primary hover:underline">Fintech</Link>, <Link href="/industries/healthcare" className="text-primary hover:underline">Healthcare</Link>, and <Link href="/solutions/carpooling-app" className="text-primary hover:underline">Mobility Solutions</Link>.
                         </p>
                     </div>
                 </FadeIn>

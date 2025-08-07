@@ -6,13 +6,26 @@ import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, 
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: "White-Label Carpooling App Solution | Launch Your Startup Fast",
-    description: "Buy our ready-to-launch, white-label carpooling app solution with an admin dashboard & mobile apps. Your startup in a box—no coding needed. Go to market in weeks.",
+    title: "White-Label Carpooling App | Launch in 48 Hours",
+    description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization.",
     openGraph: {
-        title: "White-Label Carpooling App Solution | Launch Your Startup Fast",
-        description: "Buy our ready-to-launch, white-label carpooling app solution with an admin dashboard & mobile apps. Your startup in a box—no coding needed. Go to market in weeks.",
+        title: "White-Label Carpooling App",
+        description: "Launch your carpooling business with a ready-made, scalable white-label solution.",
+        url: "https://technext96.com/solutions/carpooling-app",
+        images: [
+            {
+                url: '/images/carpool.jpg', // Assuming you will add this image to your /public/images folder
+                width: 1200,
+                height: 630,
+                alt: 'White-Label Carpooling App Solution',
+            },
+        ],
+    },
+    alternates: {
+        canonical: '/solutions/carpooling-app',
     },
 };
 
@@ -109,8 +122,25 @@ export default function CarpoolingSolutionPage() {
         }
     ];
 
+     const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "White-Label Carpooling App",
+        "description": "A complete white-label carpooling app with mobile apps and admin panel.",
+        "brand": {
+            "@type": "Organization",
+            "name": "TechNext"
+        },
+        "url": "https://technext96.com/solutions/carpooling-app"
+    };
+
     return (
         <>
+            <Script
+                id="product-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+            />
             <section className="w-full pt-24 md:pt-36 lg:pt-40 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
                 <div className="px-8 md:px-12 z-10 relative">
