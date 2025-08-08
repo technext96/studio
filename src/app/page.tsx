@@ -1,13 +1,11 @@
 
 import { Metadata } from "next";
-import HeroSection from "@/components/home/HeroSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import IndustriesSection from "@/components/home/IndustriesSection";
-import PortfolioSection from "@/components/home/PortfolioSection";
-import BlogSection from "@/components/home/BlogSection";
-import FaqSection from "@/components/home/FaqSection";
-import CtaSection from "@/components/home/CtaSection";
+import HeroSectionV2 from "@/components/home-v2/HeroSectionV2";
+import ServicesSectionV2 from "@/components/home-v2/ServicesSectionV2";
+import ProcessSection from "@/components/home-v2/ProcessSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import PortfolioAndBlogSection from "@/components/home/PortfolioAndBlogSection";
+import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
 
 export const metadata: Metadata = {
     title: 'TechNext | Elite Software Engineering & AI Solutions',
@@ -22,14 +20,12 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
-        <HeroSection />
-        <ServicesSection />
-        <IndustriesSection />
-        <PortfolioSection />
+        <HeroSectionV2 />
+        <ServicesSectionV2 />
+        <ProcessSection />
         <TestimonialsSection />
-        <BlogSection />
-        <FaqSection />
-        <CtaSection />
+        <PortfolioAndBlogSection />
+        <CtaSectionV2 />
       </main>
     </div>
   );
