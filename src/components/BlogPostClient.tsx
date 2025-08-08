@@ -24,12 +24,6 @@ type BlogPostClientProps = {
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   const Illustration = illustrationMap[post.illustration];
 
   const rideShareSchema = {
@@ -45,8 +39,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
     "url": "https://technext96.com/blog/white-label-rideshare-app"
   };
   
-  const logoClassName = "font-headline text-2xl font-bold text-primary tracking-tight";
-  const animatedLogoClassName = isMounted ? "logo-glitch" : "";
+  const logoClassName = "font-headline text-2xl font-bold tracking-tight text-primary logo-shimmer";
 
   return (
     <>
@@ -129,7 +122,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             <div className="mt-16 border-t border-border pt-8">
               <div className="flex items-start gap-6">
                   <div className="w-20 h-20 rounded-full bg-secondary overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <div className={cn(logoClassName, animatedLogoClassName)} data-text={isMounted ? "TechNext" : undefined}>TechNext</div>
+                      <div className={cn(logoClassName, "!text-xl")}>TechNext</div>
                   </div>
                   <div>
                       <p className="text-sm text-muted-foreground">Written by</p>

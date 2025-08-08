@@ -63,11 +63,8 @@ ListItem.displayName = "ListItem";
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-
+    
     useEffect(() => {
-        setIsMounted(true);
-
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
@@ -76,8 +73,7 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     
-    const logoClassName = "font-headline text-2xl font-bold text-primary tracking-tight";
-    const animatedLogoClassName = isMounted ? "logo-glitch" : "";
+    const logoClassName = "font-headline text-2xl font-bold tracking-tight logo-shimmer";
 
     return (
         <header className={cn(
@@ -99,7 +95,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
-                <Link href="/" className={cn(logoClassName, animatedLogoClassName, "mr-6 hidden lg:flex")} data-text={isMounted ? "TechNext" : undefined}>
+                <Link href="/" className={cn(logoClassName, "mr-6 hidden lg:flex")}>
                     TechNext
                 </Link>
 
@@ -159,7 +155,7 @@ export default function Header() {
                 </div>
 
                  <div className="flex lg:hidden flex-1 justify-center">
-                   <Link href="/" className={cn(logoClassName, animatedLogoClassName)} data-text={isMounted ? "TechNext" : undefined}>
+                   <Link href="/" className={cn(logoClassName)}>
                     TechNext
                    </Link>
                 </div>
