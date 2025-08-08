@@ -312,6 +312,58 @@ const QrAttendanceIllustration = () => (
     </svg>
 );
 
+const AiLearningIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-ai-learning" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        <path d="M128 400 V 200 L 256 128 L 384 200 V 400" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))"/>
+        <path d="M128 400 H 384" stroke="hsl(var(--border))" />
+        <path d="M256 256 m -48,0 a 48,48 0 1,0 96,0 a 48,48 0 1,0 -96,0" fill="none" stroke="url(#grad-ai-learning)" strokeWidth="4">
+            <animateTransform attributeName="transform" type="rotate" from="0 256 256" to="360 256 256" dur="10s" repeatCount="indefinite" />
+        </path>
+        <GraduationCap className="text-primary" x="224" y="224" width="64" height="64" strokeWidth="1.5" />
+    </svg>
+);
+
+const FoodDeliveryIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <circle cx="256" cy="256" r="128" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" />
+        <path d="M 200 200 L 256 256 L 200 312" fill="none" stroke="hsl(var(--primary))" strokeWidth="4">
+             <animateTransform attributeName="transform" type="translate" values="0 0; 32 0; 0 0" dur="2s" repeatCount="indefinite" />
+        </path>
+        <ShoppingCart className="text-primary" x="256" y="224" width="64" height="64" strokeWidth="1.5" />
+    </svg>
+);
+
+const AiShoppingIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <rect x="128" y="128" width="256" height="256" rx="20" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" />
+        <g stroke="hsl(var(--primary))" strokeWidth="2">
+            <line x1="192" y1="192" x2="320" y2="320">
+                <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+            </line>
+            <line x1="320" y1="192" x2="192" y2="320">
+                 <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+            </line>
+        </g>
+        <ShoppingCart className="text-primary" x="224" y="224" width="64" height="64" strokeWidth="1.5" />
+    </svg>
+);
+
+const MedicalChatbotIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <path d="M128 384 H 384 V 128 H 128 Z" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" rx="20" />
+        <path d="M160 320 L 160 256 C 160 224 184 200 216 200 H 296 C 328 200 352 224 352 256 L 352 320" fill="none" stroke="hsl(var(--primary))" strokeWidth="4" />
+        <path d="M192 352 h128" stroke="hsl(var(--primary))" strokeWidth="4" strokeDasharray="8 8">
+            <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2s" repeatCount="indefinite" />
+        </path>
+        <HeartPulse className="text-primary" x="224" y="224" width="64" height="64" strokeWidth="1.5" />
+    </svg>
+);
 
 export const illustrationMap: { [key: string]: React.FC } = {
     customSoftware: CustomSoftwareIllustration,
@@ -335,10 +387,10 @@ export const illustrationMap: { [key: string]: React.FC } = {
     realEstate: () => <Home className="w-full h-full text-primary" strokeWidth="0.5"/>,
     telecom: () => <Phone className="w-full h-full text-primary" strokeWidth="0.5"/>,
     government: () => <Building className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    aiLearning: () => <GraduationCap className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    foodDelivery: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    aiShopping: () => <ShoppingCart className="w-full h-full text-primary" strokeWidth="0.5"/>,
-    medicalChatbot: () => <HeartPulse className="w-full h-full text-primary" strokeWidth="0.5"/>,
+    aiLearning: AiLearningIllustration,
+    foodDelivery: FoodDeliveryIllustration,
+    aiShopping: AiShoppingIllustration,
+    medicalChatbot: MedicalChatbotIllustration,
     rideshare: RideshareIllustration,
     ethicalAi: EthicalAiIllustration,
     dataPrivacy: DataPrivacyIllustration,
@@ -395,3 +447,6 @@ export const valuePropositions = [
         description: "We believe that the most brilliant results are born from teamwork. We unite with our clients, combining diverse perspectives and expertise to achieve common goals and deliver exceptional value."
     }
 ];
+
+
+  
