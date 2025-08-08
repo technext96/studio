@@ -154,7 +154,7 @@ export default function BlogPostPage({ params }: Props) {
               </Card>
             )}
 
-            <article className="prose prose-invert max-w-none prose-h2:font-headline prose-h2:text-3xl prose-h2:text-primary prose-h3:font-headline prose-h3:text-2xl prose-h3:text-primary prose-p:text-lg prose-p:leading-relaxed prose-p:text-foreground/80 prose-blockquote:border-primary prose-blockquote:text-xl prose-li:text-lg prose-li:text-foreground/80 prose-table:border-border prose-th:text-foreground prose-td:border-border prose-a:text-primary hover:prose-a:text-primary/80">
+            <article className="prose prose-invert max-w-none">
               {post.content}
             </article>
 
