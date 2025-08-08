@@ -13,7 +13,6 @@ import {
   SheetHeader,
   SheetTitle
 } from "@/components/ui/sheet";
-import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -96,7 +95,7 @@ export default function Header() {
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
                 <Link href="/" className="mr-6 hidden lg:flex">
-                    <Logo />
+                    <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} priority />
                 </Link>
 
                 {/* Mobile Menu */}
@@ -113,7 +112,7 @@ export default function Header() {
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
                               <SheetClose asChild>
                                   <Link href="/">
-                                    <Logo />
+                                    <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} priority />
                                   </Link>
                                 </SheetClose>
                             </SheetHeader>
@@ -156,7 +155,7 @@ export default function Header() {
 
                  <div className="flex lg:hidden flex-1 justify-center">
                    <Link href="/">
-                    <Logo/>
+                    <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} priority />
                    </Link>
                 </div>
 

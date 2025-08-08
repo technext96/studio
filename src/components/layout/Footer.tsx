@@ -1,8 +1,8 @@
 
-import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/data.tsx";
 import { Mail, Github, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -15,7 +15,9 @@ export default function Footer() {
             <div className="py-12 px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
-                        <Logo />
+                        <Link href="/">
+                            <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} />
+                        </Link>
                         <p className="text-sm">
                            Crafting the future of software, one line of code at a time.
                         </p>
