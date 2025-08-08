@@ -265,16 +265,16 @@ const QrAttendanceIllustration = () => (
             </filter>
         </defs>
         
-        <g transform="translate(106, -144)">
+        <g transform="translate(106, 0) scale(1)">
             {/* Phone Body */}
-            <rect x="50" y="100" width="300" height="600" rx="40" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="2"/>
-            <rect x="65" y="115" width="270" height="570" rx="25" fill="url(#grad-qr-screen)" />
+            <rect x="50" y="10" width="300" height="492" rx="40" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="2"/>
+            <rect x="65" y="25" width="270" height="462" rx="25" fill="url(#grad-qr-screen)" />
             
             {/* Notch */}
-            <rect x="150" y="115" width="100" height="20" rx="10" fill="hsl(var(--card))" />
+            <rect x="150" y="25" width="100" height="20" rx="10" fill="hsl(var(--card))" />
             
             {/* QR Code */}
-            <g transform="translate(125, 275)" filter="url(#glow-qr)">
+            <g transform="translate(125, 125)" filter="url(#glow-qr)">
                 <rect width="150" height="150" fill="hsl(var(--primary))" rx="10"/>
                 <g fill="hsl(var(--primary-foreground))">
                     <rect x="10" y="10" width="40" height="40" rx="5"/>
@@ -307,8 +307,8 @@ const QrAttendanceIllustration = () => (
             </g>
             
             {/* Text on Screen */}
-            <text x="200" y="470" textAnchor="middle" fontFamily="var(--font-space-grotesk)" fontSize="24" fill="hsl(var(--foreground))" fontWeight="bold">Scan to Check-In</text>
-            <text x="200" y="500" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="16" fill="hsl(var(--muted-foreground))">Point camera at QR code</text>
+            <text x="200" y="320" textAnchor="middle" fontFamily="var(--font-space-grotesk)" fontSize="24" fill="hsl(var(--foreground))" fontWeight="bold">Scan to Check-In</text>
+            <text x="200" y="350" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="16" fill="hsl(var(--muted-foreground))">Point camera at QR code</text>
         </g>
     </svg>
 );
@@ -451,3 +451,4 @@ export const valuePropositions = [
 
 
   
+
