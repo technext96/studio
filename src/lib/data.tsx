@@ -91,7 +91,7 @@ export const portfolio = [
         category: "Business Tools",
         excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
         summary: "We developed a secure QR-based attendance system designed to eliminate time theft. By binding each user to a specific device and validating their check-in against an authorized Wi-Fi network or geolocation, our solution ensures that employees are physically present when they mark their attendance.",
-        illustration: "qrCode",
+        illustration: "qrAttendance",
     },
     {
         slug: "ai-powered-learning-platform",
@@ -1168,3 +1168,6 @@ export const navLinks: NavLink[] = [
         href: '/blog',
     },
 ];
+
+
+    
