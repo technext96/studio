@@ -71,6 +71,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'TechNext',
     url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+92-349-1089456',
@@ -92,10 +93,10 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <div className="relative flex min-h-dvh flex-col bg-background">
-          <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+           <div className="fixed top-0 left-0 w-full h-full -z-50 animated-gradient"></div>
         </div>
         <Toaster />
         <SpeedInsights />
