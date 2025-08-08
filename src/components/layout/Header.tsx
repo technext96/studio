@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import Link from "next/link";
@@ -13,7 +12,6 @@ import {
   SheetHeader,
   SheetTitle
 } from "@/components/ui/sheet";
-import Logo from "@/components/Logo";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -65,7 +63,7 @@ ListItem.displayName = "ListItem";
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
@@ -74,6 +72,8 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    
+    const logoClassName = "font-headline text-2xl font-bold tracking-tight logo-shimmer";
 
     return (
         <header className={cn(
@@ -95,8 +95,8 @@ export default function Header() {
                 </div>
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
-                <Link href="/" className="mr-6 hidden lg:flex">
-                    <Logo />
+                <Link href="/" className={cn(logoClassName, "mr-6 hidden lg:flex")}>
+                    TechNext
                 </Link>
 
                 {/* Mobile Menu */}
@@ -112,8 +112,8 @@ export default function Header() {
                            <SheetHeader className="p-4 border-b border-border/40">
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
                               <SheetClose asChild>
-                                  <Link href="/">
-                                    <Logo />
+                                  <Link href="/" className={cn(logoClassName)}>
+                                    TechNext
                                   </Link>
                                 </SheetClose>
                             </SheetHeader>
@@ -155,8 +155,8 @@ export default function Header() {
                 </div>
 
                  <div className="flex lg:hidden flex-1 justify-center">
-                   <Link href="/">
-                    <Logo/>
+                   <Link href="/" className={cn(logoClassName)}>
+                    TechNext
                    </Link>
                 </div>
 

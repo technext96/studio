@@ -1,21 +1,25 @@
 
-import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/data.tsx";
 import { Mail, Github, Linkedin, Youtube } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function Footer() {
     
     const companyLinks = navLinks.find(l => l.title === "Company")?.items || [];
     const serviceLinks = navLinks.find(l => l.title === "Services")?.items || [];
+    const logoClassName = "font-headline text-2xl font-bold tracking-tight logo-shimmer";
 
     return (
         <footer className="bg-secondary/20 text-foreground/80">
             <div className="py-12 px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
-                        <Logo />
+                        <Link href="/" className={cn(logoClassName)}>
+                           TechNext
+                        </Link>
                         <p className="text-sm">
                            Crafting the future of software, one line of code at a time.
                         </p>

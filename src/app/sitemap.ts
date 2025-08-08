@@ -83,12 +83,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
+  
+  const solutionsRoutes = [
+    '/solutions/campix',
+    '/solutions/carpooling-app',
+    '/solutions/qr-attendance',
+    '/solutions/training-program',
+  ].map((route) => ({
+    url: `${siteUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.9,
+  }));
 
   return [
     ...staticRoutes,
     ...servicesRoutes,
     ...industriesRoutes,
     ...portfolioRoutes,
-    ...blogRoutes
+    ...blogRoutes,
+    ...solutionsRoutes,
   ];
 }
