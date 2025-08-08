@@ -1,11 +1,11 @@
 
+'use client';
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/data.tsx";
 import { ArrowLeft, Share2, Twitter, Linkedin, Facebook } from "lucide-react";
-import type { Metadata } from "next";
-import Image from "next/image";
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
@@ -18,12 +18,16 @@ import {
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Script from "next/script";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type Props = {
   params: { slug: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// Note: generateMetadata is a server-side function, so it's kept separate
+// from the client component. Next.js handles this correctly.
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) {
     return {
@@ -45,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         authors: [post.author.name],
         images: [
           {
-            url: '/images/rideshare.jpg', // Assuming you will add this image to your /public/images folder
+            url: '/images/rideshare.jpg', 
             width: 1200,
             height: 630,
             alt: 'White-Label Ride-Sharing App Solution',
@@ -75,6 +79,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function BlogPostPage({ params }: Props) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const post = blogPosts.find((p) => p.slug === params.slug);
 
   if (!post) {
@@ -95,6 +105,9 @@ export default function BlogPostPage({ params }: Props) {
     "datePublished": "2024-08-05",
     "url": "https://technext96.com/blog/white-label-rideshare-app"
   };
+  
+  const logoClassName = "font-headline text-2xl font-bold text-primary tracking-tight";
+  const animatedLogoClassName = isMounted ? "logo-glitch" : "";
 
   return (
     <>
@@ -177,7 +190,7 @@ export default function BlogPostPage({ params }: Props) {
             <div className="mt-16 border-t border-border pt-8">
               <div className="flex items-start gap-6">
                   <div className="w-20 h-20 rounded-full bg-secondary overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <div className="font-headline text-2xl font-bold text-primary tracking-tight">TechNext</div>
+                      <div className={cn(logoClassName, animatedLogoClassName)} data-text={isMounted ? "TechNext" : undefined}>TechNext</div>
                   </div>
                   <div>
                       <p className="text-sm text-muted-foreground">Written by</p>
