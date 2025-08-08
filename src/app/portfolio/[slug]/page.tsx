@@ -43,6 +43,23 @@ export default function PortfolioProjectPage({ params }: Props) {
     notFound();
   }
   
+  // If the slug includes 'solutions/', redirect to that page.
+  // This handles the case for items like Carpooling that are in portfolio but are actually solution pages.
+  if (project.slug.startsWith('solutions/')) {
+    const solutionPath = `/${project.slug}`;
+    return (
+        <div className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center gap-8 text-center p-8">
+            <h1 className="text-2xl font-headline">Redirecting to solution page...</h1>
+            <p className="text-foreground/80">If you are not redirected, <Link href={solutionPath} className="text-primary underline">click here</Link>.</p>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `window.location.href = "${solutionPath}";`,
+                }}
+            />
+        </div>
+    );
+  }
+  
   const Illustration = illustrationMap[project.illustration];
 
 

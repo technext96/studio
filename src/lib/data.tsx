@@ -78,6 +78,22 @@ export const industries = [
 
 export const portfolio = [
     {
+        slug: "solutions/carpooling-app",
+        title: "White-Label Carpooling App",
+        category: "Mobility Solutions",
+        excerpt: "Launch your own carpooling service with our ready-made, white-label solution, including mobile apps and a full admin panel.",
+        summary: "Our white-label carpooling platform provides entrepreneurs and businesses with a turnkey solution to enter the mobility market. The package includes customizable, cross-platform mobile apps for drivers and riders, and a comprehensive web-based admin panel to manage the entire operation.",
+        illustration: "rideshare",
+    },
+    {
+        slug: "solutions/qr-attendance",
+        title: "Proxy-Proof QR Attendance System",
+        category: "Business Tools",
+        excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
+        summary: "We developed a secure QR-based attendance system designed to eliminate time theft. By binding each user to a specific device and validating their check-in against an authorized Wi-Fi network or geolocation, our solution ensures that employees are physically present when they mark their attendance.",
+        illustration: "qrCode",
+    },
+    {
         slug: "ai-powered-learning-platform",
         title: "AI-Powered Learning Platform",
         category: "Education Technology",
