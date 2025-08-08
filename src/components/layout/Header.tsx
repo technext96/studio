@@ -63,8 +63,11 @@ ListItem.displayName = "ListItem";
 export default function Header() {
     const [isSheetOpen, setIsSheetOpen] = React.useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
+        setIsMounted(true);
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
         };
@@ -72,6 +75,9 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    
+    const logoClassName = "font-headline text-2xl font-bold text-primary tracking-tight";
+    const animatedLogoClassName = isMounted ? "logo-glitch" : "";
 
     return (
         <header className={cn(
@@ -93,7 +99,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
-                <Link href="/" className="mr-6 hidden lg:flex font-headline text-2xl font-bold text-primary tracking-tight logo-glitch" data-text="TechNext">
+                <Link href="/" className={cn(logoClassName, animatedLogoClassName, "mr-6 hidden lg:flex")} data-text={isMounted ? "TechNext" : undefined}>
                     TechNext
                 </Link>
 
@@ -110,7 +116,7 @@ export default function Header() {
                            <SheetHeader className="p-4 border-b border-border/40">
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
                               <SheetClose asChild>
-                                  <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                                  <Link href="/" className={cn(logoClassName)}>
                                     TechNext
                                   </Link>
                                 </SheetClose>
@@ -153,7 +159,7 @@ export default function Header() {
                 </div>
 
                  <div className="flex lg:hidden flex-1 justify-center">
-                   <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight logo-glitch" data-text="TechNext">
+                   <Link href="/" className={cn(logoClassName, animatedLogoClassName)} data-text={isMounted ? "TechNext" : undefined}>
                     TechNext
                    </Link>
                 </div>
