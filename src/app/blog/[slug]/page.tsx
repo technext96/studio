@@ -16,7 +16,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Logo from "@/components/Logo";
 import Script from "next/script";
 
 type Props = {
@@ -177,7 +176,7 @@ export default function BlogPostPage({ params }: Props) {
             <div className="mt-16 border-t border-border pt-8">
               <div className="flex items-start gap-6">
                   <div className="w-20 h-20 rounded-full bg-secondary overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <Logo />
+                      <Image src="/logo.png" alt="TechNext Logo" width={64} height={64} className="object-contain" />
                   </div>
                   <div>
                       <p className="text-sm text-muted-foreground">Written by</p>
