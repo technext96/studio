@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import HeroSectionV2 from "@/components/home-v2/HeroSectionV2";
 import ServicesSectionV2 from "@/components/home-v2/ServicesSectionV2";
 import ProcessSection from "@/components/home-v2/ProcessSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import FeaturedProjectsSection from "@/components/home/FeaturedProjectsSection";
 import PortfolioAndBlogSection from "@/components/home/PortfolioAndBlogSection";
 import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
 
@@ -23,7 +23,7 @@ export default function Home() {
         <HeroSectionV2 />
         <ServicesSectionV2 />
         <ProcessSection />
-        <TestimonialsSection />
+        <FeaturedProjectsSection />
         <PortfolioAndBlogSection />
         <CtaSectionV2 />
       </main>
