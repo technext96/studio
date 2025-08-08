@@ -7,6 +7,7 @@ import PortfolioSection from "@/components/home/PortfolioSection";
 import BlogSection from "@/components/home/BlogSection";
 import FaqSection from "@/components/home/FaqSection";
 import CtaSection from "@/components/home/CtaSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 export const metadata: Metadata = {
     title: 'TechNext | Custom Software, AI, & Web Development Solutions',
@@ -25,6 +26,7 @@ export default function Home() {
         <ServicesSection />
         <IndustriesSection />
         <PortfolioSection />
+        <TestimonialsSection />
         <BlogSection />
         <FaqSection />
         <CtaSection />
