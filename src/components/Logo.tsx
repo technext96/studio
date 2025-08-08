@@ -1,10 +1,15 @@
+import Image from 'next/image';
 
 const Logo = () => {
   return (
     <div className="flex items-center group">
-      <span className="font-headline text-2xl font-bold text-foreground">
-        Tech<span className="text-primary">Next</span>
-      </span>
+      <Image 
+        src="/logo.png" 
+        alt="TechNext Logo" 
+        width={150} 
+        height={40} 
+        priority 
+      />
     </div>
   );
 };
