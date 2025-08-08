@@ -250,7 +250,7 @@ const SaasScaleIllustration = () => (
 );
 
 const QrAttendanceIllustration = () => (
-    <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">
         <defs>
             <linearGradient id="grad-qr-screen" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.1}} />
@@ -265,50 +265,51 @@ const QrAttendanceIllustration = () => (
             </filter>
         </defs>
         
-        {/* Phone Body */}
-        <rect x="50" y="100" width="300" height="600" rx="40" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="2"/>
-        <rect x="65" y="115" width="270" height="570" rx="25" fill="url(#grad-qr-screen)" />
-        
-        {/* Notch */}
-        <rect x="150" y="115" width="100" height="20" rx="10" fill="hsl(var(--card))" />
-        
-        {/* QR Code */}
-        <g transform="translate(125, 275)" filter="url(#glow-qr)">
-            <rect width="150" height="150" fill="hsl(var(--primary))" rx="10"/>
-            <g fill="hsl(var(--primary-foreground))">
-                <rect x="10" y="10" width="40" height="40" rx="5"/>
-                <rect x="100" y="10" width="40" height="40" rx="5"/>
-                <rect x="10" y="100" width="40" height="40" rx="5"/>
-                
-                <rect x="25" y="25" width="10" height="10" fill="hsl(var(--primary))"/>
-                <rect x="115" y="25" width="10" height="10" fill="hsl(var(--primary))"/>
-                <rect x="25" y="115" width="10" height="10" fill="hsl(var(--primary))"/>
+        <g transform="translate(106, -144)">
+            {/* Phone Body */}
+            <rect x="50" y="100" width="300" height="600" rx="40" fill="hsl(var(--card))" stroke="hsl(var(--border))" strokeWidth="2"/>
+            <rect x="65" y="115" width="270" height="570" rx="25" fill="url(#grad-qr-screen)" />
+            
+            {/* Notch */}
+            <rect x="150" y="115" width="100" height="20" rx="10" fill="hsl(var(--card))" />
+            
+            {/* QR Code */}
+            <g transform="translate(125, 275)" filter="url(#glow-qr)">
+                <rect width="150" height="150" fill="hsl(var(--primary))" rx="10"/>
+                <g fill="hsl(var(--primary-foreground))">
+                    <rect x="10" y="10" width="40" height="40" rx="5"/>
+                    <rect x="100" y="10" width="40" height="40" rx="5"/>
+                    <rect x="10" y="100" width="40" height="40" rx="5"/>
+                    
+                    <rect x="25" y="25" width="10" height="10" fill="hsl(var(--primary))"/>
+                    <rect x="115" y="25" width="10" height="10" fill="hsl(var(--primary))"/>
+                    <rect x="25" y="115" width="10" height="10" fill="hsl(var(--primary))"/>
 
-                <rect x="60" y="60" width="10" height="10" />
-                <rect x="80" y="60" width="10" height="10" />
-                <rect x="60" y="80" width="10" height="10" />
-                <rect x="80" y="80" width="10" height="10" />
-                
-                <rect x="100" y="70" width="10" height="10" />
-                <rect x="70" y="100" width="10" height="10" />
-                <rect x="120" y="90" width="10" height="10" />
-                <rect x="90" y="120" width="10" height="10" />
-                 <rect x="60" y="130" width="10" height="10" />
+                    <rect x="60" y="60" width="10" height="10" />
+                    <rect x="80" y="60" width="10" height="10" />
+                    <rect x="60" y="80" width="10" height="10" />
+                    <rect x="80" y="80" width="10" height="10" />
+                    
+                    <rect x="100" y="70" width="10" height="10" />
+                    <rect x="70" y="100" width="10" height="10" />
+                    <rect x="120" y="90" width="10" height="10" />
+                    <rect x="90" y="120" width="10" height="10" />
+                    <rect x="60" y="130" width="10" height="10" />
+                </g>
+                <animateTransform 
+                    attributeName="transform"
+                    type="scale"
+                    values="1; 1.05; 1"
+                    begin="0s"
+                    dur="4s"
+                    repeatCount="indefinite"
+                />
             </g>
-             <animateTransform 
-                attributeName="transform"
-                type="scale"
-                values="1; 1.05; 1"
-                begin="0s"
-                dur="4s"
-                repeatCount="indefinite"
-            />
+            
+            {/* Text on Screen */}
+            <text x="200" y="470" textAnchor="middle" fontFamily="var(--font-space-grotesk)" fontSize="24" fill="hsl(var(--foreground))" fontWeight="bold">Scan to Check-In</text>
+            <text x="200" y="500" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="16" fill="hsl(var(--muted-foreground))">Point camera at QR code</text>
         </g>
-        
-        {/* Text on Screen */}
-        <text x="200" y="470" textAnchor="middle" fontFamily="var(--font-space-grotesk)" fontSize="24" fill="hsl(var(--foreground))" fontWeight="bold">Scan to Check-In</text>
-        <text x="200" y="500" textAnchor="middle" fontFamily="var(--font-inter)" fontSize="16" fill="hsl(var(--muted-foreground))">Point camera at QR code</text>
-        
     </svg>
 );
 
