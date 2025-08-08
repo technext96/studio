@@ -70,12 +70,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const portfolioRoutes = portfolio.map((project) => ({
-    url: `${siteUrl}/portfolio/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }));
+  const portfolioRoutes = portfolio.map((project) => {
+    const url = project.slug.startsWith('solutions/')
+      ? `${siteUrl}/${project.slug}`
+      : `${siteUrl}/portfolio/${project.slug}`;
+    
+    return {
+      url,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    };
+  });
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
@@ -86,8 +92,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const solutionsRoutes = [
     '/solutions/campix',
-    '/solutions/carpooling-app',
-    '/solutions/qr-attendance',
     '/solutions/training-program',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
@@ -95,8 +99,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
-
-  return [
+  
+  // Combine all routes and remove duplicates that might arise from portfolio logic
+  const allRoutes = [
     ...staticRoutes,
     ...servicesRoutes,
     ...industriesRoutes,
@@ -104,4 +109,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogRoutes,
     ...solutionsRoutes,
   ];
+
+  const uniqueRoutes = Array.from(new Map(allRoutes.map(item => [item.url, item])).values());
+
+  return uniqueRoutes;
 }
