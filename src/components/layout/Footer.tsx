@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="py-12 px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
-                        <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                        <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight logo-glitch" data-text="TechNext">
                            TechNext
                         </Link>
                         <p className="text-sm">

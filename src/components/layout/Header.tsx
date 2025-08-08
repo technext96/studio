@@ -93,7 +93,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
-                <Link href="/" className="mr-6 hidden lg:flex font-headline text-2xl font-bold text-primary tracking-tight">
+                <Link href="/" className="mr-6 hidden lg:flex font-headline text-2xl font-bold text-primary tracking-tight logo-glitch" data-text="TechNext">
                     TechNext
                 </Link>
 
@@ -153,7 +153,7 @@ export default function Header() {
                 </div>
 
                  <div className="flex lg:hidden flex-1 justify-center">
-                   <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                   <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight logo-glitch" data-text="TechNext">
                     TechNext
                    </Link>
                 </div>
