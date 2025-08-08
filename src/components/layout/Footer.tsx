@@ -16,7 +16,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
                         <Link href="/">
-                            <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} />
+                            <Image src="/logo.png" alt="TechNext Logo" width={150} height={40} className="object-contain" />
                         </Link>
                         <p className="text-sm">
                            Crafting the future of software, one line of code at a time.
