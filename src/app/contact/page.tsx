@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Mail, Phone, Building, Loader2 } from 'lucide-react';
 import { submitContactForm, type State } from './actions';
 import { useToast } from '@/hooks/use-toast';
+import { Metadata } from 'next';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -28,6 +29,15 @@ function SubmitButton() {
     </Button>
   );
 }
+
+// Note: Metadata export is not used in a client component,
+// but can be helpful for static analysis or if this component
+// were to be used in a server component context.
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description: "Get in touch with the TechNext team to discuss your project. We offer free consultations and quotes for our custom software, AI, and web development services.",
+};
+
 
 export default function ContactPage() {
   const initialState: State = { success: false, message: null };
