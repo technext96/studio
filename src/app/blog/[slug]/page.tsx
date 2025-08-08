@@ -177,7 +177,7 @@ export default function BlogPostPage({ params }: Props) {
             <div className="mt-16 border-t border-border pt-8">
               <div className="flex items-start gap-6">
                   <div className="w-20 h-20 rounded-full bg-secondary overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <Image src="https://i.ibb.co/L06CZn7/logo.png" alt="TechNext Logo" width={64} height={64} className="object-contain" />
+                      <div className="font-headline text-2xl font-bold text-primary tracking-tight">TechNext</div>
                   </div>
                   <div>
                       <p className="text-sm text-muted-foreground">Written by</p>

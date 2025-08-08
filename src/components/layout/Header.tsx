@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import Link from "next/link";
@@ -94,8 +93,8 @@ export default function Header() {
                 </div>
             </div>
             <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
-                <Link href="/" className="mr-6 hidden lg:flex">
-                    <Image src="https://i.ibb.co/L06CZn7/logo.png" alt="TechNext Logo" width={150} height={40} priority className="object-contain" />
+                <Link href="/" className="mr-6 hidden lg:flex font-headline text-2xl font-bold text-primary tracking-tight">
+                    TechNext
                 </Link>
 
                 {/* Mobile Menu */}
@@ -111,8 +110,8 @@ export default function Header() {
                            <SheetHeader className="p-4 border-b border-border/40">
                               <SheetTitle className="sr-only">Main Menu</SheetTitle>
                               <SheetClose asChild>
-                                  <Link href="/">
-                                    <Image src="https://i.ibb.co/L06CZn7/logo.png" alt="TechNext Logo" width={150} height={40} priority className="object-contain" />
+                                  <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                                    TechNext
                                   </Link>
                                 </SheetClose>
                             </SheetHeader>
@@ -154,8 +153,8 @@ export default function Header() {
                 </div>
 
                  <div className="flex lg:hidden flex-1 justify-center">
-                   <Link href="/">
-                    <Image src="https://i.ibb.co/L06CZn7/logo.png" alt="TechNext Logo" width={150} height={40} priority className="object-contain" />
+                   <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                    TechNext
                    </Link>
                 </div>
 

@@ -71,7 +71,6 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'TechNext',
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`, 
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+92-349-1089456',

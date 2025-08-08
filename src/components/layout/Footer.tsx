@@ -15,8 +15,8 @@ export default function Footer() {
             <div className="py-12 px-4 md:px-6">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="flex flex-col gap-4">
-                        <Link href="/">
-                            <Image src="https://i.ibb.co/L06CZn7/logo.png" alt="TechNext Logo" width={150} height={40} className="object-contain" />
+                        <Link href="/" className="font-headline text-2xl font-bold text-primary tracking-tight">
+                           TechNext
                         </Link>
                         <p className="text-sm">
                            Crafting the future of software, one line of code at a time.
