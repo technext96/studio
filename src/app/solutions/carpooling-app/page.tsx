@@ -2,22 +2,22 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { FadeIn } from '@/components/ui/fade-in';
-import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, MessageSquare } from 'lucide-react';
+import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, MessageSquare, Badge } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: "White-Label Carpooling App | Launch in 48 Hours",
-    description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization.",
+    title: "White-Label Carpooling App Solution | Launch Your Business",
+    description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization. Launch your ride-sharing business in weeks.",
     openGraph: {
-        title: "White-Label Carpooling App",
+        title: "White-Label Carpooling App Solution | TechNext",
         description: "Launch your carpooling business with a ready-made, scalable white-label solution.",
         url: "https://technext96.com/solutions/carpooling-app",
         images: [
             {
-                url: '/images/carpool.jpg', // Assuming you will add this image to your /public/images folder
+                url: '/images/carpool.jpg', 
                 width: 1200,
                 height: 630,
                 alt: 'White-Label Carpooling App Solution',
@@ -122,6 +122,13 @@ export default function CarpoolingSolutionPage() {
         }
     ];
 
+    const howItWorks = [
+        { title: "1. Driver Posts a Ride", description: "A driver with a planned trip posts their route, schedule (one-time or recurring), and the number of available seats." },
+        { title: "2. Rider Searches for a Ride", description: "A rider searches for a trip based on their origin and destination. The app shows them compatible routes." },
+        { title: "3. Booking and Confirmation", description: "The rider requests to book a seat. The driver is notified and can approve the request, confirming the carpool." },
+        { title: "4. Ride and Payment", description: "Users communicate via in-app chat to coordinate the pickup. The payment is handled securely through the app after the ride." },
+    ];
+
      const productSchema = {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -147,7 +154,7 @@ export default function CarpoolingSolutionPage() {
                     <div className="grid lg:grid-cols-2 gap-8 items-center">
                         <FadeIn className="space-y-6 text-center lg:text-left">
                             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
-                                Your White-Label Carpooling App Solution
+                                Launch Your Carpooling App with Our White-Label Solution
                             </h1>
                             <p className="max-w-xl mx-auto lg:mx-0 text-foreground/80 md:text-xl">
                                 Your ready-made carpool startup in a box. Get a fully-functional, white-label carpooling solution with mobile apps and an admin panel, and launch under your brand in weeks.
@@ -181,7 +188,7 @@ export default function CarpoolingSolutionPage() {
                         <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">What You Get</div>
                         <h2 className="text-4xl font-headline font-bold">A Complete Carpool App Solution</h2>
                         <p className="text-foreground/80 md:text-lg">
-                            We provide everything you need to operate a successful carpooling service. This isn't just software; it's a full business opportunity for your rideshare carpool startup.
+                            We provide everything you need to operate a successful carpooling service. This isn't just software; it's a full business opportunity for your rideshare carpool startup. Our white-label solution is designed for entrepreneurs who want to launch their own business quickly.
                         </p>
                     </FadeIn>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -201,12 +208,35 @@ export default function CarpoolingSolutionPage() {
                 </div>
             </section>
 
-            <section id="audience" className="w-full py-16 md:py-24 bg-secondary/20">
+             <section id="how-it-works" className="w-full py-16 md:py-24 bg-secondary/20">
+                <div className="px-8 md:px-12">
+                    <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
+                        <h2 className="text-4xl font-headline font-bold">How It Works: The User Journey</h2>
+                        <p className="text-foreground/80 md:text-lg">Our platform provides a simple and intuitive experience for both drivers and riders, from posting a ride to final payment. This seamless process is key to building a successful carpooling community and launching your business.</p>
+                    </FadeIn>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                        {howItWorks.map((step, i) => (
+                            <FadeIn key={step.title} style={{ animationDelay: `${i * 0.1}s` }}>
+                                <Card className="text-center bg-card/50 backdrop-blur-sm border-primary/10 h-full">
+                                    <CardHeader>
+                                        <CardTitle className="font-headline text-xl">{step.title}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent>
+                                        <p className="text-foreground/80">{step.description}</p>
+                                    </CardContent>
+                                </Card>
+                            </FadeIn>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section id="audience" className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
                     <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
                         <h2 className="text-4xl font-headline font-bold">Who Is This Custom Carpool Mobile App For?</h2>
                         <p className="text-foreground/80 md:text-lg">
-                            Our white-label solution is perfect for visionaries who want to tap into the mobility market without building from scratch.
+                            Our white-label solution is perfect for visionaries who want to tap into the mobility market without building from scratch. Launch your business with a proven platform.
                         </p>
                     </FadeIn>
                      <div className="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto text-center">
@@ -220,13 +250,27 @@ export default function CarpoolingSolutionPage() {
                     </div>
                 </div>
             </section>
+            
+             <section className="w-full py-16 md:py-24 bg-secondary/20">
+                <div className="px-8 md:px-12">
+                    <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
+                        <h2 className="text-4xl font-headline font-bold">The Technology Stack</h2>
+                        <p className="text-foreground/80 md:text-lg">Our white-label carpooling app is built on a modern, scalable, and reliable technology stack to ensure a high-performance experience for your users and easy maintenance for your business.</p>
+                    </FadeIn>
+                    <FadeIn className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                        {["React Native", "Expo", "Node.js", "Express.js", "MongoDB", "Stripe", "Socket.io"].map(tech => (
+                            <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
+                        ))}
+                    </FadeIn>
+                </div>
+            </section>
 
              <section id="demo" className="w-full py-16 md:py-24">
                 <div className="px-8 md:px-12">
                      <FadeIn className="text-center space-y-3 mb-12 max-w-3xl mx-auto">
                         <h2 className="text-4xl font-headline font-bold">See It In Action</h2>
                         <p className="text-foreground/80 md:text-lg">
-                           Watch our 2-minute video walkthrough to see how the app and admin panel work together to create a seamless carpooling experience.
+                           Watch our 2-minute video walkthrough to see how the app and admin panel work together to create a seamless carpooling experience. This demo showcases the full potential of our white-label solution.
                         </p>
                     </FadeIn>
                     <FadeIn>
