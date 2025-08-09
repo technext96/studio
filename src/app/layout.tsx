@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'TechNext',
     images: [
       {
-        url: '/og-image.png',
+        url: '/favicon.ico',
         width: 1200,
         height: 630,
         alt: 'TechNext - Custom Software & Web Development',
@@ -76,7 +76,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'TechNext',
     url: siteUrl,
-    logo: `${siteUrl}/logo.png`,
+    logo: `${siteUrl}/favicon-32x32.png`,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+92-349-1089456',
