@@ -1,0 +1,1 @@
+This is a placeholder file to create the public directory. You can safely delete this file. Please upload your static assets, such as images and favicons, here.
