@@ -41,10 +41,13 @@ export default function FeaturedProjectsSection() {
             <CarouselContent className="-ml-4">
               {portfolio.map((project, index) => {
                 const Illustration = illustrationMap[project.illustration];
+                const projectUrl = project.slug.startsWith('solutions/')
+                  ? `/${project.slug}`
+                  : `/portfolio/${project.slug}`;
                 return (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <div className="p-1 h-full">
-                       <Link href={`/portfolio/${project.slug}`} className="group block h-full">
+                       <Link href={projectUrl} className="group block h-full">
                         <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                             <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
                                 {Illustration && <Illustration />}
