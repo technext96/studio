@@ -93,6 +93,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const solutionsRoutes = [
     '/solutions/campix',
     '/solutions/training-program',
+    '/solutions/carpooling-app',
+    '/solutions/qr-attendance',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),

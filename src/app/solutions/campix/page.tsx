@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",
+    title: "CampiX.AI | Autonomous AI Ad Campaigns",
     description: "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
     openGraph: {
         title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",

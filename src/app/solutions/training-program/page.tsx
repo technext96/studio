@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 
 export const metadata: Metadata = {
-    title: "Tech Training Programs | From Zero to Hero",
+    title: "Tech Training Programs | From Zero to Job-Ready",
     description: "Explore our comprehensive training programs for Frontend, Backend, UI/UX Design, and SEO. Master in-demand skills with our hands-on, project-based curricula.",
     openGraph: {
         title: "Tech Training Programs | TechNext",

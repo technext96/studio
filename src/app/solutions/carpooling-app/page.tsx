@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-    title: "White-Label Carpooling App Solution | Launch Your Business",
+    title: "White-Label Carpooling App | Launch Your Business",
     description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization. Launch your ride-sharing business in weeks.",
     openGraph: {
         title: "White-Label Carpooling App Solution | TechNext",
@@ -154,10 +154,10 @@ export default function CarpoolingSolutionPage() {
                     <div className="grid lg:grid-cols-2 gap-8 items-center">
                         <FadeIn className="space-y-6 text-center lg:text-left">
                             <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
-                                Launch Your Carpooling App with Our White-Label Solution
+                                Launch Your Carpooling App in Weeks
                             </h1>
                             <p className="max-w-xl mx-auto lg:mx-0 text-foreground/80 md:text-xl">
-                                Your ready-made carpool startup in a box. Get a fully-functional, white-label carpooling solution with mobile apps and an admin panel, and launch under your brand in weeks.
+                                Your ready-made carpool startup in a box. Get a fully-functional, white-label carpooling solution with mobile apps and an admin panel, and launch under your brand.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                                 <Button size="lg" className="text-lg px-8 py-6">
