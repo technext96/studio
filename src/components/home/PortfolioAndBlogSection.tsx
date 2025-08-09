@@ -27,9 +27,12 @@ export default function PortfolioAndBlogSection() {
                     <div className="space-y-8">
                         {featuredPortfolio.map((project, i) => {
                              const Illustration = illustrationMap[project.illustration];
+                             const projectUrl = project.slug.startsWith('solutions/')
+                                ? `/${project.slug}`
+                                : `/portfolio/${project.slug}`;
                              return (
                                 <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
-                                    <Link href={`/portfolio/${project.slug}`} className="group block">
+                                    <Link href={projectUrl} className="group block">
                                         <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                                             <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
                                                 {Illustration && <Illustration />}
