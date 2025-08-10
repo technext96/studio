@@ -9,6 +9,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import ChatWidget from '@/components/ChatWidget';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,6 +108,7 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <ChatWidget />
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="gGi2ufveMQa5LNZzbJQ3vQ" async />
       </body>
     </html>
   );
