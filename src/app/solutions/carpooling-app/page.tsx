@@ -2,14 +2,16 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { FadeIn } from '@/components/ui/fade-in';
-import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, MessageSquare, Badge } from 'lucide-react';
+import { CheckCircle2, Users, Building, GraduationCap, ArrowRight, Video, Mail, MessageSquare, Badge as BadgeIcon } from 'lucide-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import Script from 'next/script';
+import { Badge } from '@/components/ui/badge';
+
 
 export const metadata: Metadata = {
-    title: "White-Label Carpooling App | Launch Your Business",
+    title: "White-Label Carpooling App | Launch Your Business Fast",
     description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization. Launch your ride-sharing business in weeks.",
     openGraph: {
         title: "White-Label Carpooling App Solution | TechNext",

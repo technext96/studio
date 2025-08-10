@@ -16,31 +16,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     };
   }
 
-  if (post.slug === 'white-label-rideshare-app') {
-    return {
-      title: "White-Label Ride-Sharing App | Launch Uber Clone Fast",
-      description: "Launch your Uber-like ride-sharing app with our white-label solution. Affordable, fast, scalable.",
-      openGraph: {
-        title: "White-Label Ride-Sharing App",
-        description: "Launch your Uber-like app with our white-label software today.",
-        url: "https://technext96.com/blog/white-label-rideshare-app",
-        type: 'article',
-        publishedTime: post.date,
-        authors: [post.author.name],
-        images: [
-          {
-            url: '/images/rideshare.jpg', 
-            width: 1200,
-            height: 630,
-            alt: 'White-Label Ride-Sharing App Solution',
-          },
-        ],
-      },
-       alternates: {
-        canonical: `/blog/${post.slug}`,
-      },
-    };
-  }
+  const siteUrl = 'https://technext96.com';
+  const ogImage = post.illustration === 'rideshare' ? '/images/rideshare.jpg' : '/og-image.png';
 
   return {
     title: post.title,
@@ -48,9 +25,24 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `${siteUrl}/blog/${post.slug}`,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author.name],
+      images: [
+        {
+          url: `${siteUrl}${ogImage}`, 
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [`${siteUrl}${ogImage}`],
     },
     alternates: {
       canonical: `/blog/${post.slug}`,
