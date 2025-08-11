@@ -42,7 +42,7 @@ const HeroIllustration = () => {
 
                 {/* Orbiting Rings */}
                 <g transform="translate(256 256)">
-                     {/* Ring 1 - Horizontal */}
+                     {/* Ring 1 */}
                     <motion.ellipse
                         rx="180"
                         ry="80"
@@ -58,7 +58,7 @@ const HeroIllustration = () => {
                         <animateMotion dur="10s" repeatCount="indefinite" path="M0,80 A180,80 0 1,1 0,-80 A180,80 0 1,1 0,80" />
                     </motion.circle>
                     
-                    {/* Ring 2 - Vertical */}
+                    {/* Ring 2 */}
                     <motion.ellipse
                         rx="180"
                         ry="80"
@@ -73,7 +73,7 @@ const HeroIllustration = () => {
                         <animateMotion dur="8s" repeatCount="indefinite" path="M180,0 A180,80 0 1,1 -180,0 A180,80 0 1,1 180,0" />
                     </motion.circle>
 
-                     {/* Ring 3 - Diagonal */}
+                     {/* Ring 3 */}
                      <motion.ellipse
                         rx="180"
                         ry="80"
@@ -131,7 +131,7 @@ export default function HeroSectionV2() {
                             variants={itemVariants}
                         >
                             <span className="text-primary">Engineering</span>
-                            <span className="text-foreground"> a Competitive </span>
+                            <span className="text-foreground"> a Competitive </span> 
                             <span className="text-foreground">Advantage</span>
                         </motion.h1>
                         <motion.p
