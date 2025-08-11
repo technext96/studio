@@ -14,20 +14,20 @@ export const services = [
     {
         slug: "ai-ml",
         title: "AI and Machine Learning",
-        description: "Leverage the power of AI to automate processes, gain insights from data, and create intelligent products.",
-        longDescription: "As an AI development company, we help you harness the transformative power of Artificial Intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation.",
+        description: "Leverage the power of AI to automate processes, gain insights from data, and create intelligent, AI-powered products.",
+        longDescription: "As an AI development company, we provide custom machine learning solutions that harness the transformative power of artificial intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation for your business.",
         icon: "aiMl",
         illustration: "aiMl",
-        subServices: ["Intelligent Automation (RPA)", "Predictive Analytics", "Natural Language Processing", "Computer Vision", "AI Chatbots & Virtual Assistants"]
+        subServices: ["Custom Machine Learning Solutions", "Predictive Analytics", "Natural Language Processing", "Computer Vision", "AI Chatbots & Virtual Assistants"]
     },
     {
         slug: "intelligent-automation",
         title: "Intelligent Automation",
-        description: "Streamline your business operations with our intelligent automation solutions that improve efficiency and reduce costs.",
-        longDescription: "Our Intelligent Automation services combine RPA, AI, and machine learning to automate complex business processes. We help you eliminate manual tasks, reduce human error, and free up your team to focus on high-value activities, leading to significant improvements in productivity and cost savings.",
+        description: "Streamline operations with AI business process automation that improves efficiency and reduces costs.",
+        longDescription: "Our Intelligent Automation services combine RPA with AI technologies to automate complex business processes. We help you eliminate manual tasks, reduce human error, and free up your team to focus on high-value activities, leading to significant improvements in productivity and cost savings through our intelligent automation platforms.",
         icon: "automation",
         illustration: "automation",
-        subServices: ["Robotic Process Automation (RPA)", "Business Process Automation (BPA)", "Workflow Automation", "Automated Data Entry & Processing"]
+        subServices: ["Robotic Process Automation (RPA)", "AI Business Process Automation", "Workflow Automation", "Automated Data Entry & Processing"]
     },
     {
         slug: "offshore-development",
@@ -41,11 +41,11 @@ export const services = [
     {
         slug: "devops",
         title: "DevOps",
-        description: "Accelerate your software delivery lifecycle with our comprehensive DevOps services, from CI/CD to cloud management.",
-        longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster and more reliably. Our services include setting up CI/CD pipelines, automating infrastructure with IaC, and managing cloud environments to ensure high availability and scalability.",
+        description: "Accelerate your software delivery lifecycle with comprehensive DevOps services, including CI/CD and MLOps.",
+        longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster and more reliably. Our services include setting up CI/CD pipelines, automating infrastructure with IaC, and managing cloud environments. We also specialize in DevOps for ML (MLOps) to streamline machine learning lifecycles.",
         icon: "devops",
         illustration: "devops",
-        subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "Cloud Migration & Management", "Containerization (Docker & Kubernetes)"]
+        subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "DevOps for ML (MLOps)", "Containerization (Docker & Kubernetes)"]
     },
     {
         slug: "digital-marketing",
@@ -534,7 +534,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-07-28',
         category: 'Tech Insights',
-        excerpt: 'Discover why building ethically responsible AI is not just a regulatory requirement but a powerful driver of brand trust, customer loyalty, and long-term business success.',
+        excerpt: 'Discover why building ethically responsible AI is a powerful driver of brand trust, customer loyalty, and long-term business success, not just a regulatory requirement.',
         illustration: "ethicalAi",
         keyTakeaways: [
             "Trust is Currency: Ethical AI builds customer trust, which is a key differentiator in a crowded market.",
@@ -733,7 +733,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-30',
         category: 'DevOps',
-        excerpt: 'DevOps is more than just tools; it’s a culture. Learn the core principles and practical steps to bridge the gap between development and operations for faster, more reliable software delivery.',
+        excerpt: 'DevOps is more than just tools; it’s a culture of using AI in DevOps. Learn the core principles and practical steps to bridge the gap between development and operations for faster, more reliable software delivery.',
         illustration: "devops",
         keyTakeaways: [
             "It's a Culture, Not a Role: DevOps is a philosophy of collaboration and shared ownership between developers and operations teams.",

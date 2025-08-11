@@ -8,11 +8,11 @@ import PortfolioAndBlogSection from "@/components/home/PortfolioAndBlogSection";
 import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
 
 export const metadata: Metadata = {
-    title: 'Custom AI Software Development Company | TechNext',
-    description: 'TechNext architects elite custom software, AI-powered systems, and scalable web solutions to give your business a decisive competitive edge. Partner with us for innovation that performs.',
+    title: 'Custom AI Software Development & Automation | TechNext',
+    description: 'TechNext architects elite custom software, AI-powered products, and intelligent automation solutions to give your business a decisive competitive edge. We deliver innovation that performs.',
     openGraph: {
-        title: 'Custom AI Software Development Company | TechNext',
-        description: 'We build high-performance, scalable software solutions that deliver measurable results and a powerful ROI.',
+        title: 'Custom AI Software Development & Automation | TechNext',
+        description: 'We build high-performance, scalable software and AI solutions that deliver measurable results and a powerful ROI.',
     },
 };
 
