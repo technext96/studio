@@ -7,82 +7,79 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from "lucide-react";
 
 const HeroIllustration = () => {
-    const circleVariants = {
-        hidden: { scale: 0, opacity: 0 },
-        visible: (i: number) => ({
-            scale: 1,
-            opacity: 1,
+    const containerVariants = {
+        hidden: {},
+        visible: {
             transition: {
-                delay: i * 0.1,
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1], // Expo out ease
+                staggerChildren: 0.1,
             },
-        }),
+        },
     };
 
-    const lineVariants = {
-        hidden: { pathLength: 0, opacity: 0 },
-        visible: (i: number) => ({
-            pathLength: 1,
-            opacity: 0.3,
-            transition: {
-                delay: 0.5 + i * 0.15,
-                duration: 0.8,
-                ease: "easeInOut",
-            },
-        }),
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.5 },
+        visible: { 
+            opacity: 1, 
+            scale: 1,
+            transition: { type: 'spring', stiffness: 100, damping: 10 } 
+        },
     };
 
     return (
-        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">
-            <defs>
-                <filter id="glow-hero-v2" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-            </defs>
-            
-            <g>
-                {[...Array(5)].map((_, i) => (
-                     <motion.circle
-                        key={`c-${i}`}
-                        cx="256"
-                        cy="256"
-                        r={(i + 1) * 40}
-                        stroke="hsl(var(--primary) / 0.1)"
-                        strokeWidth="1"
-                        fill="none"
-                        variants={circleVariants}
-                        custom={i}
-                     />
-                ))}
-                
-                <motion.circle 
-                    cx="256" cy="256" r="30" 
-                    fill="hsl(var(--primary))" 
-                    filter="url(#glow-hero-v2)"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2, type: 'spring', stiffness: 120 }}
-                />
+        <motion.div 
+            className="w-full h-full relative"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
+                <defs>
+                    <filter id="glow-hero-v2" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+                        <feMerge>
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <radialGradient id="grad-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3"/>
+                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0"/>
+                    </radialGradient>
+                </defs>
 
-                {[...Array(8)].map((_, i) => (
-                    <motion.line
-                        key={`l-${i}`}
-                        x1="256" y1="256"
-                        x2={256 + 250 * Math.cos(i * Math.PI / 4)}
-                        y2={256 + 250 * Math.sin(i * Math.PI / 4)}
+                <motion.circle cx="256" cy="256" r="250" fill="url(#grad-glow)" />
+
+                {/* Animated grid lines */}
+                {[...Array(12)].map((_, i) => (
+                    <motion.path
+                        key={`line-a-${i}`}
+                        d={`M256 6 L256 506`}
+                        transform={`rotate(${i * 15} 256 256)`}
                         stroke="hsl(var(--primary))"
-                        strokeWidth="1"
-                        variants={lineVariants}
-                        custom={i}
+                        strokeWidth="0.5"
+                        opacity="0.2"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ duration: 1, delay: i * 0.1 }}
                     />
                 ))}
-            </g>
-        </svg>
+            </svg>
+
+            {/* Central Cube */}
+            <motion.div
+                className="absolute w-24 h-24 top-1/2 left-1/2"
+                style={{ transform: 'translate(-50%, -50%)', transformStyle: 'preserve-3d' }}
+                animate={{ rotateX: [0, 360], rotateY: [0, 360], rotateZ: [0, 360] }}
+                transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+            >
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(0deg) translateZ(48px)' }}></div>
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(90deg) translateZ(48px)' }}></div>
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(180deg) translateZ(48px)' }}></div>
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(-90deg) translateZ(48px)' }}></div>
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateX(90deg) translateZ(48px)' }}></div>
+                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateX(-90deg) translateZ(48px)' }}></div>
+            </motion.div>
+        </motion.div>
     );
 };
 

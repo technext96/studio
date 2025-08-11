@@ -14,7 +14,7 @@ export const services = [
     {
         slug: "ai-ml",
         title: "AI and Machine Learning",
-        description: "Leverage the power of AI to automate processes, gain insights from data, and create intelligent, AI-powered products.",
+        description: "Leverage our AI solutions development company to automate processes, gain insights, and create intelligent, AI-powered products.",
         longDescription: "As an AI development company, we provide custom machine learning solutions that harness the transformative power of artificial intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation for your business.",
         icon: "aiMl",
         illustration: "aiMl",
@@ -23,11 +23,11 @@ export const services = [
     {
         slug: "intelligent-automation",
         title: "Intelligent Automation",
-        description: "Streamline operations with AI business process automation that improves efficiency and reduces costs.",
+        description: "Streamline operations with AI business process automation that improves efficiency and reduces costs, using tools like n8n and Zapier.",
         longDescription: "Our Intelligent Automation services combine RPA with AI technologies to automate complex business processes. We help you eliminate manual tasks, reduce human error, and free up your team to focus on high-value activities, leading to significant improvements in productivity and cost savings through our intelligent automation platforms.",
         icon: "automation",
         illustration: "automation",
-        subServices: ["Robotic Process Automation (RPA)", "AI Business Process Automation", "Workflow Automation", "Automated Data Entry & Processing"]
+        subServices: ["Robotic Process Automation (RPA)", "AI Business Process Automation", "n8n & Zapier Workflows", "Automated Data Entry & Processing"]
     },
     {
         slug: "offshore-development",
@@ -77,6 +77,14 @@ export const industries = [
 ];
 
 export const portfolio = [
+    {
+        slug: "solutions/n8n-whatsapp-automation",
+        title: "n8n WhatsApp Automation",
+        category: "Automation Solutions",
+        excerpt: "A powerful, self-hosted automation solution to connect WhatsApp with any app, streamlining your business communication and workflows.",
+        summary: "We provide expert services to design, build, and deploy custom automation workflows using n8n, with a focus on WhatsApp integration. This solution allows businesses to automate notifications, create chatbots, and manage leads without relying on expensive per-message platforms.",
+        illustration: "n8nWhatsapp",
+    },
     {
         slug: "solutions/carpooling-app",
         title: "White-Label Carpooling App",

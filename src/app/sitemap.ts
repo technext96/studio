@@ -95,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions/training-program',
     '/solutions/carpooling-app',
     '/solutions/qr-attendance',
+    '/solutions/n8n-whatsapp-automation',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
     lastModified: new Date(),

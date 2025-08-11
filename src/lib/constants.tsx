@@ -1,5 +1,5 @@
 
-import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail, ArrowRight } from 'lucide-react';
+import { Code, Smartphone, Cloud, Bot, BrainCircuit, PencilRuler, Zap, Users, ShieldCheck, ShoppingCart, BookOpen, Building, HeartPulse, Factory, Fuel, Shield, Plane, GraduationCap, Clapperboard, Home, Phone, Briefcase, Handshake, Cog, Group, Newspaper, Lightbulb, Rocket, Video, Car, QrCode, MessageSquare, BookUser, Mail, ArrowRight, Database } from 'lucide-react';
 
 const AiMlIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
@@ -366,6 +366,58 @@ const MedicalChatbotIllustration = () => (
     </svg>
 );
 
+export const n8nWhatsappIllustration = () => (
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+        <defs>
+            <linearGradient id="grad-n8n" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(var(--secondary))" />
+            </linearGradient>
+        </defs>
+        
+        {/* Central Node */}
+        <circle cx="256" cy="256" r="60" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" />
+        <text x="256" y="268" textAnchor="middle" fontSize="48" fontWeight="bold" fill="hsl(var(--primary))">n8n</text>
+
+        {/* Outer Nodes (WhatsApp and others) */}
+        <g id="nodes">
+            <g transform="translate(100, 100)">
+                <circle r="30" fill="hsl(var(--card))" stroke="hsl(var(--border))" />
+                <MessageSquare className="text-primary" x="-16" y="-16" width="32" height="32" />
+            </g>
+            <g transform="translate(412, 100)">
+                <circle r="30" fill="hsl(var(--card))" stroke="hsl(var(--border))" />
+                <Mail className="text-primary" x="-16" y="-16" width="32" height="32" />
+            </g>
+            <g transform="translate(100, 412)">
+                <circle r="30" fill="hsl(var(--card))" stroke="hsl(var(--border))" />
+                <Users className="text-primary" x="-16" y="-16" width="32" height="32" />
+            </g>
+             <g transform="translate(412, 412)">
+                <circle r="30" fill="hsl(var(--card))" stroke="hsl(var(--border))" />
+                <Database className="text-primary" x="-16" y="-16" width="32" height="32" />
+            </g>
+        </g>
+        
+        {/* Animated Connecting Lines */}
+        <g stroke="url(#grad-n8n)" strokeWidth="2" strokeDasharray="10 5" fill="none">
+            <path d="M 220,220 L 130,130">
+                <animate attributeName="stroke-dashoffset" from="15" to="0" dur="2s" repeatCount="indefinite" />
+            </path>
+            <path d="M 292,220 L 382,130">
+                 <animate attributeName="stroke-dashoffset" from="15" to="0" dur="2s" begin="0.5s" repeatCount="indefinite" />
+            </path>
+            <path d="M 220,292 L 130,382">
+                 <animate attributeName="stroke-dashoffset" from="15" to="0" dur="2s" begin="1s" repeatCount="indefinite" />
+            </path>
+             <path d="M 292,292 L 382,382">
+                 <animate attributeName="stroke-dashoffset" from="15" to="0" dur="2s" begin="1.5s" repeatCount="indefinite" />
+            </path>
+        </g>
+         <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 256 256" to="360 256 256" dur="20s" repeatCount="indefinite"/>
+    </svg>
+);
+
 export const illustrationMap: { [key: string]: React.FC } = {
     customSoftware: CustomSoftwareIllustration,
     aiMl: AiMlIllustration,
@@ -397,6 +449,7 @@ export const illustrationMap: { [key: string]: React.FC } = {
     dataPrivacy: DataPrivacyIllustration,
     saasScale: SaasScaleIllustration,
     qrAttendance: QrAttendanceIllustration,
+    n8nWhatsapp: n8nWhatsappIllustration,
 };
 
 export const iconMap: { [key: string]: React.FC<{className?: string}> } = {
@@ -452,3 +505,7 @@ export const valuePropositions = [
 
   
 
+
+
+
+    

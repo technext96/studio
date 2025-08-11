@@ -8,8 +8,8 @@ import PortfolioAndBlogSection from "@/components/home/PortfolioAndBlogSection";
 import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
 
 export const metadata: Metadata = {
-    title: 'Custom AI Software Development & Automation | TechNext',
-    description: 'TechNext architects elite custom software, AI-powered products, and intelligent automation solutions to give your business a decisive competitive edge. We deliver innovation that performs.',
+    title: 'Custom AI Software & Intelligent Automation | TechNext',
+    description: 'TechNext architects elite custom software, AI-powered products, and intelligent automation solutions (including n8n & WhatsApp) to give your business a decisive competitive edge.',
     openGraph: {
         title: 'Custom AI Software Development & Automation | TechNext',
         description: 'We build high-performance, scalable software and AI solutions that deliver measurable results and a powerful ROI.',
