@@ -7,70 +7,56 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from "lucide-react";
 
 const HeroIllustration = () => {
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
-
     return (
-        <motion.div 
-            className="w-full h-full relative"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-        >
+        <div className="w-full h-full relative">
             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
                 <defs>
-                    <filter id="glow-hero-v2" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+                    <filter id="glow-hero-v3" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="15" result="coloredBlur" />
                         <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
                         </feMerge>
                     </filter>
-                    <radialGradient id="grad-glow" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3"/>
-                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0"/>
+                    <radialGradient id="grad-glow-v3" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
                     </radialGradient>
                 </defs>
 
-                <motion.circle cx="256" cy="256" r="250" fill="url(#grad-glow)" />
+                {/* Central Core */}
+                <motion.circle 
+                    cx="256" 
+                    cy="256" 
+                    r="40" 
+                    fill="url(#grad-glow-v3)" 
+                    filter="url(#glow-hero-v3)"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                />
+                <circle cx="256" cy="256" r="20" fill="hsl(var(--primary))" />
 
-                {/* Animated grid lines */}
-                {[...Array(12)].map((_, i) => (
-                    <motion.path
-                        key={`line-a-${i}`}
-                        d={`M256 6 L256 506`}
-                        transform={`rotate(${i * 15} 256 256)`}
-                        stroke="hsl(var(--primary))"
-                        strokeWidth="0.5"
-                        opacity="0.2"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 1, delay: i * 0.1 }}
-                    />
-                ))}
+                {/* Neural Network Paths */}
+                <g stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.3">
+                    <motion.path d="M 256 256 L 150 150" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.1 }} />
+                    <motion.path d="M 256 256 L 180 350" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.2 }}/>
+                    <motion.path d="M 256 256 L 350 180" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.3 }}/>
+                    <motion.path d="M 256 256 L 380 380" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.4 }}/>
+                    <motion.path d="M 150 150 L 80 80" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.5 }}/>
+                    <motion.path d="M 150 150 L 220 80" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.6 }}/>
+                    <motion.path d="M 380 380 L 450 450" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.7 }}/>
+                    <motion.path d="M 380 380 L 310 450" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.8 }}/>
+                </g>
+                
+                {/* Nodes */}
+                <g fill="hsl(var(--primary))">
+                    <motion.circle cx="150" cy="150" r="8" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}/>
+                    <motion.circle cx="180" cy="350" r="6" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.7 }}/>
+                    <motion.circle cx="350" cy="180" r="6" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}/>
+                    <motion.circle cx="380" cy="380" r="8" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 1.1 }}/>
+                </g>
             </svg>
-
-            {/* Central Cube */}
-            <motion.div
-                className="absolute w-24 h-24 top-1/2 left-1/2"
-                style={{ transform: 'translate(-50%, -50%)', transformStyle: 'preserve-3d' }}
-                animate={{ rotateX: [0, 360], rotateY: [0, 360], rotateZ: [0, 360] }}
-                transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-            >
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(0deg) translateZ(48px)' }}></div>
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(90deg) translateZ(48px)' }}></div>
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(180deg) translateZ(48px)' }}></div>
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateY(-90deg) translateZ(48px)' }}></div>
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateX(90deg) translateZ(48px)' }}></div>
-                <div className="absolute w-24 h-24 border border-primary bg-primary/10" style={{ transform: 'rotateX(-90deg) translateZ(48px)' }}></div>
-            </motion.div>
-        </motion.div>
+        </div>
     );
 };
 
@@ -139,8 +125,9 @@ export default function HeroSectionV2() {
                     </motion.div>
                     <motion.div 
                         className="mx-auto aspect-square max-w-lg"
-                        initial="hidden"
-                        animate="visible"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     >
                         <HeroIllustration />
                     </motion.div>
