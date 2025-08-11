@@ -5,87 +5,61 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from 'framer-motion';
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const HeroIllustration = () => {
     return (
-        <div className="w-full h-full relative">
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full object-cover z-0 opacity-20">
+            <svg viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
                 <defs>
-                    <filter id="glow-hero-v3" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="15" result="coloredBlur" />
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="hsl(var(--primary) / 0.5)" />
+                        <stop offset="100%" stopColor="hsl(var(--primary) / 0)" />
+                    </linearGradient>
+                     <filter id="glow-hero" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
                         <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
                         </feMerge>
                     </filter>
-                    <radialGradient id="grad-glow-v3" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
-                        <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                    </radialGradient>
-                    <linearGradient id="grad-ring" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="hsl(var(--primary) / 0.8)" />
-                        <stop offset="100%" stopColor="hsl(var(--primary) / 0.2)" />
-                    </linearGradient>
                 </defs>
 
-                {/* Central Core */}
-                <motion.circle 
-                    cx="256" 
-                    cy="256" 
-                    r="50" 
-                    fill="url(#grad-glow-v3)" 
-                    filter="url(#glow-hero-v3)"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <circle cx="256" cy="256" r="30" fill="hsl(var(--primary)/0.2)" stroke="hsl(var(--primary))" strokeWidth="1"/>
-
-                {/* Orbiting Rings */}
-                <g transform="translate(256 256)">
-                     {/* Ring 1 */}
-                    <motion.ellipse
-                        rx="180"
-                        ry="80"
-                        fill="none"
-                        stroke="url(#grad-ring)"
-                        strokeWidth="1.5"
-                        transform="rotate(90)"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                    />
-                    <motion.circle r="6" fill="hsl(var(--primary))">
-                        <animateMotion dur="10s" repeatCount="indefinite" path="M0,80 A180,80 0 1,1 0,-80 A180,80 0 1,1 0,80" />
-                    </motion.circle>
-                    
-                    {/* Ring 2 */}
-                    <motion.ellipse
-                        rx="180"
-                        ry="80"
-                        fill="none"
-                        stroke="url(#grad-ring)"
-                        strokeWidth="1.5"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.4 }}
-                    />
-                     <motion.circle r="6" fill="hsl(var(--primary))">
-                        <animateMotion dur="8s" repeatCount="indefinite" path="M180,0 A180,80 0 1,1 -180,0 A180,80 0 1,1 180,0" />
-                    </motion.circle>
-
-                     {/* Ring 3 */}
-                     <motion.ellipse
-                        rx="180"
-                        ry="80"
-                        fill="none"
-                        stroke="url(#grad-ring)"
-                        strokeWidth="1.5"
-                        transform="rotate(45)"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.6 }}
-                    />
+                {/* Grid lines */}
+                <g stroke="hsl(var(--primary) / 0.1)">
+                    {[...Array(20)].map((_, i) => (
+                        <path key={`h-${i}`} d={`M0 ${i * 25} H1440`} strokeWidth="0.5" />
+                    ))}
+                    {[...Array(40)].map((_, i) => (
+                        <path key={`v-${i}`} d={`M${i * 40} 0 V500`} strokeWidth="0.5" />
+                    ))}
                 </g>
+                
+                {/* Central radiating lines */}
+                <g transform="translate(720, 250)">
+                    {[...Array(36)].map((_, i) => (
+                         <motion.path
+                            key={i}
+                            d="M0 0 L 1000 0"
+                            stroke="url(#grad1)"
+                            strokeWidth="1"
+                            transform={`rotate(${i * 10})`}
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 1, delay: i * 0.05, ease: "easeOut" }}
+                        />
+                    ))}
+                </g>
+                
+                <motion.circle 
+                    cx="720" 
+                    cy="250" 
+                    r="80" 
+                    fill="hsl(var(--primary)/0.1)" 
+                    filter="url(#glow-hero)"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                />
             </svg>
         </div>
     );
@@ -114,55 +88,81 @@ export default function HeroSectionV2() {
         },
     };
 
+    const featuredLogos = [
+        { name: "Forbes", path: "https://placehold.co/100x40.png", dataAiHint: "forbes logo" },
+        { name: "TechCrunch", path: "https://placehold.co/100x40.png", dataAiHint: "techcrunch logo" },
+        { name: "Wired", path: "https://placehold.co/100x40.png", dataAiHint: "wired logo" },
+        { name: "Fast Company", path: "https://placehold.co/100x40.png", dataAiHint: "fast company logo" },
+        { name: "MIT Technology Review", path: "https://placehold.co/100x40.png", dataAiHint: "mit logo" },
+    ];
+
     return (
         <section className="w-full pt-28 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-32 relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10"></div>
+            <HeroIllustration />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10"></div>
             <div className="px-8 md:px-12 z-20 relative">
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+                <motion.div
+                    className="flex flex-col items-center justify-center space-y-6 text-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.h1
+                        className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl max-w-4xl"
+                        variants={itemVariants}
+                    >
+                        <span className="text-primary">Engineering</span>
+                        <span className="text-foreground"> a Competitive </span> 
+                        <span className="text-foreground">Advantage</span>
+                    </motion.h1>
+                    <motion.p
+                        className="max-w-2xl text-foreground/80 md:text-xl"
+                        variants={itemVariants}
+                    >
+                        We are an elite team of software architects and AI specialists. We don't just build applications—we engineer powerful, scalable solutions that become your greatest competitive asset.
+                    </motion.p>
                     <motion.div
-                        className="flex flex-col justify-center space-y-6 text-center lg:text-left"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
+                        className="flex flex-col gap-4 min-[400px]:flex-row justify-center pt-4"
+                        variants={itemVariants}
                     >
-                        <motion.h1
-                            className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl"
-                            variants={itemVariants}
-                        >
-                            <span className="text-primary">Engineering</span>
-                            <span className="text-foreground"> a Competitive </span> 
-                            <span className="text-foreground">Advantage</span>
-                        </motion.h1>
-                        <motion.p
-                            className="max-w-2xl mx-auto lg:mx-0 text-foreground/80 md:text-xl"
-                            variants={itemVariants}
-                        >
-                            We are an elite team of software architects and AI specialists. We don't just build applications—we engineer powerful, scalable solutions that become your greatest competitive asset.
-                        </motion.p>
-                        <motion.div
-                            className="flex flex-col gap-4 min-[400px]:flex-row justify-center lg:justify-start pt-4"
-                            variants={itemVariants}
-                        >
-                            <Button asChild size="lg" className="text-lg px-8 py-7">
-                                <Link href="/contact">
-                                    Start a Project <ArrowRight className="ml-2 h-5 w-5" />
-                                </Link>
-                            </Button>
-                            <Button asChild size="lg" variant="outline" className="text-lg px-8 py-7">
-                                <Link href="/services">Explore Services</Link>
-                            </Button>
-                        </motion.div>
+                        <Button asChild size="lg" className="text-lg px-8 py-7">
+                            <Link href="/contact">
+                                Start a Project <ArrowRight className="ml-2 h-5 w-5" />
+                            </Link>
+                        </Button>
+                        <Button asChild size="lg" variant="outline" className="text-lg px-8 py-7">
+                            <Link href="/services">Explore Services</Link>
+                        </Button>
                     </motion.div>
-                    <motion.div 
-                        className="mx-auto aspect-square max-w-lg"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    >
-                        <HeroIllustration />
-                    </motion.div>
-                </div>
+                </motion.div>
+                
+                <motion.div 
+                    className="mt-24"
+                    variants={itemVariants}
+                >
+                    <p className="text-center text-sm font-semibold text-foreground/60 tracking-wider uppercase">
+                        Featured In
+                    </p>
+                    <div className="mt-6 flex justify-center items-center gap-8 md:gap-12 flex-wrap">
+                        {featuredLogos.map((logo, index) => (
+                             <motion.div
+                                key={logo.name}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                             >
+                                <Image
+                                    src={logo.path}
+                                    data-ai-hint={logo.dataAiHint}
+                                    alt={logo.name}
+                                    width={100}
+                                    height={40}
+                                    className="opacity-50 contrast-0 hover:opacity-100 hover:contrast-100 transition-all"
+                                />
+                             </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </section>
     );
