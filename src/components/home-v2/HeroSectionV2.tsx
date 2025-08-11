@@ -22,38 +22,69 @@ const HeroIllustration = () => {
                         <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.4" />
                         <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
                     </radialGradient>
+                    <linearGradient id="grad-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="hsl(var(--primary) / 0.8)" />
+                        <stop offset="100%" stopColor="hsl(var(--primary) / 0.2)" />
+                    </linearGradient>
                 </defs>
 
                 {/* Central Core */}
                 <motion.circle 
                     cx="256" 
                     cy="256" 
-                    r="40" 
+                    r="50" 
                     fill="url(#grad-glow-v3)" 
                     filter="url(#glow-hero-v3)"
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
-                <circle cx="256" cy="256" r="20" fill="hsl(var(--primary))" />
+                <circle cx="256" cy="256" r="30" fill="hsl(var(--primary)/0.2)" stroke="hsl(var(--primary))" strokeWidth="1"/>
 
-                {/* Neural Network Paths */}
-                <g stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.3">
-                    <motion.path d="M 256 256 L 150 150" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.1 }} />
-                    <motion.path d="M 256 256 L 180 350" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.2 }}/>
-                    <motion.path d="M 256 256 L 350 180" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.3 }}/>
-                    <motion.path d="M 256 256 L 380 380" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.4 }}/>
-                    <motion.path d="M 150 150 L 80 80" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.5 }}/>
-                    <motion.path d="M 150 150 L 220 80" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.6 }}/>
-                    <motion.path d="M 380 380 L 450 450" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.7 }}/>
-                    <motion.path d="M 380 380 L 310 450" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.8 }}/>
-                </g>
-                
-                {/* Nodes */}
-                <g fill="hsl(var(--primary))">
-                    <motion.circle cx="150" cy="150" r="8" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}/>
-                    <motion.circle cx="180" cy="350" r="6" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.7 }}/>
-                    <motion.circle cx="350" cy="180" r="6" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}/>
-                    <motion.circle cx="380" cy="380" r="8" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, delay: 1.1 }}/>
+                {/* Orbiting Rings */}
+                <g transform="translate(256 256)">
+                     {/* Ring 1 - Horizontal */}
+                    <motion.ellipse
+                        rx="180"
+                        ry="80"
+                        fill="none"
+                        stroke="url(#grad-ring)"
+                        strokeWidth="1.5"
+                        transform="rotate(90)"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                    />
+                    <motion.circle r="6" fill="hsl(var(--primary))">
+                        <animateMotion dur="10s" repeatCount="indefinite" path="M0,80 A180,80 0 1,1 0,-80 A180,80 0 1,1 0,80" />
+                    </motion.circle>
+                    
+                    {/* Ring 2 - Vertical */}
+                    <motion.ellipse
+                        rx="180"
+                        ry="80"
+                        fill="none"
+                        stroke="url(#grad-ring)"
+                        strokeWidth="1.5"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.4 }}
+                    />
+                     <motion.circle r="6" fill="hsl(var(--primary))">
+                        <animateMotion dur="8s" repeatCount="indefinite" path="M180,0 A180,80 0 1,1 -180,0 A180,80 0 1,1 180,0" />
+                    </motion.circle>
+
+                     {/* Ring 3 - Diagonal */}
+                     <motion.ellipse
+                        rx="180"
+                        ry="80"
+                        fill="none"
+                        stroke="url(#grad-ring)"
+                        strokeWidth="1.5"
+                        transform="rotate(45)"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.6 }}
+                    />
                 </g>
             </svg>
         </div>
