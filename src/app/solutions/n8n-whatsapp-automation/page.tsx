@@ -81,7 +81,7 @@ export default function N8nWhatsappAutomationPage() {
                             </div>
                         </FadeIn>
                         <FadeIn>
-                             <div className="mx-auto aspect-square max-w-lg">
+                             <div className="mx-auto aspect-square max-w-lg object-contain">
                                 {n8nWhatsappIllustration()}
                              </div>
                         </FadeIn>
