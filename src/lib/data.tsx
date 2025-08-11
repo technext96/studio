@@ -15,7 +15,7 @@ export const services = [
         slug: "ai-ml",
         title: "AI and Machine Learning",
         description: "Leverage the power of AI to automate processes, gain insights from data, and create intelligent products.",
-        longDescription: "We help you harness the transformative power of Artificial Intelligence and Machine Learning. Our expertise includes developing intelligent automation systems, predictive analytics models, natural language processing (NLP) applications, and computer vision solutions to drive efficiency and innovation.",
+        longDescription: "As an AI development company, we help you harness the transformative power of Artificial Intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation.",
         icon: "aiMl",
         illustration: "aiMl",
         subServices: ["Intelligent Automation (RPA)", "Predictive Analytics", "Natural Language Processing", "Computer Vision", "AI Chatbots & Virtual Assistants"]
@@ -530,7 +530,7 @@ export const blogPosts = [
     },
     {
         slug: 'ethical-ai-business-case',
-        title: 'The Business Case for Ethical AI: Beyond Compliance',
+        title: 'The Business Case for Ethical AI and Automation',
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-07-28',
         category: 'Tech Insights',
