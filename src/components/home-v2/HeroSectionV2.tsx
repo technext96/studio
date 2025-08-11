@@ -65,6 +65,15 @@ const HeroIllustration = () => {
     );
 };
 
+const featuredLogos = [
+    { name: "Tech Journal", svg: <svg viewBox="0 0 120 40" height="24"><text x="0" y="28" fontFamily="var(--font-space-grotesk)" fontSize="24" fontWeight="bold" fill="currentColor">Tech Journal</text></svg> },
+    { name: "Innovate AI", svg: <svg viewBox="0 0 120 40" height="24"><text x="0" y="28" fontFamily="var(--font-space-grotesk)" fontSize="24" fontWeight="bold" fill="currentColor">INNOVATE</text></svg> },
+    { name: "FutureAI", svg: <svg viewBox="0 0 120 40" height="24"><text x="0" y="28" fontFamily="var(--font-space-grotesk)" fontSize="24" fontWeight="bold" fill="currentColor">FutureAI</text></svg> },
+    { name: "QuantumPost", svg: <svg viewBox="0 0 130 40" height="24"><text x="0" y="28" fontFamily="var(--font-space-grotesk)" fontSize="24" fontWeight="bold" fill="currentColor">QuantumPost</text></svg> },
+    { name: "Digital Weekly", svg: <svg viewBox="0 0 140 40" height="24"><text x="0" y="28" fontFamily="var(--font-space-grotesk)" fontSize="24" fontWeight="bold" fill="currentColor">Digital Weekly</text></svg> },
+];
+
+
 export default function HeroSectionV2() {
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -87,14 +96,6 @@ export default function HeroSectionV2() {
             }
         },
     };
-
-    const featuredLogos = [
-        { name: "Forbes", path: "https://placehold.co/100x40.png", dataAiHint: "forbes logo" },
-        { name: "TechCrunch", path: "https://placehold.co/100x40.png", dataAiHint: "techcrunch logo" },
-        { name: "Wired", path: "https://placehold.co/100x40.png", dataAiHint: "wired logo" },
-        { name: "Fast Company", path: "https://placehold.co/100x40.png", dataAiHint: "fast company logo" },
-        { name: "MIT Technology Review", path: "https://placehold.co/100x40.png", dataAiHint: "mit logo" },
-    ];
 
     return (
         <section className="w-full pt-28 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-32 relative overflow-hidden">
@@ -147,18 +148,13 @@ export default function HeroSectionV2() {
                         {featuredLogos.map((logo, index) => (
                              <motion.div
                                 key={logo.name}
+                                title={logo.name}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                                className="opacity-50 hover:opacity-100 transition-opacity"
                              >
-                                <Image
-                                    src={logo.path}
-                                    data-ai-hint={logo.dataAiHint}
-                                    alt={logo.name}
-                                    width={100}
-                                    height={40}
-                                    className="opacity-50 contrast-0 hover:opacity-100 hover:contrast-100 transition-all"
-                                />
+                                {logo.svg}
                              </motion.div>
                         ))}
                     </div>
