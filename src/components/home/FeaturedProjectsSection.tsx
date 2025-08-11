@@ -1,6 +1,7 @@
 
 'use client';
 
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -16,15 +17,27 @@ import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function FeaturedProjectsSection() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
+  const featuredProjects = portfolio.filter(p => [
+      'solutions/campix',
+      'ai-powered-learning-platform',
+      'medical-chatbot',
+      'ai-personal-shopper'
+  ].includes(p.slug));
+
   return (
     <section id="work" className="w-full py-16 md:py-24 lg:py-32 bg-background">
       <div className="px-8 md:px-12">
         <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
           <div className="space-y-3">
             <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary font-semibold">Our Work</div>
-            <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our Work Projects</h2>
+            <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">AI-Powered Solutions</h2>
             <p className="max-w-3xl text-foreground/80 md:text-xl/relaxed">
               We take pride in our work and the value we deliver. Explore a curated selection of our projects that demonstrate our passion for technology.
             </p>
@@ -32,14 +45,17 @@ export default function FeaturedProjectsSection() {
         </FadeIn>
         <FadeIn>
           <Carousel
+            plugins={[plugin.current]}
             opts={{
               align: "start",
               loop: true,
             }}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent className="-ml-4">
-              {portfolio.map((project, index) => {
+              {featuredProjects.map((project, index) => {
                 const Illustration = illustrationMap[project.illustration];
                 const projectUrl = project.slug.startsWith('solutions/')
                   ? `/${project.slug}`

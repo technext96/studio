@@ -14,8 +14,8 @@ export const services = [
     {
         slug: "ai-ml",
         title: "AI and Machine Learning",
-        description: "Leverage our AI solutions development company to automate processes, gain insights, and create intelligent, AI-powered products.",
-        longDescription: "As an AI development company, we provide custom machine learning solutions that harness the transformative power of artificial intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation for your business.",
+        description: "As a leading AI development company, we build custom machine learning solutions and AI-powered products to automate processes and deliver intelligent insights.",
+        longDescription: "As an AI solutions development company, we provide custom machine learning solutions that harness the transformative power of artificial intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation for your business.",
         icon: "aiMl",
         illustration: "aiMl",
         subServices: ["Custom Machine Learning Solutions", "Predictive Analytics", "Natural Language Processing", "Computer Vision", "AI Chatbots & Virtual Assistants"]
@@ -23,7 +23,7 @@ export const services = [
     {
         slug: "intelligent-automation",
         title: "Intelligent Automation",
-        description: "Streamline operations with AI business process automation that improves efficiency and reduces costs, using tools like n8n and Zapier.",
+        description: "We streamline operations with AI business process automation that improves efficiency and reduces costs, using intelligent automation platforms like n8n and Zapier.",
         longDescription: "Our Intelligent Automation services combine RPA with AI technologies to automate complex business processes. We help you eliminate manual tasks, reduce human error, and free up your team to focus on high-value activities, leading to significant improvements in productivity and cost savings through our intelligent automation platforms.",
         icon: "automation",
         illustration: "automation",
@@ -40,8 +40,8 @@ export const services = [
     },
     {
         slug: "devops",
-        title: "DevOps",
-        description: "Accelerate your software delivery lifecycle with comprehensive DevOps services, including CI/CD and MLOps.",
+        title: "DevOps & MLOps",
+        description: "Accelerate your delivery lifecycle with our comprehensive DevOps services, including CI/CD pipeline automation and specialized DevOps for ML (MLOps).",
         longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster and more reliably. Our services include setting up CI/CD pipelines, automating infrastructure with IaC, and managing cloud environments. We also specialize in DevOps for ML (MLOps) to streamline machine learning lifecycles.",
         icon: "devops",
         illustration: "devops",
@@ -78,6 +78,66 @@ export const industries = [
 
 export const portfolio = [
     {
+        slug: "solutions/campix",
+        title: "CampiX.AI: Autonomous Ad Campaigns",
+        category: "AI Marketing",
+        excerpt: "An autonomous AI platform that launches, manages, and optimizes ad campaigns across all major platforms with zero human intervention.",
+        summary: "CampiX.AI is a revolutionary platform that acts as an autonomous marketing department. By simply defining a goal and a budget, the AI handles everything else: creative generation, audience targeting, A/B testing, and performance optimization, delivering superior ROI.",
+        illustration: "marketing",
+    },
+    {
+        slug: "ai-powered-learning-platform",
+        title: "AI-Powered Learning Platform",
+        category: "Education Technology",
+        excerpt: "An adaptive learning platform that personalizes educational content for students using AI, improving engagement and outcomes.",
+        summary: "We developed a comprehensive e-learning platform that uses machine learning algorithms to create personalized learning paths for students. The system analyzes student performance in real-time and adjusts the curriculum to focus on areas needing improvement, while also providing advanced materials for students who are ahead. The platform includes interactive quizzes, video lessons, and collaborative projects, all managed through a user-friendly interface for students, teachers, and administrators.",
+        illustration: "aiLearning",
+        keyFeatures: [
+            "Personalized learning paths",
+            "Real-time performance analytics",
+            "Interactive content modules",
+            "Automated grading and feedback",
+            "Collaborative learning tools",
+            "Admin and teacher dashboards"
+        ],
+        techStack: ["Next.js", "Python (FastAPI)", "PostgreSQL", "Google Cloud", "Genkit", "Docker"],
+        demoUrl: "/solutions/training-program",
+    },
+     {
+        slug: "medical-chatbot",
+        title: "HIPAA-Compliant Medical Chatbot",
+        category: "Healthcare",
+        excerpt: "A secure, AI-powered chatbot for preliminary symptom checking and appointment scheduling, compliant with healthcare regulations.",
+        summary: "We designed and built a HIPAA-compliant medical chatbot to help patients get instant answers to their health concerns and book appointments. The chatbot uses a carefully trained NLP model to understand medical terminology, assess symptoms based on established protocols, and provide information on potential conditions. It guides users to the right specialist and schedules appointments directly into the clinic's management system, all within a secure and encrypted environment to protect patient data.",
+        illustration: "medicalChatbot",
+        keyFeatures: [
+            "HIPAA-compliant data handling",
+            "AI-driven symptom assessment",
+            "Automated appointment scheduling",
+            "Integration with EHR/EMR systems",
+            "Secure user authentication",
+            "Triage to human support when needed"
+        ],
+        techStack: ["Genkit", "Python (FastAPI)", "PostgreSQL", "React", "AWS HIPAA-Eligible Services"]
+    },
+    {
+        slug: "ai-personal-shopper",
+        title: "AI-Powered Personal Shopper for E-commerce",
+        category: "E-commerce",
+        excerpt: "An AI-driven chatbot that acts as a personal shopper, guiding users through product discovery and increasing conversion rates.",
+        summary: "We integrated an intelligent chatbot into an existing e-commerce platform. Using Natural Language Processing (NLP) and Genkit, the chatbot understands user queries, asks clarifying questions, and provides personalized product recommendations based on style preferences, budget, and past behavior. The 'personal shopper' can also create complete outfits, find matching accessories, and notify users of sales on their favorite items, significantly enhancing the user experience and driving sales.",
+        illustration: "aiShopping",
+        keyFeatures: [
+            "Natural Language Understanding (NLU)",
+            "Personalized product recommendations",
+            "Style and preference analysis",
+            "Automated up-selling and cross-selling",
+            "Seamless integration with e-commerce platform",
+            "24/7 customer assistance"
+        ],
+        techStack: ["Genkit", "Dialogflow", "React", "Node.js", "Firebase"]
+    },
+    {
         slug: "solutions/n8n-whatsapp-automation",
         title: "n8n WhatsApp Automation",
         category: "Automation Solutions",
@@ -102,24 +162,6 @@ export const portfolio = [
         illustration: "qrAttendance",
     },
     {
-        slug: "ai-powered-learning-platform",
-        title: "AI-Powered Learning Platform",
-        category: "Education Technology",
-        excerpt: "An adaptive learning platform that personalizes educational content for students using AI, improving engagement and outcomes.",
-        summary: "We developed a comprehensive e-learning platform that uses machine learning algorithms to create personalized learning paths for students. The system analyzes student performance in real-time and adjusts the curriculum to focus on areas needing improvement, while also providing advanced materials for students who are ahead. The platform includes interactive quizzes, video lessons, and collaborative projects, all managed through a user-friendly interface for students, teachers, and administrators.",
-        illustration: "aiLearning",
-        keyFeatures: [
-            "Personalized learning paths",
-            "Real-time performance analytics",
-            "Interactive content modules",
-            "Automated grading and feedback",
-            "Collaborative learning tools",
-            "Admin and teacher dashboards"
-        ],
-        techStack: ["Next.js", "Python (FastAPI)", "PostgreSQL", "Google Cloud", "Genkit", "Docker"],
-        demoUrl: "/solutions/training-program",
-    },
-    {
         slug: "food-delivery-marketplace",
         title: "On-Demand Food Delivery Marketplace",
         category: "Food & Beverage",
@@ -136,40 +178,6 @@ export const portfolio = [
         ],
         techStack: ["React Native", "Node.js (Express)", "MongoDB", "Socket.io", "Stripe", "Google Maps API"]
     },
-    {
-        slug: "ai-personal-shopper",
-        title: "AI-Powered Personal Shopper for E-commerce",
-        category: "E-commerce",
-        excerpt: "An AI-driven chatbot that acts as a personal shopper, guiding users through product discovery and increasing conversion rates.",
-        summary: "We integrated an intelligent chatbot into an existing e-commerce platform. Using Natural Language Processing (NLP) and Genkit, the chatbot understands user queries, asks clarifying questions, and provides personalized product recommendations based on style preferences, budget, and past behavior. The 'personal shopper' can also create complete outfits, find matching accessories, and notify users of sales on their favorite items, significantly enhancing the user experience and driving sales.",
-        illustration: "aiShopping",
-        keyFeatures: [
-            "Natural Language Understanding (NLU)",
-            "Personalized product recommendations",
-            "Style and preference analysis",
-            "Automated up-selling and cross-selling",
-            "Seamless integration with e-commerce platform",
-            "24/7 customer assistance"
-        ],
-        techStack: ["Genkit", "Dialogflow", "React", "Node.js", "Firebase"]
-    },
-    {
-        slug: "medical-chatbot",
-        title: "HIPAA-Compliant Medical Chatbot",
-        category: "Healthcare",
-        excerpt: "A secure, AI-powered chatbot for preliminary symptom checking and appointment scheduling, compliant with healthcare regulations.",
-        summary: "We designed and built a HIPAA-compliant medical chatbot to help patients get instant answers to their health concerns and book appointments. The chatbot uses a carefully trained NLP model to understand medical terminology, assess symptoms based on established protocols, and provide information on potential conditions. It guides users to the right specialist and schedules appointments directly into the clinic's management system, all within a secure and encrypted environment to protect patient data.",
-        illustration: "medicalChatbot",
-        keyFeatures: [
-            "HIPAA-compliant data handling",
-            "AI-driven symptom assessment",
-            "Automated appointment scheduling",
-            "Integration with EHR/EMR systems",
-            "Secure user authentication",
-            "Triage to human support when needed"
-        ],
-        techStack: ["Genkit", "Python (FastAPI)", "PostgreSQL", "React", "AWS HIPAA-Eligible Services"]
-    }
 ];
 
 export const blogPosts = [
@@ -542,7 +550,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-07-28',
         category: 'Tech Insights',
-        excerpt: 'Discover why building ethically responsible AI is a powerful driver of brand trust, customer loyalty, and long-term business success, not just a regulatory requirement.',
+        excerpt: 'Building ethically responsible AI isn\'t just about compliance; using AI in DevOps is a powerful driver of brand trust, customer loyalty, and long-term business success.',
         illustration: "ethicalAi",
         keyTakeaways: [
             "Trust is Currency: Ethical AI builds customer trust, which is a key differentiator in a crowded market.",
