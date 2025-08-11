@@ -16,15 +16,6 @@ const HeroIllustration = () => {
         },
     };
 
-    const itemVariants = {
-        hidden: { opacity: 0, scale: 0.5 },
-        visible: { 
-            opacity: 1, 
-            scale: 1,
-            transition: { type: 'spring', stiffness: 100, damping: 10 } 
-        },
-    };
-
     return (
         <motion.div 
             className="w-full h-full relative"
