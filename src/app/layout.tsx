@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | TechNext',
   },
   description: "TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.",
-  keywords: ["custom machine learning solutions", "ai software development", "intelligent automation", "ai for business operations", "devops for ml", "ai development company", "ai automation", "ai in business", "ai solutions development company"],
+  keywords: ["custom software development", "ai solutions development company", "mobile app development", "web application development", "custom machine learning solutions", "intelligent automation", "ai for business operations", "devops for ml", "ai development company", "ai automation", "ai in business"],
   openGraph: {
     title: 'TechNext | Custom Software, AI, & Web Development Solutions',
     description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
