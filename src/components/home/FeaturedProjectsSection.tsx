@@ -57,9 +57,7 @@ export default function FeaturedProjectsSection() {
             <CarouselContent className="-ml-4">
               {featuredProjects.map((project, index) => {
                 const Illustration = illustrationMap[project.illustration];
-                const projectUrl = project.slug.startsWith('solutions/')
-                  ? `/${project.slug}`
-                  : `/portfolio/${project.slug}`;
+                const projectUrl = `/solutions/${project.slug}`;
                 return (
                   <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                     <div className="p-1 h-full">
@@ -93,7 +91,7 @@ export default function FeaturedProjectsSection() {
         </FadeIn>
          <FadeIn className="mt-16 text-center">
             <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
-                <Link href="/portfolio">Explore All Projects</Link>
+                <Link href="/solutions">Explore All Projects</Link>
             </Button>
         </FadeIn>
       </div>

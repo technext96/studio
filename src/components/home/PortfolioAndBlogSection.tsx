@@ -27,9 +27,7 @@ export default function PortfolioAndBlogSection() {
                     <div className="space-y-8">
                         {featuredPortfolio.map((project, i) => {
                              const Illustration = illustrationMap[project.illustration];
-                             const projectUrl = project.slug.startsWith('solutions/')
-                                ? `/${project.slug}`
-                                : `/portfolio/${project.slug}`;
+                             const projectUrl = `/solutions/${project.slug}`;
                              return (
                                 <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                                     <Link href={projectUrl} className="group block">

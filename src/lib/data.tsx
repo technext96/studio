@@ -78,7 +78,7 @@ export const industries = [
 
 export const solutions = [
      {
-        slug: "solutions/campix",
+        slug: "campix",
         title: "CampiX.AI: Autonomous Ad Campaigns",
         category: "AI Marketing",
         excerpt: "An autonomous AI platform that launches, manages, and optimizes ad campaigns across all major platforms with zero human intervention.",
@@ -86,7 +86,7 @@ export const solutions = [
         illustration: "marketing",
     },
     {
-        slug: "solutions/n8n-whatsapp-automation",
+        slug: "n8n-whatsapp-automation",
         title: "n8n WhatsApp Automation",
         category: "Automation Solutions",
         excerpt: "A powerful, self-hosted automation solution to connect WhatsApp with any app, streamlining your business communication and workflows.",
@@ -94,7 +94,7 @@ export const solutions = [
         illustration: "n8nWhatsapp",
     },
     {
-        slug: "solutions/carpooling-app",
+        slug: "carpooling-app",
         title: "White-Label Carpooling App",
         category: "Mobility Solutions",
         excerpt: "Launch your own carpooling service with our ready-made, white-label solution, including mobile apps and a full admin panel.",
@@ -102,7 +102,7 @@ export const solutions = [
         illustration: "rideshare",
     },
     {
-        slug: "solutions/qr-attendance",
+        slug: "qr-attendance",
         title: "Proxy-Proof QR Attendance System",
         category: "Business Tools",
         excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
@@ -629,7 +629,7 @@ export const blogPosts = [
                 <p>When users trust that you are a responsible steward of their data, they are more likely to engage with your services, share relevant information willingly, and become long-term advocates for your brand. A public-facing privacy dashboard, clear data usage policies, and easy-to-use controls aren't just legal necessities; they are powerful marketing tools.</p>
                 
                 <h3>Conclusion: Make Privacy Your Default</h3>
-                <p>The era of unchecked data collection is over. The future belongs to businesses that understand that data analytics and user privacy are not opposing forces, but two sides of the same coin of a sustainable, trust-based digital economy. By adopting a "privacy by design" approach and treating user data with the respect it deserves, you can unlock powerful insights while building a brand that customers are proud to support.</p>
+                <p>The era of unchecked data collection is over. The future belongs to businesses that understand that data analytics and user privacy are not opposing forces, but two sides of the same coin of a sustainable, trust-based digital economy. By adopting a "privacy by design" approach, and treating user data with the respect it deserves, you can unlock powerful insights while building a brand that customers are proud to support.</p>
             </>
         ),
         faq: [
@@ -1162,10 +1162,10 @@ export const navLinks: NavLink[] = [
     },
     {
         title: 'Our Work',
-        href: '/portfolio',
+        href: '/solutions',
         description: 'See our success stories and client case studies.',
         items: [
-            { title: "Portfolio", href: "/portfolio", icon: "briefcase", description: "Explore our featured case studies." },
+            { title: "Our Solutions", href: "/solutions", icon: "briefcase", description: "Explore our featured case studies." },
             { title: "AI Marketing Solution", href: "/solutions/campix", icon: "rocket", description: "An autonomous AI-powered ad campaign platform." },
             { title: "Carpooling App", href: "/solutions/carpooling-app", icon: "car", description: "A white-label solution to launch your own carpooling service." },
             { title: "QR Attendance System", href: "/solutions/qr-attendance", icon: "qrCode", description: "A proxy-proof attendance system with device verification." },

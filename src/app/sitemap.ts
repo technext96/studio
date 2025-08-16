@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/portfolio`,
+      url: `${siteUrl}/solutions`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -71,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const portfolioRoutes = portfolio.map((project) => ({
-    url: `${siteUrl}/portfolio/${project.slug}`,
+    url: `${siteUrl}/solutions/${project.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
@@ -85,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
   
   const solutionsRoutes = solutions.map((solution) => ({
-    url: `${siteUrl}${solution.slug.replace('solutions', '/solutions')}`,
+    url: `${siteUrl}/solutions/${solution.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
