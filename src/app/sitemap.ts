@@ -1,6 +1,6 @@
 
 import { MetadataRoute } from 'next'
-import { services, industries, portfolio, blogPosts } from '@/lib/data.tsx';
+import { services, industries, portfolio, blogPosts, solutions } from '@/lib/data.tsx';
  
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = 'https://technext96.com';
@@ -70,18 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const portfolioRoutes = portfolio.map((project) => {
-    const url = project.slug.startsWith('solutions/')
-      ? `${siteUrl}/${project.slug}`
-      : `${siteUrl}/portfolio/${project.slug}`;
-    
-    return {
-      url,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    };
-  });
+  const portfolioRoutes = portfolio.map((project) => ({
+    url: `${siteUrl}/portfolio/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
 
   const blogRoutes = blogPosts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
@@ -90,20 +84,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
   
-  const solutionsRoutes = [
-    '/solutions/campix',
-    '/solutions/training-program',
-    '/solutions/carpooling-app',
-    '/solutions/qr-attendance',
-    '/solutions/n8n-whatsapp-automation',
-  ].map((route) => ({
-    url: `${siteUrl}${route}`,
+  const solutionsRoutes = solutions.map((solution) => ({
+    url: `${siteUrl}${solution.slug.replace('solutions', '/solutions')}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
   }));
   
-  // Combine all routes and remove duplicates that might arise from portfolio logic
+  // Combine all routes
   const allRoutes = [
     ...staticRoutes,
     ...servicesRoutes,
@@ -113,7 +101,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionsRoutes,
   ];
 
-  const uniqueRoutes = Array.from(new Map(allRoutes.map(item => [item.url, item])).values());
-
-  return uniqueRoutes;
+  return allRoutes;
 }

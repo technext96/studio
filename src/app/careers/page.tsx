@@ -7,7 +7,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 
 export const metadata: Metadata = {
     title: "Careers",
-    description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open positions.",
+    description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open software engineering positions.",
     openGraph: {
         title: 'Careers | TechNext',
         description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open positions.",

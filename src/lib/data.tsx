@@ -41,7 +41,7 @@ export const services = [
     {
         slug: "devops",
         title: "DevOps & MLOps",
-        description: "Accelerate your delivery lifecycle with our comprehensive DevOps services, including CI/CD pipeline automation and specialized DevOps for ML (MLOps).",
+        description: "Accelerate your delivery lifecycle with our DevOps services, including CI/CD pipeline automation and specialized DevOps for ML (MLOps).",
         longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster and more reliably. Our services include setting up CI/CD pipelines, automating infrastructure with IaC, and managing cloud environments. We also specialize in DevOps for ML (MLOps) to streamline machine learning lifecycles.",
         icon: "devops",
         illustration: "devops",
@@ -76,8 +76,8 @@ export const industries = [
     { slug: "government", title: "Government", description: "Secure portals and digital services for citizens.", icon: "government", illustration: "government" },
 ];
 
-export const portfolio = [
-    {
+export const solutions = [
+     {
         slug: "solutions/campix",
         title: "CampiX.AI: Autonomous Ad Campaigns",
         category: "AI Marketing",
@@ -85,6 +85,33 @@ export const portfolio = [
         summary: "CampiX.AI is a revolutionary platform that acts as an autonomous marketing department. By simply defining a goal and a budget, the AI handles everything else: creative generation, audience targeting, A/B testing, and performance optimization, delivering superior ROI.",
         illustration: "marketing",
     },
+    {
+        slug: "solutions/n8n-whatsapp-automation",
+        title: "n8n WhatsApp Automation",
+        category: "Automation Solutions",
+        excerpt: "A powerful, self-hosted automation solution to connect WhatsApp with any app, streamlining your business communication and workflows.",
+        summary: "We provide expert services to design, build, and deploy custom automation workflows using n8n, with a focus on WhatsApp integration. This solution allows businesses to automate notifications, create chatbots, and manage leads without relying on expensive per-message platforms.",
+        illustration: "n8nWhatsapp",
+    },
+    {
+        slug: "solutions/carpooling-app",
+        title: "White-Label Carpooling App",
+        category: "Mobility Solutions",
+        excerpt: "Launch your own carpooling service with our ready-made, white-label solution, including mobile apps and a full admin panel.",
+        summary: "Our white-label carpooling platform provides entrepreneurs and businesses with a turnkey solution to enter the mobility market. The package includes customizable, cross-platform mobile apps for drivers and riders, and a comprehensive web-based admin panel to manage the entire operation.",
+        illustration: "rideshare",
+    },
+    {
+        slug: "solutions/qr-attendance",
+        title: "Proxy-Proof QR Attendance System",
+        category: "Business Tools",
+        excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
+        summary: "We developed a secure QR-based attendance system designed to eliminate time theft. By binding each user to a specific device and validating their check-in against an authorized Wi-Fi network or geolocation, our solution ensures that employees are physically present when they mark their attendance.",
+        illustration: "qrAttendance",
+    }
+];
+
+export const portfolio = [
     {
         slug: "ai-powered-learning-platform",
         title: "AI-Powered Learning Platform",
@@ -138,30 +165,6 @@ export const portfolio = [
         techStack: ["Genkit", "Dialogflow", "React", "Node.js", "Firebase"]
     },
     {
-        slug: "solutions/n8n-whatsapp-automation",
-        title: "n8n WhatsApp Automation",
-        category: "Automation Solutions",
-        excerpt: "A powerful, self-hosted automation solution to connect WhatsApp with any app, streamlining your business communication and workflows.",
-        summary: "We provide expert services to design, build, and deploy custom automation workflows using n8n, with a focus on WhatsApp integration. This solution allows businesses to automate notifications, create chatbots, and manage leads without relying on expensive per-message platforms.",
-        illustration: "n8nWhatsapp",
-    },
-    {
-        slug: "solutions/carpooling-app",
-        title: "White-Label Carpooling App",
-        category: "Mobility Solutions",
-        excerpt: "Launch your own carpooling service with our ready-made, white-label solution, including mobile apps and a full admin panel.",
-        summary: "Our white-label carpooling platform provides entrepreneurs and businesses with a turnkey solution to enter the mobility market. The package includes customizable, cross-platform mobile apps for drivers and riders, and a comprehensive web-based admin panel to manage the entire operation.",
-        illustration: "rideshare",
-    },
-    {
-        slug: "solutions/qr-attendance",
-        title: "Proxy-Proof QR Attendance System",
-        category: "Business Tools",
-        excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
-        summary: "We developed a secure QR-based attendance system designed to eliminate time theft. By binding each user to a specific device and validating their check-in against an authorized Wi-Fi network or geolocation, our solution ensures that employees are physically present when they mark their attendance.",
-        illustration: "qrAttendance",
-    },
-    {
         slug: "food-delivery-marketplace",
         title: "On-Demand Food Delivery Marketplace",
         category: "Food & Beverage",
@@ -183,7 +186,7 @@ export const portfolio = [
 export const blogPosts = [
     {
         slug: 'white-label-rideshare-app',
-        title: 'White-Label Ride-Sharing App | Launch Your Uber-like Business Today',
+        title: 'White-Label Ride-Sharing App | Launch Your Uber-like Business',
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-08-05',
         category: 'Business Solutions',
@@ -316,11 +319,11 @@ export const blogPosts = [
     },
     {
         slug: 'white-label-vs-custom-development-rideshare',
-        title: 'White-Label vs. Custom Development: Which is Right for Your Ride-Sharing App?',
+        title: 'White-Label vs. Custom Development for Your Ride-Sharing App',
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-08-08',
         category: 'Business Strategy',
-        excerpt: 'Choosing between a white-label solution and custom development is a critical decision. We break down the pros and cons of each approach in terms of cost, time, and scalability.',
+        excerpt: 'Choosing between a white-label solution and custom development is a critical decision. We break down the pros and cons of each approach.',
         illustration: "customSoftware",
         keyTakeaways: [
             "Time to Market: White-label is weeks. Custom is months or years.",
@@ -550,7 +553,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-07-28',
         category: 'Tech Insights',
-        excerpt: 'Building ethically responsible AI isn\'t just about compliance; using AI in DevOps is a powerful driver of brand trust, customer loyalty, and long-term business success.',
+        excerpt: 'Ethical AI isn\'t just about compliance; using AI in DevOps is a driver of brand trust, customer loyalty, and long-term business success.',
         illustration: "ethicalAi",
         keyTakeaways: [
             "Trust is Currency: Ethical AI builds customer trust, which is a key differentiator in a crowded market.",
@@ -643,7 +646,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-07-15',
         category: 'Startup Chronicles',
-        excerpt: 'From your first 100 users to 100,000, scaling a SaaS application requires a strategic evolution of your technology, team, and processes. Here’s what you need to know.',
+        excerpt: 'From 100 to 100,000 users, scaling a SaaS application requires a strategic evolution of your technology, team, and processes. Here’s what you need to know.',
         illustration: "saasScale",
         keyTakeaways: [
             "Monolith First, Microservices Later: Start with a simple, monolithic architecture. Don't prematurely optimize for a scale you don't have.",
@@ -698,7 +701,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-20',
         category: 'AI & Machine Learning',
-        excerpt: 'Unlock efficiency and reduce costs by automating your business processes. Learn the difference between RPA and IA and discover which processes are ripe for automation.',
+        excerpt: 'Unlock efficiency by automating business processes. Learn the difference between RPA and IA and discover which processes are ripe for automation.',
         illustration: "automation",
         keyTakeaways: [
             "IA is RPA with a Brain: Intelligent Automation (IA) enhances Robotic Process Automation (RPA) with AI capabilities like NLP and computer vision.",
@@ -749,7 +752,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-30',
         category: 'DevOps',
-        excerpt: 'DevOps is more than just tools; it’s a culture of using AI in DevOps. Learn the core principles and practical steps to bridge the gap between development and operations for faster, more reliable software delivery.',
+        excerpt: 'DevOps is more than just tools; it’s a culture of using AI in DevOps. Learn the core principles and practical steps to bridge the gap between development and operations.',
         illustration: "devops",
         keyTakeaways: [
             "It's a Culture, Not a Role: DevOps is a philosophy of collaboration and shared ownership between developers and operations teams.",
@@ -805,7 +808,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-25',
         category: 'Business Solutions',
-        excerpt: 'Offshoring can be a powerful strategy to scale your development team and reduce costs. Learn the best practices for communication, culture, and project management to make it a success.',
+        excerpt: 'Offshoring can be a powerful strategy to scale your development team and reduce costs. Learn the best practices for communication, culture, and project management.',
         illustration: "offshore",
         keyTakeaways: [
             "It's About Talent, Not Just Cost: While cost savings are a benefit, the primary driver should be accessing a global pool of skilled talent.",
@@ -857,7 +860,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-15',
         category: 'E-commerce',
-        excerpt: 'From headless architecture to personalized experiences, discover the key technologies and strategies you need to build a successful and scalable e-commerce business in today’s competitive market.',
+        excerpt: 'From headless architecture to personalized experiences, discover the key technologies and strategies you need to build a successful e-commerce business.',
         illustration: "ecommerce",
         keyTakeaways: [
             "Headless is the Future: Decoupling your frontend (the 'head') from your backend commerce engine provides maximum flexibility and performance.",
@@ -909,7 +912,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-06-10',
         category: 'Cybersecurity',
-        excerpt: 'In an era of constant threats, a reactive approach to security is a recipe for disaster. Learn the foundational principles of a proactive cybersecurity strategy to protect your business and your customers.',
+        excerpt: 'In an era of constant threats, a reactive approach to security is a recipe for disaster. Learn the foundational principles of a proactive cybersecurity strategy.',
         illustration: "cybersecurity",
         keyTakeaways: [
             "Assume You Will Be Breached: A 'zero trust' security model assumes threats can be both external and internal, requiring verification for every access request.",
@@ -956,7 +959,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-05-28',
         category: 'Fintech',
-        excerpt: 'The financial industry is in the midst of a technological revolution. Explore the key trends, from embedded finance to DeFi, that are redefining how we save, spend, and invest.',
+        excerpt: 'The financial industry is in a technological revolution. Explore the key trends, from embedded finance to DeFi, that are redefining how we save, spend, and invest.',
         illustration: "fintech",
         keyTakeaways: [
             "Embedded Finance is Everywhere: Financial services are being integrated directly into non-financial apps and products (e.g., 'buy now, pay later' in e-commerce).",
@@ -999,7 +1002,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-05-20',
         category: 'Healthcare',
-        excerpt: 'From telehealth and remote monitoring to AI-powered diagnostics, technology is empowering patients and revolutionizing care delivery. Explore the key trends in modern healthcare software.',
+        excerpt: 'From telehealth to AI diagnostics, technology is empowering patients and revolutionizing care delivery. Explore the key trends in modern healthcare software.',
         illustration: "healthcare",
         keyTakeaways: [
             "Telehealth is Here to Stay: Virtual consultations have become a standard part of care delivery, offering convenience and accessibility.",
@@ -1042,7 +1045,7 @@ export const blogPosts = [
         author: { name: 'TechNext Team', role: 'Content & Marketing Division' },
         date: '2024-05-15',
         category: 'Business Solutions',
-        excerpt: 'Off-the-shelf software can get you started, but custom solutions are what will set you apart. Learn when to make the switch and how tailored software can become your greatest competitive advantage.',
+        excerpt: 'Off-the-shelf software can get you started, but custom solutions set you apart. Learn when to make the switch and how it can be your greatest competitive advantage.',
         illustration: "customSoftware",
         keyTakeaways: [
             "Solves Your Exact Problem: Custom software is designed to fit your unique business processes, not the other way around.",

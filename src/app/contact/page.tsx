@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
     title: "Contact Us",
-    description: "Get in touch with the TechNext team to discuss your project. We offer free consultations and quotes for our custom software, AI, and web development services.",
+    description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our custom software, AI, and web development services.",
 };
 
 export default function ContactPage() {

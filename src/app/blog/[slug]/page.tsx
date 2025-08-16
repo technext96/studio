@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   const siteUrl = 'https://technext96.com';
-  const ogImage = post.illustration === 'rideshare' ? '/images/rideshare.jpg' : '/og-image.png';
+  const ogImage = post.illustration ? `/images/${post.illustration}.jpg` : '/og-image.png';
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
   return {
