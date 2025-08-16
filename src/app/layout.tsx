@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: '/',
+    canonical: siteUrl,
   },
   icons: {
     icon: '/favicon.ico',

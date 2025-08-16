@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
 
   const siteUrl = 'https://technext96.com';
   const ogImage = post.illustration === 'rideshare' ? '/images/rideshare.jpg' : '/og-image.png';
+  const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
   return {
     title: post.title,
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `${siteUrl}/blog/${post.slug}`,
+      url: canonicalUrl,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author.name],
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
       images: [`${siteUrl}${ogImage}`],
     },
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: canonicalUrl,
     },
   };
 }
