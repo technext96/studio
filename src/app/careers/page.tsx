@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Briefcase, BrainCircuit, Users } from 'lucide-react';
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open software engineering positions.",
     openGraph: {
         title: 'Careers | TechNext',
-        description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open positions.",
+        description: "Join our team at TechNext and help build the future.",
     },
 };
 

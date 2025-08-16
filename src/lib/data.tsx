@@ -1193,6 +1193,3 @@ export const navLinks: NavLink[] = [
         href: '/blog',
     },
 ];
-
-
-    

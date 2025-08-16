@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { valuePropositions } from '@/lib/constants';
 import { CheckCircle2, Eye, Gem, Target, Users } from 'lucide-react';
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
     openGraph: {
         title: 'About Us | TechNext',
-        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success.",
+        description: "Learn about TechNext's mission, vision, and values.",
     },
 };
 

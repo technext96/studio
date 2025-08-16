@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${industry.title} Solutions`,
-    description: `Learn how our technology solutions are tailored for the ${industry.title} industry.`,
+    description: `Learn how our technology solutions are tailored for the ${industry.title} industry, driving innovation and digital transformation.`,
   };
 }
 
