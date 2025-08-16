@@ -16,7 +16,7 @@ export default function ContactPage() {
               <div className="text-center space-y-4">
                 <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl">Get in Touch</h1>
                 <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
-                  Have a project in mind, a question about our services, or just want to say hello? We'd love to hear from you. Fill out the form below or use our contact details to reach our team of experts.
+                  Have a project in mind, a question about our services, or just want to say hello? We'd love to hear from you. Fill out the form below or use our contact details.
                 </p>
               </div>
           </div>

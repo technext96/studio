@@ -6,7 +6,7 @@ export const services = [
         slug: "custom-software",
         title: "Custom Software Development",
         description: "We build tailored software solutions to meet your unique business needs, ensuring scalability and performance.",
-        longDescription: "Our custom software development service provides end-to-end solutions, from conceptualization and UI/UX design to development, deployment, and ongoing support. We specialize in creating robust, scalable, and secure applications that are perfectly aligned with your business objectives.",
+        longDescription: "Our custom software development service provides end-to-end solutions, from conceptualization and UI/UX design to development, deployment, and ongoing support.",
         icon: "customSoftware",
         illustration: "customSoftware",
         subServices: ["Web Application Development", "Enterprise Software", "API Development", "System Integration", "Cloud-Native Applications"]
@@ -14,8 +14,8 @@ export const services = [
     {
         slug: "ai-ml",
         title: "AI and Machine Learning",
-        description: "As a leading AI development company, we build custom machine learning solutions and AI-powered products to automate processes and deliver intelligent insights.",
-        longDescription: "As an AI solutions development company, we provide custom machine learning solutions that harness the transformative power of artificial intelligence. Our expertise includes building custom AI solutions, predictive analytics models, natural language processing (NLP) applications, and computer vision systems to drive efficiency and innovation for your business.",
+        description: "As a leading AI development company, we build custom machine learning solutions and AI-powered products.",
+        longDescription: "As an AI solutions development company, we provide custom machine learning solutions that harness the power of artificial intelligence to drive efficiency and innovation.",
         icon: "aiMl",
         illustration: "aiMl",
         subServices: ["Custom Machine Learning Solutions", "Predictive Analytics", "Natural Language Processing", "Computer Vision", "AI Chatbots & Virtual Assistants"]
@@ -23,8 +23,8 @@ export const services = [
     {
         slug: "intelligent-automation",
         title: "Intelligent Automation",
-        description: "We streamline operations with AI business process automation that improves efficiency and reduces costs, using intelligent automation platforms like n8n and Zapier.",
-        longDescription: "Our Intelligent Automation services combine RPA with AI technologies to automate complex business processes. We help you eliminate manual tasks, reduce human error, and free up your team to focus on high-value activities, leading to significant improvements in productivity and cost savings through our intelligent automation platforms.",
+        description: "We streamline operations with AI business process automation that improves efficiency and reduces costs.",
+        longDescription: "Our Intelligent Automation services combine RPA with AI technologies to automate complex business processes, freeing up your team to focus on high-value activities.",
         icon: "automation",
         illustration: "automation",
         subServices: ["Robotic Process Automation (RPA)", "AI Business Process Automation", "n8n & Zapier Workflows", "Automated Data Entry & Processing"]
@@ -33,7 +33,7 @@ export const services = [
         slug: "offshore-development",
         title: "Offshore Development",
         description: "Access a global talent pool and reduce development costs with our reliable offshore development services.",
-        longDescription: "Our Offshore Development services provide you with a dedicated team of highly skilled developers, designers, and project managers. We offer a flexible and cost-effective way to scale your development capabilities without compromising on quality, communication, or transparency.",
+        longDescription: "Our Offshore Development services provide you with a dedicated team of highly skilled developers, designers, and project managers to scale your capabilities.",
         icon: "offshore",
         illustration: "offshore",
         subServices: ["Dedicated Development Teams", "Staff Augmentation", "Full-Cycle Product Development", "QA & Testing Services"]
@@ -41,8 +41,8 @@ export const services = [
     {
         slug: "devops",
         title: "DevOps & MLOps",
-        description: "Accelerate your delivery lifecycle with our DevOps services, including CI/CD pipeline automation and specialized DevOps for ML (MLOps).",
-        longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster and more reliably. Our services include setting up CI/CD pipelines, automating infrastructure with IaC, and managing cloud environments. We also specialize in DevOps for ML (MLOps) to streamline machine learning lifecycles.",
+        description: "Accelerate your delivery lifecycle with our DevOps services, including CI/CD pipeline automation and MLOps.",
+        longDescription: "We provide end-to-end DevOps solutions to help you build, test, and release software faster. We also specialize in MLOps to streamline machine learning lifecycles.",
         icon: "devops",
         illustration: "devops",
         subServices: ["CI/CD Pipeline Implementation", "Infrastructure as Code (IaC)", "DevOps for ML (MLOps)", "Containerization (Docker & Kubernetes)"]
@@ -50,8 +50,8 @@ export const services = [
     {
         slug: "digital-marketing",
         title: "Digital Marketing & SEO",
-        description: "Enhance your online presence, attract more customers, and grow your business with our data-driven marketing strategies.",
-        longDescription: "Our digital marketing services are designed to increase your visibility, engagement, and conversions. We offer a full suite of services including SEO, content marketing, and social media management, all tailored to your specific business goals and target audience.",
+        description: "Enhance your online presence and attract more customers with our data-driven marketing strategies.",
+        longDescription: "Our digital marketing services are designed to increase your visibility, engagement, and conversions. We offer a full suite of services including SEO, and ASO.",
         icon: "marketing",
         illustration: "marketing",
         subServices: ["Search Engine Optimization (SEO)", "App Store Optimization (ASO)", "Content Marketing", "Social Media Management", "GEO-fencing"]

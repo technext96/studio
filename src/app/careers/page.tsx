@@ -19,25 +19,25 @@ const jobOpenings = [
         title: "Senior Full-Stack Engineer",
         location: "Remote",
         department: "Engineering",
-        description: "We are looking for an experienced Full-Stack Engineer to build and maintain scalable web applications. You'll work with a modern tech stack (Next.js, React, Genkit) and contribute to all phases of the development lifecycle, from concept to deployment."
+        description: "We are looking for an experienced Full-Stack Engineer to build and maintain scalable web applications with Next.js, React, and Genkit."
     },
     {
         title: "AI/ML Engineer",
         location: "Tech City Office",
         department: "AI & Data Science",
-        description: "Join our AI team to design, implement, and deploy machine learning models. You will develop AI-driven features, research new algorithms, and push the boundaries of what's possible with artificial intelligence."
+        description: "Join our AI team to design, implement, and deploy machine learning models. You will develop AI-driven features and research new algorithms."
     },
     {
         title: "UX/UI Designer",
         location: "Remote",
         department: "Design",
-        description: "We are seeking a creative and user-centric UX/UI designer to create intuitive and beautiful user experiences. You'll be responsible for the entire design process, from user research and wireframing to final high-fidelity mockups and hand-off."
+        description: "We are seeking a creative UX/UI designer to create intuitive and beautiful user experiences, from user research to high-fidelity mockups."
     },
     {
         title: "DevOps Engineer",
         location: "Remote / Tech City",
         department: "Engineering",
-        description: "Help us build and maintain our robust cloud infrastructure. Your role will involve automating our CI/CD pipelines, ensuring the reliability and scalability of our systems, and implementing best practices for security and performance."
+        description: "Help us build and maintain our robust cloud infrastructure. Your role will involve automating our CI/CD pipelines and ensuring reliability."
     }
 ];
 
@@ -102,7 +102,7 @@ export default function CareersPage() {
                     <FadeIn className="space-y-4">
                         <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Build the Future with Us</h1>
                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
-                            At TechNext, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology, dedicated to innovation, and committed to making a difference. Your next great opportunity starts here.
+                            At TechNext, we aren't just building software; we're crafting the future. Join a forward-thinking team that is passionate about technology and innovation.
                         </p>
                     </FadeIn>
                 </div>
@@ -114,12 +114,12 @@ export default function CareersPage() {
                         <FadeIn className="space-y-6">
                             <h2 className="text-4xl font-headline font-bold">Life at TechNext</h2>
                             <p className="text-foreground/80 text-lg">
-                                At TechNext, we cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members, providing them with the resources and autonomy they need to succeed, and celebrating our collective achievements. We are more than just a company; we are a community of innovators dedicated to making a difference and pushing the boundaries of technology.
+                                We cultivate a vibrant and inclusive culture that encourages growth, continuous learning, and meaningful contributions. We believe in empowering our team members.
                             </p>
                             <ul className="space-y-4 text-foreground/80 text-lg pt-4">
-                                <li className="flex items-start gap-4"><BrainCircuit className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Access to continuous learning, professional development opportunities, and tech conferences.</span></li>
-                                <li className="flex items-start gap-4"><Briefcase className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Flexible work arrangements, generous paid time off, and a focus on a healthy work-life balance.</span></li>
-                                <li className="flex items-start gap-4"><Users className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>A collaborative, inclusive, and supportive work environment where every voice is heard and valued.</span></li>
+                                <li className="flex items-start gap-4"><BrainCircuit className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Access to continuous learning and professional development opportunities.</span></li>
+                                <li className="flex items-start gap-4"><Briefcase className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>Flexible work arrangements and a focus on a healthy work-life balance.</span></li>
+                                <li className="flex items-start gap-4"><Users className="text-primary h-6 w-6 mt-1 flex-shrink-0"/><span>A collaborative, inclusive, and supportive work environment.</span></li>
                             </ul>
                         </FadeIn>
                          <div className="grid grid-cols-2 gap-6">
