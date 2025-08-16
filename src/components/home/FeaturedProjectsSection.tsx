@@ -11,7 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { FadeIn } from "@/components/ui/fade-in";
-import { portfolio } from "@/lib/data.tsx";
+import { solutions } from "@/lib/data.tsx";
 import { illustrationMap } from "@/lib/constants";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
@@ -24,8 +24,8 @@ export default function FeaturedProjectsSection() {
     Autoplay({ delay: 4000, stopOnInteraction: true })
   );
 
-  const featuredProjects = portfolio.filter(p => [
-      'solutions/campix',
+  const featuredProjects = solutions.filter(p => [
+      'campix',
       'ai-powered-learning-platform',
       'medical-chatbot',
       'ai-personal-shopper'

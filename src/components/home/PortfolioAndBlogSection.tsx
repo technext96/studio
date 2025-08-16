@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { blogPosts, portfolio } from "@/lib/data.tsx";
+import { blogPosts, solutions } from "@/lib/data.tsx";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { illustrationMap } from "@/lib/constants";
@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 export default function PortfolioAndBlogSection() {
-    const featuredPortfolio = portfolio.slice(0, 2);
+    const featuredSolutions = solutions.slice(0, 2);
     const featuredBlog = blogPosts.slice(0, 2);
 
     return (
@@ -23,9 +23,9 @@ export default function PortfolioAndBlogSection() {
                 </FadeIn>
 
                 <div className="grid lg:grid-cols-2 gap-12">
-                    {/* Portfolio Column */}
+                    {/* Solutions Column */}
                     <div className="space-y-8">
-                        {featuredPortfolio.map((project, i) => {
+                        {featuredSolutions.map((project, i) => {
                              const Illustration = illustrationMap[project.illustration];
                              const projectUrl = `/solutions/${project.slug}`;
                              return (

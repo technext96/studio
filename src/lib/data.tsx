@@ -108,10 +108,7 @@ export const solutions = [
         excerpt: "A secure, modern attendance system that prevents 'buddy punching' by using device and Wi-Fi verification.",
         summary: "We developed a secure QR-based attendance system designed to eliminate time theft. By binding each user to a specific device and validating their check-in against an authorized Wi-Fi network or geolocation, our solution ensures that employees are physically present when they mark their attendance.",
         illustration: "qrAttendance",
-    }
-];
-
-export const portfolio = [
+    },
     {
         slug: "ai-powered-learning-platform",
         title: "AI-Powered Learning Platform",
@@ -129,6 +126,9 @@ export const portfolio = [
         ],
         techStack: ["Next.js", "Python (FastAPI)", "PostgreSQL", "Google Cloud", "Genkit", "Docker"],
         demoUrl: "/solutions/training-program",
+        details: {
+            industry: "Education"
+        }
     },
      {
         slug: "medical-chatbot",
@@ -145,7 +145,10 @@ export const portfolio = [
             "Secure user authentication",
             "Triage to human support when needed"
         ],
-        techStack: ["Genkit", "Python (FastAPI)", "PostgreSQL", "React", "AWS HIPAA-Eligible Services"]
+        techStack: ["Genkit", "Python (FastAPI)", "PostgreSQL", "React", "AWS HIPAA-Eligible Services"],
+        details: {
+            industry: "Healthcare"
+        }
     },
     {
         slug: "ai-personal-shopper",
@@ -162,7 +165,10 @@ export const portfolio = [
             "Seamless integration with e-commerce platform",
             "24/7 customer assistance"
         ],
-        techStack: ["Genkit", "Dialogflow", "React", "Node.js", "Firebase"]
+        techStack: ["Genkit", "Dialogflow", "React", "Node.js", "Firebase"],
+        details: {
+            industry: "E-commerce"
+        }
     },
     {
         slug: "food-delivery-marketplace",

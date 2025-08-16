@@ -1,7 +1,7 @@
 
 
 import { Button } from "@/components/ui/button";
-import { industries, portfolio } from "@/lib/data.tsx";
+import { industries, solutions } from "@/lib/data.tsx";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export default function IndustryPage({ params }: Props) {
         notFound();
     }
 
-    const relatedProjects = portfolio.filter(p => p.category.includes(industry.title) || (p.details && p.details.industry === industry.title)).slice(0, 2);
+    const relatedProjects = solutions.filter(p => p.category.includes(industry.title) || (p.details && p.details.industry === industry.title)).slice(0, 2);
 
     const industryChallenges = [
         `Navigating complex regulatory and compliance requirements specific to the ${industry.title} sector.`,
@@ -138,7 +138,7 @@ export default function IndustryPage({ params }: Props) {
                                 const ProjectIllustration = illustrationMap[project.illustration];
                                 return (
                                 <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
-                                    <Link href={`/portfolio/${project.slug}`} className="group">
+                                    <Link href={`/solutions/${project.slug}`} className="group">
                                         <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                                             <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
                                                 {ProjectIllustration && <ProjectIllustration/>}
