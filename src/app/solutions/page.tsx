@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio } from "@/lib/data.tsx";
+import { solutions } from "@/lib/data.tsx";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +34,7 @@ export default function SolutionsPage() {
       <section className="w-full py-16 md:py-24">
         <div className="px-8 md:px-12">
           <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
-            {portfolio.map((project, i) => {
+            {solutions.map((project, i) => {
               const Illustration = illustrationMap[project.illustration];
               const projectUrl = `/solutions/${project.slug}`;
               return (

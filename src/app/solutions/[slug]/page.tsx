@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { portfolio } from "@/lib/data.tsx";
+import { solutions } from "@/lib/data.tsx";
 import { ArrowLeft, CheckCircle2, Bot, GraduationCap, HeartPulse, ShoppingCart, Briefcase, Factory, User, Rocket, Shield, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = portfolio.find((p) => p.slug === params.slug);
+  const project = solutions.find((p) => p.slug === params.slug);
 
   if (!project) {
     return {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function PortfolioProjectPage({ params }: Props) {
-  const project = portfolio.find((p) => p.slug === params.slug);
+  const project = solutions.find((p) => p.slug === params.slug);
 
   if (!project) {
     notFound();
@@ -80,12 +80,12 @@ export default function PortfolioProjectPage({ params }: Props) {
                     <CardTitle className="font-headline text-2xl">Project Details</CardTitle>
                 </CardHeader>
                 <CardContent className="grid grid-cols-2 gap-6 text-lg">
-                    {project.details.useCase && <div className="flex items-start gap-4"><Bot className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Use Case</p><p className="text-foreground/80">{project.details.useCase}</p></div></div>}
-                    {project.details.industry && <div className="flex items-start gap-4"><Factory className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Industry</p><p className="text-foreground/80">{project.details.industry}</p></div></div>}
-                    {project.details.headquarters && <div className="flex items-start gap-4"><Briefcase className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Headquarters</p><p className="text-foreground/80">{project.details.headquarters}</p></div></div>}
-                    {project.details.product && <div className="flex items-start gap-4"><Rocket className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Product</p><p className="text-foreground/80">{project.details.product}</p></div></div>}
-                    {project.details.results && <div className="flex items-start gap-4"><CheckCircle2 className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Results</p><p className="text-foreground/80">{project.details.results}</p></div></div>}
-                    {project.details.timeline && <div className="flex items-start gap-4"><CheckCircle2 className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Timeline</p><p className="text-foreground/80">{project.details.timeline}</p></div></div>}
+                    {project.details?.useCase && <div className="flex items-start gap-4"><Bot className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Use Case</p><p className="text-foreground/80">{project.details.useCase}</p></div></div>}
+                    {project.details?.industry && <div className="flex items-start gap-4"><Factory className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Industry</p><p className="text-foreground/80">{project.details.industry}</p></div></div>}
+                    {project.details?.headquarters && <div className="flex items-start gap-4"><Briefcase className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Headquarters</p><p className="text-foreground/80">{project.details.headquarters}</p></div></div>}
+                    {project.details?.product && <div className="flex items-start gap-4"><Rocket className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Product</p><p className="text-foreground/80">{project.details.product}</p></div></div>}
+                    {project.details?.results && <div className="flex items-start gap-4"><CheckCircle2 className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Results</p><p className="text-foreground/80">{project.details.results}</p></div></div>}
+                    {project.details?.timeline && <div className="flex items-start gap-4"><CheckCircle2 className="h-7 w-7 text-primary mt-1"/><div><p className="font-semibold">Timeline</p><p className="text-foreground/80">{project.details.timeline}</p></div></div>}
                 </CardContent>
             </Card>
           </div>
@@ -272,7 +272,7 @@ export default function PortfolioProjectPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  return portfolio.map((p) => ({
+  return solutions.map((p) => ({
     slug: p.slug,
   }));
 }
