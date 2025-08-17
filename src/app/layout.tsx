@@ -108,7 +108,7 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <ChatWidget />
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="gGi2ufveMQa5LNZzbJQ3vQ" async />
+        <Script src="https://ahrefs.com/site-audit/js/nocrawl.js" data-key="gGi2ufveMQa5LNZzbJQ3vQ" async />
       </body>
     </html>
   );
