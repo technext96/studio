@@ -91,7 +91,7 @@ export default function FeaturedProjectsSection() {
         </FadeIn>
          <FadeIn className="mt-16 text-center">
             <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6">
-                <Link href="/solutions">Explore All Projects</Link>
+                <Link href="/solutions">Explore All Solutions</Link>
             </Button>
         </FadeIn>
       </div>

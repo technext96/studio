@@ -3,7 +3,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { type blogPosts } from "@/lib/data.tsx";
+import { type blogPosts, solutions } from "@/lib/data.tsx";
 import { ArrowLeft, Share2, Twitter, Linkedin, Facebook } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -18,6 +18,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "./ui/fade-in";
 
 type BlogPostClientProps = {
   post: (typeof blogPosts)[0];
@@ -25,6 +26,7 @@ type BlogPostClientProps = {
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   const Illustration = illustrationMap[post.illustration];
+  const relatedSolutions = solutions.slice(0, 2);
 
   const rideShareSchema = {
     "@context": "https://schema.org",
@@ -117,6 +119,37 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
                   ))}
                 </Accordion>
               </div>
+            )}
+            
+            {relatedSolutions.length > 0 && (
+                <section id="related-solutions" className="w-full mt-16 pt-12 border-t border-border">
+                    <div className="px-4 md:px-6">
+                        <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                        <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Explore Our Solutions</h2>
+                        </FadeIn>
+                        <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-4xl">
+                            {relatedSolutions.map((project, i) => {
+                                const ProjectIllustration = illustrationMap[project.illustration];
+                                return (
+                                <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
+                                    <Link href={`/solutions/${project.slug}`} className="group">
+                                        <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                                            <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                                                {ProjectIllustration && <ProjectIllustration/>}
+                                            </div>
+                                            <CardHeader>
+                                                <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
+                                            </CardHeader>
+                                            <CardContent className="flex-grow">
+                                                <p className="text-sm text-foreground/80">{project.excerpt}</p>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
+                                </FadeIn>
+                            )})}
+                        </div>
+                    </div>
+                </section>
             )}
 
             <div className="mt-16 border-t border-border pt-8">

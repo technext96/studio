@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { services } from "@/lib/data.tsx";
-import { ArrowLeft } from "lucide-react";
+import { services, solutions } from "@/lib/data.tsx";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import VisionDocumentGenerator from "./VisionDocumentGenerator";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/ui/fade-in";
 import { illustrationMap } from "@/lib/constants";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type Props = {
   params: { slug: string };
@@ -39,6 +40,8 @@ export default function ServicePage({ params }: Props) {
     }
 
     const Illustration = illustrationMap[service.illustration];
+    
+    const relatedSolutions = solutions.filter(s => s.category.toLowerCase().includes(service.title.split(" ")[0].toLowerCase())).slice(0, 2);
 
     const process = [
         { title: "1. Discovery & Strategic Planning", description: "Every successful project begins with a deep understanding of your vision. We collaborate closely with you to define objectives, analyze market dynamics, and map out a strategic roadmap. This foundational step ensures our efforts are perfectly aligned with your business goals from day one." },
@@ -131,6 +134,40 @@ export default function ServicePage({ params }: Props) {
                                 <Badge key={tech} variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary hover:bg-primary/20 glow-effect">{tech}</Badge>
                             ))}
                         </FadeIn>
+                    </div>
+                </section>
+            )}
+            
+            {relatedSolutions.length > 0 && (
+                <section id="portfolio" className="w-full py-16 md:py-24 bg-background">
+                    <div className="px-8 md:px-12">
+                        <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Related Case Studies</h2>
+                            <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
+                                See our expertise in {service.title} in action. Explore how we've solved real-world problems for clients like you.
+                            </p>
+                        </FadeIn>
+                        <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-6xl">
+                            {relatedSolutions.map((project, i) => {
+                                const ProjectIllustration = illustrationMap[project.illustration];
+                                return (
+                                <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
+                                    <Link href={`/solutions/${project.slug}`} className="group">
+                                        <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                                            <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                                                {ProjectIllustration && <ProjectIllustration/>}
+                                            </div>
+                                            <CardHeader>
+                                            <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                                            </CardHeader>
+                                            <CardContent className="flex-grow">
+                                            <p className="text-sm text-foreground/80">{project.excerpt}</p>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
+                                </FadeIn>
+                            )})}
+                        </div>
                     </div>
                 </section>
             )}
