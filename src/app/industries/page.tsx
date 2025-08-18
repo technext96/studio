@@ -10,17 +10,18 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { illustrationMap, iconMap } from "@/lib/constants";
 
 const siteUrl = 'https://technext96.com';
+const pageUrl = `${siteUrl}/industries`;
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description: "Discover how our technology solutions drive innovation and success across a wide range of industries, from Fintech to Healthcare.",
   alternates: {
-    canonical: `${siteUrl}/industries`,
+    canonical: pageUrl,
   },
   openGraph: {
       title: 'Industries We Serve | TechNext',
       description: "Discover how our technology solutions drive innovation and success across a wide range of industries.",
-      url: `${siteUrl}/industries`,
+      url: pageUrl,
   },
 };
 

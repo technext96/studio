@@ -8,17 +8,18 @@ import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 
 const siteUrl = 'https://technext96.com';
+const pageUrl = `${siteUrl}/about`;
 
 export const metadata: Metadata = {
     title: "About Us",
     description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
     alternates: {
-        canonical: `${siteUrl}/about`,
+        canonical: pageUrl,
     },
     openGraph: {
         title: 'About Us | TechNext',
         description: "Learn about TechNext's mission, vision, and values.",
-        url: `${siteUrl}/about`,
+        url: pageUrl,
     },
 };
 

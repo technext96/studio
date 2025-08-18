@@ -9,17 +9,18 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { iconMap } from "@/lib/constants";
 
 const siteUrl = 'https://technext96.com';
+const pageUrl = `${siteUrl}/services`;
 
 export const metadata: Metadata = {
   title: "Our Services",
   description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration. We provide the tools you need to succeed.",
   alternates: {
-    canonical: `${siteUrl}/services`,
+    canonical: pageUrl,
   },
   openGraph: {
       title: 'Our Services | TechNext',
       description: "Explore our comprehensive technology solutions, from AI/ML to custom software development.",
-      url: `${siteUrl}/services`,
+      url: pageUrl,
   },
 };
 
