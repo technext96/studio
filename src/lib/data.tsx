@@ -1195,33 +1195,6 @@ export const blogPosts = [
   }
 ];
 
-export const homePageFaqs = [
-  {
-    question: 'What kind of technologies do you specialize in?',
-    answer: 'We specialize in a wide range of modern technologies, including Next.js, React, and React Native for front-end development, and Python (FastAPI) and Node.js (Express) for back-end solutions. For AI and machine learning, we leverage Genkit, TensorFlow, and PyTorch. Our cloud expertise is primarily focused on Google Cloud and AWS.'
-  },
-  {
-    question: 'How long does it take to build a custom software application?',
-    answer: 'The timeline for a custom software project can vary significantly based on its complexity, features, and the scope of the project. A simple application or MVP might take 2-3 months, while a more complex, enterprise-level system could take 6-12 months or longer. We provide a detailed project timeline after our initial discovery and planning phase.'
-  },
-  {
-    question: 'What is your development process like?',
-    answer: 'We follow an agile development methodology, working in iterative sprints. Our process includes a thorough discovery phase, UI/UX design and prototyping, development, rigorous quality assurance, and finally, deployment. We maintain transparent communication throughout the entire lifecycle to ensure the final product aligns perfectly with your vision.'
-  },
-  {
-    question: 'Do you offer support and maintenance after the project is launched?',
-    answer: 'Yes, we offer comprehensive support and maintenance packages to ensure your application remains up-to-date, secure, and performs optimally. Our services include bug fixes, performance monitoring, security updates, and feature enhancements as your business grows.'
-  },
-  {
-    question: 'How do you ensure the quality of your software?',
-    answer: 'Quality is at the core of our process. We have a dedicated Quality Assurance (QA) team that conducts multiple levels of testing, including functional testing, integration testing, performance testing, and security audits. We also follow best practices in coding and conduct regular code reviews to maintain high standards.'
-  },
-  {
-    question: 'How much does it cost to work with you?',
-    answer: "The cost of a project depends on various factors, including the project's scope, complexity, and the technologies involved. We offer flexible engagement models, including fixed-price contracts for well-defined projects and time-and-materials for more dynamic requirements. We provide a detailed, transparent quote after an initial consultation."
-  }
-];
-
 export const navLinks: NavLink[] = [
   {
     title: 'Services',
