@@ -17,8 +17,23 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Careers | TechNext',
-        description: "Join our team at TechNext and help build the future.",
+        description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open software engineering positions.",
         url: pageUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: "TechNext - Careers",
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Careers | TechNext',
+        description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open software engineering positions.",
+        images: [`${siteUrl}/og-image.png`],
     },
 };
 

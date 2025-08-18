@@ -20,6 +20,21 @@ export const metadata: Metadata = {
       title: 'Our Work & Success Stories | TechNext',
       description: "Explore our portfolio of successful projects and see how we solve complex challenges for our clients.",
       url: pageUrl,
+      type: 'website',
+      images: [
+          {
+              url: `${siteUrl}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "TechNext - Our Solutions",
+          },
+      ],
+  },
+  twitter: {
+      card: 'summary_large_image',
+      title: 'Our Work & Success Stories | TechNext',
+      description: "Explore our portfolio of successful projects and see how we solve complex challenges for our clients.",
+      images: [`${siteUrl}/og-image.png`],
   },
 };
 

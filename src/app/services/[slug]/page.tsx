@@ -40,6 +40,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `${service.title} | TechNext`,
         description: service.description,
         url: canonicalUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: service.title,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `${service.title} | TechNext`,
+        description: service.description,
+        images: [`${siteUrl}/og-image.png`],
     },
   };
 }

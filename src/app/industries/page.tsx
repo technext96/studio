@@ -22,6 +22,21 @@ export const metadata: Metadata = {
       title: 'Industries We Serve | TechNext',
       description: "Discover how our technology solutions drive innovation and success across a wide range of industries.",
       url: pageUrl,
+      type: 'website',
+      images: [
+          {
+              url: `${siteUrl}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "TechNext - Industries We Serve",
+          },
+      ],
+  },
+  twitter: {
+      card: 'summary_large_image',
+      title: 'Industries We Serve | TechNext',
+      description: "Discover how our technology solutions drive innovation and success across a wide range of industries.",
+      images: [`${siteUrl}/og-image.png`],
   },
 };
 

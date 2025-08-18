@@ -27,17 +27,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const canonicalUrl = `${siteUrl}/industries/${industry.slug}`;
+  const pageTitle = `${industry.title} Solutions`;
+  const pageDescription = `Learn how our technology solutions are tailored for the ${industry.title} industry, driving innovation and digital transformation.`;
 
   return {
-    title: `${industry.title} Solutions`,
-    description: `Learn how our technology solutions are tailored for the ${industry.title} industry, driving innovation and digital transformation.`,
+    title: pageTitle,
+    description: pageDescription,
     alternates: {
         canonical: canonicalUrl,
     },
     openGraph: {
-        title: `${industry.title} Solutions | TechNext`,
-        description: `Custom technology solutions for the ${industry.title} industry.`,
+        title: `${pageTitle} | TechNext`,
+        description: pageDescription,
         url: canonicalUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: pageTitle,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `${pageTitle} | TechNext`,
+        description: pageDescription,
+        images: [`${siteUrl}/og-image.png`],
     },
   };
 }

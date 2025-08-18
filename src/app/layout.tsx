@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'TechNext',
     images: [
       {
-        url: '/og-image.png',
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'TechNext - Custom Software & Web Development',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TechNext | Custom Software & Web Development',
     description: 'High-performance solutions for your business needs.',
-    images: ['/og-image.png'],
+    images: [`${siteUrl}/og-image.png`],
   },
   alternates: {
     canonical: siteUrl,

@@ -15,8 +15,23 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'Contact Us | TechNext',
-        description: "Get in touch with the TechNext team to discuss your project.",
+        description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
         url: pageUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: "TechNext - Contact Us",
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Contact Us | TechNext',
+        description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
+        images: [`${siteUrl}/og-image.png`],
     },
 };
 

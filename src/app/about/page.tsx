@@ -18,8 +18,23 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'About Us | TechNext',
-        description: "Learn about TechNext's mission, vision, and values.",
+        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
         url: pageUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: "TechNext - About Us",
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Us | TechNext',
+        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
+        images: [`${siteUrl}/og-image.png`],
     },
 };
 

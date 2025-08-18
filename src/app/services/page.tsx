@@ -19,8 +19,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
       title: 'Our Services | TechNext',
-      description: "Explore our comprehensive technology solutions, from AI/ML to custom software development.",
+      description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration.",
       url: pageUrl,
+      type: 'website',
+      images: [
+          {
+              url: `${siteUrl}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "TechNext - Our Services",
+          },
+      ],
+  },
+  twitter: {
+      card: 'summary_large_image',
+      title: 'Our Services | TechNext',
+      description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration.",
+      images: [`${siteUrl}/og-image.png`],
   },
 };
 

@@ -21,6 +21,21 @@ export const metadata: Metadata = {
       title: 'Blog | TechNext',
       description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
       url: pageUrl,
+      type: 'website',
+      images: [
+          {
+              url: `${siteUrl}/og-image.png`,
+              width: 1200,
+              height: 630,
+              alt: "TechNext Blog",
+          },
+      ],
+  },
+  twitter: {
+      card: 'summary_large_image',
+      title: 'Blog | TechNext',
+      description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
+      images: [`${siteUrl}/og-image.png`],
   },
 };
 

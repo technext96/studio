@@ -33,17 +33,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   
   const canonicalUrl = `${siteUrl}/solutions/${project.slug}`;
+  const pageTitle = `Case Study: ${project.title}`;
 
   return {
-    title: `Case Study: ${project.title}`,
+    title: pageTitle,
     description: project.excerpt,
     alternates: {
         canonical: canonicalUrl,
     },
     openGraph: {
-        title: `Case Study: ${project.title} | TechNext`,
+        title: `${pageTitle} | TechNext`,
         description: project.excerpt,
         url: canonicalUrl,
+        type: 'website',
+        images: [
+            {
+                url: `${siteUrl}/og-image.png`,
+                width: 1200,
+                height: 630,
+                alt: pageTitle,
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: `${pageTitle} | TechNext`,
+        description: project.excerpt,
+        images: [`${siteUrl}/og-image.png`],
     },
   };
 }
