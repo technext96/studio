@@ -33,7 +33,7 @@ export const services = [
         slug: "offshore-development",
         title: "Offshore Development",
         description: "Access a global talent pool and reduce development costs with our reliable offshore development services.",
-        longDescription: "Our Offshore Development services provide you with a dedicated team of highly skilled developers, designers, and project managers to scale your capabilities.",
+        longDescription: "Our Offshore Development service provides a strategic advantage by giving you access to a dedicated team of highly skilled developers, QA engineers, and project managers. We handle the recruitment, infrastructure, and administrative overhead, allowing you to scale your engineering capacity quickly and cost-effectively. Whether you need to augment your existing team or build a new product from scratch, our offshore model ensures quality, seamless communication, and a faster time-to-market.",
         icon: "offshore",
         illustration: "offshore",
         subServices: ["Dedicated Development Teams", "Staff Augmentation", "Full-Cycle Product Development", "QA & Testing Services"]
@@ -66,11 +66,11 @@ export const industries = [
     { slug: "manufacturing", title: "Manufacturing", description: "IIoT and smart factory automation solutions.", icon: "manufacturing", illustration: "manufacturing" },
     { slug: "oil-gas", title: "Oil & Gas", description: "Digital solutions for energy sector efficiency.", icon: "oilGas", illustration: "oilGas" },
     { slug: "insurance", title: "Insurance", description: "Modernizing policy and claims management.", icon: "insurance", illustration: "insurance" },
-    { slug: "travel", title: "Travel & Hospitality", description: "Booking platforms and guest management.", icon: "travel", illustration: "travel" },
+    { slug: "travel-hospitality", title: "Travel & Hospitality", description: "Booking platforms and guest management.", icon: "travel", illustration: "travel" },
     { slug: "cybersecurity", title: "Cybersecurity", description: "Building robust defense and threat detection systems.", icon: "cybersecurity", illustration: "cybersecurity" },
     { slug: "ecommerce", title: "E-commerce", description: "Scalable online stores and marketplaces.", icon: "ecommerce", illustration: "ecommerce" },
     { slug: "education", title: "Education", description: "E-learning platforms and student information systems.", icon: "education", illustration: "education" },
-    { slug: "media", title: "Media & Entertainment", description: "Streaming solutions and content delivery networks.", icon: "media", illustration: "media" },
+    { slug: "media-entertainment", title: "Media & Entertainment", description: "Streaming solutions and content delivery networks.", icon: "media", illustration: "media" },
     { slug: "real-estate", title: "Real Estate", description: "Property management and virtual tour software.", icon: "realEstate", illustration: "realEstate" },
     { slug: "telecom", title: "Telecom", description: "Network management and customer service platforms.", icon: "telecom", illustration: "telecom" },
     { slug: "government", title: "Government", description: "Secure portals and digital services for citizens.", icon: "government", illustration: "government" },
@@ -1193,3 +1193,4 @@ export const navLinks: NavLink[] = [
         href: '/blog',
     },
 ];
+
