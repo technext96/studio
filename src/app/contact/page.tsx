@@ -4,9 +4,19 @@ import { Mail, Phone, Building } from 'lucide-react';
 import ContactForm from './ContactForm';
 import { FadeIn } from '@/components/ui/fade-in';
 
+const siteUrl = 'https://technext96.com';
+
 export const metadata: Metadata = {
     title: "Contact Us",
     description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
+    alternates: {
+        canonical: `${siteUrl}/contact`,
+    },
+    openGraph: {
+        title: 'Contact Us | TechNext',
+        description: "Get in touch with the TechNext team to discuss your project.",
+        url: `${siteUrl}/contact`,
+    },
 };
 
 export default function ContactPage() {

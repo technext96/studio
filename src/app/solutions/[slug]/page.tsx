@@ -1,4 +1,5 @@
 
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,6 +21,8 @@ type Props = {
   params: { slug: string };
 };
 
+const siteUrl = 'https://technext96.com';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = solutions.find((p) => p.slug === params.slug);
 
@@ -28,10 +31,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "Project Not Found",
     };
   }
+  
+  const canonicalUrl = `${siteUrl}/solutions/${project.slug}`;
 
   return {
     title: `Case Study: ${project.title}`,
     description: project.excerpt,
+    alternates: {
+        canonical: canonicalUrl,
+    },
+    openGraph: {
+        title: `Case Study: ${project.title} | TechNext`,
+        description: project.excerpt,
+        url: canonicalUrl,
+    },
   };
 }
 

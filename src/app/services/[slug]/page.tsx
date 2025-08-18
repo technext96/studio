@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { services, solutions } from "@/lib/data.tsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -16,6 +17,8 @@ type Props = {
   params: { slug: string };
 };
 
+const siteUrl = 'https://technext96.com';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = services.find((p) => p.slug === params.slug);
 
@@ -24,10 +27,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "Service Not Found",
     };
   }
+  
+  const canonicalUrl = `${siteUrl}/services/${service.slug}`;
 
   return {
     title: service.title,
     description: service.description,
+    alternates: {
+        canonical: canonicalUrl,
+    },
+    openGraph: {
+        title: `${service.title} | TechNext`,
+        description: service.description,
+        url: canonicalUrl,
+    },
   };
 }
 

@@ -15,6 +15,8 @@ type Props = {
   params: { slug: string };
 };
 
+const siteUrl = 'https://technext96.com';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const industry = industries.find((p) => p.slug === params.slug);
 
@@ -24,9 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const canonicalUrl = `${siteUrl}/industries/${industry.slug}`;
+
   return {
     title: `${industry.title} Solutions`,
     description: `Learn how our technology solutions are tailored for the ${industry.title} industry, driving innovation and digital transformation.`,
+    alternates: {
+        canonical: canonicalUrl,
+    },
+    openGraph: {
+        title: `${industry.title} Solutions | TechNext`,
+        description: `Custom technology solutions for the ${industry.title} industry.`,
+        url: canonicalUrl,
+    },
   };
 }
 

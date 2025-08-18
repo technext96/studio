@@ -6,12 +6,18 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { FadeIn } from '@/components/ui/fade-in';
 
+const siteUrl = 'https://technext96.com';
+
 export const metadata: Metadata = {
     title: "Careers",
     description: "Join our forward-thinking team at TechNext and help build the future of software solutions. Explore our open software engineering positions.",
+    alternates: {
+        canonical: `${siteUrl}/careers`,
+    },
     openGraph: {
         title: 'Careers | TechNext',
         description: "Join our team at TechNext and help build the future.",
+        url: `${siteUrl}/careers`,
     },
 };
 

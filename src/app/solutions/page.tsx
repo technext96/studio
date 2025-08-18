@@ -7,12 +7,18 @@ import Link from "next/link";
 import { FadeIn } from "@/components/ui/fade-in";
 import { illustrationMap } from "@/lib/constants";
 
+const siteUrl = 'https://technext96.com';
+
 export const metadata: Metadata = {
   title: "Our Solutions",
   description: "Explore our portfolio of successful projects and solutions, from AI-powered learning platforms to scalable food delivery solutions. See our expertise in action.",
+  alternates: {
+    canonical: `${siteUrl}/solutions`,
+  },
   openGraph: {
       title: 'Our Work & Success Stories | TechNext',
       description: "Explore our portfolio of successful projects and see how we solve complex challenges for our clients.",
+      url: `${siteUrl}/solutions`,
   },
 };
 
