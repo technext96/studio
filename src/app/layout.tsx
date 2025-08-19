@@ -93,6 +93,9 @@ export default function RootLayout({
   
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <meta name="trustpilot-one-time-domain-verification-id" content="f2f5ba88-b873-4a40-83d9-edcc56a4e13d"/>
+      </head>
       <body className={cn('min-h-screen bg-background font-sans antialiased', inter.variable, spaceGrotesk.variable)}>
         <script
             type="application/ld+json"
