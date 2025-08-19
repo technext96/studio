@@ -23,21 +23,7 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: 'host',
-            key: 'host',
             value: 'www.technext96.com',
-          },
-        ],
-        destination: 'https://technext96.com/:path*',
-        permanent: true,
-      },
-      // Redirect HTTP → HTTPS
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'protocol',
-            key: 'protocol',
-            value: 'http',
           },
         ],
         destination: 'https://technext96.com/:path*',
