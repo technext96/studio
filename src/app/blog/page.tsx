@@ -13,13 +13,13 @@ const pageUrl = `${siteUrl}/blog`;
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
+  description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
       title: 'Blog | TechNext',
-      description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
+      description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
       url: pageUrl,
       type: 'website',
       images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
       card: 'summary_large_image',
       title: 'Blog | TechNext',
-      description: "Insights, tutorials, and thoughts on the future of technology from the TechNext team.",
+      description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
       images: [`${siteUrl}/og-image.png`],
   },
 };

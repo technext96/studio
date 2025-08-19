@@ -49,7 +49,7 @@ export const services = [
   {
     slug: 'digital-marketing',
     title: 'Digital Marketing & SEO',
-    description: 'Enhance your online presence and attract more customers with our data-driven marketing strategies.',
+    description: 'Boost your online presence with our data-driven digital marketing and SEO services. We enhance visibility, attract customers, and deliver measurable results.',
     longDescription: 'Our digital marketing services are designed to increase your visibility, engagement, and conversions. We offer a full suite of services including SEO, and ASO.',
     icon: 'marketing',
     illustration: 'marketing',
