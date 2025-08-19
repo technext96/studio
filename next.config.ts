@@ -16,6 +16,21 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.technext96.com',
+          },
+        ],
+        destination: 'https://technext96.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
