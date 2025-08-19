@@ -7,20 +7,34 @@ import { CheckCircle2, Zap, GitBranch, Infinity, Bot, Mail } from 'lucide-react'
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: "n8n WhatsApp Automation | Connect Your Business",
-  description:
-    "Automate your business workflows with our expert n8n and WhatsApp integration services. Connect to any app, build complex automations, and save time.",
+export const metadata:Metadata = {
+  title: "n8n WhatsApp Automation | Connect Your Business | TechNext",
+  description: "Leverage the power of n8n to automate WhatsApp communication and connect it to your entire app ecosystem.",
   openGraph: {
     title: "n8n WhatsApp Automation | Custom Workflow Integration",
-    description:
-      "Leverage the power of n8n to automate your WhatsApp communication and connect it to your entire app ecosystem.",
-    url: "https://technext96.com/solutions/n8n-whatsapp-automation", // 👈 OG URL
+    description: "Automate WhatsApp with n8n and streamline workflows across your business apps.",
+    url: "https://technext96.com/solutions/n8n-whatsapp-automation",
+    type: "website",
+    images: [
+      {
+        url: "https://technext96.com/images/n8n-whatsapp.jpg",
+        width: 1200,
+        height: 630,
+        alt: "n8n WhatsApp Automation Workflow",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "n8n WhatsApp Automation | TechNext",
+    description: "Boost productivity with WhatsApp automation powered by n8n.",
+    images: ["https://technext96.com/images/n8n-whatsapp.jpg"],
   },
   alternates: {
-    canonical: "https://technext96.com/solutions/n8n-whatsapp-automation", // 👈 Canonical
+    canonical: "https://technext96.com/solutions/n8n-whatsapp-automation",
   },
 };
+
 
 export default function N8nWhatsappAutomationPage() {
     const features = [

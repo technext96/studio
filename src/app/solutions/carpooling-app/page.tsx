@@ -10,26 +10,34 @@ import Script from 'next/script';
 import { Badge } from '@/components/ui/badge';
 
 
-export const metadata: Metadata = {
-    title: "White-Label Carpooling App | Launch Your Business Fast",
-    description: "Build your own carpooling app with our white-label solution. Includes app, admin panel & full customization. Launch your ride-sharing business in weeks.",
-    openGraph: {
-        title: "White-Label Carpooling App Solution | TechNext",
-        description: "Launch your carpooling business with a ready-made, scalable white-label solution.",
-        url: "https://technext96.com/solutions/carpooling-app",
-        images: [
-            {
-                url: '/images/carpool.jpg', 
-                width: 1200,
-                height: 630,
-                alt: 'White-Label Carpooling App Solution',
-            },
-        ],
-    },
-    alternates: {
-        canonical: '/solutions/carpooling-app',
-    },
+export const metadata:Metadata = {
+  title: "White-Label Carpooling App | Launch Your Business Fast | TechNext",
+  description: "White-label carpooling app solution with real-time tracking, secure payments, and fast launch support.",
+  openGraph: {
+    title: "White-Label Carpooling App Solution | TechNext",
+    description: "Launch your custom carpooling app with secure payments, real-time tracking, and a fast setup.",
+    url: "https://technext96.com/solutions/carpooling-app",
+    type: "website",
+    images: [
+      {
+        url: "https://technext96.com/images/carpool.jpg",
+        width: 1200,
+        height: 630,
+        alt: "White-Label Carpooling App by TechNext",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carpooling App Solution | TechNext",
+    description: "Start your ride-sharing business quickly with our white-label carpooling app.",
+    images: ["https://technext96.com/images/carpool.jpg"],
+  },
+  alternates: {
+    canonical: "https://technext96.com/solutions/carpooling-app",
+  },
 };
+
 
 const CarpoolingHeroIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">

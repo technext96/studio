@@ -6,20 +6,34 @@ import { CheckCircle2, Bot, Users, BarChart, Sparkles, SlidersHorizontal, ArrowR
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: "CampiX.AI | Autonomous AI Ad Campaigns",
-  description:
-    "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
+export const metadata : Metadata = {
+  title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns | TechNext",
+  description: "Launch, manage, and optimize Facebook, Google & TikTok ads with CampiX.AI. Zero marketing knowledge needed.",
   openGraph: {
     title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",
-    description:
-      "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
-    url: "https://technext96.com/solutions/campix", // 👈 Important
+    description: "AI-driven platform to launch and optimize ad campaigns with ease.",
+    url: "https://technext96.com/solutions/campix",
+    type: "website",
+    images: [
+      {
+        url: "https://technext96.com/images/campix.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CampiX.AI Autonomous Ad Campaigns",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",
+    description: "Launch, manage, and optimize ads with AI on Facebook, Google & TikTok.",
+    images: ["https://technext96.com/images/campix.jpg"],
   },
   alternates: {
-    canonical: "https://technext96.com/solutions/campix", // 👈 Add this
+    canonical: "https://technext96.com/solutions/campix",
   },
 };
+
 
 
 const CampixIllustration = () => (

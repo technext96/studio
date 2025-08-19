@@ -24,44 +24,33 @@ const spaceGrotesk = Space_Grotesk({
 const siteUrl = 'https://technext96.com';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: 'TechNext | Custom Software, AI, & Web Development Solutions',
-    template: '%s | TechNext',
-  },
-  description: "TechNext delivers custom software, AI/ML, and web development solutions to help your business grow and innovate. Get your free quote today.",
-  keywords: ["custom software development", "ai solutions development company", "mobile app development", "web application development", "custom machine learning solutions", "intelligent automation", "ai for business operations", "devops for ml", "ai development company", "ai automation", "ai in business"],
+  title: "Custom AI Software & Intelligent Automation | TechNext",
+  description: "We build high-performance, scalable software and AI solutions that deliver measurable results and a powerful ROI.",
   openGraph: {
-    title: 'TechNext | Custom Software, AI, & Web Development Solutions',
-    description: 'We build high-performance, scalable software solutions to turn your ideas into reality.',
-    type: 'website',
-    locale: 'en_US',
-    url: siteUrl,
-    siteName: 'TechNext',
+    title: "Custom AI Software Development & Automation | TechNext",
+    description: "High-performance AI software, automation, and web solutions to power growth and ROI.",
+    url: "https://technext96.com/",
+    type: "website",
     images: [
       {
-        url: `${siteUrl}/og-image.png`,
+        url: "https://technext96.com/images/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: 'TechNext - Custom Software & Web Development',
+        alt: "TechNext AI Software & Automation Solutions",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'TechNext | Custom Software & Web Development',
-    description: 'High-performance solutions for your business needs.',
-    images: [`${siteUrl}/og-image.png`],
+    card: "summary_large_image",
+    title: "Custom AI Software & Automation | TechNext",
+    description: "Build scalable software, AI tools, and automation with TechNext.",
+    images: ["https://technext96.com/images/og-home.jpg"],
   },
   alternates: {
-    canonical: siteUrl,
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    canonical: "https://technext96.com/",
   },
 };
+
 
 export const viewport: Viewport = {
   themeColor: '#179CF0',

@@ -7,20 +7,34 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export const metadata: Metadata = {
-  title: "Proxy-Proof QR Attendance System | Secure Check-ins ",
-  description:
-    "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
+export const metadata:Metadata = {
+  title: "Proxy-Proof QR Attendance System | Secure Check-ins | TechNext",
+  description: "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system for schools, universities, and businesses.",
   openGraph: {
-    title: "Proxy-Proof QR Attendance System | Secure Check-ins ",
-    description:
-      "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
+    title: "Proxy-Proof QR Attendance System | TechNext",
+    description: "Secure QR-based attendance system designed to prevent proxies and ensure accuracy.",
     url: "https://technext96.com/solutions/qr-attendance",
+    type: "website",
+    images: [
+      {
+        url: "https://technext96.com/images/qr-attendance.jpg",
+        width: 1200,
+        height: 630,
+        alt: "QR Attendance System by TechNext",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QR Attendance System | TechNext",
+    description: "Accurate, proxy-proof QR attendance tracking for education and businesses.",
+    images: ["https://technext96.com/images/qr-attendance.jpg"],
   },
   alternates: {
     canonical: "https://technext96.com/solutions/qr-attendance",
   },
 };
+
 
 
 const QrAttendanceIllustration = () => (
