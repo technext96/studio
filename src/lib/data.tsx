@@ -5,7 +5,7 @@ export const services = [
     slug: 'custom-software',
     title: 'Custom Software Development',
     description: 'We build tailored software solutions to meet your unique business needs, ensuring scalability and performance.',
-    longDescription: 'Our custom software development service provides end-to-end solutions, from conceptualization and UI/UX design to development, deployment, and ongoing support.',
+    longDescription: 'Our custom software development service provides end-to-end solutions, from conceptualization and UI/UX design to development, deployment, and ongoing support. Whether you need a secure QR attendance system or a comprehensive carpooling platform, we deliver robust applications tailored to your requirements.',
     icon: 'customSoftware',
     illustration: 'customSoftware',
     subServices: ['Web Application Development', 'Enterprise Software', 'API Development', 'System Integration', 'Cloud-Native Applications']
@@ -14,7 +14,7 @@ export const services = [
     slug: 'ai-ml',
     title: 'AI and Machine Learning',
     description: 'As a leading AI development company, we build custom machine learning solutions and AI-powered products.',
-    longDescription: 'As an AI solutions development company, we provide custom machine learning solutions that harness the power of artificial intelligence to drive efficiency and innovation.',
+    longDescription: 'As an AI solutions development company, we provide custom machine learning solutions that harness the power of artificial intelligence to drive efficiency and innovation. Understanding the importance of responsible technology, we also publish insights on topics like the business case for ethical AI.',
     icon: 'aiMl',
     illustration: 'aiMl',
     subServices: ['Custom Machine Learning Solutions', 'Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'AI Chatbots & Virtual Assistants']
@@ -60,19 +60,37 @@ export const services = [
 export const industries = [
   {slug: 'fintech', title: 'Fintech', description: 'Secure and scalable financial technology solutions.', icon: 'fintech', illustration: 'fintech'},
   {slug: 'logistics', title: 'Logistics', description: 'Optimizing supply chain and delivery operations.', icon: 'logistics', illustration: 'logistics'},
-  {slug: 'automotive', title: 'Automotive', description: 'Connected car and fleet management systems.', icon: 'automotive', illustration: 'automotive'},
+  {slug: 'automotive', title: 'Automotive', description: 'Connected car and fleet management systems, including white-label carpooling app solutions.', icon: 'automotive', illustration: 'automotive'},
   {slug: 'healthcare', title: 'Healthcare', description: 'HIPAA-compliant software for patient care.', icon: 'healthcare', illustration: 'healthcare'},
   {slug: 'manufacturing', title: 'Manufacturing', description: 'IIoT and smart factory automation solutions.', icon: 'manufacturing', illustration: 'manufacturing'},
   {slug: 'oil-gas', title: 'Oil & Gas', description: 'Digital solutions for energy sector efficiency.', icon: 'oilGas', illustration: 'oilGas'},
   {slug: 'insurance', title: 'Insurance', description: 'Modernizing policy and claims management.', icon: 'insurance', illustration: 'insurance'},
-  {slug: 'travel-hospitality', title: 'Travel & Hospitality', description: 'Booking platforms and guest management.', icon: 'travel', illustration: 'travel'},
-  {slug: 'cybersecurity', title: 'Cybersecurity', description: 'Building robust defense and threat detection systems.', icon: 'cybersecurity', illustration: 'cybersecurity'},
+  {
+    slug: 'travel-hospitality',
+    title: 'Travel & Hospitality',
+    description: 'Custom booking platforms and management systems, including innovative solutions for modern travel like our carpooling app for shared mobility.',
+    icon: 'travel',
+    illustration: 'travel'
+  },
+  {slug: 'cybersecurity', title: 'Cybersecurity', description: 'Building robust defense and threat detection systems, guided by the principles of ethical AI to ensure fairness and transparency.', icon: 'cybersecurity', illustration: 'cybersecurity'},
   {slug: 'ecommerce', title: 'E-commerce', description: 'Scalable online stores and marketplaces.', icon: 'ecommerce', illustration: 'ecommerce'},
-  {slug: 'education', title: 'Education', description: 'E-learning platforms and student information systems.', icon: 'education', illustration: 'education'},
-  {slug: 'media-entertainment', title: 'Media & Entertainment', description: 'Streaming solutions and content delivery networks.', icon: 'media', illustration: 'media'},
+  {slug: 'education', title: 'Education', description: 'E-learning platforms and student information systems, including modern tools like a secure QR attendance system.', icon: 'education', illustration: 'education'},
+  {
+    slug: 'media-entertainment',
+    title: 'Media & Entertainment',
+    description: 'Streaming solutions and content delivery networks. Our digital marketing services can help you reach a wider audience.',
+    icon: 'media',
+    illustration: 'media'
+  },
   {slug: 'real-estate', title: 'Real Estate', description: 'Property management and virtual tour software.', icon: 'realEstate', illustration: 'realEstate'},
   {slug: 'telecom', title: 'Telecom', description: 'Network management and customer service platforms.', icon: 'telecom', illustration: 'telecom'},
-  {slug: 'government', title: 'Government', description: 'Secure portals and digital services for citizens.', icon: 'government', illustration: 'government'}
+  {
+    slug: 'government',
+    title: 'Government',
+    description: 'Secure portals and digital services for citizens, such as proxy-proof QR attendance systems and robust cybersecurity solutions.',
+    icon: 'government',
+    illustration: 'government'
+  }
 ];
 
 export const solutions = [
@@ -175,7 +193,7 @@ export const blogPosts = [
         <p>The urban mobility landscape is undergoing a massive transformation. With rising fuel costs and a growing emphasis on sustainability, ride-sharing is no longer a luxury but a daily necessity for millions. This explosive growth presents a golden opportunity for entrepreneurs and businesses to enter the market. But how do you compete with giants like Uber and Lyft without a nine-figure development budget? The answer lies in a white-label ride-sharing app.</p>
 
         <h3>What is a White-Label Ride-Sharing App?</h3>
-        <p>A white-label ride-sharing app is a pre-built, fully functional, and ready-to-deploy software solution that a company can purchase, rebrand, and launch as its own. Think of it as a "startup in a box." Instead of spending 6-12 months and hundreds of thousands of dollars on custom development, you get a market-tested platform that can be customized with your logo, brand colors, and specific business rules. This allows you to focus on what truly matters: building your brand and growing your user base.</p>
+        <p>A white-label ride-sharing app is a pre-built, fully functional, and ready-to-deploy software solution that a company can purchase, rebrand, and launch as its own. Think of it as a "startup in a box." Instead of spending 6-12 months and hundreds of thousands of dollars on custom development, you get a market-tested platform that can be customized with your logo, brand colors, and specific business rules. For entrepreneurs, our white-label carpooling app is an excellent entry point.</p>
 
         <h3>Core Benefits of a White-Label Solution</h3>
         <ul>
@@ -278,7 +296,7 @@ export const blogPosts = [
             <strong>Geographic Focus:</strong> Target a specific city or region that is currently underserved by major players.
           </li>
           <li>
-            <strong>Niche Demographics:</strong> Create a service for a specific group, such as female-only rides (e.g., Safr), non-emergency medical transport, or corporate travel.
+            <strong>Niche Demographics:</strong> Create a service for a specific group, such as female-only rides (e.g., Safr), non-emergency medical transport, or corporate travel. Our experience in the travel & hospitality industry provides deep insights here.
           </li>
           <li>
             <strong>Vehicle Type:</strong> Focus on luxury vehicles, electric cars, or even motorcycle taxis, depending on your market.
@@ -332,7 +350,7 @@ export const blogPosts = [
         <p>When you decide to launch a ride-sharing app, one of the first and most important decisions you'll face is how to build your technology. The two main paths are purchasing a white-label solution or building a custom app from the ground up. Each approach has its own set of advantages and disadvantages, and the right choice depends on your budget, timeline, and long-term business goals.</p>
 
         <h3>The Case for a White-Label Solution</h3>
-        <p>A white-label app is a pre-built, ready-to-deploy platform that you can rebrand as your own. This is the fast-track to entering the market.</p>
+        <p>A white-label app is a pre-built, ready-to-deploy platform that you can rebrand as your own, such as our white-label carpooling app. This is the fast-track to entering the market.</p>
 
         <h4>Pros:</h4>
         <ul>
@@ -447,9 +465,9 @@ export const blogPosts = [
       </>
     ),
     faq: [
-      {question: 'How does a carpooling app differ from a ride-hailing app like Uber?', answer: '<p>The key difference is the model. Ride-hailing is an on-demand taxi service where a driver works for profit. Carpooling is about sharing a ride with someone who is already going in the same direction, primarily to split costs and reduce environmental impact. The driver is not a professional chauffeur.</p>'},
-      {question: 'What is the best way to set the price for a carpool ride?', answer: '<p>The app should automatically suggest a fair price based on the distance of the trip and local fuel costs. The goal is cost-sharing, not profit. The platform should prevent drivers from charging exorbitant amounts to maintain the spirit of carpooling.</p>'},
-      {question: 'How important is the user interface (UI) for a carpooling app?', answer: '<p>Extremely important. The app must be intuitive and easy to use. A complicated process for posting or booking a ride will quickly frustrate and deter users. A clean, simple design is key.</p>'}
+      {question: 'How does a carpooling app differ from a ride-hailing app like Uber?', answer: `<p>The key difference is the model. Ride-hailing is an on-demand taxi service where a driver works for profit. Carpooling is about sharing a ride with someone who is already going in the same direction, primarily to split costs and reduce environmental impact. The driver is not a professional chauffeur.</p>`},
+      {question: 'What is the best way to set the price for a carpool ride?', answer: `<p>The app should automatically suggest a fair price based on the distance of the trip and local fuel costs. The goal is cost-sharing, not profit. The platform should prevent drivers from charging exorbitant amounts to maintain the spirit of carpooling.</p>`},
+      {question: 'How important is the user interface (UI) for a carpooling app?', answer: `<p>Extremely important. The app must be intuitive and easy to use. A complicated process for posting or booking a ride will quickly frustrate and deter users. A clean, simple design is key.</p>`}
     ]
   },
   {
@@ -466,7 +484,7 @@ export const blogPosts = [
         <p>For years, the ride-sharing landscape has been dominated by a few global giants. However, the future of urban mobility isn't about monoliths; it's about a diverse ecosystem of specialized, efficient, and community-focused services. This shift is creating a massive opportunity for entrepreneurs to launch their own ride-sharing businesses, and white-label technology is the key that unlocks this potential.</p>
 
         <h3>The Limitations of the Mega-App Model</h3>
-        <p>While Uber and Lyft have revolutionized transportation, their "everything for everyone" approach has inherent weaknesses. They struggle to cater to the unique needs of specific communities, such as the demand for female-only drivers, non-emergency medical transport, or corporate travel solutions. This is where niche players can thrive.</p>
+        <p>While Uber and Lyft have revolutionized transportation, their "everything for everyone" approach has inherent weaknesses. They struggle to cater to the unique needs of specific communities, such as the demand for female-only drivers, non-emergency medical transport, or corporate travel solutions.</p>
 
         <h3>Why Niche Ride-Sharing Services Will Win</h3>
         <p>By focusing on a specific segment, new ride-sharing businesses can offer a superior experience that the giants can't match. Imagine a service dedicated to:</p>
