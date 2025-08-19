@@ -20,12 +20,17 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   const ogImage = post.illustration ? `/images/${post.illustration}.jpg` : '/og-image.png';
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
+  // ✅ Ensure meta description length is capped at 160 chars
+  const safeDescription = post.excerpt.length > 160 
+    ? post.excerpt.substring(0, 157).trim() + "…" 
+    : post.excerpt;
+
   return {
     title: post.title,
-    description: post.excerpt,
+    description: safeDescription,
     openGraph: {
       title: post.title,
-      description: post.excerpt,
+      description: safeDescription,
       url: canonicalUrl,
       type: 'article',
       publishedTime: post.date,
@@ -42,7 +47,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: post.excerpt,
+      description: safeDescription,
       images: [`${siteUrl}${ogImage}`],
     },
     alternates: {
