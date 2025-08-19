@@ -13,13 +13,13 @@ const pageUrl = `${siteUrl}/services`;
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration. We provide the tools you need to succeed.",
+  description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
       title: 'Our Services | TechNext',
-      description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration.",
+      description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
       url: pageUrl,
       type: 'website',
       images: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
       card: 'summary_large_image',
       title: 'Our Services | TechNext',
-      description: "Discover our range of expert services, including web development, mobile app creation, cloud solutions, and AI integration.",
+      description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
       images: [`${siteUrl}/og-image.png`],
   },
 };
