@@ -8,31 +8,34 @@ const siteUrl = 'https://technext96.com';
 const pageUrl = `${siteUrl}/contact`;
 
 export const metadata: Metadata = {
-    title: "Contact Us",
-    description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
-    alternates: {
-        canonical: pageUrl,
-    },
-    openGraph: {
-        title: 'Contact Us | TechNext',
-        description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
-        url: pageUrl,
-        type: 'website',
-        images: [
-            {
-                url: `${siteUrl}/og-image.png`,
-                width: 1200,
-                height: 630,
-                alt: "TechNext - Contact Us",
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Contact Us | TechNext',
-        description: "Get in touch with the TechNext team to discuss your project. We offer free consultations for our software, AI, and web development services.",
-        images: [`${siteUrl}/og-image.png`],
-    },
+  title: "Contact TechNext | Get in Touch with Our Team Today",
+  description:
+    "Have a project in mind? Contact TechNext for expert software development, AI/ML integration, and digital solutions. Get your free consultation today.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Contact TechNext | Get in Touch with Our Team Today",
+    description:
+      "Have a project in mind? Contact TechNext for expert software development, AI/ML integration, and digital solutions. Get your free consultation today.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "TechNext - Contact Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact TechNext | Get in Touch with Our Team Today",
+    description:
+      "Have a project in mind? Contact TechNext for expert software development, AI/ML integration, and digital solutions. Get your free consultation today.",
+    images: [`${siteUrl}/og-image.png`],
+  },
 };
 
 export default function ContactPage() {

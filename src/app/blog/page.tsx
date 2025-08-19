@@ -12,32 +12,36 @@ const siteUrl = 'https://technext96.com';
 const pageUrl = `${siteUrl}/blog`;
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
+  title: "TechNext Blog | Insights on Software, AI & Automation",
+  description:
+    "Explore the TechNext Blog for expert insights on custom software development, AI/ML integration, and automation. Read tutorials, case studies, and articles to stay ahead in tech.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-      title: 'Blog | TechNext',
-      description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
-      url: pageUrl,
-      type: 'website',
-      images: [
-          {
-              url: `${siteUrl}/og-image.png`,
-              width: 1200,
-              height: 630,
-              alt: "TechNext Blog",
-          },
-      ],
+    title: "TechNext Blog | Insights on Software, AI & Automation",
+    description:
+      "Explore the TechNext Blog for expert insights on custom software development, AI/ML integration, and automation. Read tutorials, case studies, and articles to stay ahead in tech.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "TechNext Blog",
+      },
+    ],
   },
   twitter: {
-      card: 'summary_large_image',
-      title: 'Blog | TechNext',
-      description: "Dive into the TechNext blog for expert insights on custom software, AI, and automation. Read in-depth tutorials and articles to stay ahead in the digital age.",
-      images: [`${siteUrl}/og-image.png`],
+    card: "summary_large_image",
+    title: "TechNext Blog | Insights on Software, AI & Automation",
+    description:
+      "Explore the TechNext Blog for expert insights on custom software development, AI/ML integration, and automation. Read tutorials, case studies, and articles to stay ahead in tech.",
+    images: [`${siteUrl}/og-image.png`],
   },
 };
+
 
 export default function BlogPage() {
   return (

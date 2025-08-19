@@ -12,13 +12,13 @@ const siteUrl = 'https://technext96.com';
 const pageUrl = `${siteUrl}/services`;
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Software, AI & Web Development Services | TechNext",
   description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
-      title: 'Our Services | TechNext',
+      title: 'Software, AI & Web Development Services | TechNext',
       description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
       url: pageUrl,
       type: 'website',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
       card: 'summary_large_image',
-      title: 'Our Services | TechNext',
+      title: 'Software, AI & Web Development Services | TechNext',
       description: "Explore our expert services, from custom web and mobile app development to cloud solutions and AI integration. We provide the technology you need to succeed.",
       images: [`${siteUrl}/og-image.png`],
   },

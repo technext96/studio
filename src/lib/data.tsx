@@ -39,7 +39,7 @@ export const services = [
   },
   {
     slug: 'devops',
-    title: 'DevOps & MLOps',
+    title: 'DevOps & MLOps Services | TechNext',
     description: 'Accelerate your delivery lifecycle with our DevOps services, including CI/CD pipeline automation and MLOps.',
     longDescription: 'We provide end-to-end DevOps solutions to help you build, test, and release software faster. We also specialize in MLOps to streamline machine learning lifecycles.',
     icon: 'devops',

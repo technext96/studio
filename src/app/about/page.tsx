@@ -11,31 +11,34 @@ const siteUrl = 'https://technext96.com';
 const pageUrl = `${siteUrl}/about`;
 
 export const metadata: Metadata = {
-    title: "About Us",
-    description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
-    alternates: {
-        canonical: pageUrl,
-    },
-    openGraph: {
-        title: 'About Us | TechNext',
-        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
-        url: pageUrl,
-        type: 'website',
-        images: [
-            {
-                url: `${siteUrl}/og-image.png`,
-                width: 1200,
-                height: 630,
-                alt: "TechNext - About Us",
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'About Us | TechNext',
-        description: "Learn about TechNext's mission, vision, and the values that drive our commitment to innovation and client success in software development.",
-        images: [`${siteUrl}/og-image.png`],
-    },
+  title: "About TechNext | Mission, Vision & Software Innovation",
+  description:
+    "Discover TechNext’s mission, vision, and core values that drive our passion for innovation, AI/ML, and client success in software development.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "About TechNext | Mission, Vision & Software Innovation",
+    description:
+      "Discover TechNext’s mission, vision, and core values that drive our passion for innovation, AI/ML, and client success in software development.",
+    url: pageUrl,
+    type: "website",
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "TechNext - About Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About TechNext | Mission, Vision & Software Innovation",
+    description:
+      "Discover TechNext’s mission, vision, and core values that drive our passion for innovation, AI/ML, and client success in software development.",
+    images: [`${siteUrl}/og-image.png`],
+  },
 };
 
 const TeamIllustration = () => (
