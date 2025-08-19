@@ -8,11 +8,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "Proxy-Proof QR Attendance System | Secure Check-ins | TechNext",
+  title: "Proxy-Proof QR Attendance System | Secure Check-ins ",
   description:
     "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
   openGraph: {
-    title: "Proxy-Proof QR Attendance System | Secure Check-ins | TechNext",
+    title: "Proxy-Proof QR Attendance System | Secure Check-ins ",
     description:
       "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
     url: "https://technext96.com/solutions/qr-attendance",
