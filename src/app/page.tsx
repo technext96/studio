@@ -9,7 +9,7 @@ import CtaSectionV2 from "@/components/home-v2/CtaSectionV2";
 
 export const metadata: Metadata = {
     title: 'Custom AI Software & Intelligent Automation | TechNext',
-    description: 'TechNext delivers expert custom software, AI/ML integration, and web development services to power your business growth and innovation. Get your free quote today.',
+    description: 'TechNext delivers custom software, AI/ML integration, and web development to drive growth and innovation. Get your free quote today.',
     openGraph: {
         title: 'Custom AI Software Development & Automation | TechNext',
         description: 'We build high-performance, scalable software and AI solutions that deliver measurable results and a powerful ROI.',
