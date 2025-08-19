@@ -8,13 +8,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-    title: "Proxy-Proof QR Attendance System | Secure Check-ins",
-    description: "Our QR attendance system uses device & Wi-Fi verification to prevent buddy punching and ensure secure, error-free check-ins for your staff.",
-    openGraph: {
-        title: "Proxy-Proof QR Attendance System | Secure Check-ins",
-        description: "Say goodbye to buddy punching. Our system uses device & Wi-Fi verification to ensure secure, error-free check-ins.",
-    },
+  title: "Proxy-Proof QR Attendance System | Secure Check-ins | TechNext",
+  description:
+    "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
+  openGraph: {
+    title: "Proxy-Proof QR Attendance System | Secure Check-ins | TechNext",
+    description:
+      "Ensure accurate, proxy-proof attendance with TechNext’s secure QR-based system. Perfect for schools, universities, and businesses.",
+    url: "https://technext96.com/solutions/qr-attendance",
+  },
+  alternates: {
+    canonical: "https://technext96.com/solutions/qr-attendance",
+  },
 };
+
 
 const QrAttendanceIllustration = () => (
     <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">

@@ -7,13 +7,20 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "CampiX.AI | Autonomous AI Ad Campaigns",
-    description: "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
-    openGraph: {
-        title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",
-        description: "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
-    },
+  title: "CampiX.AI | Autonomous AI Ad Campaigns",
+  description:
+    "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
+  openGraph: {
+    title: "CampiX.AI | Autonomous AI-Powered Ad Campaigns",
+    description:
+      "Launch, manage, and optimize ad campaigns across Facebook, Google & TikTok with zero marketing knowledge. Let our AI be your marketing department.",
+    url: "https://technext96.com/solutions/campix", // 👈 Important
+  },
+  alternates: {
+    canonical: "https://technext96.com/solutions/campix", // 👈 Add this
+  },
 };
+
 
 const CampixIllustration = () => (
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">

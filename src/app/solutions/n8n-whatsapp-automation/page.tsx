@@ -8,12 +8,18 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: "n8n WhatsApp Automation | Connect Your Business",
-    description: "Automate your business workflows with our expert n8n and WhatsApp integration services. Connect to any app, build complex automations, and save time.",
-    openGraph: {
-        title: "n8n WhatsApp Automation | Custom Workflow Integration",
-        description: "Leverage the power of n8n to automate your WhatsApp communication and connect it to your entire app ecosystem.",
-    },
+  title: "n8n WhatsApp Automation | Connect Your Business",
+  description:
+    "Automate your business workflows with our expert n8n and WhatsApp integration services. Connect to any app, build complex automations, and save time.",
+  openGraph: {
+    title: "n8n WhatsApp Automation | Custom Workflow Integration",
+    description:
+      "Leverage the power of n8n to automate your WhatsApp communication and connect it to your entire app ecosystem.",
+    url: "https://technext96.com/solutions/n8n-whatsapp-automation", // 👈 OG URL
+  },
+  alternates: {
+    canonical: "https://technext96.com/solutions/n8n-whatsapp-automation", // 👈 Canonical
+  },
 };
 
 export default function N8nWhatsappAutomationPage() {
