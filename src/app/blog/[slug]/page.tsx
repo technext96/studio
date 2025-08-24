@@ -1,3 +1,4 @@
+
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
@@ -154,11 +155,16 @@ export default async function BlogPostPage({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const posts = await prisma.blog.findMany({
-    select: { slug: true },
-  });
+  try {
+    const posts = await prisma.blog.findMany({
+      select: { slug: true },
+    });
 
-  return posts.map((p) => ({
-    slug: p.slug,
-  }));
+    return posts.map((p) => ({
+      slug: p.slug,
+    }));
+  } catch (error) {
+    console.warn("Could not connect to the database to generate static blog pages. Skipping. Please check your DATABASE_URL.", error);
+    return [];
+  }
 }
