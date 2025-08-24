@@ -22,7 +22,7 @@ export default function PortfolioAndBlogSection() {
                     </p>
                 </FadeIn>
 
-                <div className="grid lg:grid-cols-2 gap-12">
+                <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
                     {/* Solutions Column */}
                     <div className="space-y-8">
                         {featuredSolutions.map((project, i) => {
