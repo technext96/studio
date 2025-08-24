@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 222 47% 98%; /* Light Gray */
-    --foreground: 222 47% 11%; /* Dark Blue */
-    --card: 222 47% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 222 47% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 222 47% 28%; /* Deep Blue (#30475E) */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 222 47% 90%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 222 47% 90%;
-    --muted-foreground: 224 44% 40%;
-    --accent: 120 61% 65%; /* Vibrant Green (#77DD77) */
-    --accent-foreground: 222 47% 11%;
+    --background: 220 13% 97%;
+    --foreground: 220 14% 10%;
+    --card: 220 13% 97%;
+    --card-foreground: 220 14% 10%;
+    --popover: 220 13% 97%;
+    --popover-foreground: 220 14% 10%;
+    --primary: 190 95% 45%; /* Vibrant Cyan (#06D0F9) */
+    --primary-foreground: 200 100% 10%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 14% 10%;
+    --muted: 220 13% 91%;
+    --muted-foreground: 220 9% 45%;
+    --accent: 190 95% 50%;
+    --accent-foreground: 220 14% 10%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 222 47% 88%;
-    --input: 222 47% 88%;
-    --ring: 222 47% 28%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 190 95% 45%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 47% 11%; /* Dark Blue */
-    --foreground: 210 40% 98%;
-    --card: 222 47% 15%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 96%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 28% 65%;
-    --accent: 120 61% 65%; /* Vibrant Green (#77DD77) */
-    --accent-foreground: 222 47% 11%;
+    --background: 215 28% 12%;
+    --foreground: 215 20% 90%;
+    --card: 215 28% 17%;
+    --card-foreground: 215 20% 90%;
+    --popover: 215 28% 12%;
+    --popover-foreground: 215 20% 90%;
+    --primary: 190 95% 50%; /* Vibrant Cyan (#06D0F9) */
+    --primary-foreground: 200 100% 10%;
+    --secondary: 215 28% 22%;
+    --secondary-foreground: 215 20% 90%;
+    --muted: 215 28% 22%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 190 95% 55%;
+    --accent-foreground: 200 100% 10%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 22%;
-    --input: 217 33% 22%;
-    --ring: 215 28% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 28% 25%;
+    --input: 215 28% 25%;
+    --ring: 190 95% 55%;
   }
 }
 
