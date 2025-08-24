@@ -61,6 +61,12 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   };
 }
 
+// Function to remove frontmatter from markdown content
+const removeFrontmatter = (markdown: string) => {
+  const frontmatterRegex = /^---\s*[\s\S]*?---\s*/;
+  return markdown.replace(frontmatterRegex, '').trim();
+};
+
 export default async function BlogPostPage({ params }: Props) {
   const post = await prisma.blog.findUnique({
     where: { slug: params.slug },
@@ -85,9 +91,11 @@ export default async function BlogPostPage({ params }: Props) {
     },
   });
 
+  const contentWithoutFrontmatter = removeFrontmatter(post.content);
+  
   const parsedContent = await marked.parse(
     // Quick fix for button component in MDX
-    post.content.replace(
+    contentWithoutFrontmatter.replace(
       /<Button>(.*?)<\/Button>/g,
       '<a href="/contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">$1</a>'
     )
