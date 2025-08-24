@@ -6,7 +6,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import Script from "next/script";
 import { Button } from "./ui/button";
-import { useState, useEffect, ReactNode } from "react";
+import { useState, useEffect } from "react";
 
 type BlogPostClientProps = {
   post: {
@@ -14,9 +14,9 @@ type BlogPostClientProps = {
     date: string;
     tags: string[];
     author: { name: string };
-    content: ReactNode;
+    content: string; // Now a string of HTML
     excerpt: string;
-    jsonLd?: string;
+    jsonLd?: string | null;
   };
 };
 
@@ -24,6 +24,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
   const [pageUrl, setPageUrl] = useState('');
 
   useEffect(() => {
+    // This code now only runs on the client, avoiding hydration errors
     setPageUrl(window.location.href);
   }, []);
 
@@ -89,9 +90,10 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             </a>
           </div>
 
-          <article className="prose prose-invert max-w-none prose-lg">
-            {post.content}
-          </article>
+          <article 
+            className="prose prose-invert max-w-none prose-lg"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </div>
       </div>
     </>

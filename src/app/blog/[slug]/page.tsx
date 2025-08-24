@@ -6,7 +6,7 @@ import { illustrationMap } from "@/lib/constants";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/ui/fade-in";
-import { compileMDX } from 'next-mdx-remote/rsc';
+import { marked } from 'marked';
 import { Button } from "@/components/ui/button";
 
 const prisma = new PrismaClient();
@@ -85,19 +85,13 @@ export default async function BlogPostPage({ params }: Props) {
     },
   });
 
-  const { content } = await compileMDX({
-    source: post.content,
-    components: {
-      Button: (props) => (
-        <Button asChild>
-          <Link href="/contact" {...props} />
-        </Button>
-      ),
-    },
-    options: {
-      parseFrontmatter: false,
-    },
-  });
+  const parsedContent = await marked.parse(
+    // Quick fix for button component in MDX
+    post.content.replace(
+      /<Button>(.*?)<\/Button>/g,
+      '<a href="/contact" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">$1</a>'
+    )
+  );
 
   const clientPost = {
     ...post,
@@ -108,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
     author: { name: 'TechNext AI Writer', role: 'AI Content Specialist' },
     illustration: 'aiMl', 
     jsonLd: post.jsonLd,
-    content: content,
+    content: parsedContent,
   };
 
   return (
