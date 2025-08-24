@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "blog:generate": "tsx scripts/generateBlog.js"
+    "blog:generate": "tsx scripts/generateBlog.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",

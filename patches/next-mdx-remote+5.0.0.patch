@@ -1,0 +1,31 @@
+diff --git a/node_modules/next-mdx-remote/dist/index.js b/node_modules/next-mdx-remote/dist/index.js
+index c735235..b6635c9 100644
+--- a/node_modules/next-mdx-remote/dist/index.js
++++ b/node_modules/next-mdx-remote/dist/index.js
+@@ -101,7 +101,7 @@ function MDXRemote(props) {
+     ...scope
+   }, [components, scope]);
+   const [error, setError] = (0, import_react.useState)();
+-  const [element, setElement] = (0, import_react.useState)(() => getElement(compiledSource, mdxScope));
++  const [element, setElement] = (0, import_react.useState)(void 0);
+   (0, import_react.useEffect)(() => {
+     let C;
+     try {
+diff --git a/node_modules/next-mdx-remote/package.json b/node_modules/next-mdx-remote/package.json
+index 4744d2d..327b7b1 100644
+--- a/node_modules/next-mdx-remote/package.json
++++ b/node_modules/next-mdx-remote/package.json
+@@ -47,6 +47,12 @@
+     "react-dom": ">=16.8"
+   },
+   "dependencies": {
+-    "shiki": "^0.14.3"
++    "shiki": "^0.14.3",
++    "react": "18.3.1",
++    "react-dom": "18.3.1",
++    "react-jsx-runtime": "18.3.1"
++  },
++  "resolutions": {
++    "react": "18.3.1"
+   }
+ }
