@@ -1,4 +1,4 @@
-# **App Name**: Code Harbor
+# **App Name**: TechNext
 
 ## Core Features:
 
