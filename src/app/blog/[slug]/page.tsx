@@ -2,6 +2,11 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
 import { PrismaClient } from "@/generated/prisma";
+import { solutions } from "@/lib/data.tsx";
+import { illustrationMap } from "@/lib/constants";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const prisma = new PrismaClient();
 
@@ -64,6 +69,21 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) {
     notFound();
   }
+  
+  const relatedPosts = await prisma.blog.findMany({
+    where: {
+      tags: {
+        hasSome: post.tags,
+      },
+      NOT: {
+        id: post.id,
+      },
+    },
+    take: 2,
+    orderBy: {
+      createdAt: 'desc',
+    },
+  });
 
   // A bit of a type mapping to fit the existing client component
   const clientPost = {
@@ -78,7 +98,44 @@ export default async function BlogPostPage({ params }: Props) {
     faq: [], // Can be added to schema later if needed
   };
 
-  return <BlogPostClient post={clientPost} />;
+  return (
+    <>
+      <BlogPostClient post={clientPost} />
+       {relatedPosts.length > 0 && (
+          <section id="related-posts" className="w-full py-16 md:py-24 bg-secondary/20">
+              <div className="px-4 md:px-6">
+                  <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                  <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Related Articles</h2>
+                      <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
+                          Enjoyed this article? Here are a few other posts you might find interesting.
+                      </p>
+                  </FadeIn>
+                  <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-5xl">
+                      {relatedPosts.map((relatedPost, i) => {
+                          const ProjectIllustration = illustrationMap['aiMl']; // Default illustration
+                          return (
+                          <FadeIn key={relatedPost.slug} style={{ animationDelay: `${i * 0.1}s` }}>
+                              <Link href={`/blog/${relatedPost.slug}`} className="group">
+                                  <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
+                                      <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
+                                          {ProjectIllustration && <ProjectIllustration/>}
+                                      </div>
+                                      <CardHeader>
+                                      <CardTitle className="font-headline text-xl">{relatedPost.title}</CardTitle>
+                                      </CardHeader>
+                                      <CardContent className="flex-grow">
+                                      <p className="text-sm text-foreground/80 line-clamp-3">{relatedPost.description}</p>
+                                      </CardContent>
+                                  </Card>
+                              </Link>
+                          </FadeIn>
+                      )})}
+                  </div>
+              </div>
+          </section>
+      )}
+    </>
+  );
 }
 
 export async function generateStaticParams() {

@@ -1,23 +1,20 @@
 'use client';
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { type blogPosts, solutions } from "@/lib/data.tsx";
-import { ArrowLeft, Share2, Twitter, Linkedin, Facebook } from "lucide-react";
+import { type blogPosts } from "@/lib/data.tsx";
+import { ArrowLeft, Share2, Twitter, Linkedin, Facebook, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
 import { illustrationMap } from "@/lib/constants";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Script from "next/script";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { FadeIn } from "./ui/fade-in";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Button } from "./ui/button";
+
 
 type BlogPostClientProps = {
   post: (typeof blogPosts)[0] & { jsonLd?: string };
@@ -25,8 +22,13 @@ type BlogPostClientProps = {
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   const Illustration = illustrationMap[post.illustration];
-  const relatedSolutions = solutions.slice(0, 2);
-  const logoClassName = "font-headline text-2xl font-bold tracking-tight text-primary logo-shimmer";
+  const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+  const socialLinks = {
+    twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(post.title)}`,
+    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.excerpt)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`,
+  };
 
   return (
     <>
@@ -37,121 +39,57 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           dangerouslySetInnerHTML={{ __html: post.jsonLd }}
         />
       )}
-      <div className="w-full py-16 md:py-24 lg:py-28">
-        <div className="px-8 md:px-12">
+      <div className="w-full py-16 md:py-24 lg:py-28 bg-secondary/20">
+        <div className="px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="mb-8">
-              <nav className="text-sm mb-4" aria-label="Breadcrumb">
-                <ol className="list-none p-0 inline-flex space-x-2 text-foreground/80">
-                  <li><Link href="/" className="hover:text-primary">Home</Link></li>
-                  <li><span>/</span></li>
-                  <li><Link href="/blog" className="hover:text-primary">Blog</Link></li>
-                  <li><span>/</span></li>
-                  <li className="text-primary" aria-current="page">{post.category}</li>
-                </ol>
-              </nav>
-              <p className="text-base text-primary font-semibold mb-2">{post.category}</p>
+              <Button variant="ghost" asChild className="-ml-4 mb-4">
+                <Link href="/blog">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Back to Blog
+                </Link>
+              </Button>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {post.tags.map(tag => <Badge key={tag} className="text-sm">{tag}</Badge>)}
+              </div>
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
                 {post.title}
               </h1>
-              <p className="mt-4 text-lg text-foreground/80">{post.excerpt}</p>
-              <div className="mt-6 flex items-center justify-between text-sm text-foreground/80">
-                <p>Published on {format(new Date(post.date), "MMMM d, yyyy")}</p>
-                <div className="flex items-center gap-2">
-                  <Share2 className="h-4 w-4" />
-                  <span className="font-semibold">Share:</span>
-                  <a href="#" className="hover:text-primary"><Twitter className="h-4 w-4" /></a>
-                  <a href="#" className="hover:text-primary"><Linkedin className="h-4 w-4" /></a>
-                  <a href="#" className="hover:text-primary"><Facebook className="h-4 w-4" /></a>
-                </div>
-              </div>
-            </div>
-
-            <div className="my-8">
-              <div className="rounded-lg border-2 border-primary/20 glow-effect aspect-video w-full object-cover bg-secondary/50 p-4">
-                {Illustration && <Illustration />}
-              </div>
-            </div>
-
-            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
-              <Card className="my-12 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                      <CardTitle className="font-headline text-2xl">Key Takeaways</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                      <ul className="list-disc list-inside space-y-2 text-foreground/80">
-                          {post.keyTakeaways.map((takeaway, i) => <li key={i}>{takeaway}</li>)}
-                      </ul>
-                  </CardContent>
-              </Card>
-            )}
-
-            <article className="prose prose-invert max-w-none">
-              {/* This is a temporary fix to render MDX content. A proper MDX parser should be used for full feature support. */}
-              <div dangerouslySetInnerHTML={{ __html: post.content.replace(/<Button>/g, '<a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" href="/contact">').replace(/<\/Button>/g, '</a>') }} />
-            </article>
-
-            {post.faq && post.faq.length > 0 && (
-              <div className="mt-16">
-                <h2 className="text-3xl font-bold font-headline mb-8 text-primary">Frequently Asked Questions</h2>
-                <Accordion type="single" collapsible className="w-full">
-                  {post.faq.map((item, index) => (
-                    <AccordionItem value={`item-${index}`} key={index}>
-                      <AccordionTrigger className="text-left text-lg hover:no-underline">{item.question}</AccordionTrigger>
-                      <AccordionContent className="text-base text-foreground/80 prose prose-invert max-w-none prose-p:text-lg prose-p:text-foreground/80">
-                        {item.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            )}
-            
-            {relatedSolutions.length > 0 && (
-                <section id="related-solutions" className="w-full mt-16 pt-12 border-t border-border">
-                    <div className="px-4 md:px-6">
-                        <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                        <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Explore Our Solutions</h2>
-                        </FadeIn>
-                        <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-4xl">
-                            {relatedSolutions.map((project, i) => {
-                                const ProjectIllustration = illustrationMap[project.illustration];
-                                return (
-                                <FadeIn key={project.slug} style={{ animationDelay: `${i * 0.1}s` }}>
-                                    <Link href={`/solutions/${project.slug}`} className="group">
-                                        <Card className="overflow-hidden h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
-                                            <div className="aspect-video w-full object-cover bg-secondary/50 p-4">
-                                                {ProjectIllustration && <ProjectIllustration/>}
-                                            </div>
-                                            <CardHeader>
-                                                <CardTitle className="font-headline text-xl">{project.title}</CardTitle>
-                                            </CardHeader>
-                                            <CardContent className="flex-grow">
-                                                <p className="text-sm text-foreground/80">{project.excerpt}</p>
-                                            </CardContent>
-                                        </Card>
-                                    </Link>
-                                </FadeIn>
-                            )})}
-                        </div>
-                    </div>
-                </section>
-            )}
-
-            <div className="mt-16 border-t border-border pt-8">
-              <div className="flex items-start gap-6">
-                  <div className="w-20 h-20 rounded-full bg-secondary overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <div className={cn(logoClassName, "!text-xl")}>TechNext</div>
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-foreground/80">
+                  <div className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    <span>{post.author.name}</span>
                   </div>
-                  <div>
-                      <p className="text-sm text-muted-foreground">Written by</p>
-                      <h4 className="font-bold text-lg text-foreground">{post.author.name}</h4>
-                      <p className="text-muted-foreground">{post.author.role}</p>
+                   <div className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>Published on {format(new Date(post.date), "MMMM d, yyyy")}</span>
                   </div>
               </div>
             </div>
-
           </div>
+        </div>
+      </div>
+
+      <div className="w-full py-12 md:py-16">
+        <div className="px-4 md:px-6 max-w-4xl mx-auto relative">
+          
+           {/* Floating Share Bar */}
+           <div className="absolute top-0 -left-24 hidden lg:flex flex-col gap-2">
+            <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-2">Share</p>
+            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+              <Linkedin className="h-5 w-5" />
+            </a>
+             <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+              <Facebook className="h-5 w-5" />
+            </a>
+          </div>
+
+          <article className="prose prose-invert max-w-none prose-lg">
+            <div dangerouslySetInnerHTML={{ __html: post.content.replace(/<Button>/g, '<a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" href="/contact">').replace(/<\/Button>/g, '</a>') }} />
+          </article>
         </div>
       </div>
     </>
