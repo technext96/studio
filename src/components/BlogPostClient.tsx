@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { Button } from "./ui/button";
+import { useState, useEffect } from "react";
 
 
 type BlogPostClientProps = {
@@ -22,7 +24,12 @@ type BlogPostClientProps = {
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   const Illustration = illustrationMap[post.illustration];
-  const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const [pageUrl, setPageUrl] = useState('');
+
+  useEffect(() => {
+    // This ensures window is accessed only on the client side, after hydration.
+    setPageUrl(window.location.href);
+  }, []);
 
   const socialLinks = {
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(post.title)}`,
