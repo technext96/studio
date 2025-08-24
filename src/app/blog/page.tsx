@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -6,8 +5,9 @@ import { format } from "date-fns";
 import { FadeIn } from "@/components/ui/fade-in";
 import { PrismaClient } from "@/generated/prisma";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { illustrationMap } from "@/lib/constants";
 
 const prisma = new PrismaClient();
 
@@ -45,25 +45,6 @@ export const metadata: Metadata = {
   },
 };
 
-const BlogIllustration = () => (
-    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" className="w-full h-full object-contain">
-        <defs>
-            <linearGradient id="grad-blog" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style={{stopColor: 'hsl(var(--primary))'}} />
-                <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))'}} />
-            </linearGradient>
-        </defs>
-        <path d="M128 128 h256 v256 h-256z" fill="hsl(var(--primary)/.1)" stroke="hsl(var(--border))" rx="15"/>
-        <path d="M160 192 h192" stroke="url(#grad-blog)" strokeWidth="4" strokeLinecap="round">
-            <animate attributeName="x2" values="352;256;352" dur="4s" repeatCount="indefinite" />
-        </path>
-         <path d="M160 256 h192" stroke="url(#grad-blog)" strokeWidth="4" strokeLinecap="round" />
-         <path d="M160 320 h128" stroke="url(#grad-blog)" strokeWidth="4" strokeLinecap="round">
-             <animate attributeName="x2" values="288;352;288" dur="4s" begin="2s" repeatCount="indefinite" />
-        </path>
-    </svg>
-)
-
 export default async function BlogPage() {
   const posts = await prisma.blog.findMany({
     orderBy: {
@@ -71,8 +52,9 @@ export default async function BlogPage() {
     },
   });
 
-  const featuredPost = posts[0];
-  const otherPosts = posts.slice(1);
+  const featuredPost = posts.find(p => p.featured) || posts[0];
+  const otherPosts = posts.filter(p => p.id !== featuredPost?.id);
+  const FeaturedIllustration = featuredPost ? illustrationMap[featuredPost.image || 'aiMl'] : null;
 
   return (
     <>
@@ -96,8 +78,8 @@ export default async function BlogPage() {
               <Link href={`/blog/${featuredPost.slug}`} className="group block">
                 <Card className="grid md:grid-cols-2 overflow-hidden bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 transition-all duration-300 glow-effect">
                   <div className="bg-secondary/50 p-8 flex items-center justify-center">
-                    <div className="w-full h-full max-w-xs transition-transform duration-300 group-hover:scale-105">
-                        <BlogIllustration />
+                    <div className="w-full h-full max-w-sm transition-transform duration-300 group-hover:scale-105">
+                        {FeaturedIllustration && <FeaturedIllustration />}
                     </div>
                   </div>
                   <div className="p-8 flex flex-col">
@@ -122,13 +104,15 @@ export default async function BlogPage() {
 
           {/* Other Posts */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {otherPosts.map((post, i) => (
+            {otherPosts.map((post, i) => {
+              const Illustration = illustrationMap[post.image || 'aiMl'];
+              return (
               <FadeIn key={post.slug} style={{ animationDelay: `${i * 0.1}s`}}>
                 <Link href={`/blog/${post.slug}`} className="group h-full flex">
                   <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_0_20px_theme(colors.primary/0.5)] bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50 w-full">
                     <div className="overflow-hidden aspect-video w-full object-cover bg-secondary/50 p-4 flex items-center justify-center">
-                       <div className="w-full h-full max-w-[150px] transition-transform duration-300 group-hover:scale-110">
-                         <BlogIllustration />
+                       <div className="w-full h-full max-w-[200px] transition-transform duration-300 group-hover:scale-110">
+                         {Illustration && <Illustration />}
                        </div>
                     </div>
                     <CardHeader>
@@ -144,7 +128,7 @@ export default async function BlogPage() {
                   </Card>
                 </Link>
               </FadeIn>
-            ))}
+            )})}
           </div>
         </div>
       </section>

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   const siteUrl = 'https://technext96.com';
-  const ogImage = '/og-image.png';
+  const ogImage = post.image ? `${siteUrl}/images/blog/${post.image}.png` : `${siteUrl}/og-image.png`;
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
   return {
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
       publishedTime: post.createdAt.toISOString(),
       images: [
         {
-          url: `${siteUrl}${ogImage}`, 
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
       card: 'summary_large_image',
       title: post.seoTitle,
       description: post.seoDescription,
-      images: [`${siteUrl}${ogImage}`],
+      images: [ogImage],
     },
     alternates: {
       canonical: canonicalUrl,
@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
     tags: post.tags,
     category: post.tags.join(', '),
     author: { name: 'TechNext AI Writer', role: 'AI Content Specialist' },
-    illustration: 'aiMl', 
+    illustration: post.image || 'aiMl',
     jsonLd: post.jsonLd,
     content: parsedContent,
   };
@@ -119,7 +119,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </FadeIn>
                   <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-5xl">
                       {relatedPosts.map((relatedPost, i) => {
-                          const ProjectIllustration = illustrationMap['aiMl']; 
+                          const ProjectIllustration = illustrationMap[relatedPost.image || 'aiMl']; 
                           return (
                           <FadeIn key={relatedPost.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                               <Link href={`/blog/${relatedPost.slug}`} className="group">

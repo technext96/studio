@@ -9,8 +9,10 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import { PrismaClient } from '@/generated/prisma';
 import slugify from 'slugify';
+import { illustrationMap } from '@/lib/constants';
 
 const prisma = new PrismaClient();
+const illustrationKeys = Object.keys(illustrationMap);
 
 const BlogOnTopicInputSchema = z.object({
   topic: z.string().describe('The specific topic for the blog post.'),
@@ -23,6 +25,7 @@ const BlogOnTopicOutputSchema = z.object({
     date: z.string().describe('The current date in YYYY-MM-DD format.'),
     description: z.string().describe('A strong SEO meta description, maximum 160 characters.'),
     tags: z.array(z.string()).describe('3–6 relevant keywords as tags related to the topic.'),
+    image: z.enum(illustrationKeys as [string, ...string[]]).describe('A relevant illustration key from the provided list for the blog post cover image.'),
   }),
   content: z.string().describe('The full blog post content in MDX format, between 1200-1500 words, including headings, lists, and a call-to-action button.'),
   seo: z.object({
@@ -46,11 +49,12 @@ const prompt = ai.definePrompt({
 Your task is to perform the following actions for the given topic: "{{{topic}}}"
 
 1.  **Write a complete SEO-optimized blog**: Generate a full blog post in MDX format based on the provided topic.
-2.  **Include YAML frontmatter**: The post must start with YAML frontmatter containing:
+2.  **Include all frontmatter fields**: The post must have:
     *   \`title\`: A catchy, SEO-friendly title related to the topic.
     *   \`date\`: The current date (YYYY-MM-DD).
     *   \`description\`: A compelling meta description, maximum 160 characters.
     *   \`tags\`: An array of 3–6 relevant keywords related to the topic.
+    *   \`image\`: Choose the most relevant illustration key from this list: ${illustrationKeys.join(', ')}.
 3.  **Blog Content**: The body of the blog must be:
     *   Between 1200 and 1500 words.
     *   Well-structured with markdown headings ('##' and '###').
@@ -76,7 +80,8 @@ Return a single JSON object that strictly follows this structure, with no additi
     "title": "...",
     "date": "...",
     "description": "...",
-    "tags": ["...", "..."]
+    "tags": ["...", "..."],
+    "image": "..."
   },
   "content": "The full MDX blog post content...",
   "seo": {
@@ -115,6 +120,8 @@ const blogOnTopicFlow = ai.defineFlow(
       description: frontmatter.description,
       content: content,
       tags: frontmatter.tags,
+      image: frontmatter.image,
+      featured: false, // Default to not featured
       seoTitle: seo.seo_title,
       seoDescription: seo.seo_description,
       seoKeywords: seo.seo_keywords,
@@ -123,6 +130,12 @@ const blogOnTopicFlow = ai.defineFlow(
     };
 
     try {
+      // Set the newest post as featured
+      await prisma.blog.updateMany({
+        data: { featured: false },
+      });
+      blogData.featured = true;
+
       console.log(`[BlogOnTopic] Attempting to save blog post with slug: ${slug}`);
       await prisma.blog.create({
         data: blogData,

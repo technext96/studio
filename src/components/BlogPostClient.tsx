@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import Script from "next/script";
 import { Button } from "./ui/button";
 import { useState, useEffect } from "react";
+import { illustrationMap } from "@/lib/constants";
 
 type BlogPostClientProps = {
   post: {
@@ -17,14 +18,15 @@ type BlogPostClientProps = {
     content: string; // Now a string of HTML
     excerpt: string;
     jsonLd?: string | null;
+    illustration: string;
   };
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   const [pageUrl, setPageUrl] = useState('');
+  const Illustration = illustrationMap[post.illustration];
 
   useEffect(() => {
-    // This code now only runs on the client, avoiding hydration errors
     setPageUrl(window.location.href);
   }, []);
 
@@ -43,32 +45,38 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           dangerouslySetInnerHTML={{ __html: post.jsonLd }}
         />
       )}
-      <div className="w-full py-16 md:py-24 lg:py-28 bg-secondary/20">
-        <div className="px-4 md:px-6">
+      <div className="w-full py-16 md:py-24 lg:py-28 bg-secondary/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
+        <div className="px-4 md:px-6 z-10 relative">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <Button variant="ghost" asChild className="-ml-4 mb-4">
+             <Button variant="ghost" asChild className="-ml-4 mb-8">
                 <Link href="/blog">
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     Back to Blog
                 </Link>
               </Button>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map(tag => <Badge key={tag} className="text-sm">{tag}</Badge>)}
-              </div>
-              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
-                {post.title}
-              </h1>
-              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-foreground/80">
-                  <div className="flex items-center gap-2">
-                    <User className="h-4 w-4" />
-                    <span>{post.author.name}</span>
-                  </div>
-                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>Published on {format(new Date(post.date), "MMMM d, yyyy")}</span>
-                  </div>
-              </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                        {post.tags.map(tag => <Badge key={tag}>{tag}</Badge>)}
+                    </div>
+                    <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl text-primary">
+                        {post.title}
+                    </h1>
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-foreground/80 pt-4">
+                        <div className="flex items-center gap-2">
+                            <User className="h-4 w-4" />
+                            <span>{post.author.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Calendar className="h-4 w-4" />
+                            <span>{format(new Date(post.date), "MMMM d, yyyy")}</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="aspect-video w-full object-cover bg-secondary/50 p-4 rounded-lg glow-effect">
+                    {Illustration && <Illustration />}
+                </div>
             </div>
           </div>
         </div>

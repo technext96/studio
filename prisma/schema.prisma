@@ -2,9 +2,30 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider   = "prisma-client-js"
-  output     = "../src/generated/prisma"
-  engineType = "library"
+  provider        = "prisma-client-js"
+  // The output directory for the generated client.
+  // It's important that this is somewhere that can be used by both the
+  // client and server.
+  output          = "./../src/generated/prisma"
+  // The name of the client class to generate.
+  // Optional, defaults to `PrismaClient`.
+  // It's not recommended to change this.
+  // newInstanceName = "PrismaClient"
+  // Use a relative path to the schema file.
+  // Optional, defaults to the location of the schema file.
+  // schemaPath = "./schema.prisma"
+  // The name of the engine type to use.
+  // Optional, defaults to `library`.
+  // It's not recommended to change this.
+  engineType      = "library"
+  // The name of the binary platform to use.
+  // Optional, defaults to the current platform.
+  binaryTarget    = "native"
+  // Show all logs
+  log             = ["query", "info", "warn", "error"]
+  // The data proxy is used for serverless environments.
+  // https://www.prisma.io/docs/data-platform/data-proxy
+  // dataProxy = false
 }
 
 datasource db {
@@ -17,12 +38,14 @@ model Blog {
   slug            String   @unique
   title           String
   description     String
-  content         String   @db.Text
+  content         String
   tags            String[]
+  image           String?
+  featured        Boolean  @default(false)
   seoTitle        String
   seoDescription  String
   seoKeywords     String
-  jsonLd          String   @db.Text
+  jsonLd          String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
