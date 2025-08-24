@@ -131,10 +131,13 @@ const blogOnTopicFlow = ai.defineFlow(
     };
 
     try {
-      // Set the newest post as featured
+      // Un-feature all other posts first
       await prisma.blog.updateMany({
+        where: { featured: true },
         data: { featured: false },
       });
+      
+      // Set the new post as featured
       blogData.featured = true;
 
       console.log(`[BlogOnTopic] Attempting to save blog post with slug: ${slug}`);

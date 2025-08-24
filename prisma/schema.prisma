@@ -1,6 +1,10 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
-  provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  output          = "../src/generated/prisma"
 }
 
 datasource db {
@@ -10,18 +14,18 @@ datasource db {
 }
 
 model Blog {
-  id              String   @id @default(cuid())
-  slug            String   @unique
+  id              String    @id @default(cuid())
+  slug            String    @unique
   title           String
-  description     String
+  description     String?
   content         String
   tags            String[]
   image           String?
-  featured        Boolean  @default(false)
+  featured        Boolean   @default(false)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
   seoTitle        String?
   seoDescription  String?
   seoKeywords     String?
-  jsonLd          String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  jsonLd          Json?
 }

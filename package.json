@@ -11,7 +11,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "blog:generate": "tsx scripts/generateBlog.js",
-    "blog:generate-all": "tsx scripts/generateAllBlogs.js"
+    "blog:generate-all": "tsx scripts/generateAllBlogs.js",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
