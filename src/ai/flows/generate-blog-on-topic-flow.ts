@@ -27,7 +27,7 @@ const BlogOnTopicOutputSchema = z.object({
     tags: z.array(z.string()).describe('3–6 relevant keywords as tags related to the topic.'),
     image: z.enum(illustrationKeys as [string, ...string[]]).describe('A relevant illustration key from the provided list for the blog post cover image.'),
   }),
-  content: z.string().describe('The full blog post content in MDX format, between 1200-1500 words, including headings, lists, and a call-to-action button.'),
+  content: z.string().describe('The full blog post content in MDX format, between 1200-1500 words, including headings, lists, and a call-to-action button. IMPORTANT: Do NOT include a YAML frontmatter block in this field.'),
   seo: z.object({
     seo_title: z.string().describe('The SEO title for the page metadata.'),
     seo_description: z.string().describe('The SEO meta description for the page metadata.'),
@@ -61,6 +61,7 @@ Your task is to perform the following actions for the given topic: "{{{topic}}}"
     *   Easy to read, using short paragraphs, bullet points, and numbered lists where appropriate.
     *   Include code examples in markdown code blocks if the topic is technical.
     *   End with a clear call-to-action: \`<Button>Contact TechNext96 Experts</Button>\`
+    *   **Crucially, the 'content' field must ONLY contain the markdown for the blog post body, starting with the first heading. DO NOT include a YAML frontmatter block in the content.**
 4.  **Run a review pass**: Internally review the generated content to:
     *   Fix any grammatical errors and improve readability.
     *   Optimize keyword usage and heading structure for SEO.
