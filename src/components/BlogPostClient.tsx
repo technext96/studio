@@ -1,33 +1,29 @@
-
 'use client';
 
 import { Badge } from "@/components/ui/badge";
-import { type blogPosts } from "@/lib/data.tsx";
-import { ArrowLeft, Share2, Twitter, Linkedin, Facebook, Calendar, User } from "lucide-react";
+import { ArrowLeft, Twitter, Linkedin, Facebook, Calendar, User } from "lucide-react";
 import Link from "next/link";
 import { format } from "date-fns";
-import { illustrationMap } from "@/lib/constants";
 import Script from "next/script";
-import { cn } from "@/lib/utils";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
 import { Button } from "./ui/button";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, ReactNode } from "react";
 
 type BlogPostClientProps = {
-  post: (typeof blogPosts)[0] & { jsonLd?: string };
+  post: {
+    title: string;
+    date: string;
+    tags: string[];
+    author: { name: string };
+    content: ReactNode;
+    excerpt: string;
+    jsonLd?: string;
+  };
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
-  const Illustration = illustrationMap[post.illustration];
   const [pageUrl, setPageUrl] = useState('');
 
   useEffect(() => {
-    // This ensures window is accessed only on the client side, after hydration.
     setPageUrl(window.location.href);
   }, []);
 
@@ -80,7 +76,6 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
       <div className="w-full py-12 md:py-16">
         <div className="px-4 md:px-6 max-w-4xl mx-auto relative">
           
-           {/* Floating Share Bar */}
            <div className="absolute top-0 -left-24 hidden lg:flex flex-col gap-2">
             <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-2">Share</p>
             <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
@@ -95,7 +90,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
           </div>
 
           <article className="prose prose-invert max-w-none prose-lg">
-            <div dangerouslySetInnerHTML={{ __html: post.content.replace(/<Button>/g, '<a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" href="/contact">').replace(/<\/Button>/g, '</a>') }} />
+            {post.content}
           </article>
         </div>
       </div>

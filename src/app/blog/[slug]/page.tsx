@@ -2,11 +2,12 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
 import { PrismaClient } from "@/generated/prisma";
-import { solutions } from "@/lib/data.tsx";
 import { illustrationMap } from "@/lib/constants";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/ui/fade-in";
+import { compileMDX } from 'next-mdx-remote/rsc';
+import { Button } from "@/components/ui/button";
 
 const prisma = new PrismaClient();
 
@@ -29,7 +30,6 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   const ogImage = '/og-image.png';
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
-  // Use the pre-generated SEO metadata from the database
   return {
     title: post.seoTitle,
     description: post.seoDescription,
@@ -85,17 +85,30 @@ export default async function BlogPostPage({ params }: Props) {
     },
   });
 
-  // A bit of a type mapping to fit the existing client component
+  const { content } = await compileMDX({
+    source: post.content,
+    components: {
+      Button: (props) => (
+        <Button asChild>
+          <Link href="/contact" {...props} />
+        </Button>
+      ),
+    },
+    options: {
+      parseFrontmatter: false,
+    },
+  });
+
   const clientPost = {
     ...post,
     date: post.createdAt.toISOString(),
     excerpt: post.description,
+    tags: post.tags,
     category: post.tags.join(', '),
     author: { name: 'TechNext AI Writer', role: 'AI Content Specialist' },
-    illustration: 'aiMl', // Using a default illustration
+    illustration: 'aiMl', 
     jsonLd: post.jsonLd,
-    keyTakeaways: [], // Can be added to schema later if needed
-    faq: [], // Can be added to schema later if needed
+    content: content,
   };
 
   return (
@@ -112,7 +125,7 @@ export default async function BlogPostPage({ params }: Props) {
                   </FadeIn>
                   <div className="mx-auto grid gap-8 md:grid-cols-2 lg:gap-10 max-w-5xl">
                       {relatedPosts.map((relatedPost, i) => {
-                          const ProjectIllustration = illustrationMap['aiMl']; // Default illustration
+                          const ProjectIllustration = illustrationMap['aiMl']; 
                           return (
                           <FadeIn key={relatedPost.slug} style={{ animationDelay: `${i * 0.1}s` }}>
                               <Link href={`/blog/${relatedPost.slug}`} className="group">

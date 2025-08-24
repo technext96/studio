@@ -80,8 +80,16 @@
       @apply border-l-4 border-primary pl-4 italic;
     }
 
+    ul, ol {
+      @apply list-inside space-y-2 pl-2;
+    }
+
     ul {
-      @apply list-disc list-inside space-y-2;
+        @apply list-disc;
+    }
+
+    ol {
+        @apply list-decimal;
     }
 
     table {
