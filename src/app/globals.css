@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,6 +66,10 @@
 
     p, li, blockquote {
        @apply text-lg leading-relaxed text-foreground/80;
+    }
+    
+    p {
+        @apply mb-6;
     }
 
     a {
