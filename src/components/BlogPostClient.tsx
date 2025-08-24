@@ -86,7 +86,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
 
       <div className="w-full py-12 md:py-16">
         <div className="px-4 md:px-6 max-w-4xl mx-auto">
-          <div className="lg:grid lg:grid-cols-[1fr_4fr] lg:gap-12">
+          <div className="lg:grid lg:grid-cols-[auto_1fr] lg:gap-12">
             <aside className="hidden lg:block">
               <div className="sticky top-28">
                 <div className="flex flex-col gap-2 items-start">
