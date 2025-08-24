@@ -45,9 +45,9 @@ export default function IndustriesPage() {
     <>
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-        <div className="px-8 md:px-12 text-center z-10 relative">
-          <FadeIn className="space-y-4">
-            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">Industries We Serve with Distinction</h1>
+        <div className="px-4 md:px-6 text-center z-10 relative">
+          <FadeIn className="space-y-4 max-w-3xl mx-auto">
+            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">Industries We Serve with Distinction</h1>
             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
               We leverage deep industry knowledge to deliver impactful and customized software solutions that meet the unique challenges and regulatory demands of your sector. Our expertise isn't just technical—it's contextual.
             </p>
@@ -56,8 +56,8 @@ export default function IndustriesPage() {
       </section>
 
       <section className="w-full py-16 md:py-24">
-        <div className="px-8 md:px-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {industries.map((industry, i) => {
               const Illustration = illustrationMap[industry.illustration];
               const Icon = iconMap[industry.icon];

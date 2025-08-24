@@ -83,18 +83,18 @@ export default function Header() {
                 "bg-secondary/20 border-b border-border/40 transition-all duration-300",
                 isScrolled ? "-translate-y-full opacity-0 absolute" : "translate-y-0 opacity-100 relative"
              )}>
-                <div className="container flex h-8 max-w-none items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-6">
+                <div className="container flex h-8 max-w-7xl items-center justify-end px-4 md:px-6 text-xs text-foreground/80 gap-4 sm:gap-6">
                    <a href="mailto:technext96@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                        <Mail className="h-3 w-3" />
-                       technext96@gmail.com
+                       <span className="hidden sm:inline">technext96@gmail.com</span>
                    </a>
                     <div className="flex items-center gap-2">
                        <Phone className="h-3 w-3" />
-                       +92 349 1089456
+                        <span className="hidden sm:inline">+92 349 1089456</span>
                    </div>
                 </div>
             </div>
-            <div className="container flex h-16 max-w-none items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
+            <div className="container flex h-16 max-w-7xl items-center justify-between px-4 gap-4 md:px-6 border-b border-border/40">
                 <Link href="/" className={cn(logoClassName, "mr-6 hidden lg:flex")}>
                     TechNext
                 </Link>

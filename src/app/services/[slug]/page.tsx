@@ -81,10 +81,10 @@ export default function ServicePage({ params }: Props) {
 
     return (
         <>
-            <section className="w-full py-20 md:py-28 bg-secondary/50 relative">
+            <section className="w-full py-20 md:py-28 bg-secondary/50 relative pt-24">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-8 md:px-12 z-10 relative">
-                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="px-4 md:px-6 z-10 relative">
+                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center max-w-7xl mx-auto">
                         <FadeIn className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/services">
@@ -109,26 +109,25 @@ export default function ServicePage({ params }: Props) {
             </section>
 
             <section className="w-full py-16 md:py-24">
-                <div className="px-8 md:px-12">
+                <div className="px-4 md:px-6">
                     <FadeIn className="text-center space-y-4 mb-16 max-w-4xl mx-auto">
                          <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our End-to-End Approach</h2>
                          <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We follow a structured, collaborative, and transparent journey to transform your ambitious ideas into market-ready realities. Our process is designed for clarity, efficiency, and exceptional outcomes.</p>
                     </FadeIn>
                     <div className="relative max-w-5xl mx-auto">
-                        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true"></div>
+                        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" aria-hidden="true"></div>
                         {process.map((step, index) => (
-                             <div key={index} className="relative mb-12 md:mb-16">
-                                <FadeIn className="md:flex md:items-center" style={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}>
-                                    <div className="md:w-1/2 p-4 md:p-0"></div>
-                                    <div className="hidden md:block">
-                                        <div className="absolute left-1/2 top-1/2 w-8 h-8 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 border-4 border-background flex items-center justify-center font-bold text-primary-foreground">
+                             <div key={index} className="relative mb-12 last:mb-0">
+                                <FadeIn className="md:grid md:grid-cols-2 md:gap-8 items-start">
+                                    <div className={`relative ${index % 2 === 0 ? 'md:order-2' : ''}`}>
+                                        <div className="absolute left-6 top-1 md:left-1/2 w-12 h-12 bg-primary rounded-full -translate-x-1/2 flex items-center justify-center font-bold text-primary-foreground ring-8 ring-background">
                                            {index + 1}
                                         </div>
-                                    </div>
-                                    <div className="md:w-1/2 p-4 md:p-0">
-                                        <div className={`p-6 bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg shadow-lg md:mx-8`}>
-                                            <h3 className="text-xl font-bold font-headline mb-3 text-primary">{step.title}</h3>
-                                            <p className="text-foreground/80">{step.description}</p>
+                                        <div className="pl-20 md:pl-0 md:ml-12">
+                                            <div className={`p-6 bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg shadow-lg md:mx-8`}>
+                                                <h3 className="text-xl font-bold font-headline mb-3 text-primary">{step.title}</h3>
+                                                <p className="text-foreground/80">{step.description}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </FadeIn>
@@ -140,7 +139,7 @@ export default function ServicePage({ params }: Props) {
             
             {service.slug === 'ai-ml' && (
               <section className="w-full py-16 md:py-24 bg-background">
-                <div className="px-8 md:px-12">
+                <div className="px-4 md:px-6">
                    <FadeIn className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">AI-Powered Vision Document Generator</h2>
                      <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">Have a brilliant idea? Describe it below and let our custom-trained AI create a foundational vision document to kickstart your project planning.</p>
@@ -152,7 +151,7 @@ export default function ServicePage({ params }: Props) {
 
             {service.subServices && (
                  <section className="w-full py-16 md:py-24 bg-secondary/20">
-                    <div className="px-8 md:px-12">
+                    <div className="px-4 md:px-6">
                         <FadeIn className="text-center space-y-4 mb-12 max-w-4xl mx-auto">
                              <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Key Offerings within {service.title}</h2>
                              <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">We provide top-tier expertise across a wide range of specialized areas to deliver comprehensive and effective solutions.</p>
@@ -168,7 +167,7 @@ export default function ServicePage({ params }: Props) {
             
             {relatedSolutions.length > 0 && (
                 <section id="portfolio" className="w-full py-16 md:py-24 bg-background">
-                    <div className="px-8 md:px-12">
+                    <div className="px-4 md:px-6">
                         <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Related Case Studies</h2>
                             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
@@ -201,7 +200,7 @@ export default function ServicePage({ params }: Props) {
             )}
 
              <section className="w-full py-20 md:py-28">
-                <div className="px-8 md:px-12 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <FadeIn className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
                      <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Start Your {service.title} Project?</h2>
                      <p className="text-foreground/80 md:text-lg">

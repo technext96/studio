@@ -90,8 +90,8 @@ export default function IndustryPage({ params }: Props) {
         <>
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/50 relative pt-24">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-8 md:px-12 z-10 relative">
-                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="px-4 md:px-6 z-10 relative">
+                    <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center max-w-7xl mx-auto">
                         <FadeIn className="space-y-6">
                             <Button variant="ghost" asChild className="mb-4 -ml-4">
                                 <Link href="/industries">
@@ -119,10 +119,10 @@ export default function IndustryPage({ params }: Props) {
             </section>
             
              <section className="w-full py-16 md:py-24">
-                <div className="px-8 md:px-12">
+                <div className="px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
                         <FadeIn className="space-y-6">
-                            <h2 className="text-4xl font-headline font-bold">Common Challenges in {industry.title}</h2>
+                            <h2 className="text-3xl font-headline font-bold sm:text-4xl">Common Challenges in {industry.title}</h2>
                             <p className="text-foreground/80 text-lg">
                                 The {industry.title} sector is constantly evolving, facing unique pressures from technological disruption, regulatory shifts, and changing consumer expectations. We understand these complexities and build solutions to overcome them.
                             </p>
@@ -155,9 +155,9 @@ export default function IndustryPage({ params }: Props) {
 
             {relatedProjects.length > 0 && (
                 <section id="portfolio" className="w-full py-16 md:py-24 bg-secondary/20">
-                    <div className="px-8 md:px-12">
+                    <div className="px-4 md:px-6">
                         <FadeIn className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                        <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Related Case Studies</h2>
+                        <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Related Case Studies</h2>
                             <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl/relaxed">
                                 See our expertise in the {industry.title} industry in action. Explore how we've solved real-world problems for clients like you.
                             </p>
@@ -188,9 +188,9 @@ export default function IndustryPage({ params }: Props) {
             )}
 
              <section className="w-full py-20 md:py-28">
-                <div className="px-8 md:px-12 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <FadeIn className="space-y-6 max-w-4xl mx-auto bg-card/50 backdrop-blur-sm border-primary/10 rounded-lg p-10 glow-effect">
-                     <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Ready to Innovate in the {industry.title} Sector?</h2>
+                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl">Ready to Innovate in the {industry.title} Sector?</h2>
                      <p className="text-foreground/80 md:text-lg">
                        Let's discuss how our tailored technology solutions can help you achieve your business goals and set a new standard in your industry. Contact us today for a strategic consultation with our {industry.title} experts.
                      </p>

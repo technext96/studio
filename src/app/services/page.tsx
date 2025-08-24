@@ -68,7 +68,7 @@ export default function ServicesPage() {
                         <CardDescription className="mt-2 text-base">{service.description}</CardDescription>
                       </div>
                     </CardHeader>
-                    <CardFooter className="mt-auto pl-16 sm:pl-[4.5rem]">
+                    <CardFooter className="mt-auto pl-4 sm:pl-16 md:pl-[4.5rem]">
                        <Button asChild>
                            <Link href={`/services/${service.slug}`}>
                             Explore Service <ArrowRight className="ml-2 h-4 w-4" />
