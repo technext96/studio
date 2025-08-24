@@ -1,0 +1,98 @@
+'use server';
+/**
+ * @fileOverview An AI flow to automatically generate a complete, SEO-optimized blog post.
+ *
+ * - generateAutoBlog - A function that handles the blog generation process.
+ * - AutoBlogOutput - The return type for the generateAutoBlog function.
+ */
+
+import { ai } from '@/ai/genkit';
+import { z } from 'zod';
+
+const AutoBlogOutputSchema = z.object({
+  topic: z.string().describe('The trending topic that was selected for the blog post.'),
+  frontmatter: z.object({
+    title: z.string().describe('A catchy, SEO-friendly title for the blog post.'),
+    date: z.string().describe('The current date in YYYY-MM-DD format.'),
+    description: z.string().describe('A strong SEO meta description, maximum 160 characters.'),
+    tags: z.array(z.string()).describe('3–6 relevant keywords as tags.'),
+  }),
+  content: z.string().describe('The full blog post content in MDX format, between 1200-1500 words, including headings, lists, and a call-to-action button.'),
+  seo: z.object({
+    seo_title: z.string().describe('The SEO title for the page metadata.'),
+    seo_description: z.string().describe('The SEO meta description for the page metadata.'),
+    seo_keywords: z.string().describe('A comma-separated list of SEO keywords.'),
+    json_ld: z.string().describe('A complete JSON-LD structured data string for an Article.'),
+  }),
+});
+export type AutoBlogOutput = z.infer<typeof AutoBlogOutputSchema>;
+
+export async function generateAutoBlog(): Promise<AutoBlogOutput> {
+  return autoBlogFlow();
+}
+
+const prompt = ai.definePrompt({
+  name: 'autoBlogPrompt',
+  output: { schema: AutoBlogOutputSchema },
+  prompt: `You are an expert AI writer and SEO strategist for TechNext96 (https://technext96.com), a software development company.
+
+Your task is to perform the following actions in a single, comprehensive step:
+
+1.  **Pick a trending topic**: Choose a relevant and trending topic in AI, intelligent automation, custom software development, or offshore development. The topic should be aimed at attracting business decision-makers (e.g., CTOs, Product Managers, Founders).
+2.  **Write a complete SEO-optimized blog**: Generate a full blog post in MDX format.
+3.  **Include YAML frontmatter**: The post must start with YAML frontmatter containing:
+    *   `title`: A catchy, SEO-friendly title.
+    *   `date`: The current date (YYYY-MM-DD).
+    *   `description`: A compelling meta description, maximum 160 characters.
+    *   `tags`: An array of 3–6 relevant keywords.
+4.  **Blog Content**: The body of the blog must be:
+    *   Between 1200 and 1500 words.
+    *   Well-structured with markdown headings (`##` and `###`).
+    *   Easy to read, using short paragraphs, bullet points, and numbered lists where appropriate.
+    *   Include code examples in markdown code blocks if the topic is technical.
+    *   End with a clear call-to-action: \`<Button>Contact TechNext96 Experts</Button>\`
+5.  **Run a review pass**: Internally review the generated content to:
+    *   Fix any grammatical errors and improve readability.
+    *   Optimize keyword usage and heading structure for SEO.
+    *   Ensure the writing is unique and plagiarism-free.
+6.  **Provide SEO metadata separately**: In the final JSON output, include a separate \`seo\` object with:
+    *   `seo_title`: The title for the page's <title> tag.
+    *   `seo_description`: The meta description.
+    *   `seo_keywords`: A comma-separated string of keywords.
+    *   `json_ld`: A complete JSON-LD structured data script for an \`Article\` schema.
+
+**Output Format**:
+Return a single JSON object that strictly follows this structure, with no additional commentary.
+\`\`\`json
+{
+  "topic": "The chosen trending topic",
+  "frontmatter": {
+    "title": "...",
+    "date": "...",
+    "description": "...",
+    "tags": ["...", "..."]
+  },
+  "content": "The full MDX blog post content...",
+  "seo": {
+    "seo_title": "...",
+    "seo_description": "...",
+    "seo_keywords": "...",
+    "json_ld": "{...}"
+  }
+}
+\`\`\``,
+});
+
+const autoBlogFlow = ai.defineFlow(
+  {
+    name: 'autoBlogFlow',
+    outputSchema: AutoBlogOutputSchema,
+  },
+  async () => {
+    const { output } = await prompt();
+    if (!output) {
+      throw new Error('Failed to generate blog post.');
+    }
+    return output;
+  }
+);
