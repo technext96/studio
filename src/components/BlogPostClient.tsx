@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Badge } from "@/components/ui/badge";
@@ -21,35 +20,21 @@ import { cn } from "@/lib/utils";
 import { FadeIn } from "./ui/fade-in";
 
 type BlogPostClientProps = {
-  post: (typeof blogPosts)[0];
+  post: (typeof blogPosts)[0] & { jsonLd?: string };
 };
 
 export default function BlogPostClient({ post }: BlogPostClientProps) {
   const Illustration = illustrationMap[post.illustration];
   const relatedSolutions = solutions.slice(0, 2);
-
-  const rideShareSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "White-Label Ride-Sharing App",
-    "description": "Launch your Uber-like ride-sharing app with a white-label software solution.",
-    "author": {
-      "@type": "Organization",
-      "name": "TechNext"
-    },
-    "datePublished": "2024-08-05",
-    "url": "https://technext96.com/blog/white-label-rideshare-app"
-  };
-  
   const logoClassName = "font-headline text-2xl font-bold tracking-tight text-primary logo-shimmer";
 
   return (
     <>
-      {post.slug === 'white-label-rideshare-app' && (
+      {post.jsonLd && (
         <Script
           id="blog-post-schema"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(rideShareSchema) }}
+          dangerouslySetInnerHTML={{ __html: post.jsonLd }}
         />
       )}
       <div className="w-full py-16 md:py-24 lg:py-28">
@@ -88,7 +73,7 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
               </div>
             </div>
 
-            {post.keyTakeaways && (
+            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
               <Card className="my-12 bg-card/50 backdrop-blur-sm">
                   <CardHeader>
                       <CardTitle className="font-headline text-2xl">Key Takeaways</CardTitle>
@@ -102,7 +87,8 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
             )}
 
             <article className="prose prose-invert max-w-none">
-              {post.content}
+              {/* This is a temporary fix to render MDX content. A proper MDX parser should be used for full feature support. */}
+              <div dangerouslySetInnerHTML={{ __html: post.content.replace(/<Button>/g, '<a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" href="/contact">').replace(/<\/Button>/g, '</a>') }} />
             </article>
 
             {post.faq && post.faq.length > 0 && (

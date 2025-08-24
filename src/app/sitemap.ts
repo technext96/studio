@@ -1,8 +1,11 @@
 
 import { MetadataRoute } from 'next'
-import { services, industries, blogPosts, solutions } from '@/lib/data.tsx';
+import { services, industries, solutions } from '@/lib/data.tsx';
+import { PrismaClient } from '@/generated/prisma';
+
+const prisma = new PrismaClient();
  
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = 'https://technext96.com';
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -39,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${siteUrl}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 0.7,
     },
     {
@@ -77,9 +80,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  const posts = await prisma.blog.findMany({
+    select: {
+      slug: true,
+      updatedAt: true,
+    },
+  });
+
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: post.updatedAt,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));

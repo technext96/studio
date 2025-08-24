@@ -1,15 +1,19 @@
-
-import { blogPosts } from "@/lib/data.tsx";
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
+import { PrismaClient } from "@/generated/prisma";
+
+const prisma = new PrismaClient();
 
 type Props = {
   params: { slug: string };
 };
 
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = await prisma.blog.findUnique({
+    where: { slug: params.slug },
+  });
+
   if (!post) {
     return {
       title: "Post Not Found",
@@ -17,24 +21,20 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   }
 
   const siteUrl = 'https://technext96.com';
-  const ogImage = post.illustration ? `/images/${post.illustration}.jpg` : '/og-image.png';
+  const ogImage = '/og-image.png';
   const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
-  // ✅ Ensure meta description length is capped at 160 chars
-  const safeDescription = post.excerpt.length > 160 
-    ? post.excerpt.substring(0, 157).trim() + "…" 
-    : post.excerpt;
-
+  // Use the pre-generated SEO metadata from the database
   return {
-    title: post.title,
-    description: safeDescription,
+    title: post.seoTitle,
+    description: post.seoDescription,
+    keywords: post.seoKeywords,
     openGraph: {
-      title: post.title,
-      description: safeDescription,
+      title: post.seoTitle,
+      description: post.seoDescription,
       url: canonicalUrl,
       type: 'article',
-      publishedTime: post.date,
-      authors: [post.author.name],
+      publishedTime: post.createdAt.toISOString(),
       images: [
         {
           url: `${siteUrl}${ogImage}`, 
@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
-      description: safeDescription,
+      title: post.seoTitle,
+      description: post.seoDescription,
       images: [`${siteUrl}${ogImage}`],
     },
     alternates: {
@@ -56,18 +56,37 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: Props) {
+  const post = await prisma.blog.findUnique({
+    where: { slug: params.slug },
+  });
 
   if (!post) {
     notFound();
   }
 
-  return <BlogPostClient post={post} />;
+  // A bit of a type mapping to fit the existing client component
+  const clientPost = {
+    ...post,
+    date: post.createdAt.toISOString(),
+    excerpt: post.description,
+    category: post.tags.join(', '),
+    author: { name: 'TechNext AI Writer', role: 'AI Content Specialist' },
+    illustration: 'aiMl', // Using a default illustration
+    jsonLd: post.jsonLd,
+    keyTakeaways: [], // Can be added to schema later if needed
+    faq: [], // Can be added to schema later if needed
+  };
+
+  return <BlogPostClient post={clientPost} />;
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((p) => ({
+  const posts = await prisma.blog.findMany({
+    select: { slug: true },
+  });
+
+  return posts.map((p) => ({
     slug: p.slug,
   }));
 }

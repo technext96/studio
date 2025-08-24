@@ -1,13 +1,16 @@
 'use server';
 /**
- * @fileOverview An AI flow to automatically generate a complete, SEO-optimized blog post.
+ * @fileOverview An AI flow to automatically generate a complete, SEO-optimized blog post and save it to the database.
  *
- * - generateAutoBlog - A function that handles the blog generation process.
- * - AutoBlogOutput - The return type for the generateAutoBlog function.
+ * - generateAndSaveAutoBlog - A function that triggers the blog generation and saving process.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
+import { PrismaClient } from '@/generated/prisma';
+import slugify from 'slugify';
+
+const prisma = new PrismaClient();
 
 const AutoBlogOutputSchema = z.object({
   topic: z.string().describe('The trending topic that was selected for the blog post.'),
@@ -25,10 +28,9 @@ const AutoBlogOutputSchema = z.object({
     json_ld: z.string().describe('A complete JSON-LD structured data string for an Article.'),
   }),
 });
-export type AutoBlogOutput = z.infer<typeof AutoBlogOutputSchema>;
 
-export async function generateAutoBlog(): Promise<AutoBlogOutput> {
-  return autoBlogFlow();
+export async function generateAndSaveAutoBlog(): Promise<void> {
+  await autoBlogFlow();
 }
 
 const prompt = ai.definePrompt({
@@ -47,7 +49,7 @@ Your task is to perform the following actions in a single, comprehensive step:
     *   `tags`: An array of 3–6 relevant keywords.
 4.  **Blog Content**: The body of the blog must be:
     *   Between 1200 and 1500 words.
-    *   Well-structured with markdown headings (`##` and `###`).
+    *   Well-structured with markdown headings ('##' and '###').
     *   Easy to read, using short paragraphs, bullet points, and numbered lists where appropriate.
     *   Include code examples in markdown code blocks if the topic is technical.
     *   End with a clear call-to-action: \`<Button>Contact TechNext96 Experts</Button>\`
@@ -86,13 +88,32 @@ Return a single JSON object that strictly follows this structure, with no additi
 const autoBlogFlow = ai.defineFlow(
   {
     name: 'autoBlogFlow',
-    outputSchema: AutoBlogOutputSchema,
+    outputSchema: z.void(),
   },
   async () => {
     const { output } = await prompt();
     if (!output) {
       throw new Error('Failed to generate blog post.');
     }
-    return output;
+
+    const { frontmatter, content, seo } = output;
+    const slug = slugify(frontmatter.title, { lower: true, strict: true });
+
+    await prisma.blog.create({
+      data: {
+        slug: slug,
+        title: frontmatter.title,
+        description: frontmatter.description,
+        content: content,
+        tags: frontmatter.tags,
+        seoTitle: seo.seo_title,
+        seoDescription: seo.seo_description,
+        seoKeywords: seo.seo_keywords,
+        jsonLd: seo.json_ld,
+        createdAt: new Date(frontmatter.date),
+      },
+    });
+
+    console.log(`Successfully generated and saved blog post: ${slug}`);
   }
 );
