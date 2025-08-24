@@ -43,10 +43,10 @@ export default function ServicesPage() {
   return (
     <>
       <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20">
-        <div className="px-8 md:px-12">
-          <FadeIn className="text-center space-y-4">
-            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl">Our Suite of Services</h1>
-            <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
+        <div className="px-4 md:px-6">
+          <FadeIn className="text-center space-y-4 max-w-4xl mx-auto">
+            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl">Our Suite of Services</h1>
+            <p className="text-foreground/80 text-base sm:text-lg md:text-xl">
               We provide comprehensive, end-to-end technology solutions designed to help you build, scale, and innovate your digital presence. Explore how our expertise across a wide range of services can empower your business to reach its full potential.
             </p>
           </FadeIn>
@@ -54,21 +54,21 @@ export default function ServicesPage() {
       </section>
 
       <section className="w-full py-16 md:py-24">
-        <div className="px-8 md:px-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <div className="px-4 md:px-6">
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
             {services.map((service, i) => {
               const Icon = iconMap[service.icon];
               return (
               <FadeIn key={service.slug} style={{ animationDelay: `${i * 0.05}s`}}>
                   <Card className="group hover:shadow-lg transition-shadow duration-300 flex flex-col h-full bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/50">
-                    <CardHeader className="flex flex-row items-start gap-6">
-                      <div className="text-primary mt-1 flex-shrink-0">{Icon && <Icon className="w-10 h-10" />}</div>
+                    <CardHeader className="flex flex-row items-start gap-4 sm:gap-6">
+                      <div className="text-primary mt-1 flex-shrink-0">{Icon && <Icon className="w-8 h-8 sm:w-10 sm:h-10" />}</div>
                       <div>
-                        <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                        <CardTitle className="font-headline text-xl sm:text-2xl">{service.title}</CardTitle>
                         <CardDescription className="mt-2 text-base">{service.description}</CardDescription>
                       </div>
                     </CardHeader>
-                    <CardFooter className="mt-auto pl-[4.5rem]">
+                    <CardFooter className="mt-auto pl-16 sm:pl-[4.5rem]">
                        <Button asChild>
                            <Link href={`/services/${service.slug}`}>
                             Explore Service <ArrowRight className="ml-2 h-4 w-4" />

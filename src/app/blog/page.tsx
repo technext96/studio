@@ -46,21 +46,21 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
+      <section className="w-full py-20 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div className="px-4 md:px-6 text-center z-10 relative">
-          <FadeIn className="space-y-2">
-            <h1 className="text-3xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">From Our Digital Labs</h1>
-            <p className="max-w-[600px] mx-auto text-foreground/80 md:text-xl">
+          <FadeIn className="space-y-4">
+            <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl text-primary">From Our Digital Labs</h1>
+            <p className="max-w-[700px] mx-auto text-foreground/80 text-base sm:text-lg md:text-xl">
               Dive into our collection of expert insights, in-depth tutorials, and forward-thinking articles on the future of technology. Your resource for staying ahead in the digital age.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      <section className="w-full py-12 md:py-24">
+      <section className="w-full py-16 md:py-24">
         <div className="px-4 md:px-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 max-w-7xl mx-auto">
             {blogPosts.map((post, i) => {
               const Illustration = illustrationMap[post.illustration];
               return (

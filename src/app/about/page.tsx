@@ -84,10 +84,10 @@ export default function AboutPage() {
         <>
             <section className="w-full py-20 md:py-28 lg:py-36 bg-secondary/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-                <div className="px-8 md:px-12 text-center z-10 relative">
+                <div className="px-4 md:px-6 text-center z-10 relative">
                     <FadeIn className="space-y-4">
-                        <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-6xl text-primary">We’re More Than a Team, We’re Architects of the Future</h1>
-                        <p className="max-w-3xl mx-auto text-foreground/80 md:text-xl">
+                        <h1 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">We’re More Than a Team, We’re Architects of the Future</h1>
+                        <p className="max-w-3xl mx-auto text-foreground/80 text-base sm:text-lg md:text-xl">
                             We are a passionate collective of thinkers, creators, and problem-solvers dedicated to crafting reliable and scalable software solutions.
                         </p>
                     </FadeIn>
@@ -95,21 +95,21 @@ export default function AboutPage() {
             </section>
 
             <section className="w-full py-16 md:py-24">
-                <div className="px-8 md:px-12">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
                         <FadeIn className="space-y-8">
-                            <div className="flex items-start gap-6">
-                                <div className="bg-primary/10 text-primary p-4 rounded-full flex-shrink-0"><Eye className="h-7 w-7" /></div>
+                            <div className="flex items-start gap-4">
+                                <div className="bg-primary/10 text-primary p-3 sm:p-4 rounded-full flex-shrink-0"><Eye className="h-6 w-6 sm:h-7 sm:w-7" /></div>
                                 <div>
-                                    <h2 className="text-3xl font-headline font-bold">Our Vision</h2>
-                                    <p className="text-foreground/80 mt-3">To be a globally recognized leader in technology innovation, empowering businesses to thrive in the digital age through intelligent and impactful solutions.</p>
+                                    <h2 className="text-2xl sm:text-3xl font-headline font-bold">Our Vision</h2>
+                                    <p className="text-foreground/80 mt-2 text-base sm:text-lg">To be a globally recognized leader in technology innovation, empowering businesses to thrive in the digital age through intelligent and impactful solutions.</p>
                                 </div>
                             </div>
-                             <div className="flex items-start gap-6">
-                                <div className="bg-primary/10 text-primary p-4 rounded-full flex-shrink-0"><Target className="h-7 w-7" /></div>
+                             <div className="flex items-start gap-4">
+                                <div className="bg-primary/10 text-primary p-3 sm:p-4 rounded-full flex-shrink-0"><Target className="h-6 w-6 sm:h-7 sm:w-7" /></div>
                                 <div>
-                                    <h2 className="text-3xl font-headline font-bold">Our Mission</h2>
-                                    <p className="text-foreground/80 mt-3">Our mission is to build enduring partnerships by delivering superior quality software and strategic insights, fostering a culture of collaboration and excellence.</p>
+                                    <h2 className="text-2xl sm:text-3xl font-headline font-bold">Our Mission</h2>
+                                    <p className="text-foreground/80 mt-2 text-base sm:text-lg">Our mission is to build enduring partnerships by delivering superior quality software and strategic insights, fostering a culture of collaboration and excellence.</p>
                                 </div>
                             </div>
                         </FadeIn>
@@ -123,46 +123,46 @@ export default function AboutPage() {
             </section>
 
              <section className="w-full py-16 md:py-24 bg-secondary/20">
-                <div className="px-8 md:px-12">
-                     <FadeIn className="text-center space-y-3 mb-16">
-                         <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Our Core Values</h2>
-                         <p className="max-w-3xl mx-auto text-foreground/80 md:text-lg">These are the fundamental principles that guide every decision we make, every line of code we write, and every relationship we build.</p>
+                <div className="px-4 md:px-6">
+                     <FadeIn className="text-center space-y-3 mb-12 md:mb-16">
+                         <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Core Values</h2>
+                         <p className="max-w-3xl mx-auto text-foreground/80 text-base sm:text-lg md:text-xl">These are the fundamental principles that guide every decision we make, every line of code we write, and every relationship we build.</p>
                     </FadeIn>
-                    <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
                         <FadeIn className="space-y-4">
-                            <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                                <Gem className="h-9 w-9"/>
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                <Gem className="h-8 w-8 sm:h-9 sm:w-9"/>
                             </div>
-                            <h3 className="font-headline text-2xl font-bold">Innovation</h3>
-                            <p className="text-foreground/80">We are driven by a relentless curiosity to explore emerging technologies and find creative, cutting-edge solutions to complex problems.</p>
+                            <h3 className="font-headline text-xl sm:text-2xl font-bold">Innovation</h3>
+                            <p className="text-foreground/80 text-base sm:text-lg">We are driven by a relentless curiosity to explore emerging technologies and find creative, cutting-edge solutions to complex problems.</p>
                         </FadeIn>
                          <FadeIn className="space-y-4" style={{animationDelay: '0.1s'}}>
-                            <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                                <CheckCircle2 className="h-9 w-9"/>
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                <CheckCircle2 className="h-8 w-8 sm:h-9 sm:w-9"/>
                             </div>
-                            <h3 className="font-headline text-2xl font-bold">Integrity</h3>
-                            <p className="text-foreground/80">We operate with unwavering transparency and honesty. Trust is the foundation of our relationships, and we build it with our clients and team members.</p>
+                            <h3 className="font-headline text-xl sm:text-2xl font-bold">Integrity</h3>
+                            <p className="text-foreground/80 text-base sm:text-lg">We operate with unwavering transparency and honesty. Trust is the foundation of our relationships, and we build it with our clients and team members.</p>
                         </FadeIn>
                          <FadeIn className="space-y-4" style={{animationDelay: '0.2s'}}>
-                            <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                               <Users className="h-9 w-9"/>
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                               <Users className="h-8 w-8 sm:h-9 sm:w-9"/>
                             </div>
-                            <h3 className="font-headline text-2xl font-bold">Collaboration</h3>
-                            <p className="text-foreground/80">We believe that the most brilliant results are born from teamwork. We combine diverse perspectives and expertise to achieve common goals.</p>
+                            <h3 className="font-headline text-xl sm:text-2xl font-bold">Collaboration</h3>
+                            <p className="text-foreground/80 text-base sm:text-lg">We believe that the most brilliant results are born from teamwork. We combine diverse perspectives and expertise to achieve common goals.</p>
                         </FadeIn>
                     </div>
                 </div>
             </section>
             
             <section className="w-full py-20 md:py-28">
-                <div className="px-8 md:px-12 text-center">
+                <div className="px-4 md:px-6 text-center">
                    <FadeIn className="space-y-6">
-                     <h2 className="text-4xl font-headline font-bold tracking-tighter sm:text-5xl">Join Our Team of Innovators</h2>
-                     <p className="text-foreground/80 md:text-lg">
+                     <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">Join Our Team of Innovators</h2>
+                     <p className="text-foreground/80 text-base sm:text-lg md:text-xl">
                        We are always searching for passionate, talented, and driven individuals to join our growing family. If you are ready to make an impact on the future of technology, we invite you to explore our open positions.
                      </p>
                      <div className="pt-4">
-                         <Button asChild size="lg" className="text-lg px-8 py-6">
+                         <Button asChild size="lg" className="text-lg px-6 py-5 sm:px-8 sm:py-6">
                            <Link href="/careers">View Open Careers</Link>
                          </Button>
                      </div>
