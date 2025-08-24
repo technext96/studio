@@ -62,10 +62,10 @@ Your task is to perform the following actions for the given topic: "{{{topic}}}"
     *   Optimize keyword usage and heading structure for SEO.
     *   Ensure the writing is unique and plagiarism-free.
 5.  **Provide SEO metadata separately**: In the final JSON output, include a separate \`seo\` object with:
-    *   `seo_title`: The title for the page's <title> tag.
-    *   `seo_description`: The meta description.
-    *   `seo_keywords`: A comma-separated string of keywords.
-    *   `json_ld`: A complete JSON-LD structured data script for an \`Article\` schema.
+    *   \`seo_title\`: The title for the page's <title> tag.
+    *   \`seo_description\`: The meta description.
+    *   \`seo_keywords\`: A comma-separated string of keywords.
+    *   \`json_ld\`: A complete JSON-LD structured data script for an \`Article\` schema.
 
 **Output Format**:
 Return a single JSON object that strictly follows this structure, with no additional commentary.
