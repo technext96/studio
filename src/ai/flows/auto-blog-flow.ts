@@ -91,29 +91,43 @@ const autoBlogFlow = ai.defineFlow(
     outputSchema: z.void(),
   },
   async () => {
+    console.log('[AutoBlog] Starting blog generation flow...');
     const { output } = await prompt();
+    
     if (!output) {
+      console.error('[AutoBlog] Failed to generate blog post from AI. Output was null.');
       throw new Error('Failed to generate blog post.');
     }
+
+    console.log(`[AutoBlog] AI generated content for topic: ${output.topic}`);
+    // console.log('[AutoBlog] Full AI Output:', JSON.stringify(output, null, 2));
 
     const { frontmatter, content, seo } = output;
     const slug = slugify(frontmatter.title, { lower: true, strict: true });
 
-    await prisma.blog.create({
-      data: {
-        slug: slug,
-        title: frontmatter.title,
-        description: frontmatter.description,
-        content: content,
-        tags: frontmatter.tags,
-        seoTitle: seo.seo_title,
-        seoDescription: seo.seo_description,
-        seoKeywords: seo.seo_keywords,
-        jsonLd: seo.json_ld,
-        createdAt: new Date(frontmatter.date),
-      },
-    });
+    const blogData = {
+      slug: slug,
+      title: frontmatter.title,
+      description: frontmatter.description,
+      content: content,
+      tags: frontmatter.tags,
+      seoTitle: seo.seo_title,
+      seoDescription: seo.seo_description,
+      seoKeywords: seo.seo_keywords,
+      jsonLd: seo.json_ld,
+      createdAt: new Date(frontmatter.date),
+    };
 
-    console.log(`Successfully generated and saved blog post: ${slug}`);
+    try {
+      console.log(`[AutoBlog] Attempting to save blog post with slug: ${slug}`);
+      await prisma.blog.create({
+        data: blogData,
+      });
+      console.log(`[AutoBlog] Successfully saved blog post: ${slug}`);
+    } catch (error) {
+      console.error(`[AutoBlog] Error saving blog post to database for slug: ${slug}`, error);
+      // Re-throw the error to ensure the calling process knows it failed.
+      throw error;
+    }
   }
 );
