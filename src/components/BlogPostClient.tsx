@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Badge } from "@/components/ui/badge";
@@ -85,17 +86,19 @@ export default function BlogPostClient({ post }: BlogPostClientProps) {
       <div className="w-full py-12 md:py-16">
         <div className="px-4 md:px-6 max-w-4xl mx-auto relative">
           
-           <div className="absolute top-0 -left-24 hidden lg:flex flex-col gap-2">
-            <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-2">Share</p>
-            <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
-              <Twitter className="h-5 w-5" />
-            </a>
-            <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
-              <Linkedin className="h-5 w-5" />
-            </a>
-             <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
-              <Facebook className="h-5 w-5" />
-            </a>
+           <div className="absolute top-8 -left-28 hidden lg:block">
+            <div className="sticky top-28 flex flex-col gap-2">
+                <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mb-2">Share</p>
+                <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-secondary hover:bg-primary/20 text-primary transition-colors">
+                  <Facebook className="h-5 w-5" />
+                </a>
+            </div>
           </div>
 
           <article 
