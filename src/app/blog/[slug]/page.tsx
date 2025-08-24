@@ -2,7 +2,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaClient, Blog } from "@/generated/prisma";
 import { illustrationMap } from "@/lib/constants";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,10 +16,20 @@ type Props = {
   params: { slug: string };
 };
 
+async function getPost(slug: string): Promise<Blog | null> {
+  try {
+    const post = await prisma.blog.findUnique({
+      where: { slug: slug },
+    });
+    return post;
+  } catch (error) {
+    console.warn(`Could not fetch post with slug "${slug}". Please check your database connection and schema.`, error);
+    return null;
+  }
+}
+
 export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  const post = await prisma.blog.findUnique({
-    where: { slug: params.slug },
-  });
+  const post = await getPost(params.slug);
 
   if (!post) {
     return {
@@ -69,28 +79,32 @@ const removeFrontmatter = (markdown: string) => {
 };
 
 export default async function BlogPostPage({ params }: Props) {
-  const post = await prisma.blog.findUnique({
-    where: { slug: params.slug },
-  });
+  const post = await getPost(params.slug);
 
   if (!post) {
     notFound();
   }
   
-  const relatedPosts = await prisma.blog.findMany({
-    where: {
-      tags: {
-        hasSome: post.tags,
+  let relatedPosts: Blog[] = [];
+  try {
+    relatedPosts = await prisma.blog.findMany({
+      where: {
+        tags: {
+          hasSome: post.tags,
+        },
+        NOT: {
+          id: post.id,
+        },
       },
-      NOT: {
-        id: post.id,
+      take: 2,
+      orderBy: {
+        createdAt: 'desc',
       },
-    },
-    take: 2,
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+    });
+  } catch (error) {
+     console.warn(`Could not fetch related posts. Please check your database connection and schema.`, error);
+  }
+
 
   const contentWithoutFrontmatter = removeFrontmatter(post.content);
   
@@ -110,7 +124,7 @@ export default async function BlogPostPage({ params }: Props) {
     category: post.tags.join(', '),
     author: { name: 'TechNext AI Writer', role: 'AI Content Specialist' },
     illustration: post.image || 'aiMl',
-    jsonLd: post.jsonLd,
+    jsonLd: post.jsonLd ? JSON.stringify(post.jsonLd) : null,
     content: parsedContent,
   };
 

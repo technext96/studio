@@ -1,9 +1,10 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 import Link from "next/link";
 import { format } from "date-fns";
 import { FadeIn } from "@/components/ui/fade-in";
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaClient, Blog } from "@/generated/prisma";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -46,14 +47,20 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const posts = await prisma.blog.findMany({
-    orderBy: {
-      createdAt: 'desc',
-    },
-  });
+  let posts: Blog[] = [];
+  try {
+    posts = await prisma.blog.findMany({
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  } catch (error) {
+    console.warn("Could not fetch blog posts. Please check your database connection and schema.", error);
+  }
 
-  const featuredPost = posts.find(p => p.featured) || posts[0];
-  const otherPosts = posts.filter(p => p.id !== featuredPost?.id);
+
+  const featuredPost = posts.find(p => p.featured) || (posts.length > 0 ? posts[0] : null);
+  const otherPosts = featuredPost ? posts.filter(p => p.id !== featuredPost.id) : posts;
   const FeaturedIllustration = featuredPost ? illustrationMap[featuredPost.image || 'aiMl'] : null;
 
   return (
@@ -130,6 +137,12 @@ export default async function BlogPage() {
               </FadeIn>
             )})}
           </div>
+          {posts.length === 0 && !featuredPost && (
+            <div className="text-center py-16">
+              <h2 className="text-2xl font-headline font-semibold">No Blog Posts Found</h2>
+              <p className="text-foreground/80 mt-2">Check back later for new articles, or ensure your database is connected and migrated correctly.</p>
+            </div>
+          )}
         </div>
       </section>
     </>
