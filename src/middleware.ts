@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getIronSession } from 'iron-session';
+import { cookies } from 'next/headers';
 import { SessionData, sessionOptions } from '@/lib/session';
 
 export async function middleware(request: NextRequest) {
-  const session = await getIronSession<SessionData>(request, sessionOptions);
+  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
   const { pathname } = request.nextUrl;
 
   // If user is trying to access admin routes without a session, redirect to login
