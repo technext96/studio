@@ -11,7 +11,17 @@ type ActionResult = {
   message: string;
 };
 
-export async function updateBlogStatus(id: string, action: BlogAction): Promise<ActionResult> {
+export async function updateBlogStatus(
+  prevState: ActionResult, 
+  formData: FormData
+): Promise<ActionResult> {
+  const id = formData.get('id') as string;
+  const action = formData.get('action') as BlogAction;
+
+  if (!id || !action) {
+    return { success: false, message: 'Invalid form data. Missing ID or action.' };
+  }
+  
   try {
     let updateData: Prisma.BlogUpdateInput = {};
 
@@ -26,12 +36,16 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
         updateData = { status: 'PUBLISHED' };
         break;
       case 'feature':
-        // When featuring a post, un-feature all others first
-        await prisma.blog.updateMany({
-          where: { featured: true },
-          data: { featured: false },
+        await prisma.$transaction(async (tx) => {
+          await tx.blog.updateMany({
+            where: { featured: true },
+            data: { featured: false },
+          });
+          await tx.blog.update({
+            where: { id },
+            data: { featured: true, status: 'PUBLISHED' },
+          });
         });
-        updateData = { featured: true, status: 'PUBLISHED' }; // Featuring also publishes it
         break;
       case 'unfeature':
         updateData = { featured: false };
@@ -40,10 +54,12 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
         return { success: false, message: 'Invalid action specified.' };
     }
 
-    await prisma.blog.update({
-      where: { id },
-      data: updateData,
-    });
+    if (action !== 'feature') {
+        await prisma.blog.update({
+          where: { id },
+          data: updateData,
+        });
+    }
 
     revalidatePath('/admin/blogs');
     revalidatePath('/blog');
@@ -58,7 +74,7 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
       if (error.code === 'P2025') {
         return { success: false, message: `Error: Blog post not found.` };
       }
-      return { success: false, message: `Database error: ${error.code}.` };
+      return { success: false, message: `Database error: ${error.code}. Check server logs.` };
     }
     
     if (error instanceof Prisma.PrismaClientInitializationError) {
@@ -68,3 +84,5 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
     return { success: false, message: 'An unexpected server error occurred. Please check the server logs.' };
   }
 }
+
+    

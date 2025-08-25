@@ -1,71 +1,63 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
+import { useFormState } from 'react-dom';
 import { type Blog } from '@prisma/client';
-import { updateBlogStatus, type BlogAction } from './actions';
-import { Check, X, Send, Star, Loader2 } from 'lucide-react';
+import { updateBlogStatus } from './actions';
+import { Check, X, Send, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { ActionButton } from './ActionButton';
 
 interface ActionButtonsProps {
   blog: Blog;
 }
 
+const initialState = {
+  success: false,
+  message: '',
+};
+
 export default function ActionButtons({ blog }: ActionButtonsProps) {
-  const [loadingAction, setLoadingAction] = useState<BlogAction | null>(null);
-  const router = useRouter();
+  const [state, dispatch] = useFormState(updateBlogStatus, initialState);
   const { toast } = useToast();
 
-  const handleAction = async (action: BlogAction) => {
-    setLoadingAction(action);
-    try {
-      const result = await updateBlogStatus(blog.id, action);
-
-      if (result && result.success) {
-        toast({ title: 'Success', description: result.message });
-        router.refresh(); // This is the key fix: force a refresh to get new server data
+  useEffect(() => {
+    if (state.message) {
+      if (state.success) {
+        toast({ title: 'Success', description: state.message });
       } else {
-        toast({ 
-          title: 'Error', 
-          description: result?.message || 'An unknown error occurred.', 
-          variant: 'destructive' 
+        toast({
+          title: 'Error',
+          description: state.message,
+          variant: 'destructive',
         });
       }
-    } catch (error) {
-      console.error(`Action failed: ${action}`, error);
-      toast({
-        title: 'Action Failed',
-        description: 'An unexpected error occurred. Please check browser console for details.',
-        variant: 'destructive',
-      });
-    } finally {
-      setLoadingAction(null);
     }
-  };
-  
-  const renderButton = (action: BlogAction, icon: React.ReactNode, text: string, variant: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" = "outline", disabled = false) => {
-    const isLoading = loadingAction === action;
-    return (
-      <Button
-        size="sm"
-        variant={variant}
-        onClick={() => handleAction(action)}
-        disabled={isLoading || disabled}
-        className="text-xs h-8"
-      >
-        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : icon}
-        {text}
-      </Button>
-    );
-  };
+  }, [state, toast]);
 
   return (
-    <div className="flex gap-2 justify-end">
-      {blog.status !== 'APPROVED' && blog.status !== 'PUBLISHED' && renderButton('approve', <Check className="mr-1 h-4 w-4" />, 'Approve', 'secondary')}
-      {blog.status !== 'REJECTED' && renderButton('reject', <X className="mr-1 h-4 w-4" />, 'Reject', 'destructive')}
-      {blog.status === 'APPROVED' && renderButton('publish', <Send className="mr-1 h-4 w-4" />, 'Publish')}
-      {renderButton(blog.featured ? 'unfeature' : 'feature', <Star className="mr-1 h-4 w-4" />, blog.featured ? 'Un-Feature' : 'Feature', blog.featured ? 'default' : 'outline')}
-    </div>
+    <form action={dispatch} className="flex gap-2 justify-end">
+      <input type="hidden" name="id" value={blog.id} />
+      <input type="hidden" name="isFeatured" value={String(blog.featured)} />
+      
+      {blog.status !== 'APPROVED' && blog.status !== 'PUBLISHED' && (
+        <ActionButton action="approve" icon={<Check className="mr-1 h-4 w-4" />} text="Approve" variant="secondary" />
+      )}
+      {blog.status !== 'REJECTED' && (
+        <ActionButton action="reject" icon={<X className="mr-1 h-4 w-4" />} text="Reject" variant="destructive" />
+      )}
+      {blog.status === 'APPROVED' && (
+        <ActionButton action="publish" icon={<Send className="mr-1 h-4 w-4" />} text="Publish" />
+      )}
+      
+      <ActionButton
+        action={blog.featured ? 'unfeature' : 'feature'}
+        icon={<Star className="mr-1 h-4 w-4" />}
+        text={blog.featured ? 'Un-Feature' : 'Feature'}
+        variant={blog.featured ? 'default' : 'outline'}
+      />
+    </form>
   );
 }
+
+    
