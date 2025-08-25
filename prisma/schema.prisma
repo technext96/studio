@@ -12,21 +12,21 @@ datasource db {
 }
 
 model Blog {
-  id             String     @id @default(cuid())
-  slug           String     @unique
-  title          String
-  description    String?
-  content        String
-  tags           String[]
-  image          String?
-  featured       Boolean    @default(false)
-  status         BlogStatus @default(PENDING)
-  createdAt      DateTime   @default(now())
-  updatedAt      DateTime   @updatedAt
-  seoTitle       String?
-  seoDescription String?
-  seoKeywords    String?
-  jsonLd         Json?
+  id              String      @id @default(cuid())
+  slug            String      @unique
+  title           String
+  description     String
+  content         String      @db.Text
+  tags            String[]
+  image           String?
+  featured        Boolean     @default(false)
+  status          BlogStatus  @default(PENDING)
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  seoTitle        String?
+  seoDescription  String?
+  seoKeywords     String?
+  jsonLd          Json?
 }
 
 enum BlogStatus {
