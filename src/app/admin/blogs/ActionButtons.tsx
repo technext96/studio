@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Blog } from '@/generated/prisma';
-import { updateBlogStatus, BlogAction } from './actions';
+import { type Blog } from '@prisma/client';
+import { updateBlogStatus, type BlogAction } from './actions';
 import { Check, X, Send, Star, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
