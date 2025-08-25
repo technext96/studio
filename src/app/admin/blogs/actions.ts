@@ -18,8 +18,7 @@ export async function updateBlogStatus(
 ): Promise<ActionResult> {
   const id = formData.get('id') as string;
   const action = formData.get('action') as BlogAction;
-  const isFeatured = formData.get('isFeatured') === 'true';
-
+  
   if (!id || !action) {
     return { success: false, message: 'Invalid form data. Missing ID or action.' };
   }
