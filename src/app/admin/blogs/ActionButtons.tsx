@@ -1,9 +1,8 @@
 
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useActionState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useFormState } from 'react-dom';
 import { type Blog } from '@/generated/prisma';
 import { updateBlogStatus } from './actions';
 import { useToast } from '@/hooks/use-toast';
@@ -20,7 +19,7 @@ const initialState = {
 };
 
 export default function ActionButtons({ blog }: ActionButtonsProps) {
-  const [state, dispatch] = useFormState(updateBlogStatus, initialState);
+  const [state, dispatch] = useActionState(updateBlogStatus, initialState);
   const router = useRouter();
   const { toast } = useToast();
 
