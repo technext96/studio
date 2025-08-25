@@ -1,13 +1,13 @@
 'use server';
 
-import { PrismaClient } from '@/generated/prisma';
+import { PrismaClient, Prisma } from '@/generated/prisma';
 import { revalidatePath } from 'next/cache';
 
 const prisma = new PrismaClient();
 
 export type BlogAction = 'approve' | 'reject' | 'publish' | 'feature' | 'unfeature';
 
-export async function updateBlogStatus(id: string, action: BlogAction) {
+export async function updateBlogStatus(id: string, action: BlogAction): Promise<{ success: boolean; message: string; }> {
   try {
     let updateData: any = {};
 
@@ -33,7 +33,7 @@ export async function updateBlogStatus(id: string, action: BlogAction) {
         updateData = { featured: false };
         break;
       default:
-        throw new Error('Invalid action');
+        return { success: false, message: 'Invalid action.' };
     }
 
     await prisma.blog.update({
@@ -48,6 +48,9 @@ export async function updateBlogStatus(id: string, action: BlogAction) {
     return { success: true, message: `Blog post ${action}ed successfully.` };
   } catch (error) {
     console.error(`Failed to ${action} blog post:`, error);
-    return { success: false, message: `Failed to ${action} blog post.` };
+    if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+      return { success: false, message: `Database error: Failed to ${action} blog post.` };
+    }
+    return { success: false, message: `An unexpected error occurred.` };
   }
 }
