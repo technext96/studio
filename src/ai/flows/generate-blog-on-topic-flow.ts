@@ -122,7 +122,8 @@ const blogOnTopicFlow = ai.defineFlow(
       content: content,
       tags: frontmatter.tags,
       image: frontmatter.image,
-      featured: false, // Default to not featured
+      featured: false,
+      status: 'PENDING', // Default to PENDING for review
       seoTitle: seo.seo_title,
       seoDescription: seo.seo_description,
       seoKeywords: seo.seo_keywords,
@@ -131,15 +132,6 @@ const blogOnTopicFlow = ai.defineFlow(
     };
 
     try {
-      // Un-feature all other posts first
-      await prisma.blog.updateMany({
-        where: { featured: true },
-        data: { featured: false },
-      });
-      
-      // Set the new post as featured
-      blogData.featured = true;
-
       console.log(`[BlogOnTopic] Attempting to save blog post with slug: ${slug}`);
       await prisma.blog.create({
         data: blogData,

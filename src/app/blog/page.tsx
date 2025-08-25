@@ -50,6 +50,9 @@ export default async function BlogPage() {
   let posts: Blog[] = [];
   try {
     posts = await prisma.blog.findMany({
+      where: {
+        status: 'PUBLISHED',
+      },
       orderBy: {
         createdAt: 'desc',
       },
@@ -137,7 +140,7 @@ export default async function BlogPage() {
               </FadeIn>
             )})}
           </div>
-          {posts.length === 0 && !featuredPost && (
+          {posts.length === 0 && (
             <div className="text-center py-16">
               <h2 className="text-2xl font-headline font-semibold">No Blog Posts Found</h2>
               <p className="text-foreground/80 mt-2">Check back later for new articles, or ensure your database is connected and migrated correctly.</p>
