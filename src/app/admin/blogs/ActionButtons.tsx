@@ -18,17 +18,27 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
 
   const handleAction = async (action: BlogAction) => {
     setLoadingAction(action);
-    const result = await updateBlogStatus(blog.id, action);
-    setLoadingAction(null);
+    try {
+      const result = await updateBlogStatus(blog.id, action);
 
-    if (result && result.success) {
-      toast({ title: 'Success', description: result.message });
-    } else {
-      toast({ 
-        title: 'Error', 
-        description: result?.message || 'An unexpected error occurred.', 
-        variant: 'destructive' 
+      if (result && result.success) {
+        toast({ title: 'Success', description: result.message });
+      } else {
+        toast({ 
+          title: 'Error', 
+          description: result?.message || 'An unknown error occurred.', 
+          variant: 'destructive' 
+        });
+      }
+    } catch (error) {
+      console.error(`Action failed: ${action}`, error);
+      toast({
+        title: 'Action Failed',
+        description: 'An unexpected error occurred on the server. Please check the console.',
+        variant: 'destructive',
       });
+    } finally {
+      setLoadingAction(null);
     }
   };
   

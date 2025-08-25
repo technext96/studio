@@ -46,12 +46,20 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
     revalidatePath('/blog');
     revalidatePath('/');
     
-    return { success: true, message: `Blog post ${action}ed successfully.` };
+    return { success: true, message: `Blog post action '${action}' completed successfully.` };
   } catch (error) {
     console.error(`Failed to ${action} blog post:`, error);
-    if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
-      return { success: false, message: `Database error: Failed to ${action} blog post.` };
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+       // Example: The record to be updated does not exist.
+      if (error.code === 'P2025') {
+        return { success: false, message: `Blog post not found. It may have been deleted.` };
+      }
+      return { success: false, message: `A database error occurred: ${error.message}` };
     }
-    return { success: false, message: `An unexpected server error occurred.` };
+     if (error instanceof Prisma.PrismaClientInitializationError) {
+      return { success: false, message: `Could not connect to the database. Please check your connection string.` };
+    }
+    
+    return { success: false, message: 'An unexpected server error occurred. Please check the server logs.' };
   }
 }
