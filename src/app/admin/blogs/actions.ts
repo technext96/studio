@@ -13,10 +13,13 @@ export type ActionResult = {
 };
 
 export async function updateBlogStatus(
-  id: string,
-  action: BlogAction,
-  isFeatured: boolean
+  prevState: ActionResult,
+  formData: FormData,
 ): Promise<ActionResult> {
+  const id = formData.get('id') as string;
+  const action = formData.get('action') as BlogAction;
+  const isFeatured = formData.get('isFeatured') === 'true';
+
   if (!id || !action) {
     return { success: false, message: 'Invalid form data. Missing ID or action.' };
   }
@@ -25,7 +28,6 @@ export async function updateBlogStatus(
     if (action === 'feature' || action === 'unfeature') {
       const newFeaturedState = action === 'feature';
       if (newFeaturedState) {
-        // When featuring a post, un-feature all others first
         await prisma.$transaction(async (tx) => {
           await tx.blog.updateMany({
             where: { featured: true },
@@ -37,14 +39,12 @@ export async function updateBlogStatus(
           });
         });
       } else {
-        // Just un-feature the single post
         await prisma.blog.update({
           where: { id },
           data: { featured: false },
         });
       }
     } else {
-      // Handle status changes
       let newStatus: Prisma.BlogUpdateInput['status'];
       switch (action) {
         case 'approve':
