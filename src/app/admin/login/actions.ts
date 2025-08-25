@@ -11,7 +11,7 @@ export async function authenticate(
 ) {
   try {
     const password = formData.get('password');
-    const session = await getIronSession<SessionData>(cookies(), sessionOptions);
+    const session = await getIronSession<SessionData>(await cookies(), sessionOptions);
 
     if (password === process.env.ADMIN_PASSWORD) {
       session.isLoggedIn = true;

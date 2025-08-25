@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { type Blog } from '@/generated/prisma';
 import { updateBlogStatus, type ActionResult, type BlogAction } from './actions';
@@ -19,19 +19,29 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
 
   const handleAction = async (action: BlogAction) => {
     setLoadingAction(action);
-    const result = await updateBlogStatus(blog.id, action, blog.featured);
-    
-    if (result?.success) {
-      toast({ title: 'Success', description: result.message });
-      router.refresh();
-    } else {
+    try {
+      const result = await updateBlogStatus(blog.id, action, blog.featured);
+      
+      if (result?.success) {
+        toast({ title: 'Success', description: result.message });
+        router.refresh();
+      } else {
+        toast({
+          title: 'Error',
+          description: result?.message || 'An unexpected error occurred.',
+          variant: 'destructive',
+        });
+      }
+    } catch (error) {
       toast({
         title: 'Error',
-        description: result?.message || 'An unexpected error occurred.',
+        description: 'A server-side error occurred. Please try again.',
         variant: 'destructive',
       });
+      console.error("Failed to perform blog action:", error);
+    } finally {
+      setLoadingAction(null);
     }
-    setLoadingAction(null);
   };
 
   return (
