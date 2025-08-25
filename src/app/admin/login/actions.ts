@@ -1,6 +1,6 @@
 'use server';
 
-import { getIronSession } from 'iron-session/next';
+import { getIronSession } from 'iron-session';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { SessionData, sessionOptions } from '@/lib/session';
