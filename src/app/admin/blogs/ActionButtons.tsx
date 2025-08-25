@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { type Blog } from '@prisma/client';
 import { updateBlogStatus, type BlogAction } from './actions';
@@ -13,6 +14,7 @@ interface ActionButtonsProps {
 
 export default function ActionButtons({ blog }: ActionButtonsProps) {
   const [loadingAction, setLoadingAction] = useState<BlogAction | null>(null);
+  const router = useRouter();
   const { toast } = useToast();
 
   const handleAction = async (action: BlogAction) => {
@@ -22,6 +24,7 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
 
       if (result && result.success) {
         toast({ title: 'Success', description: result.message });
+        router.refresh(); // This is the key fix: force a refresh to get new server data
       } else {
         toast({ 
           title: 'Error', 
