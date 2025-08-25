@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { format } from "date-fns";
 import { FadeIn } from "@/components/ui/fade-in";
-import { PrismaClient, Blog } from "@/generated/prisma";
+import { PrismaClient, Blog, Prisma } from "@/generated/prisma";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +58,11 @@ export default async function BlogPage() {
       },
     });
   } catch (error) {
-    console.warn("Could not fetch blog posts. Please check your database connection and schema.", error);
+     if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2021') {
+      console.warn("The 'Blog' table does not exist in the database yet. Skipping fetching posts.");
+    } else {
+      console.error("Could not fetch blog posts.", error);
+    }
   }
 
 

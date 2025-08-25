@@ -4,10 +4,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { format } from 'date-fns';
 import ActionButtons from './ActionButtons';
+import { Prisma } from '@/generated/prisma';
 
 const prisma = new PrismaClient();
 
-async function getBlogs() {
+async function getBlogs(): Promise<Blog[]> {
   try {
     const blogs = await prisma.blog.findMany({
       orderBy: {
@@ -16,8 +17,14 @@ async function getBlogs() {
     });
     return blogs;
   } catch (error) {
+    // Check if the error is because the table doesn't exist
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2021') {
+      console.warn("The 'Blog' table does not exist in the database yet. Please run migrations.");
+      return [];
+    }
+    // For other errors, re-throw them
     console.error("Failed to fetch blogs:", error);
-    return [];
+    throw error;
   }
 }
 
@@ -76,6 +83,7 @@ export default async function AdminBlogsPage() {
             {blogs.length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
                     <p>No blog posts found.</p>
+                    <p className="text-xs mt-2">If you have just set up your database, please ensure you have run the necessary migrations.</p>
                 </div>
             )}
           </CardContent>
