@@ -1,6 +1,8 @@
+
 'use client';
 
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation'; // Corrected import
 import { useFormState } from 'react-dom';
 import { type Blog } from '@prisma/client';
 import { updateBlogStatus } from './actions';
@@ -19,10 +21,11 @@ const initialState = {
 
 export default function ActionButtons({ blog }: ActionButtonsProps) {
   const [state, dispatch] = useFormState(updateBlogStatus, initialState);
+  const router = useRouter();
   const { toast } = useToast();
 
   useEffect(() => {
-    if (state.message) {
+    if (state?.message) {
       if (state.success) {
         toast({ title: 'Success', description: state.message });
       } else {
@@ -32,8 +35,9 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
           variant: 'destructive',
         });
       }
+      router.refresh();
     }
-  }, [state, toast]);
+  }, [state, toast, router]);
 
   return (
     <form action={dispatch} className="flex gap-2 justify-end">
@@ -59,5 +63,3 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
     </form>
   );
 }
-
-    
