@@ -1,11 +1,9 @@
-
 'use client';
 
-import { useEffect } from 'react';
-import { useActionState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { type Blog } from '@/generated/prisma';
-import { updateBlogStatus, type ActionResult } from './actions';
+import { updateBlogStatus, type ActionResult, type BlogAction } from './actions';
 import { useToast } from '@/hooks/use-toast';
 import { Check, X, Send, Star } from 'lucide-react';
 import { ActionButton } from './ActionButton';
@@ -14,44 +12,58 @@ interface ActionButtonsProps {
   blog: Blog;
 }
 
-const initialState: ActionResult = {
-  success: false,
-  message: '',
-};
-
 export default function ActionButtons({ blog }: ActionButtonsProps) {
-  const [state, dispatch] = useActionState(updateBlogStatus, initialState);
+  const [loadingAction, setLoadingAction] = useState<BlogAction | null>(null);
   const router = useRouter();
   const { toast } = useToast();
 
-  useEffect(() => {
-    if (state && state.message) {
-      if (state.success) {
-        toast({ title: 'Success', description: state.message });
-        router.refresh(); // Re-fetch server data and re-render
-      } else {
-        toast({
-          title: 'Error',
-          description: state.message,
-          variant: 'destructive',
-        });
-      }
+  const handleAction = async (action: BlogAction) => {
+    setLoadingAction(action);
+    const result = await updateBlogStatus(blog.id, action, blog.featured);
+    
+    if (result?.success) {
+      toast({ title: 'Success', description: result.message });
+      router.refresh();
+    } else {
+      toast({
+        title: 'Error',
+        description: result?.message || 'An unexpected error occurred.',
+        variant: 'destructive',
+      });
     }
-  }, [state, toast, router]);
+    setLoadingAction(null);
+  };
 
   return (
-    <form action={dispatch} className="flex gap-2 justify-end">
-      <input type="hidden" name="id" value={blog.id} />
-      <input type="hidden" name="isFeatured" value={String(blog.featured)} />
-      
+    <div className="flex gap-2 justify-end">
       {blog.status !== 'APPROVED' && blog.status !== 'PUBLISHED' && (
-        <ActionButton action="approve" icon={<Check className="mr-1 h-4 w-4" />} text="Approve" variant="secondary" />
+        <ActionButton 
+          action="approve" 
+          icon={<Check className="mr-1 h-4 w-4" />} 
+          text="Approve" 
+          variant="secondary" 
+          loadingAction={loadingAction}
+          onClick={() => handleAction('approve')}
+        />
       )}
       {blog.status !== 'REJECTED' && (
-        <ActionButton action="reject" icon={<X className="mr-1 h-4 w-4" />} text="Reject" variant="destructive" />
+        <ActionButton 
+          action="reject" 
+          icon={<X className="mr-1 h-4 w-4" />} 
+          text="Reject" 
+          variant="destructive"
+          loadingAction={loadingAction}
+          onClick={() => handleAction('reject')} 
+        />
       )}
       {blog.status === 'APPROVED' && (
-        <ActionButton action="publish" icon={<Send className="mr-1 h-4 w-4" />} text="Publish" />
+        <ActionButton 
+          action="publish" 
+          icon={<Send className="mr-1 h-4 w-4" />} 
+          text="Publish" 
+          loadingAction={loadingAction}
+          onClick={() => handleAction('publish')}
+        />
       )}
       
       <ActionButton
@@ -59,7 +71,9 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
         icon={<Star className="mr-1 h-4 w-4" />}
         text={blog.featured ? 'Un-Feature' : 'Feature'}
         variant={blog.featured ? 'default' : 'outline'}
+        loadingAction={loadingAction}
+        onClick={() => handleAction(blog.featured ? 'unfeature' : 'feature')}
       />
-    </form>
+    </div>
   );
 }
