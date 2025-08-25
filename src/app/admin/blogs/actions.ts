@@ -10,7 +10,7 @@ export type BlogAction = 'approve' | 'reject' | 'publish' | 'feature' | 'unfeatu
 
 export async function updateBlogStatus(id: string, action: BlogAction): Promise<{ success: boolean; message: string; }> {
   try {
-    let updateData: any = {};
+    let updateData: Prisma.BlogUpdateInput = {};
 
     switch (action) {
       case 'approve':
@@ -52,6 +52,6 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
     if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
       return { success: false, message: `Database error: Failed to ${action} blog post.` };
     }
-    return { success: false, message: `An unexpected error occurred.` };
+    return { success: false, message: `An unexpected server error occurred.` };
   }
 }
