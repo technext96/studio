@@ -22,19 +22,10 @@ export async function updateBlogStatus(
   }
   
   try {
-    let updateData: Prisma.BlogUpdateInput = {};
-
-    switch (action) {
-      case 'approve':
-        updateData = { status: 'APPROVED' };
-        break;
-      case 'reject':
-        updateData = { status: 'REJECTED' };
-        break;
-      case 'publish':
-        updateData = { status: 'PUBLISHED' };
-        break;
-      case 'feature':
+    if (action === 'feature' || action === 'unfeature') {
+      const newFeaturedState = action === 'feature';
+      if (newFeaturedState) {
+        // When featuring a post, un-feature all others first
         await prisma.$transaction(async (tx) => {
           await tx.blog.updateMany({
             where: { featured: true },
@@ -42,22 +33,36 @@ export async function updateBlogStatus(
           });
           await tx.blog.update({
             where: { id },
-            data: { featured: true, status: 'PUBLISHED' },
+            data: { featured: true },
           });
         });
-        break;
-      case 'unfeature':
-        updateData = { featured: false };
-        break;
-      default:
-        return { success: false, message: 'Invalid action specified.' };
-    }
-
-    if (action !== 'feature') {
+      } else {
+        // Just un-feature the single post
         await prisma.blog.update({
           where: { id },
-          data: updateData,
+          data: { featured: false },
         });
+      }
+    } else {
+      // Handle status changes
+      let newStatus: Prisma.BlogUpdateInput['status'];
+      switch (action) {
+        case 'approve':
+          newStatus = 'APPROVED';
+          break;
+        case 'reject':
+          newStatus = 'REJECTED';
+          break;
+        case 'publish':
+          newStatus = 'PUBLISHED';
+          break;
+        default:
+          return { success: false, message: 'Invalid status action specified.' };
+      }
+      await prisma.blog.update({
+        where: { id },
+        data: { status: newStatus },
+      });
     }
 
     revalidatePath('/admin/blogs');
