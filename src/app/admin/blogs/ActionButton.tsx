@@ -14,7 +14,7 @@ interface ActionButtonProps {
 }
 
 export function ActionButton({ action, icon, text, variant = "outline", disabled = false }: ActionButtonProps) {
-  const { pending } from useFormStatus();
+  const { pending }: { pending: boolean } = useFormStatus();
 
   return (
     <Button

@@ -2,12 +2,12 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation'; // Corrected import
+import { useRouter } from 'next/navigation';
 import { useFormState } from 'react-dom';
-import { type Blog } from '@prisma/client';
+import { type Blog } from '@/generated/prisma';
 import { updateBlogStatus } from './actions';
-import { Check, X, Send, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Check, X, Send, Star } from 'lucide-react';
 import { ActionButton } from './ActionButton';
 
 interface ActionButtonsProps {

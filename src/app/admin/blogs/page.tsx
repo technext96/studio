@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { Prisma, type Blog, type BlogStatus } from '@prisma/client';
+import { Prisma, type Blog, type BlogStatus } from '@/generated/prisma';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
