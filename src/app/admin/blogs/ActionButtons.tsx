@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -18,12 +19,17 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
   const handleAction = async (action: BlogAction) => {
     setLoadingAction(action);
     const result = await updateBlogStatus(blog.id, action);
-    if (result.success) {
+    setLoadingAction(null);
+
+    if (result && result.success) {
       toast({ title: 'Success', description: result.message });
     } else {
-      toast({ title: 'Error', description: result.message, variant: 'destructive' });
+      toast({ 
+        title: 'Error', 
+        description: result?.message || 'An unexpected error occurred.', 
+        variant: 'destructive' 
+      });
     }
-    setLoadingAction(null);
   };
   
   const renderButton = (action: BlogAction, icon: React.ReactNode, text: string, variant: "default" | "secondary" | "destructive" | "outline" | "ghost" | "link" = "outline", disabled = false) => {
