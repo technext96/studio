@@ -17,12 +17,17 @@ async function getBlogs(): Promise<Blog[]> {
     });
     return blogs;
   } catch (error) {
-    // Check if the error is because the table doesn't exist
-    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2021') {
-      console.warn("The 'Blog' table does not exist in the database yet. Please run migrations.");
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      (error.code === 'P2021' || error.code === 'P1001')
+    ) {
+      console.warn("Database is not available or the 'Blog' table does not exist. Please check your database connection and run migrations.");
       return [];
     }
-    // For other errors, re-throw them
+     if (error instanceof Prisma.PrismaClientInitializationError) {
+      console.warn("Could not connect to the database. Please check your DATABASE_URL.", error.message);
+      return [];
+    }
     console.error("Failed to fetch blogs:", error);
     throw error;
   }
@@ -83,7 +88,7 @@ export default async function AdminBlogsPage() {
             {blogs.length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
                     <p>No blog posts found.</p>
-                    <p className="text-xs mt-2">If you have just set up your database, please ensure you have run the necessary migrations.</p>
+                    <p className="text-xs mt-2">Please ensure your database is connected and you have run the necessary migrations.</p>
                 </div>
             )}
           </CardContent>

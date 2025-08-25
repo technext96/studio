@@ -1,7 +1,7 @@
 
 import { MetadataRoute } from 'next'
 import { services, industries, solutions } from '@/lib/data.tsx';
-import { PrismaClient } from '@/generated/prisma';
+import { PrismaClient, Prisma } from '@/generated/prisma';
 
 const prisma = new PrismaClient();
  
@@ -80,19 +80,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  const posts = await prisma.blog.findMany({
-    select: {
-      slug: true,
-      updatedAt: true,
-    },
-  });
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await prisma.blog.findMany({
+      where: { status: 'PUBLISHED' },
+      select: {
+        slug: true,
+        updatedAt: true,
+      },
+    });
 
-  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${siteUrl}/blog/${post.slug}`,
-    lastModified: post.updatedAt,
-    changeFrequency: 'weekly',
-    priority: 0.7,
-  }));
+    blogRoutes = posts.map((post) => ({
+      url: `${siteUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    }));
+  } catch (error) {
+     if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+        console.warn("Could not generate blog routes for sitemap. Please check your database connection.", error.message);
+     } else {
+        throw error;
+     }
+  }
   
   // Combine all routes
   const allRoutes: MetadataRoute.Sitemap = [

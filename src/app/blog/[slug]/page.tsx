@@ -2,7 +2,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
-import { PrismaClient, Blog } from "@/generated/prisma";
+import { PrismaClient, Blog, Prisma } from "@/generated/prisma";
 import { illustrationMap } from "@/lib/constants";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,8 +23,11 @@ async function getPost(slug: string): Promise<Blog | null> {
     });
     return post;
   } catch (error) {
-    console.warn(`Could not fetch post with slug "${slug}". Please check your database connection and schema.`, error);
-    return null;
+    if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+      console.warn(`Could not fetch post with slug "${slug}". Please check your database connection and schema.`, error.message);
+      return null;
+    }
+    throw error;
   }
 }
 
@@ -102,7 +105,11 @@ export default async function BlogPostPage({ params }: Props) {
       },
     });
   } catch (error) {
-     console.warn(`Could not fetch related posts. Please check your database connection and schema.`, error);
+     if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+        console.warn(`Could not fetch related posts. Please check your database connection and schema.`, error.message);
+     } else {
+        throw error;
+     }
   }
 
 
@@ -178,7 +185,10 @@ export async function generateStaticParams() {
       slug: p.slug,
     }));
   } catch (error) {
-    console.warn("Could not connect to the database to generate static blog pages. Skipping. Please check your DATABASE_URL.", error);
-    return [];
+    if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+        console.warn("Could not connect to the database to generate static blog pages. Skipping.", error.message);
+        return [];
+    }
+    throw error;
   }
 }

@@ -58,10 +58,10 @@ export default async function BlogPage() {
       },
     });
   } catch (error) {
-     if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2021') {
-      console.warn("The 'Blog' table does not exist in the database yet. Skipping fetching posts.");
+     if (error instanceof Prisma.PrismaClientKnownRequestError || error instanceof Prisma.PrismaClientInitializationError) {
+      console.warn("Could not fetch blog posts. Please check your database connection and migrations.", error.message);
     } else {
-      console.error("Could not fetch blog posts.", error);
+      console.error("An unexpected error occurred while fetching blog posts:", error);
     }
   }
 
