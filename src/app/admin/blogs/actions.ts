@@ -1,12 +1,13 @@
+
 'use server';
 
 import { prisma } from '@/lib/prisma';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@/generated/prisma';
 import { revalidatePath } from 'next/cache';
 
 export type BlogAction = 'approve' | 'reject' | 'publish' | 'feature' | 'unfeature';
 
-type ActionResult = {
+export type ActionResult = {
   success: boolean;
   message: string;
 };
@@ -36,11 +37,14 @@ export async function updateBlogStatus(
         updateData = { status: 'PUBLISHED' };
         break;
       case 'feature':
+        // Using a transaction to ensure data consistency
         await prisma.$transaction(async (tx) => {
+          // Un-feature any currently featured post
           await tx.blog.updateMany({
             where: { featured: true },
             data: { featured: false },
           });
+          // Feature the new post and ensure it's published
           await tx.blog.update({
             where: { id },
             data: { featured: true, status: 'PUBLISHED' },
@@ -54,6 +58,8 @@ export async function updateBlogStatus(
         return { success: false, message: 'Invalid action specified.' };
     }
 
+    // For actions other than 'feature', perform a single update.
+    // The 'feature' action is handled within the transaction.
     if (action !== 'feature') {
         await prisma.blog.update({
           where: { id },
@@ -70,19 +76,19 @@ export async function updateBlogStatus(
   } catch (error) {
     console.error(`Failed to ${action} blog post with ID ${id}:`, error);
     
+    // Provide more specific error messages
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       if (error.code === 'P2025') {
         return { success: false, message: `Error: Blog post not found.` };
       }
-      return { success: false, message: `Database error: ${error.code}. Check server logs.` };
+      return { success: false, message: `Database error: ${error.code}. Please check server logs.` };
     }
     
     if (error instanceof Prisma.PrismaClientInitializationError) {
       return { success: false, message: `Database connection error. Please check your DATABASE_URL.` };
     }
     
+    // Generic fallback for any other errors
     return { success: false, message: 'An unexpected server error occurred. Please check the server logs.' };
   }
 }
-
-    

@@ -1,10 +1,11 @@
 
 'use client';
 
-import { useEffect, useActionState } from 'react';
+import { useEffect } from 'react';
+import { useActionState } from 'react';
 import { useRouter } from 'next/navigation';
 import { type Blog } from '@/generated/prisma';
-import { updateBlogStatus } from './actions';
+import { updateBlogStatus, type ActionResult } from './actions';
 import { useToast } from '@/hooks/use-toast';
 import { Check, X, Send, Star } from 'lucide-react';
 import { ActionButton } from './ActionButton';
@@ -13,7 +14,7 @@ interface ActionButtonsProps {
   blog: Blog;
 }
 
-const initialState = {
+const initialState: ActionResult = {
   success: false,
   message: '',
 };
@@ -24,9 +25,10 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
   const { toast } = useToast();
 
   useEffect(() => {
-    if (state?.message) {
+    if (state && state.message) {
       if (state.success) {
         toast({ title: 'Success', description: state.message });
+        router.refresh(); // Re-fetch server data and re-render
       } else {
         toast({
           title: 'Error',
@@ -34,7 +36,6 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
           variant: 'destructive',
         });
       }
-      router.refresh();
     }
   }, [state, toast, router]);
 
