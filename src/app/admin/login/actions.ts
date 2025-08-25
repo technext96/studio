@@ -1,6 +1,6 @@
 'use server';
 
-import { getIronSession } from 'iron-session';
+import { getIronSession } from 'iron-session/edge';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { SessionData, sessionOptions } from '@/lib/session';
@@ -11,7 +11,7 @@ export async function authenticate(
 ) {
   try {
     const password = formData.get('password');
-    const session = await getIronSession<SessionData>(await cookies(), sessionOptions);
+    const session = await getIronSession<SessionData>(cookies(), sessionOptions);
 
     if (password === process.env.ADMIN_PASSWORD) {
       session.isLoggedIn = true;
