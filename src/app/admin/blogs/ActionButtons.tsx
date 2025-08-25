@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -34,7 +33,7 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
       console.error(`Action failed: ${action}`, error);
       toast({
         title: 'Action Failed',
-        description: 'An unexpected error occurred on the server. Please check the console.',
+        description: 'An unexpected error occurred. Please check browser console for details.',
         variant: 'destructive',
       });
     } finally {
@@ -57,7 +56,6 @@ export default function ActionButtons({ blog }: ActionButtonsProps) {
       </Button>
     );
   };
-
 
   return (
     <div className="flex gap-2 justify-end">

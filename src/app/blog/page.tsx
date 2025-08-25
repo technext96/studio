@@ -1,16 +1,14 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Metadata } from "next";
 import Link from "next/link";
 import { format } from "date-fns";
 import { FadeIn } from "@/components/ui/fade-in";
-import { PrismaClient, Blog, Prisma } from "@/generated/prisma";
+import { prisma } from '@/lib/prisma';
+import { Blog, Prisma } from "@/generated/prisma";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { illustrationMap } from "@/lib/constants";
-
-const prisma = new PrismaClient();
 
 const siteUrl = 'https://technext96.com';
 const pageUrl = `${siteUrl}/blog`;
@@ -64,7 +62,6 @@ export default async function BlogPage() {
       console.error("An unexpected error occurred while fetching blog posts:", error);
     }
   }
-
 
   const featuredPost = posts.find(p => p.featured) || (posts.length > 0 ? posts[0] : null);
   const otherPosts = featuredPost ? posts.filter(p => p.id !== featuredPost.id) : posts;

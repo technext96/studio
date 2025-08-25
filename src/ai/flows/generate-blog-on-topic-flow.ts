@@ -7,11 +7,10 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
-import { PrismaClient } from '@/generated/prisma';
+import { prisma } from '@/lib/prisma';
 import slugify from 'slugify';
 import { illustrationMap } from '@/lib/constants';
 
-const prisma = new PrismaClient();
 const illustrationKeys = Object.keys(illustrationMap);
 
 const BlogOnTopicInputSchema = z.object({

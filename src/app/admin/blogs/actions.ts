@@ -1,14 +1,17 @@
-
 'use server';
 
-import { PrismaClient, Prisma } from '@/generated/prisma';
+import { prisma } from '@/lib/prisma';
+import { Prisma } from '@/generated/prisma';
 import { revalidatePath } from 'next/cache';
-
-const prisma = new PrismaClient();
 
 export type BlogAction = 'approve' | 'reject' | 'publish' | 'feature' | 'unfeature';
 
-export async function updateBlogStatus(id: string, action: BlogAction): Promise<{ success: boolean; message: string; }> {
+type ActionResult = {
+  success: boolean;
+  message: string;
+};
+
+export async function updateBlogStatus(id: string, action: BlogAction): Promise<ActionResult> {
   try {
     let updateData: Prisma.BlogUpdateInput = {};
 
@@ -34,7 +37,7 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
         updateData = { featured: false };
         break;
       default:
-        return { success: false, message: 'Invalid action.' };
+        return { success: false, message: 'Invalid action specified.' };
     }
 
     await prisma.blog.update({
@@ -47,17 +50,19 @@ export async function updateBlogStatus(id: string, action: BlogAction): Promise<
     revalidatePath('/');
     
     return { success: true, message: `Blog post action '${action}' completed successfully.` };
+
   } catch (error) {
-    console.error(`Failed to ${action} blog post:`, error);
+    console.error(`Failed to ${action} blog post with ID ${id}:`, error);
+    
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
-       // Example: The record to be updated does not exist.
       if (error.code === 'P2025') {
-        return { success: false, message: `Blog post not found. It may have been deleted.` };
+        return { success: false, message: `Error: Blog post not found.` };
       }
-      return { success: false, message: `A database error occurred: ${error.message}` };
+      return { success: false, message: `Database error: ${error.code}.` };
     }
-     if (error instanceof Prisma.PrismaClientInitializationError) {
-      return { success: false, message: `Could not connect to the database. Please check your connection string.` };
+    
+    if (error instanceof Prisma.PrismaClientInitializationError) {
+      return { success: false, message: `Database connection error. Please check your DATABASE_URL.` };
     }
     
     return { success: false, message: 'An unexpected server error occurred. Please check the server logs.' };

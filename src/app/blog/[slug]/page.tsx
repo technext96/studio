@@ -1,16 +1,14 @@
-
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostClient from "@/components/BlogPostClient";
-import { PrismaClient, Blog, Prisma } from "@/generated/prisma";
+import { prisma } from '@/lib/prisma';
+import { Blog, Prisma } from "@/generated/prisma";
 import { illustrationMap } from "@/lib/constants";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/ui/fade-in";
 import { marked } from 'marked';
 import { Button } from "@/components/ui/button";
-
-const prisma = new PrismaClient();
 
 type Props = {
   params: { slug: string };
@@ -19,7 +17,7 @@ type Props = {
 async function getPost(slug: string): Promise<Blog | null> {
   try {
     const post = await prisma.blog.findUnique({
-      where: { slug: slug },
+      where: { slug: slug, status: 'PUBLISHED' },
     });
     return post;
   } catch (error) {
@@ -95,6 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
         tags: {
           hasSome: post.tags,
         },
+        status: 'PUBLISHED',
         NOT: {
           id: post.id,
         },
@@ -111,7 +110,6 @@ export default async function BlogPostPage({ params }: Props) {
         throw error;
      }
   }
-
 
   const contentWithoutFrontmatter = removeFrontmatter(post.content);
   
@@ -178,6 +176,7 @@ export default async function BlogPostPage({ params }: Props) {
 export async function generateStaticParams() {
   try {
     const posts = await prisma.blog.findMany({
+      where: { status: 'PUBLISHED' },
       select: { slug: true },
     });
 

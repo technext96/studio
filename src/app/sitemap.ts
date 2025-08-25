@@ -1,9 +1,7 @@
-
 import { MetadataRoute } from 'next'
 import { services, industries, solutions } from '@/lib/data.tsx';
-import { PrismaClient, Prisma } from '@/generated/prisma';
-
-const prisma = new PrismaClient();
+import { prisma } from '@/lib/prisma';
+import { Prisma } from '@/generated/prisma';
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = 'https://technext96.com';

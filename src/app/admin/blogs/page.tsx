@@ -1,13 +1,10 @@
-
-import { PrismaClient, Blog, BlogStatus } from '@/generated/prisma';
+import { prisma } from '@/lib/prisma';
+import { Blog, BlogStatus, Prisma } from '@/generated/prisma';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { format } from 'date-fns';
 import ActionButtons from './ActionButtons';
-import { Prisma } from '@/generated/prisma';
-
-const prisma = new PrismaClient();
 
 async function getBlogs(): Promise<Blog[]> {
   try {
@@ -18,11 +15,8 @@ async function getBlogs(): Promise<Blog[]> {
     });
     return blogs;
   } catch (error) {
-    if (
-      error instanceof Prisma.PrismaClientKnownRequestError &&
-      (error.code === 'P2021' || error.code === 'P1001')
-    ) {
-      console.warn("Database is not available or the 'Blog' table does not exist. Please check your database connection and run migrations.");
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === 'P2021') {
+      console.warn("The 'Blog' table does not exist. Please run database migrations.");
       return [];
     }
      if (error instanceof Prisma.PrismaClientInitializationError) {
@@ -30,7 +24,8 @@ async function getBlogs(): Promise<Blog[]> {
       return [];
     }
     console.error("Failed to fetch blogs:", error);
-    throw error;
+    // In case of other errors, we still return an empty array to avoid crashing the page.
+    return [];
   }
 }
 
